@@ -40,6 +40,7 @@
 ![屏幕截图 2024-06-22 113815](https://github.com/RolinShmily/RolinShmily.github.io/assets/142618699/c86cb078-ca68-4e98-8031-dbeb8b3085c7)
 3. 打开任意世界，*对局域网开放* ， 注意如果朋友是离线用户，一定要关闭*在线验证*
 ![屏幕截图 2024-06-22 113335](https://github.com/RolinShmily/RolinShmily.github.io/assets/142618699/3bb916b0-a844-4eec-9bdf-9e47b62009cb)
+![屏幕截图 2024-06-22 113441](https://github.com/RolinShmily/RolinShmily.github.io/assets/142618699/5af288b8-349f-4aea-bb40-4ba50a68da75)
 4. 将 *端口号* 和 *IPv4地址* 发给你的朋友
 ---
 ### 游戏连接者：
