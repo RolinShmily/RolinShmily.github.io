@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sat, 22 Jun 2024 15:54:26 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>Minecraft联机</title><link>https://RolinShmily.github.io/post/Minecraft-lian-ji.html</link><description>## 一、工具下载&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sat, 22 Jun 2024 16:02:27 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>Minecraft联机</title><link>https://RolinShmily.github.io/post/Minecraft-lian-ji.html</link><description>## 一、工具下载&#13;
 - 我们使用的工具是 ***ZeroTier***  一个专门用来建立点对点虚拟专用网(***P2P VPN***)&#13;
 - 以***Windows***系统为例&#13;
 1. 下载地址：https://www.zerotier.com/&#13;
@@ -14,6 +14,6 @@
 &#13;
 ![屏幕截图 2024-06-22 110219](https://github.com/RolinShmily/RolinShmily.github.io/assets/142618699/93ee2260-8306-473c-8275-90f648089bc1)&#13;
 &#13;
-4. 安装前请把 ***杀毒软件*** 全部关闭，尽量不要出现被拦截的情况。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Minecraft-lian-ji.html</guid><pubDate>Sat, 22 Jun 2024 03:46:48 +0000</pubDate></item><item><title>Girls Band Cry</title><link>https://RolinShmily.github.io/post/Girls%20Band%20Cry.html</link><description>TOGENASHI TOGEARI&#13;
+4. 安装前请把 ***杀毒软件*** 全部关闭，尽量不要出现被拦截的情况。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Minecraft-lian-ji.html</guid><pubDate>Sat, 22 Jun 2024 03:46:48 +0000</pubDate></item><item><title>Girls Band Cry</title><link>https://RolinShmily.github.io/post/Girls%20Band%20Cry.html</link><description>## ***TOGENASHI TOGEARI***&#13;
 ![GBC_PC壁紙-topaz](https://github.com/RolinShmily/RolinShmily.github.io/assets/142618699/e8307087-1e8c-43b4-a5f8-de450a77d025)&#13;
 。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Girls%20Band%20Cry.html</guid><pubDate>Sat, 22 Jun 2024 02:34:54 +0000</pubDate></item></channel></rss>
