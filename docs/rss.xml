@@ -1,4 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sat, 22 Jun 2024 02:39:09 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>Girls Band Cry</title><link>https://RolinShmily.github.io/post/Girls%20Band%20Cry.html</link><description>TOGENASHI TOGEARI&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sat, 22 Jun 2024 03:47:15 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>Minecraft联机</title><link>https://RolinShmily.github.io/post/Minecraft-lian-ji.html</link><description># 局域网联机&#13;
+- 我们使用的工具是 *ZeroTier*  一个专门用来建立点对点虚拟专用网(*P2P VPN*)&#13;
+- 以Windows系统为例&#13;
+1. 下载地址：https://www.zerotier.com/&#13;
+![屏幕截图 2024-06-22 105811](https://github.com/RolinShmily/RolinShmily.github.io/assets/142618699/d906566c-6819-47f8-a9e6-640b48e43d19)&#13;
+2. 点击 *Download*&#13;
+![屏幕截图 2024-06-22 105945](https://github.com/RolinShmily/RolinShmily.github.io/assets/142618699/4ea5fbc8-d658-4bff-a5a4-b0c1e6a2e2ca)&#13;
+3. 一般情况下直接点击 *MSI Installer (x86/x64)* 下载完成如图&#13;
+![屏幕截图 2024-06-22 110219](https://github.com/RolinShmily/RolinShmily.github.io/assets/142618699/93ee2260-8306-473c-8275-90f648089bc1)&#13;
+4. 安装前请把杀毒软件全部关闭，尽量不要出现被拦截的情况。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Minecraft-lian-ji.html</guid><pubDate>Sat, 22 Jun 2024 03:46:48 +0000</pubDate></item><item><title>Girls Band Cry</title><link>https://RolinShmily.github.io/post/Girls%20Band%20Cry.html</link><description>TOGENASHI TOGEARI&#13;
 ![GBC_PC壁紙-topaz](https://github.com/RolinShmily/RolinShmily.github.io/assets/142618699/e8307087-1e8c-43b4-a5f8-de450a77d025)&#13;
 。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Girls%20Band%20Cry.html</guid><pubDate>Sat, 22 Jun 2024 02:34:54 +0000</pubDate></item></channel></rss>
