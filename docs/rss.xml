@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sun, 23 Jun 2024 03:39:35 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CourterStrike2_config与指令(command)</title><link>https://RolinShmily.github.io/post/CourterStrike2_config-yu-zhi-ling-%28command%29.html</link><description>## *游戏自用config文件*&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sun, 23 Jun 2024 03:55:10 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config与指令(command)</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-yu-zhi-ling-%28command%29.html</link><description>## *游戏自用config文件*&#13;
 ### *一、autoexec.cfg*&#13;
 &gt;- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定&#13;
 ```ini&#13;
@@ -274,7 +274,7 @@ alias 'nb06' 'say 我打不过，对面帮忙点个投降;bind ''' 'nb07'';&#13;
 alias 'nb07' 'say 听不懂，我唐人街的;bind ''' 'nb08'';&#13;
 alias 'nb08' 'say 我只看到了天赋与努力;bind ''' 'nb09'';&#13;
 alias 'nb09' 'say 别炸了，人外有人，段上还有段;bind ''' 'nb10'';&#13;
-alias 'nb10' 'say 我的意识光可鉴人，枪法四面八方。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/CourterStrike2_config-yu-zhi-ling-%28command%29.html</guid><pubDate>Sun, 23 Jun 2024 03:33:44 +0000</pubDate></item><item><title>Minecraft_联机(on-line)</title><link>https://RolinShmily.github.io/post/Minecraft_-lian-ji-%28on-line%29.html</link><description>## 一、工具下载&#13;
+alias 'nb10' 'say 我的意识光可鉴人，枪法四面八方。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/CounterStrike2_config-yu-zhi-ling-%28command%29.html</guid><pubDate>Sun, 23 Jun 2024 03:33:44 +0000</pubDate></item><item><title>Minecraft_联机(on-line)</title><link>https://RolinShmily.github.io/post/Minecraft_-lian-ji-%28on-line%29.html</link><description>## 一、工具下载&#13;
 &gt;- 我们使用的工具是 ***ZeroTier***  一个专门用来建立点对点虚拟专用网(***P2P VPN***)&#13;
 &gt;- 以***Windows***系统为例&#13;
 1. 下载地址：https://www.zerotier.com/&#13;
