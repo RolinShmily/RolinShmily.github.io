@@ -211,7 +211,7 @@ alias "dao21" "subclass_change 525; alias dao dao1"
 alias "dao22" "subclass_change 526; alias dao dao1"
 ```
 ### *四、jiting.cfg*
->- cfg生效后，默认使用valorant版急停，长按空格键左侧的 **alt** 键切换 **双键劲舞团急停** 松开取消，按 **CapsLock** 键，切换valorant和双键急停，当然在autocfg下，按 **]** 键可恢复成原版急停，三种急停对比：BV12841167nH
+>- cfg生效后，默认使用valorant版急停，长按空格键左侧的 **alt** 键切换 **双键劲舞团急停** 松开取消，按 **CapsLock** 键，切换valorant和双键急停，当然在autocfg下，按 **]** 键可恢复成原版急停，三种急停对比： ***BV12841167nH***
 ```ini
 alias "+_forward" "+forward; forwardback 0.0001 0 0";
 alias "-_forward" "-forward; forwardback -0.0001 0 0;rightleft 0 0 0";
