@@ -1,7 +1,6 @@
-----
 ## Java版Minecraft下载
 ----
-### 一、启动器 ***HMCL*** 和 ***PCL2***
+### 一、启动器 ***HMCL*** 、 ***PCL2*** 、 ***官方启动器***
 
 - ***HMCL*** --由 ***huangyuhui*** 制作
 主页: https://hmcl.huangyuhui.net/  
@@ -20,8 +19,16 @@ GitHub项目地址: https://github.com/Hex-Dragon/PCL2
 ![HMCL](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-05_22-57-23.png?raw=true)
 ![PCL2](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-05_22-57-33.png?raw=true)
 
->- 打开后都是可视化操作界面，接下来提一下游戏本体的下载。
+- ***官方启动器*** --由 ***Mojang*** 制作（当然游戏也是人家做的）
+网址：https://www.minecraft.net/zh-hans
+>- 在这里我们能找到购买游戏的途径（Minecraft游戏其实是付费的），购买之后就能够得到 ***Java版*** 和 ***基岩版***，如果不行的话，可以去 ***Microsoft Store***（俗称微软商店）中购买
+
+![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-15_16-44-39.png?raw=true)
+![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-15_16-48-37.png?raw=true)
+>- 购买游戏其实对 ***Java版*** 影响不大，因为微软接手后大力发展的是 在自家 ***XBox***平台上的 ***基岩版*** minecraft，但是购买了游戏后，***Java版*** 用户将会被分配一个唯一的 ***uuid***，用于 ***Java*** 服务器的 ***正版验证*** ，从而进行有效 ***联机*** 
+>- ***uuid*** 查询网站：https://mcuuid.net/
 ### 二、游戏本体下载
+>- 打开非官方启动器后都是可视化操作界面，接下来提一下游戏本体的下载。
 >- 在启动器中的下载版块里，首先 ***选择游戏版本***，接下来选择模组加载器
 
 1. ***Forge*** ![1](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-05_23-16-20.png?raw=true) ：具有大量老牌大型模组社区，可供下载。游戏光影一般搭配 ***OptiFine*** 使用，不过如今 ***Forge*** 优化模组中也出现了 ***Fabric***里类似 ***iris***的存在，但不安装 ***OptiFine*** 也不影响游戏本体的下载与游玩。
