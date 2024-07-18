@@ -7,7 +7,7 @@
 
 ![Anaconda下载官网](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/anaconda_pytorch_cuda/Snipaste_2024-07-18_12-20-36.png?raw=true)
 ![Anaconda下载选项](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/anaconda_pytorch_cuda/Snipaste_2024-07-18_13-40-06.png?raw=true)
-- 安装完成后再配置一下 ***帐户环境变量***，就大功告成了。
+- 安装完成后再配置一下 ***帐户环境变量***
 
 ![环境变量](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/anaconda_pytorch_cuda/Snipaste_2024-07-18_14-27-14.png?raw=true)
 ### 2.***Cuda*** (需要Nvidia显卡)
@@ -26,25 +26,25 @@
 - ***Cuda*** 根据安装版本来选择，可以向下兼容。
 - 复制给出的下载指令，例如这里给出的是：
 - pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-- 接下来在Windows搜索栏搜索 ***Anaconda Prompt*** 打开后将给出的下在指令输入进去。(此时的Pytorch就安装在了整个系统大环境下)
+- 接下来在Windows搜索栏搜索 ***Anaconda Prompt*** 打开后将给出的下载指令输入进去。(此时的Pytorch就安装在了整个系统大环境下)
 
 ![Anaconda Prompt](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/anaconda_pytorch_cuda/Snipaste_2024-07-18_14-09-45.png?raw=true)
 ![Anaconda Prompt](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/anaconda_pytorch_cuda/Snipaste_2024-07-18_14-14-32.png?raw=true)
 
 ### 4.***VScode相关设置***
-1. 安装python拓展：
+#### 1. 安装python拓展：
 - 打开VScode拓展，搜索python，安装
 
 ![Python拓展](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/anaconda_pytorch_cuda/Snipaste_2024-07-18_14-30-16.png?raw=true)
 
-2. 设置python环境：
+#### 2. 设置python环境：
 - 打开VScode设置，(左下角齿轮->选择设置settings)
 
 ![齿轮](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/anaconda_pytorch_cuda/Snipaste_2024-07-18_14-32-40.png?raw=true)
 ![settings1](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/anaconda_pytorch_cuda/Snipaste_2024-07-18_14-37-15.png?raw=true)
 ![settings2](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/anaconda_pytorch_cuda/Snipaste_2024-07-18_14-38-55.png?raw=true)
 
-3. 设置python解释器：
+#### 3. 设置python解释器：
 - 任意打开一个python文件，例如test.py
 - 其中编写代码 `print(123)`
 
