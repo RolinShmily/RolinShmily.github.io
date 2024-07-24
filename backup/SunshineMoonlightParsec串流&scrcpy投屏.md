@@ -22,13 +22,13 @@
 
 - 最后保证 ***sunshine*** 在 ***Windows的防火墙*** 保护范围外，或者 ***关闭防火墙***
 
-1. ***Moonlight*** 即串流的接收端，负责接收数据流，并将操作信息再回馈给主机。
+2. ***Moonlight*** 即串流的接收端，负责接收数据流，并将操作信息再回馈给主机。
     下载地址：
     - 安卓：https://github.com/moonlight-stream/moonlight-android/releases
     - PC：https://github.com/moonlight-stream/moonlight-qt/releases
 - 在 ***assert*** 下找到对应版本的安装包后下载，随后只需要保证在同一个 ***内网环境*** 下，同时 ***sunshine*** 处于运行状态，***moonlight*** 可自动检测，检测不到可以 ***手动输入ip*** 连接。( ***ip查询*** 详见 ***zerotier*** 篇：https://rolinshmily.github.io/post/Minecraft-xia-zai-%26Zerotier-ju-yu-wang-lian-ji.html)
 
-1. 在 ***moonlight*** 端发送连接请求后，会要求 ***sunshine*** 端输入对应 ***pin码***
+3. 在 ***moonlight*** 端发送连接请求后，会要求 ***sunshine*** 端输入对应 ***pin码***
 
 ![pin](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-33-58.png?raw=true)
 
