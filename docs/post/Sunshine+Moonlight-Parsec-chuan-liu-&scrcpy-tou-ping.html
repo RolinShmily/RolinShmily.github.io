@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/142618699?v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 串流
+- 影音串流技术是一种线上即时影音播放技术，有别于传统的MPEG或MP3等影音播放方式，应用串流(streaming)技术传送多媒体的特点，在于可以边看边下载，大幅节省使用者等待的时间。">
+<meta property="og:title" content="Sunshine+Moonlight/Parsec串流&scrcpy投屏">
+<meta property="og:description" content="## 串流
+- 影音串流技术是一种线上即时影音播放技术，有别于传统的MPEG或MP3等影音播放方式，应用串流(streaming)技术传送多媒体的特点，在于可以边看边下载，大幅节省使用者等待的时间。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://RolinShmily.github.io/post/Sunshine%2BMoonlight-Parsec-chuan-liu-%26scrcpy-tou-ping.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/142618699?v=4">
+<title>Sunshine+Moonlight/Parsec串流&scrcpy投屏</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">Sunshine+Moonlight/Parsec串流&scrcpy投屏</h1>
+<div class="title-right">
+    <a href="https://RolinShmily.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>串流</h2>
+<ul>
+<li>影音串流技术是一种线上即时影音播放技术，有别于传统的MPEG或MP3等影音播放方式，应用串流(streaming)技术传送多媒体的特点，在于可以边看边下载，大幅节省使用者等待的时间。</li>
+</ul>
+<blockquote>
+<ul>
+<li>方案有两种：</li>
+<li>
+<ol>
+<li><em><strong>Sunshine</strong></em>+<em><strong>Moonlight</strong></em></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><em><strong>Parsec</strong></em></li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>注：默认 <em><strong>内网</strong></em> 条件下使用，没有内网条件的可以通过内网穿透，创造条件，比如 <em><strong>zerotier</strong></em> 的P2P连接，<em><strong>Sakura</strong></em> 的frp反向代理<br>
+如果有 <em><strong>IPv4或IPv6</strong></em> ，那就直接在 <em><strong>外网</strong></em> 条件下使用</li>
+</ul>
+<h3>一、<em><strong>Sunshine</strong></em>+<em><strong>Moonlight</strong></em></h3>
+<ol>
+<li><em><strong>Sunshine</strong></em> 可以简单理解为PC的信息流发射端，也就是将视频和音频信息打包，准备发送。<br>
+下载地址：<a href="https://github.com/LizardByte/Sunshine/releases">https://github.com/LizardByte/Sunshine/releases</a></li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_19-48-30.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_19-48-30.png?raw=true" alt="Sunshine" style="max-width: 100%;"></a></p>
+<ul>
+<li>下载后在右下角托盘处，选择 <em><strong>open sunshine</strong></em> 打开web端，注册一个账户，随后登录。</li>
+<li>在 <em><strong>configuration</strong></em> 的 <em><strong>General</strong></em> 里改为简体中文，<em><strong>save</strong></em>-&gt;<em><strong>apply</strong></em></li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-10.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-10.png?raw=true" alt="config1" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-39.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-39.png?raw=true" alt="config2" style="max-width: 100%;"></a></p>
+<ul>
+<li>在 <em><strong>配置</strong></em> 里的 <em><strong>Network</strong></em> 里，将 <em><strong>UPnP开启</strong></em>，<em><strong>开启IPv4+IPv6</strong></em></li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-14-26.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-14-26.png?raw=true" alt="config3" style="max-width: 100%;"></a></p>
+<ul>
+<li>最后保证 <em><strong>sunshine</strong></em> 在 <em><strong>Windows的防火墙</strong></em> 保护范围外，或者 <em><strong>关闭防火墙</strong></em></li>
+</ul>
+<ol start="2">
+<li><em><strong>Moonlight</strong></em> 即串流的接收端，负责接收数据流，并将操作信息再回馈给主机。<br>
+下载地址：
+<ul>
+<li>安卓：<a href="https://github.com/moonlight-stream/moonlight-android/releases">https://github.com/moonlight-stream/moonlight-android/releases</a></li>
+<li>PC：<a href="https://github.com/moonlight-stream/moonlight-qt/releases">https://github.com/moonlight-stream/moonlight-qt/releases</a></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>在 <em><strong>assert</strong></em> 下找到对应版本的安装包后下载，随后只需要保证在同一个 <em><strong>内网环境</strong></em> 下，同时 <em><strong>sunshine</strong></em> 处于运行状态，<em><strong>moonlight</strong></em> 可自动检测，检测不到可以 <em><strong>手动输入ip</strong></em> 连接。( <em><strong>ip查询</strong></em> 详见 <em><strong>zerotier</strong></em> 篇：<a href="https://rolinshmily.github.io/post/Minecraft-xia-zai-%26Zerotier-ju-yu-wang-lian-ji.html" rel="nofollow">https://rolinshmily.github.io/post/Minecraft-xia-zai-%26Zerotier-ju-yu-wang-lian-ji.html</a>)</li>
+</ul>
+<ol start="3">
+<li>在 <em><strong>moonlight</strong></em> 端发送连接请求后，会要求 <em><strong>sunshine</strong></em> 端输入对应 <em><strong>pin码</strong></em></li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-33-58.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-33-58.png?raw=true" alt="pin" style="max-width: 100%;"></a></p>
+<h3>二、<em><strong>Parsec</strong></em></h3>
+<ul>
+<li>与 <em><strong>sunshine+moonlight</strong></em> 的逻辑差不多</li>
+<li>官网地址：<a href="https://parsec.app/downloads" rel="nofollow">https://parsec.app/downloads</a></li>
+</ul>
+<h3>三、<em><strong>Parsec Virtual Display</strong></em></h3>
+<ul>
+<li>
+<p>一个软件层 <em><strong>虚拟显示器</strong></em>，可以自定义屏幕，使串流的 <em><strong>moonlight端</strong></em> 充当 <em><strong>sunshine</strong></em> 的 <em><strong>副屏幕</strong></em></p>
+</li>
+<li>
+<p>下载地址：<a href="https://github.com/nomi-san/parsec-vdd/releases">https://github.com/nomi-san/parsec-vdd/releases</a></p>
+</li>
+<li>
+<p>在创建一个屏幕之后，我们要保存它提供的视频输出命令</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-44-36.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-44-36.png?raw=true" alt="display" style="max-width: 100%;"></a></p>
+<ul>
+<li>打开 <em><strong>sunshine</strong></em> web端，在配置下的 <em><strong>Audio/Video</strong></em> 里找到 <em><strong>输出名称</strong></em>，输入软件提供的命令行</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-48-55.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-48-55.png?raw=true" alt="display2" style="max-width: 100%;"></a></p>
+<ul>
+<li>最后记得 <em><strong>保存+应用</strong></em></li>
+</ul>
+<h2>投屏</h2>
+<ul>
+<li>一般应用于 <em><strong>PC操作安卓手机</strong></em> 或者 <em><strong>直播安卓手机游戏</strong></em> 时</li>
+<li><em><strong>scrcpy程序</strong></em> 下载地址：<a href="https://github.com/Genymobile/scrcpy/releases">https://github.com/Genymobile/scrcpy/releases</a></li>
+</ul>
+<ol>
+<li>在第一次进行投屏时，请使用数据线连接手机与pc，并打开手机的 <em><strong>usb调试</strong></em> 功能</li>
+</ol>
+<blockquote>
+<ul>
+<li><em><strong>USB调试</strong></em> 一般在 <em><strong>开发者选项</strong></em> 中，需要在 <em><strong>设置</strong></em> 里找到 <em><strong>关于手机</strong></em> -&gt; <em><strong>版本信息</strong></em> -&gt; 多次点击 <em><strong>软件版本</strong></em> （出现提示 <em><strong>处于开发者模式</strong></em>）-&gt; 回退到 <em><strong>系统与升级</strong></em> -&gt; <em><strong>开发者选项</strong></em></li>
+</ul>
+</blockquote>
+<ul>
+<li>运行程序文件，等待手机界面出现，如果不行，可以将手机的usb模式选择为 <em><strong>管理文件</strong></em><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-06-18.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-06-18.png?raw=true" alt="scrcpy" style="max-width: 100%;"></a></li>
+</ul>
+<ol start="2">
+<li><em><strong>WiFi</strong></em> 连接配置：</li>
+</ol>
+<ul>
+<li>保持有线连接状态，在程序根目录下运行cmd</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-12-21.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-12-21.png?raw=true" alt="cmd" style="max-width: 100%;"></a></p>
+<ul>
+<li>输入指令：<code class="notranslate">.\scrcpy.exe -d</code> 运行后关闭手机界面</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-15-57.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-15-57.png?raw=true" alt="scrcpy1" style="max-width: 100%;"></a></p>
+<ul>
+<li>输入指令：<code class="notranslate">.\scrcpy.exe --tcpip</code> 此后，保证手机处于PC的wifi连接下，可拔掉数据线。</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-19-34.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-19-34.png?raw=true" alt="scrcpy2" style="max-width: 100%;"></a></p>
+<blockquote>
+<ul>
+<li>在此cmd下输入<code class="notranslate">.\scrcpy.exe -h</code>即可查看所有指令</li>
+</ul>
+</blockquote>
+<ol start="3">
+<li><em><strong>连接方式</strong></em>：</li>
+</ol>
+<ul>
+<li>如果使用 <em><strong>有线连接</strong></em>，则直接运行程序文件 <em><strong>scrcpy.exe</strong></em> 即可</li>
+<li>如果使用 <em><strong>wifi连接</strong></em>，则可以在根目录下新建一个 <em><strong>start.bat</strong></em> 文件（可以先创建 <em><strong>start.txt</strong></em> 再将后缀名改为 <em><strong>bat</strong></em>），<em><strong>编辑</strong></em>，写入代码<code class="notranslate">.\scrcpy.exe -e</code>保存，双击运行 <em><strong>start.bat</strong></em> 即可</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-31-26.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-31-26.png?raw=true" alt="bat" style="max-width: 100%;"></a></p></div>
+<div style="font-size:small;margin-top:8px;float:right;">by RolinShmily 转载请注明出处</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://RolinShmily.github.io">RolinShmily</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("06/22/2024"!=""){
+    var startSite=new Date("06/22/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","RolinShmily/RolinShmily.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+</script>
+
+
+</html>
