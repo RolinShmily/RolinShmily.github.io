@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/142618699?v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## *游戏自用config文件与部分指令分享*
+### *一、autoexec.cfg*
+>- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定
+```ini
+//Shubiao
+sensitivity 1.25
+
+//Jichu Bangding
+bind '0' 'slot10'
+bind '1' 'slot1'
+bind '2' 'slot2'
+bind '3' 'slot3'
+bind '4' 'slot4'
+bind '5' 'slot5'
+bind '6' 'slot6'
+bind '7' 'slot7'
+bind '8' 'slot8'
+bind '9' 'slot9'
+bind 'a' '+left' 
+bind 'd' '+right' 
+bind 'w' '+forward' 
+bind 's' '+back'
+bind 'mouse1' '+attack' 
+bind 'mouse2' '+attack2' 
+bind 'e' '+use' 
+bind 'f' '+lookatweapon' 
+bind 'space' '+jump' 
+bind 'ctrl' '+duck' 
+bind 'g' 'drop' 
+bind shift '+sprint' 
+bind 'b' 'buymenu' 
+
+//Bangding
+bind 'n' 'noclip' 
+bind 'c' '+voicerecord' 
+bind 'h' 'toggleradarscale'
+bind 'v' 'switchhands'
+
+bind '[' 'exec wdv3.cfg'
+bind ']' 'exec autoexec.cfg'
+
+bind 'i' 'exec jiting.cfg'
+
+bind 'o' 'exec huandao.cfg'
+
+bind '\' 'exec j.cfg'
+
+bind '-' 'cl_drawhud 0'
+bind '=' 'cl_drawhud 1'
+
+bind ',' 'sv_showimpacts 1'
+bind '.' 'sv_showimpacts 0'
+
+bind 'q' 'lastinv'
+bind 't' '+spray_menu'
+bind 'u' 'messagemode2'
+bind 'y' 'messagemode'
+bind 'z' 'radio'
+bind 'MOUSE4' '+radialradio'
+bind 'MOUSE5' 'player_ping'
+
+bind 'p' 'sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999; mp_buytime 99999;mp_ignore_round_win_conditions 1;mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_autoteambalance 0;mp_friendlyfire 1;mp_solid_teammates 1;mp_taser_recharge_time 10;mp_drop_knife_enable true;ammo_grenade_limit_total 6;mp_spectators_max 9;mp_autokick 0;mp_limitteams 10;mp_restartgame 1;'
+bind '/' 'sv_grenade_trajectory_prac_pipreview 1;sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;'
+
+bind 'l' 'sv_rethrow_last_grenade'
+bind 'j' 'mp_restartgame 1'
+bind 'k' 'give weapon_knife'
+
+
+//Zhunxing
+cl_crosshair_drawoutline false;
+cl_crosshair_dynamic_maxdist_splitratio	0.300000;
+cl_crosshair_dynamic_splitalpha_innermod 1.000000;
+cl_crosshair_dynamic_splitalpha_outermod 0.500000;
+cl_crosshair_dynamic_splitdist 7;
+cl_crosshair_outlinethickness 0.000000;
+cl_crosshair_recoil false;
+cl_crosshair_sniper_width 1;
+cl_crosshair_t false;
+cl_crosshairalpha 255;
+cl_crosshaircolor 5;
+cl_crosshaircolor_b	255;
+cl_crosshaircolor_g	255;
+cl_crosshaircolor_r	0;
+cl_crosshairdot	true;
+cl_crosshairgap	-3.700000;
+cl_crosshairgap_useweaponvalue false;
+cl_crosshairsize 0.900000;
+cl_crosshairstyle 5;
+cl_crosshairthickness 0.800000;
+cl_crosshairusealpha true;
+
+
+//Chiqiang
+viewmodel_fov '68.000000'
+viewmodel_offset_x '2.0'
+viewmodel_offset_y '2.0'
+viewmodel_offset_z '-1.0'
+
+//Leida
+cl_radar_always_centered '0'
+cl_radar_scale '0.37'
+cl_hud_radar_scale '1'
+cl_teammate_colors_show 2
+
+//Qita
+fps_max 999 
+cl_join_advertise '2'
+cl_use_opens_buy_menu '0' 
+cl_dm_buyrandomweapons 0 
+gameinstructor_enable '0'
+cl_autohelp 'false'
+mm_dedicated_search_maxping '70' 
+func_break_max_pieces 0
+r_drawtracers_firstperson 0
+
+
+echo Config Loaded!
+```
+
+>- **n** 键 飞天
+>- **c** 键 讲话
+>- **h** 键 切换小地图缩放比例
+>- **v** 键 切换左右手
+>- **z** 键 开启无线电
+>- **t** 键 开启喷漆
+>- **u** 键 团队消息
+>- **y** 键 全体消息
+>- **Mouth4** (侧键1) 快捷信息
+>- **Mouth5** (侧键2) 玩家信号
+
+- **p** 键 开启自定义房间：
+```ini
+sv_cheats 1; //开启作弊模式
+bot_kick; //踢出机器人
+mp_buy_anywhere 1; //可在任意处购买
+mp_freezetime 0; //赛前准备时间为0
+mp_maxmoney 99999; //最大金钱数99999
+mp_startmoney 99999; //起始金钱数99999
+mp_buytime 99999; //购买时间99999
+mp_ignore_round_win_conditions 1; //回合永不结束
+mp_respawn_on_death_ct 1; //ct无限复活
+mp_respawn_on_death_t 1; //t无限复活
+mp_autoteambalance 0; //队伍平衡关闭
+mp_friendlyfire 1; //队友伤害开启
+mp_solid_teammates 1; //队友实体开启
+mp_taser_recharge_time 10; //电击枪充电时间为10s
+mp_drop_knife_enable true; //允许掉落匕首
+ammo_grenade_limit_total 6; //手榴弹最大可携带数为6
+mp_spectators_max 9; //游戏观察者最大数为9
+mp_autokick 0; //禁用自动踢出服务器功能
+mp_limitteams 10; //队伍间最大人数差为10
+mp_restartgame 1; //在1s后重启回合
+```
+- **/** 键 开启道具可视化：
+```ini
+sv_grenade_trajectory_prac_pipreview 1; //启用手榴弹轨迹的预览
+sv_grenade_trajectory_prac_trailtime 8; //设置手榴弹轨迹可见时间为8s
+sv_infinite_ammo 2; //设置无限弹药模式(道具无限)，但仍需换弹夹
+```
+>- **l** 键 复现最后一次投掷的手榴弹
+>- **j** 键 重启回合
+
+>- **,** 键 开启弹痕
+>- **.** 键 关闭弹痕
+
+>- **-** 键 隐藏UI
+>- **=** 键 开启UI
+
+>- **k** 键 掉落一把匕首
+- **o** 键 开启换刀 (**huandao.cfg**) 对准匕首即可
+- **i** 键 开启急停模式，具体见**jiting.cfg**
+- **\\** 键 开启彩虹hud，祥见**j.cfg** 
+- **[** 键 启动弯刀自适应检视 (**wdv3.cfg**) 切刀按'**3**'触发
+- **]** 键 重启**autoexec.cfg**文件，可以消除外置cfg文件的生效
+### *二、cfg文件的位置和游戏自启动指令*
+>- 编辑好cfg文件要放入游戏文件夹对应位置才能生效
+>- 相对路径：**.\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg**
+
+>- 在steam中的启动选项里可以方便设置一些东西：
+>- **-allow_third_party_software** 允许第三方软件,例如**OBS**的窗口采集
+>- **-perfectworld** 国服
+>- **-worldwide** 国际服
+>- 每条命令之间要留一个空格
+### *三、huandao.cfg*
+>- 更改匕首模型，对准匕首按 **o** 键即可
+```ini
+bind 'o' 'dao'                                                    
+alias 'dao' 'dao1'
+alias 'dao1' 'subclass_change 500; alias dao dao2'
+alias 'dao2' 'subclass_change 503; alias dao dao3'
+alias 'dao3' 'subclass_change 505; alias dao dao4'
+alias 'dao4' 'subclass_change 506; alias dao dao5'
+alias 'dao5' 'subclass_change 507; alias dao dao6'
+alias 'dao6' 'subclass_change 508; alias dao dao7'
+alias 'dao7' 'subclass_change 509; alias dao dao8'
+alias 'dao8' 'subclass_change 512; alias dao dao9'
+alias 'dao9' 'subclass_change 514; alias dao dao10'
+alias 'dao10' 'subclass_change 515; alias dao dao11'
+alias 'dao11' 'subclass_change 516; alias dao dao12'
+alias 'dao12' 'subclass_change 517; alias dao dao13'
+alias 'dao13' 'subclass_change 518; alias dao dao14'
+alias 'dao14' 'subclass_change 519; alias dao dao15'
+alias 'dao15' 'subclass_change 520; alias dao dao16'
+alias 'dao16' 'subclass_change 521; alias dao dao17'
+alias 'dao17' 'subclass_change 522; alias dao dao18'
+alias 'dao18' 'subclass_change 523; alias dao dao19'
+alias 'dao19' 'subclass_change 524; alias dao dao20'
+alias 'dao20' 'subclass_change 524; alias dao dao21'
+alias 'dao21' 'subclass_change 525; alias dao dao1'
+alias 'dao22' 'subclass_change 526; alias dao dao1'
+```
+### *四、jiting.cfg*
+>- cfg生效后，默认使用valorant版急停，长按空格键左侧的 **alt** 键切换 **双键劲舞团急停** 松开取消，按 **CapsLock** 键，切换valorant和双键急停，当然在autocfg下，按 **]** 键可恢复成原版急停，三种急停对比： ***BV12841167nH***
+```ini
+alias '+_forward' '+forward; forwardback 0.0001 0 0';
+alias '-_forward' '-forward; forwardback -0.0001 0 0;rightleft 0 0 0';
+
+alias '+_back' '+back; forwardback -0.0001 0 0';
+alias '-_back' '-back; forwardback 0.0001 0 0;rightleft 0 0 0';
+
+alias '+_left' '+left; rightleft -0.0001 0 0';
+alias '-_left' '-left; rightleft 0.0001 0 0;forwardback 0 0 0';
+
+
+alias '+_right' '+right; rightleft 0.0001 0 0';
+alias '-_right' '-right; rightleft -0.0001 0 0;forwardback 0 0 0';
+
+alias '+_forward1' '+forward; forwardback 0.0001 0 0';
+alias '-_forward1' '-forward; forwardback 0 0 0';
+
+alias '+_back1' '+back; forwardback -0.0001 0 0';
+alias '-_back1' '-back; forwardback 0 0 0';
+
+alias '+_left1' '+left; rightleft -0.0001 0 0';
+alias '-_left1' '-left; rightleft 0 0 0';
+
+alias '+_right1' '+right; rightleft 0.0001 0 0';
+alias '-_right1' '-right; rightleft 0 0 0';
+
+alias '+xjt' 'bind 'w' '+_forward';bind 's' '+_back';bind 'a' '+_left';bind 'd' '+_right';';
+alias '+ljt' 'bind 'w' '+_forward1';bind 's' '+_back1';bind 'a' '+_left1';bind 'd' '+_right1';';
+
+alias '+jt' '+ljt';
+alias '-jt' '+xjt';
+alias '+jt1' '+xjt';
+alias '-jt1' '+ljt';
+bind alt '+jt';
+bind CAPSLOCK '+Ljt';
+
+bind 'w' '+_forward';
+bind 's' '+_back';
+bind 'a' '+_left';
+bind 'd' '+_right'
+```
+### *五、j.cfg*
+>- 方向键,切刀键和鼠标点击均会启动hud颜色循环
+```ini
+alias '+_forward' '+forward;cl_hud_color 11';
+alias '-_forward' '-forward;cl_hud_color 8';
+bind 'w' '+_forward';
+alias '+_back' '+back;cl_hud_color 9';
+alias '-_back' '-back;cl_hud_color 10';
+bind 's' '+_back';
+alias '+_left' '+left;cl_hud_color 8';
+alias '-_left' '-left;cl_hud_color 9';
+bind 'a' '+_left';
+alias '+_right' '+right;cl_hud_color 10';
+alias '-_right' '-right;cl_hud_color 5';
+bind 'd' '+_right';
+bind 'q' 'lastinv;cl_hud_color 6'
+alias +att'+attack;cl_hud_color 5;cl_crosshaircolor 7';
+alias -att'-attack;cl_hud_color 9;cl_crosshaircolor 6';
+bind mouse1'+att';
+alias +att2'+attack2;cl_hud_color 2;cl_crosshaircolor 4;r_cleardecals';
+```
+### *六、wdv3.cfg*
+>- 可忽略掉切出弯刀时的双手拿刀动作，而直接播放检视动画，转刀或者立刀
+```ini
+alias 'q1' 'lastinv'
+alias 'q2' weapon
+alias 'v1' 'switchhands 1 0'
+alias 'v2' knifeswitch 
+
+alias 'view' '+lookatweapon;-lookatweapon'
+
+alias 'weapon' 'lastinv;alias q2 knife;alias v2 gunswitch'
+alias 'knife' 'lastinv;view;alias q2 weapon;alias v2 knifeswitch'
+alias 'knifeswitch' 'switchhands 1 0;view'
+alias 'gunswitch' 'switchhands 1 0'
+
+bind '1' 'slot1;bind q q1;bind v v1'
+bind '2' 'slot2;bind q q1;bind v v1'
+bind '3' 'slot3;view;bind q q2;alias q2 weapon;alias v2 knifeswitch;bind v v2'
+bind '4' 'slot4;bind q q1;bind v v1'
+bind '5' 'slot5;bind q q1;bind v v1'
+bind 'q' 'q1'
+bind 'v' 'v1'
+```
+### *七、一些好玩的指令*
+- **爆头模式**
+```
+mp_damage_headshot_only 1;
+```
+- **生成一只鸡**
+```
+ent_create chicken;  
+```
+- **人机难度**
+```
+custom_bot_difficulty 5;
+```
+- **任意地点下包**
+```
+mp_plant_c4_anywhere 1; 
+```
+- **C4引爆时间**
+```
+mp_c4timer 40; 
+```
+- **自动回血**
+```
+sv_regeneration_force_on 1; 
+```
+- **显示人物行走速度**
+```
+cl_showpos 1; 
+```
+- **武器掉落高亮**
+```
+mp_weapons_glow_on_ground 1; 
+```。">
+<meta property="og:title" content="CounterStrike2_config文件与指令">
+<meta property="og:description" content="## *游戏自用config文件与部分指令分享*
+### *一、autoexec.cfg*
+>- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定
+```ini
+//Shubiao
+sensitivity 1.25
+
+//Jichu Bangding
+bind '0' 'slot10'
+bind '1' 'slot1'
+bind '2' 'slot2'
+bind '3' 'slot3'
+bind '4' 'slot4'
+bind '5' 'slot5'
+bind '6' 'slot6'
+bind '7' 'slot7'
+bind '8' 'slot8'
+bind '9' 'slot9'
+bind 'a' '+left' 
+bind 'd' '+right' 
+bind 'w' '+forward' 
+bind 's' '+back'
+bind 'mouse1' '+attack' 
+bind 'mouse2' '+attack2' 
+bind 'e' '+use' 
+bind 'f' '+lookatweapon' 
+bind 'space' '+jump' 
+bind 'ctrl' '+duck' 
+bind 'g' 'drop' 
+bind shift '+sprint' 
+bind 'b' 'buymenu' 
+
+//Bangding
+bind 'n' 'noclip' 
+bind 'c' '+voicerecord' 
+bind 'h' 'toggleradarscale'
+bind 'v' 'switchhands'
+
+bind '[' 'exec wdv3.cfg'
+bind ']' 'exec autoexec.cfg'
+
+bind 'i' 'exec jiting.cfg'
+
+bind 'o' 'exec huandao.cfg'
+
+bind '\' 'exec j.cfg'
+
+bind '-' 'cl_drawhud 0'
+bind '=' 'cl_drawhud 1'
+
+bind ',' 'sv_showimpacts 1'
+bind '.' 'sv_showimpacts 0'
+
+bind 'q' 'lastinv'
+bind 't' '+spray_menu'
+bind 'u' 'messagemode2'
+bind 'y' 'messagemode'
+bind 'z' 'radio'
+bind 'MOUSE4' '+radialradio'
+bind 'MOUSE5' 'player_ping'
+
+bind 'p' 'sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999; mp_buytime 99999;mp_ignore_round_win_conditions 1;mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_autoteambalance 0;mp_friendlyfire 1;mp_solid_teammates 1;mp_taser_recharge_time 10;mp_drop_knife_enable true;ammo_grenade_limit_total 6;mp_spectators_max 9;mp_autokick 0;mp_limitteams 10;mp_restartgame 1;'
+bind '/' 'sv_grenade_trajectory_prac_pipreview 1;sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;'
+
+bind 'l' 'sv_rethrow_last_grenade'
+bind 'j' 'mp_restartgame 1'
+bind 'k' 'give weapon_knife'
+
+
+//Zhunxing
+cl_crosshair_drawoutline false;
+cl_crosshair_dynamic_maxdist_splitratio	0.300000;
+cl_crosshair_dynamic_splitalpha_innermod 1.000000;
+cl_crosshair_dynamic_splitalpha_outermod 0.500000;
+cl_crosshair_dynamic_splitdist 7;
+cl_crosshair_outlinethickness 0.000000;
+cl_crosshair_recoil false;
+cl_crosshair_sniper_width 1;
+cl_crosshair_t false;
+cl_crosshairalpha 255;
+cl_crosshaircolor 5;
+cl_crosshaircolor_b	255;
+cl_crosshaircolor_g	255;
+cl_crosshaircolor_r	0;
+cl_crosshairdot	true;
+cl_crosshairgap	-3.700000;
+cl_crosshairgap_useweaponvalue false;
+cl_crosshairsize 0.900000;
+cl_crosshairstyle 5;
+cl_crosshairthickness 0.800000;
+cl_crosshairusealpha true;
+
+
+//Chiqiang
+viewmodel_fov '68.000000'
+viewmodel_offset_x '2.0'
+viewmodel_offset_y '2.0'
+viewmodel_offset_z '-1.0'
+
+//Leida
+cl_radar_always_centered '0'
+cl_radar_scale '0.37'
+cl_hud_radar_scale '1'
+cl_teammate_colors_show 2
+
+//Qita
+fps_max 999 
+cl_join_advertise '2'
+cl_use_opens_buy_menu '0' 
+cl_dm_buyrandomweapons 0 
+gameinstructor_enable '0'
+cl_autohelp 'false'
+mm_dedicated_search_maxping '70' 
+func_break_max_pieces 0
+r_drawtracers_firstperson 0
+
+
+echo Config Loaded!
+```
+
+>- **n** 键 飞天
+>- **c** 键 讲话
+>- **h** 键 切换小地图缩放比例
+>- **v** 键 切换左右手
+>- **z** 键 开启无线电
+>- **t** 键 开启喷漆
+>- **u** 键 团队消息
+>- **y** 键 全体消息
+>- **Mouth4** (侧键1) 快捷信息
+>- **Mouth5** (侧键2) 玩家信号
+
+- **p** 键 开启自定义房间：
+```ini
+sv_cheats 1; //开启作弊模式
+bot_kick; //踢出机器人
+mp_buy_anywhere 1; //可在任意处购买
+mp_freezetime 0; //赛前准备时间为0
+mp_maxmoney 99999; //最大金钱数99999
+mp_startmoney 99999; //起始金钱数99999
+mp_buytime 99999; //购买时间99999
+mp_ignore_round_win_conditions 1; //回合永不结束
+mp_respawn_on_death_ct 1; //ct无限复活
+mp_respawn_on_death_t 1; //t无限复活
+mp_autoteambalance 0; //队伍平衡关闭
+mp_friendlyfire 1; //队友伤害开启
+mp_solid_teammates 1; //队友实体开启
+mp_taser_recharge_time 10; //电击枪充电时间为10s
+mp_drop_knife_enable true; //允许掉落匕首
+ammo_grenade_limit_total 6; //手榴弹最大可携带数为6
+mp_spectators_max 9; //游戏观察者最大数为9
+mp_autokick 0; //禁用自动踢出服务器功能
+mp_limitteams 10; //队伍间最大人数差为10
+mp_restartgame 1; //在1s后重启回合
+```
+- **/** 键 开启道具可视化：
+```ini
+sv_grenade_trajectory_prac_pipreview 1; //启用手榴弹轨迹的预览
+sv_grenade_trajectory_prac_trailtime 8; //设置手榴弹轨迹可见时间为8s
+sv_infinite_ammo 2; //设置无限弹药模式(道具无限)，但仍需换弹夹
+```
+>- **l** 键 复现最后一次投掷的手榴弹
+>- **j** 键 重启回合
+
+>- **,** 键 开启弹痕
+>- **.** 键 关闭弹痕
+
+>- **-** 键 隐藏UI
+>- **=** 键 开启UI
+
+>- **k** 键 掉落一把匕首
+- **o** 键 开启换刀 (**huandao.cfg**) 对准匕首即可
+- **i** 键 开启急停模式，具体见**jiting.cfg**
+- **\\** 键 开启彩虹hud，祥见**j.cfg** 
+- **[** 键 启动弯刀自适应检视 (**wdv3.cfg**) 切刀按'**3**'触发
+- **]** 键 重启**autoexec.cfg**文件，可以消除外置cfg文件的生效
+### *二、cfg文件的位置和游戏自启动指令*
+>- 编辑好cfg文件要放入游戏文件夹对应位置才能生效
+>- 相对路径：**.\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg**
+
+>- 在steam中的启动选项里可以方便设置一些东西：
+>- **-allow_third_party_software** 允许第三方软件,例如**OBS**的窗口采集
+>- **-perfectworld** 国服
+>- **-worldwide** 国际服
+>- 每条命令之间要留一个空格
+### *三、huandao.cfg*
+>- 更改匕首模型，对准匕首按 **o** 键即可
+```ini
+bind 'o' 'dao'                                                    
+alias 'dao' 'dao1'
+alias 'dao1' 'subclass_change 500; alias dao dao2'
+alias 'dao2' 'subclass_change 503; alias dao dao3'
+alias 'dao3' 'subclass_change 505; alias dao dao4'
+alias 'dao4' 'subclass_change 506; alias dao dao5'
+alias 'dao5' 'subclass_change 507; alias dao dao6'
+alias 'dao6' 'subclass_change 508; alias dao dao7'
+alias 'dao7' 'subclass_change 509; alias dao dao8'
+alias 'dao8' 'subclass_change 512; alias dao dao9'
+alias 'dao9' 'subclass_change 514; alias dao dao10'
+alias 'dao10' 'subclass_change 515; alias dao dao11'
+alias 'dao11' 'subclass_change 516; alias dao dao12'
+alias 'dao12' 'subclass_change 517; alias dao dao13'
+alias 'dao13' 'subclass_change 518; alias dao dao14'
+alias 'dao14' 'subclass_change 519; alias dao dao15'
+alias 'dao15' 'subclass_change 520; alias dao dao16'
+alias 'dao16' 'subclass_change 521; alias dao dao17'
+alias 'dao17' 'subclass_change 522; alias dao dao18'
+alias 'dao18' 'subclass_change 523; alias dao dao19'
+alias 'dao19' 'subclass_change 524; alias dao dao20'
+alias 'dao20' 'subclass_change 524; alias dao dao21'
+alias 'dao21' 'subclass_change 525; alias dao dao1'
+alias 'dao22' 'subclass_change 526; alias dao dao1'
+```
+### *四、jiting.cfg*
+>- cfg生效后，默认使用valorant版急停，长按空格键左侧的 **alt** 键切换 **双键劲舞团急停** 松开取消，按 **CapsLock** 键，切换valorant和双键急停，当然在autocfg下，按 **]** 键可恢复成原版急停，三种急停对比： ***BV12841167nH***
+```ini
+alias '+_forward' '+forward; forwardback 0.0001 0 0';
+alias '-_forward' '-forward; forwardback -0.0001 0 0;rightleft 0 0 0';
+
+alias '+_back' '+back; forwardback -0.0001 0 0';
+alias '-_back' '-back; forwardback 0.0001 0 0;rightleft 0 0 0';
+
+alias '+_left' '+left; rightleft -0.0001 0 0';
+alias '-_left' '-left; rightleft 0.0001 0 0;forwardback 0 0 0';
+
+
+alias '+_right' '+right; rightleft 0.0001 0 0';
+alias '-_right' '-right; rightleft -0.0001 0 0;forwardback 0 0 0';
+
+alias '+_forward1' '+forward; forwardback 0.0001 0 0';
+alias '-_forward1' '-forward; forwardback 0 0 0';
+
+alias '+_back1' '+back; forwardback -0.0001 0 0';
+alias '-_back1' '-back; forwardback 0 0 0';
+
+alias '+_left1' '+left; rightleft -0.0001 0 0';
+alias '-_left1' '-left; rightleft 0 0 0';
+
+alias '+_right1' '+right; rightleft 0.0001 0 0';
+alias '-_right1' '-right; rightleft 0 0 0';
+
+alias '+xjt' 'bind 'w' '+_forward';bind 's' '+_back';bind 'a' '+_left';bind 'd' '+_right';';
+alias '+ljt' 'bind 'w' '+_forward1';bind 's' '+_back1';bind 'a' '+_left1';bind 'd' '+_right1';';
+
+alias '+jt' '+ljt';
+alias '-jt' '+xjt';
+alias '+jt1' '+xjt';
+alias '-jt1' '+ljt';
+bind alt '+jt';
+bind CAPSLOCK '+Ljt';
+
+bind 'w' '+_forward';
+bind 's' '+_back';
+bind 'a' '+_left';
+bind 'd' '+_right'
+```
+### *五、j.cfg*
+>- 方向键,切刀键和鼠标点击均会启动hud颜色循环
+```ini
+alias '+_forward' '+forward;cl_hud_color 11';
+alias '-_forward' '-forward;cl_hud_color 8';
+bind 'w' '+_forward';
+alias '+_back' '+back;cl_hud_color 9';
+alias '-_back' '-back;cl_hud_color 10';
+bind 's' '+_back';
+alias '+_left' '+left;cl_hud_color 8';
+alias '-_left' '-left;cl_hud_color 9';
+bind 'a' '+_left';
+alias '+_right' '+right;cl_hud_color 10';
+alias '-_right' '-right;cl_hud_color 5';
+bind 'd' '+_right';
+bind 'q' 'lastinv;cl_hud_color 6'
+alias +att'+attack;cl_hud_color 5;cl_crosshaircolor 7';
+alias -att'-attack;cl_hud_color 9;cl_crosshaircolor 6';
+bind mouse1'+att';
+alias +att2'+attack2;cl_hud_color 2;cl_crosshaircolor 4;r_cleardecals';
+```
+### *六、wdv3.cfg*
+>- 可忽略掉切出弯刀时的双手拿刀动作，而直接播放检视动画，转刀或者立刀
+```ini
+alias 'q1' 'lastinv'
+alias 'q2' weapon
+alias 'v1' 'switchhands 1 0'
+alias 'v2' knifeswitch 
+
+alias 'view' '+lookatweapon;-lookatweapon'
+
+alias 'weapon' 'lastinv;alias q2 knife;alias v2 gunswitch'
+alias 'knife' 'lastinv;view;alias q2 weapon;alias v2 knifeswitch'
+alias 'knifeswitch' 'switchhands 1 0;view'
+alias 'gunswitch' 'switchhands 1 0'
+
+bind '1' 'slot1;bind q q1;bind v v1'
+bind '2' 'slot2;bind q q1;bind v v1'
+bind '3' 'slot3;view;bind q q2;alias q2 weapon;alias v2 knifeswitch;bind v v2'
+bind '4' 'slot4;bind q q1;bind v v1'
+bind '5' 'slot5;bind q q1;bind v v1'
+bind 'q' 'q1'
+bind 'v' 'v1'
+```
+### *七、一些好玩的指令*
+- **爆头模式**
+```
+mp_damage_headshot_only 1;
+```
+- **生成一只鸡**
+```
+ent_create chicken;  
+```
+- **人机难度**
+```
+custom_bot_difficulty 5;
+```
+- **任意地点下包**
+```
+mp_plant_c4_anywhere 1; 
+```
+- **C4引爆时间**
+```
+mp_c4timer 40; 
+```
+- **自动回血**
+```
+sv_regeneration_force_on 1; 
+```
+- **显示人物行走速度**
+```
+cl_showpos 1; 
+```
+- **武器掉落高亮**
+```
+mp_weapons_glow_on_ground 1; 
+```。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/142618699?v=4">
+<title>CounterStrike2_config文件与指令</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">CounterStrike2_config文件与指令</h1>
+<div class="title-right">
+    <a href="https://RolinShmily.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2><em>游戏自用config文件与部分指令分享</em></h2>
+<h3><em>一、autoexec.cfg</em></h3>
+<blockquote>
+<ul>
+<li>自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定</li>
+</ul>
+</blockquote>
+<div class="highlight highlight-source-ini"><pre class="notranslate">//Shubiao
+sensitivity 1.25
+
+//Jichu Bangding
+bind <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot10<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot2<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot3<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot4<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>5<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot5<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>6<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot6<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>7<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot7<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>8<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot8<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>9<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot9<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+left<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>d<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+right<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>w<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+forward<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>s<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+back<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>mouse1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+attack<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>mouse2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+attack2<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>e<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+use<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>f<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+lookatweapon<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>space<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+jump<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>ctrl<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+duck<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>g<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>drop<span class="pl-pds">"</span></span> 
+bind shift <span class="pl-s"><span class="pl-pds">"</span>+sprint<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>buymenu<span class="pl-pds">"</span></span> 
+
+//Bangding
+bind <span class="pl-s"><span class="pl-pds">"</span>n<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>noclip<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+voicerecord<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>h<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>toggleradarscale<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>v<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>switchhands<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>[<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec wdv3.cfg<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>]<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec autoexec.cfg<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>i<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec jiting.cfg<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>o<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec huandao.cfg<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>\<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec j.cfg<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_drawhud 0<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>=<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_drawhud 1<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>,<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>sv_showimpacts 1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>.<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>sv_showimpacts 0<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>q<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>lastinv<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>t<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+spray_menu<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>u<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>messagemode2<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>messagemode<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>z<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>radio<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>MOUSE4<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+radialradio<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>MOUSE5<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>player_ping<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>p<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999; mp_buytime 99999;mp_ignore_round_win_conditions 1;mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_autoteambalance 0;mp_friendlyfire 1;mp_solid_teammates 1;mp_taser_recharge_time 10;mp_drop_knife_enable true;ammo_grenade_limit_total 6;mp_spectators_max 9;mp_autokick 0;mp_limitteams 10;mp_restartgame 1;<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>sv_grenade_trajectory_prac_pipreview 1;sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>l<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>sv_rethrow_last_grenade<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>j<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>mp_restartgame 1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>k<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>give weapon_knife<span class="pl-pds">"</span></span>
+
+
+//Zhunxing
+cl_crosshair_drawoutline false<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshair_dynamic_maxdist_splitratio	0.300000<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshair_dynamic_splitalpha_innermod 1.000000<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshair_dynamic_splitalpha_outermod 0.500000<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshair_dynamic_splitdist 7<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshair_outlinethickness 0.000000<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshair_recoil false<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshair_sniper_width 1<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshair_t false<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshairalpha 255<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshaircolor 5<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshaircolor_b	255<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshaircolor_g	255<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshaircolor_r	0<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshairdot	true<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshairgap	-3.700000<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshairgap_useweaponvalue false<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshairsize 0.900000<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshairstyle 5<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshairthickness 0.800000<span class="pl-c"><span class="pl-c">;</span></span>
+cl_crosshairusealpha true<span class="pl-c"><span class="pl-c">;</span></span>
+
+
+//Chiqiang
+viewmodel_fov <span class="pl-s"><span class="pl-pds">"</span>68.000000<span class="pl-pds">"</span></span>
+viewmodel_offset_x <span class="pl-s"><span class="pl-pds">"</span>2.0<span class="pl-pds">"</span></span>
+viewmodel_offset_y <span class="pl-s"><span class="pl-pds">"</span>2.0<span class="pl-pds">"</span></span>
+viewmodel_offset_z <span class="pl-s"><span class="pl-pds">"</span>-1.0<span class="pl-pds">"</span></span>
+
+//Leida
+cl_radar_always_centered <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
+cl_radar_scale <span class="pl-s"><span class="pl-pds">"</span>0.37<span class="pl-pds">"</span></span>
+cl_hud_radar_scale <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
+cl_teammate_colors_show 2
+
+//Qita
+fps_max 999 
+cl_join_advertise <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>
+cl_use_opens_buy_menu <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> 
+cl_dm_buyrandomweapons 0 
+gameinstructor_enable <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
+cl_autohelp <span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span>
+mm_dedicated_search_maxping <span class="pl-s"><span class="pl-pds">"</span>70<span class="pl-pds">"</span></span> 
+func_break_max_pieces 0
+r_drawtracers_firstperson 0
+
+
+echo Config Loaded!</pre></div>
+<blockquote>
+<ul>
+<li><strong>n</strong> 键 飞天</li>
+<li><strong>c</strong> 键 讲话</li>
+<li><strong>h</strong> 键 切换小地图缩放比例</li>
+<li><strong>v</strong> 键 切换左右手</li>
+<li><strong>z</strong> 键 开启无线电</li>
+<li><strong>t</strong> 键 开启喷漆</li>
+<li><strong>u</strong> 键 团队消息</li>
+<li><strong>y</strong> 键 全体消息</li>
+<li><strong>Mouth4</strong> (侧键1) 快捷信息</li>
+<li><strong>Mouth5</strong> (侧键2) 玩家信号</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>p</strong> 键 开启自定义房间：</li>
+</ul>
+<div class="highlight highlight-source-ini"><pre class="notranslate">sv_cheats 1<span class="pl-c"><span class="pl-c">;</span> //开启作弊模式</span>
+bot_kick<span class="pl-c"><span class="pl-c">;</span> //踢出机器人</span>
+mp_buy_anywhere 1<span class="pl-c"><span class="pl-c">;</span> //可在任意处购买</span>
+mp_freezetime 0<span class="pl-c"><span class="pl-c">;</span> //赛前准备时间为0</span>
+mp_maxmoney 99999<span class="pl-c"><span class="pl-c">;</span> //最大金钱数99999</span>
+mp_startmoney 99999<span class="pl-c"><span class="pl-c">;</span> //起始金钱数99999</span>
+mp_buytime 99999<span class="pl-c"><span class="pl-c">;</span> //购买时间99999</span>
+mp_ignore_round_win_conditions 1<span class="pl-c"><span class="pl-c">;</span> //回合永不结束</span>
+mp_respawn_on_death_ct 1<span class="pl-c"><span class="pl-c">;</span> //ct无限复活</span>
+mp_respawn_on_death_t 1<span class="pl-c"><span class="pl-c">;</span> //t无限复活</span>
+mp_autoteambalance 0<span class="pl-c"><span class="pl-c">;</span> //队伍平衡关闭</span>
+mp_friendlyfire 1<span class="pl-c"><span class="pl-c">;</span> //队友伤害开启</span>
+mp_solid_teammates 1<span class="pl-c"><span class="pl-c">;</span> //队友实体开启</span>
+mp_taser_recharge_time 10<span class="pl-c"><span class="pl-c">;</span> //电击枪充电时间为10s</span>
+mp_drop_knife_enable true<span class="pl-c"><span class="pl-c">;</span> //允许掉落匕首</span>
+ammo_grenade_limit_total 6<span class="pl-c"><span class="pl-c">;</span> //手榴弹最大可携带数为6</span>
+mp_spectators_max 9<span class="pl-c"><span class="pl-c">;</span> //游戏观察者最大数为9</span>
+mp_autokick 0<span class="pl-c"><span class="pl-c">;</span> //禁用自动踢出服务器功能</span>
+mp_limitteams 10<span class="pl-c"><span class="pl-c">;</span> //队伍间最大人数差为10</span>
+mp_restartgame 1<span class="pl-c"><span class="pl-c">;</span> //在1s后重启回合</span></pre></div>
+<ul>
+<li><strong>/</strong> 键 开启道具可视化：</li>
+</ul>
+<div class="highlight highlight-source-ini"><pre class="notranslate">sv_grenade_trajectory_prac_pipreview 1<span class="pl-c"><span class="pl-c">;</span> //启用手榴弹轨迹的预览</span>
+sv_grenade_trajectory_prac_trailtime 8<span class="pl-c"><span class="pl-c">;</span> //设置手榴弹轨迹可见时间为8s</span>
+sv_infinite_ammo 2<span class="pl-c"><span class="pl-c">;</span> //设置无限弹药模式(道具无限)，但仍需换弹夹</span></pre></div>
+<blockquote>
+<ul>
+<li><strong>l</strong> 键 复现最后一次投掷的手榴弹</li>
+<li><strong>j</strong> 键 重启回合</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>,</strong> 键 开启弹痕</li>
+<li><strong>.</strong> 键 关闭弹痕</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>-</strong> 键 隐藏UI</li>
+<li><strong>=</strong> 键 开启UI</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>k</strong> 键 掉落一把匕首</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>o</strong> 键 开启换刀 (<strong>huandao.cfg</strong>) 对准匕首即可</li>
+<li><strong>i</strong> 键 开启急停模式，具体见<strong>jiting.cfg</strong></li>
+<li><strong>\</strong> 键 开启彩虹hud，祥见<strong>j.cfg</strong></li>
+<li><strong>[</strong> 键 启动弯刀自适应检视 (<strong>wdv3.cfg</strong>) 切刀按"<strong>3</strong>"触发</li>
+<li><strong>]</strong> 键 重启<strong>autoexec.cfg</strong>文件，可以消除外置cfg文件的生效</li>
+</ul>
+<h3><em>二、cfg文件的位置和游戏自启动指令</em></h3>
+<blockquote>
+<ul>
+<li>编辑好cfg文件要放入游戏文件夹对应位置才能生效</li>
+<li>相对路径：<strong>.\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg</strong></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>在steam中的启动选项里可以方便设置一些东西：</li>
+<li><strong>-allow_third_party_software</strong> 允许第三方软件,例如<strong>OBS</strong>的窗口采集</li>
+<li><strong>-perfectworld</strong> 国服</li>
+<li><strong>-worldwide</strong> 国际服</li>
+<li>每条命令之间要留一个空格</li>
+</ul>
+</blockquote>
+<h3><em>三、huandao.cfg</em></h3>
+<blockquote>
+<ul>
+<li>更改匕首模型，对准匕首按 <strong>o</strong> 键即可</li>
+</ul>
+</blockquote>
+<div class="highlight highlight-source-ini"><pre class="notranslate">bind <span class="pl-s"><span class="pl-pds">"</span>o<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>dao<span class="pl-pds">"</span></span>                                                    
+alias <span class="pl-s"><span class="pl-pds">"</span>dao<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>dao1<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 500; alias dao dao2<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 503; alias dao dao3<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao3<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 505; alias dao dao4<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao4<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 506; alias dao dao5<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao5<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 507; alias dao dao6<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao6<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 508; alias dao dao7<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao7<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 509; alias dao dao8<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao8<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 512; alias dao dao9<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao9<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 514; alias dao dao10<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao10<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 515; alias dao dao11<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao11<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 516; alias dao dao12<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao12<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 517; alias dao dao13<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao13<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 518; alias dao dao14<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao14<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 519; alias dao dao15<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao15<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 520; alias dao dao16<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao16<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 521; alias dao dao17<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao17<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 522; alias dao dao18<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao18<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 523; alias dao dao19<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao19<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 524; alias dao dao20<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao20<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 524; alias dao dao21<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao21<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 525; alias dao dao1<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>dao22<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 526; alias dao dao1<span class="pl-pds">"</span></span></pre></div>
+<h3><em>四、jiting.cfg</em></h3>
+<blockquote>
+<ul>
+<li>cfg生效后，默认使用valorant版急停，长按空格键左侧的 <strong>alt</strong> 键切换 <strong>双键劲舞团急停</strong> 松开取消，按 <strong>CapsLock</strong> 键，切换valorant和双键急停，当然在autocfg下，按 <strong>]</strong> 键可恢复成原版急停，三种急停对比： <em><strong>BV12841167nH</strong></em></li>
+</ul>
+</blockquote>
+<div class="highlight highlight-source-ini"><pre class="notranslate">alias <span class="pl-s"><span class="pl-pds">"</span>+_forward<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+forward; forwardback 0.0001 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_forward<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-forward; forwardback -0.0001 0 0;rightleft 0 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>+_back<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+back; forwardback -0.0001 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_back<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-back; forwardback 0.0001 0 0;rightleft 0 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>+_left<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+left; rightleft -0.0001 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_left<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-left; rightleft 0.0001 0 0;forwardback 0 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+
+alias <span class="pl-s"><span class="pl-pds">"</span>+_right<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+right; rightleft 0.0001 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_right<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-right; rightleft -0.0001 0 0;forwardback 0 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>+_forward1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+forward; forwardback 0.0001 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_forward1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-forward; forwardback 0 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>+_back1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+back; forwardback -0.0001 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_back1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-back; forwardback 0 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>+_left1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+left; rightleft -0.0001 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_left1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-left; rightleft 0 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>+_right1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+right; rightleft 0.0001 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_right1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-right; rightleft 0 0 0<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>+xjt<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>bind <span class="pl-pds">"</span></span>w<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>+_forward<span class="pl-s"><span class="pl-pds">"</span>;bind <span class="pl-pds">"</span></span>s<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>+_back<span class="pl-s"><span class="pl-pds">"</span>;bind <span class="pl-pds">"</span></span>a<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>+_left<span class="pl-s"><span class="pl-pds">"</span>;bind <span class="pl-pds">"</span></span>d<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>+_right<span class="pl-s"><span class="pl-pds">"</span>;<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>+ljt<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>bind <span class="pl-pds">"</span></span>w<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>+_forward1<span class="pl-s"><span class="pl-pds">"</span>;bind <span class="pl-pds">"</span></span>s<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>+_back1<span class="pl-s"><span class="pl-pds">"</span>;bind <span class="pl-pds">"</span></span>a<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>+_left1<span class="pl-s"><span class="pl-pds">"</span>;bind <span class="pl-pds">"</span></span>d<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>+_right1<span class="pl-s"><span class="pl-pds">"</span>;<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>+jt<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+ljt<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-jt<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+xjt<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>+jt1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+xjt<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-jt1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+ljt<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind alt <span class="pl-s"><span class="pl-pds">"</span>+jt<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind CAPSLOCK <span class="pl-s"><span class="pl-pds">"</span>+Ljt<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>w<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+_forward<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>s<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+_back<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+_left<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>d<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+_right<span class="pl-pds">"</span></span></pre></div>
+<h3><em>五、j.cfg</em></h3>
+<blockquote>
+<ul>
+<li>方向键,切刀键和鼠标点击均会启动hud颜色循环</li>
+</ul>
+</blockquote>
+<div class="highlight highlight-source-ini"><pre class="notranslate">alias <span class="pl-s"><span class="pl-pds">"</span>+_forward<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+forward;cl_hud_color 11<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_forward<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-forward;cl_hud_color 8<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>w<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+_forward<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>+_back<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+back;cl_hud_color 9<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_back<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-back;cl_hud_color 10<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>s<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+_back<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>+_left<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+left;cl_hud_color 8<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_left<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-left;cl_hud_color 9<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+_left<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>+_right<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+right;cl_hud_color 10<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>-_right<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-right;cl_hud_color 5<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>d<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+_right<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>q<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>lastinv;cl_hud_color 6<span class="pl-pds">"</span></span>
+alias +att<span class="pl-s"><span class="pl-pds">"</span>+attack;cl_hud_color 5;cl_crosshaircolor 7<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias -att<span class="pl-s"><span class="pl-pds">"</span>-attack;cl_hud_color 9;cl_crosshaircolor 6<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+bind mouse1<span class="pl-s"><span class="pl-pds">"</span>+att<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+alias +att2<span class="pl-s"><span class="pl-pds">"</span>+attack2;cl_hud_color 2;cl_crosshaircolor 4;r_cleardecals<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span></pre></div>
+<h3><em>六、wdv3.cfg</em></h3>
+<blockquote>
+<ul>
+<li>可忽略掉切出弯刀时的双手拿刀动作，而直接播放检视动画，转刀或者立刀</li>
+</ul>
+</blockquote>
+<div class="highlight highlight-source-ini"><pre class="notranslate">alias <span class="pl-s"><span class="pl-pds">"</span>q1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>lastinv<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>q2<span class="pl-pds">"</span></span> weapon
+alias <span class="pl-s"><span class="pl-pds">"</span>v1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>switchhands 1 0<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>v2<span class="pl-pds">"</span></span> knifeswitch 
+
+alias <span class="pl-s"><span class="pl-pds">"</span>view<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+lookatweapon;-lookatweapon<span class="pl-pds">"</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>weapon<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>lastinv;alias q2 knife;alias v2 gunswitch<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>lastinv;view;alias q2 weapon;alias v2 knifeswitch<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knifeswitch<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>switchhands 1 0;view<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>gunswitch<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>switchhands 1 0<span class="pl-pds">"</span></span>
+
+bind <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot1;bind q q1;bind v v1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot2;bind q q1;bind v v1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot3;view;bind q q2;alias q2 weapon;alias v2 knifeswitch;bind v v2<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot4;bind q q1;bind v v1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>5<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot5;bind q q1;bind v v1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>q<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>q1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>v<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>v1<span class="pl-pds">"</span></span></pre></div>
+<h3><em>七、一些好玩的指令</em></h3>
+<ul>
+<li><strong>爆头模式</strong></li>
+</ul>
+<pre class="notranslate"><code class="notranslate">mp_damage_headshot_only 1;
+</code></pre>
+<ul>
+<li><strong>生成一只鸡</strong></li>
+</ul>
+<pre class="notranslate"><code class="notranslate">ent_create chicken;  
+</code></pre>
+<ul>
+<li><strong>人机难度</strong></li>
+</ul>
+<pre class="notranslate"><code class="notranslate">custom_bot_difficulty 5;
+</code></pre>
+<ul>
+<li><strong>任意地点下包</strong></li>
+</ul>
+<pre class="notranslate"><code class="notranslate">mp_plant_c4_anywhere 1; 
+</code></pre>
+<ul>
+<li><strong>C4引爆时间</strong></li>
+</ul>
+<pre class="notranslate"><code class="notranslate">mp_c4timer 40; 
+</code></pre>
+<ul>
+<li><strong>自动回血</strong></li>
+</ul>
+<pre class="notranslate"><code class="notranslate">sv_regeneration_force_on 1; 
+</code></pre>
+<ul>
+<li><strong>显示人物行走速度</strong></li>
+</ul>
+<pre class="notranslate"><code class="notranslate">cl_showpos 1; 
+</code></pre>
+<ul>
+<li><strong>武器掉落高亮</strong></li>
+</ul>
+<pre class="notranslate"><code class="notranslate">mp_weapons_glow_on_ground 1; 
+</code></pre></div>
+<div style="font-size:small;margin-top:8px;float:right;">by RolinShmily 转载请注明出处</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://RolinShmily.github.io">RolinShmily</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("06/22/2024"!=""){
+    var startSite=new Date("06/22/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","RolinShmily/RolinShmily.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+
+</html>
