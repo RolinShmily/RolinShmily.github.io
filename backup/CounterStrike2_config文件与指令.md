@@ -95,10 +95,11 @@ cl_crosshairusealpha "1"
 
 
 //Chiqiang
-viewmodel_fov "68.000000"
-viewmodel_offset_x "2.0"
-viewmodel_offset_y "2.0"
-viewmodel_offset_z "-1.0"
+viewmodel_fov 64
+viewmodel_offset_x 2
+viewmodel_offset_y 1.5
+viewmodel_offset_z -1.5
+viewmodel_presetpos 3
 
 //Leida
 cl_radar_always_centered "0"
