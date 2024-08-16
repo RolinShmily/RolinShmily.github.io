@@ -1,7 +1,9 @@
 ## *游戏自用config文件与部分指令分享*
 ### *一、autoexec.cfg*
->- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定
+>- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，关闭了自动切枪
 ```ini
+
+cl_autowepswitch 0
 //Shubiao
 sensitivity 1.25
 

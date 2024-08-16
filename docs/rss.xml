@@ -1,12 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Fri, 16 Aug 2024 04:11:04 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>Sunshine+Moonlight/Parsec串流&amp;scrcpy投屏</title><link>https://RolinShmily.github.io/post/Sunshine%2BMoonlight-Parsec-chuan-liu-%26scrcpy-tou-ping.html</link><description>## 串流&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Fri, 16 Aug 2024 08:19:54 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>Sunshine+Moonlight/Parsec串流&amp;scrcpy投屏</title><link>https://RolinShmily.github.io/post/Sunshine%2BMoonlight-Parsec-chuan-liu-%26scrcpy-tou-ping.html</link><description>## 串流&#13;
 - 影音串流技术是一种线上即时影音播放技术，有别于传统的MPEG或MP3等影音播放方式，应用串流(streaming)技术传送多媒体的特点，在于可以边看边下载，大幅节省使用者等待的时间。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Sunshine%2BMoonlight-Parsec-chuan-liu-%26scrcpy-tou-ping.html</guid><pubDate>Wed, 24 Jul 2024 16:33:39 +0000</pubDate></item><item><title>Python与Pytorch环境</title><link>https://RolinShmily.github.io/post/Python-yu-Pytorch-huan-jing.html</link><description>## ***使用VScode搭建Python与Pytorch环境***&#13;
 ### 1.***Anaconda***&#13;
 - ***Anaconda*** 是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Python-yu-Pytorch-huan-jing.html</guid><pubDate>Thu, 18 Jul 2024 07:00:07 +0000</pubDate></item><item><title>C/C++通过VScode+MinGW编译运行</title><link>https://RolinShmily.github.io/post/C-C%2B%2B-tong-guo-VScode%2BMinGW-bian-yi-yun-xing.html</link><description>## 前言&#13;
 - 针对准备学习编程的新人，一般是从c语言开始，当然c++是可以兼容c语言的，且环境配置上差不太多，在这里一起讲。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/C-C%2B%2B-tong-guo-VScode%2BMinGW-bian-yi-yun-xing.html</guid><pubDate>Sun, 14 Jul 2024 05:36:51 +0000</pubDate></item><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## *游戏自用config文件与部分指令分享*&#13;
 ### *一、autoexec.cfg*&#13;
-&gt;- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定&#13;
+&gt;- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，关闭了自动切枪&#13;
 ```ini&#13;
+&#13;
+cl_autowepswitch 0&#13;
 //Shubiao&#13;
 sensitivity 1.25&#13;
 &#13;
