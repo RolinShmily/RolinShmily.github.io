@@ -379,7 +379,7 @@ alias "knife19" "subclass_change 524; alias knife knife20"
 alias "knife20" "subclass_change 525; alias knife knife21"
 alias "knife21" "subclass_change 526; alias knife knife1"
 
-//nob
+//noob
 alias "noob01" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob02"";
 alias "noob02" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob03"";
 alias "noob03" "say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind "[" "noob04"";
