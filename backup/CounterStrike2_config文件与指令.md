@@ -141,7 +141,7 @@ bind "\" "key_listboundkeys";//在控制台打印所有按键功能
 - **6. 灵敏度、准星、持枪视角、雷达**
 ```ini
 ;//鼠标灵敏度
-sensitivity 1.25 
+sensitivity 1.11
 ;//准星
 cl_crosshair_drawoutline "0"
 cl_crosshair_dynamic_maxdist_splitratio "0.3"
@@ -253,7 +253,7 @@ alias "+firr2" "+attack2"
 alias "-firr2" "-attack2;slot2;slot1;att1;"
 
 //Mouse
-sensitivity 1.25
+sensitivity 1.11
 
 //Keys
 bind "w" "+forward"
