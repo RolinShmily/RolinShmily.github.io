@@ -1,5 +1,5 @@
 ## *游戏自用config文件与部分指令分享*
-### *一、自动加载cfg简介*
+### 一、自动加载cfg简介
 >- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，完整版放在最后
 - **1. p** 键 开启自定义房间, **k** 键 掉刀, **l** 键 回看投掷物, **n** 键 开启飞行
 ```ini
@@ -197,7 +197,7 @@ cl_teamid_overhead_mode 3;//始终显示队友名称与装备
 echo AutoConfig Enabled!;//控制台打印
 say Hello!;//全局喊话
 ```
-### *二、cfg文件的位置和游戏自启动指令*
+### 二、cfg文件的位置和游戏自启动指令
 >- 编辑好cfg文件要放入游戏文件夹对应位置才能生效
 >- 相对路径：**.\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg**
 >- 或者: **.\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo**
@@ -208,7 +208,7 @@ say Hello!;//全局喊话
 >- **-worldwide** 国际服
 >- 每条命令之间要留一个空格
 
-### *三、一些好玩的指令*
+### 三、一些好玩的指令
 - **爆头模式**
 ```
 mp_damage_headshot_only 1;
@@ -241,7 +241,7 @@ cl_showpos 1;
 ```
 mp_weapons_glow_on_ground 1; 
 ```
-### *四、autoexec.cfg*
+### 四、autoexec.cfg
 ```ini
 //tips01
 alias "att0" "bind mouse1 +firr1;bind mouse2 +firr2"
