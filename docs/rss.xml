@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Fri, 06 Sep 2024 04:56:58 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## *游戏自用config文件与部分指令分享*&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sat, 07 Sep 2024 12:26:18 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## *游戏自用config文件与部分指令分享*&#13;
 ### 一、自动加载cfg简介&#13;
 &gt;- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，完整版放在最后&#13;
 - **1. p** 键 开启自定义房间, **k** 键 掉刀, **l** 键 回看投掷物, **n** 键 开启飞行&#13;
@@ -129,8 +129,8 @@ bind 'y' 'messagemode';//全局聊天框&#13;
 bind 'alt' '+voicerecord';//打开麦克风&#13;
 bind 'mouse4' 'clutch_mode_toggle';//静音队伍语音&#13;
 bind 'mouse5' 'player_ping';//玩家标志&#13;
-bind 'mwheeldown' 'invnext' ;//滚轮切换装备&#13;
-bind 'mwheelup' 'invprev';//滚轮切换装备&#13;
+bind 'mwheeldown' '+jump' ;//滚轮跳&#13;
+bind 'mwheelup' '+jump';//滚轮跳&#13;
 bind '`' 'toggleconsole';//打开控制台&#13;
 bind 't' 'switchhands';//切换左右手持枪&#13;
 bind 'h' 'toggleradarscale'; //切换小地图缩放&#13;
@@ -291,8 +291,8 @@ bind 'y' 'messagemode'&#13;
 bind 'alt' '+voicerecord'&#13;
 bind 'mouse4' 'clutch_mode_toggle'&#13;
 bind 'mouse5' 'player_ping'&#13;
-bind 'mwheeldown' 'invnext' &#13;
-bind 'mwheelup' 'invprev'&#13;
+bind 'mwheeldown' '+jump' &#13;
+bind 'mwheelup' '+jump'&#13;
 bind '`' 'toggleconsole'&#13;
 &#13;
 bind 't' 'switchhands'&#13;

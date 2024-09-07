@@ -128,8 +128,8 @@ bind "y" "messagemode";//全局聊天框
 bind "alt" "+voicerecord";//打开麦克风
 bind "mouse4" "clutch_mode_toggle";//静音队伍语音
 bind "mouse5" "player_ping";//玩家标志
-bind "mwheeldown" "invnext" ;//滚轮切换装备
-bind "mwheelup" "invprev";//滚轮切换装备
+bind "mwheeldown" "+jump" ;//滚轮跳
+bind "mwheelup" "+jump";//滚轮跳
 bind "`" "toggleconsole";//打开控制台
 bind "t" "switchhands";//切换左右手持枪
 bind "h" "toggleradarscale"; //切换小地图缩放
@@ -290,8 +290,8 @@ bind "y" "messagemode"
 bind "alt" "+voicerecord"
 bind "mouse4" "clutch_mode_toggle"
 bind "mouse5" "player_ping"
-bind "mwheeldown" "invnext" 
-bind "mwheelup" "invprev"
+bind "mwheeldown" "+jump" 
+bind "mwheelup" "+jump"
 bind "`" "toggleconsole"
 
 bind "t" "switchhands"
