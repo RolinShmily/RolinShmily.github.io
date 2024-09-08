@@ -165,6 +165,8 @@ cl_crosshairsize "1"
 cl_crosshairstyle "4"
 cl_crosshairthickness "1"
 cl_crosshairusealpha "1"
+;//狙击枪瞄准线宽度
+cl_crosshair_sniper_width "2"
 ;//持枪视角
 viewmodel_fov 64
 viewmodel_offset_x 2
@@ -324,6 +326,7 @@ cl_crosshairsize "1"
 cl_crosshairstyle "4"
 cl_crosshairthickness "1"
 cl_crosshairusealpha "1"
+cl_crosshair_sniper_width "2"
 
 //Gun's view
 viewmodel_fov 64
