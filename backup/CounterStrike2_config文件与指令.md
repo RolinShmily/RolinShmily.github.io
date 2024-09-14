@@ -168,10 +168,10 @@ cl_crosshairusealpha "1"
 ;//狙击枪瞄准线宽度
 cl_crosshair_sniper_width "2"
 ;//持枪视角
-viewmodel_fov 64
-viewmodel_offset_x 2
-viewmodel_offset_y 1.5
-viewmodel_offset_z -1.5
+viewmodel_fov 68
+viewmodel_offset_x 1.5
+viewmodel_offset_y 2
+viewmodel_offset_z -1
 viewmodel_presetpos 3
 ;//雷达
 cl_radar_always_centered "0"
@@ -329,10 +329,10 @@ cl_crosshairusealpha "1"
 cl_crosshair_sniper_width "2"
 
 //Gun's view
-viewmodel_fov 64
-viewmodel_offset_x 2
-viewmodel_offset_y 1.5
-viewmodel_offset_z -1.5
+viewmodel_fov 68
+viewmodel_offset_x 1.5
+viewmodel_offset_y 2
+viewmodel_offset_z -1
 viewmodel_presetpos 3
 
 //Radar
