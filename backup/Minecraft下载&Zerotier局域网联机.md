@@ -31,7 +31,7 @@ GitHub项目地址: https://github.com/Hex-Dragon/PCL2
 >- 打开非官方启动器后都是可视化操作界面，接下来提一下游戏本体的下载。
 >- 在启动器中的下载版块里，首先 ***选择游戏版本***，接下来选择模组加载器
 
-1. ***Forge*** ![1](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-05_23-16-20.png?raw=true) ：具有大量老牌大型模组社区，可供下载。游戏光影一般搭配 ***OptiFine*** 使用，不过如今 ***Forge*** 优化模组中也出现了 ***Fabric***里类似 ***iris***的存在，但不安装 ***OptiFine*** 也不影响游戏本体的下载与游玩。
+1. ***Forge*** ![1](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-05_23-16-20.png?raw=true) ：具有大量老牌大型模组社区，可供下载。游戏光影一般搭配 ***OptiFine*** 使用，不过如今 ***Forge*** 优化模组中也出现了 ***Fabric***里类似 ***iris***的存在，但不安装 ***OptiFine*** 也不影响游戏本体的下载与游玩。
 2. ***Fabric***  ![2](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-05_23-16-10.png?raw=true) ： 小鲜肉，起初是大多小型模组的生态圈，如今也有很多大型模组，因 ***Fabric*** 的许多优化都比 ***Forge*** 更好，而被做了一些移植。下载时要搭配 ***Fabric API*** ， 这是必要的，启动器里一般默认自动勾选。
 >- 之后通过启动器的一键式安装，你就得到了游戏本体了。但是众所周知 ***Java版Minecraft*** 是需要 ***Java环境*** 来运行的，因此你需要下载 ***Java***
 ### 三、Java下载
