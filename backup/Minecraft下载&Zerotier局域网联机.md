@@ -12,7 +12,7 @@ GitHub项目地址:https://github.com/HMCL-dev/HMCL
 爱发电文件地址: https://afdian.com/p/0164034c016c11ebafcb52540025c377
 GitHub项目地址: https://github.com/Hex-Dragon/PCL2
 
-![PCL2](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-05_22-48-14.png?raw=true)
+![PCL2](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-05_22-48-14.png?raw=true)
 
 >- 一般通过这种途径下载，将会得到一个 ***.zip*** 压缩包文件，然后找到一个文件夹解压下来，将会得到两个程序文件：
 
