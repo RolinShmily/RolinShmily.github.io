@@ -6,7 +6,7 @@
 主页: https://hmcl.huangyuhui.net/  
 GitHub项目地址:https://github.com/HMCL-dev/HMCL
 
-![HMCL主页](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-05_22-38-20.png?raw=true)
+![HMCL主页](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/2024/09/23/Snipaste_2024-07-05_22-38-20.814574c5b4981436.png)
 
 - ***PCL2*** --由 ***龙腾猫跃*** 制作
 爱发电文件地址: https://afdian.com/p/0164034c016c11ebafcb52540025c377
