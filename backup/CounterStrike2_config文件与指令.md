@@ -144,29 +144,44 @@ bind "\" "key_listboundkeys";//在控制台打印所有按键功能
 sensitivity 1.11
 ;//准星
 cl_crosshair_drawoutline "0"
-cl_crosshair_dynamic_maxdist_splitratio "0.3"
+cl_crosshair_dynamic_maxdist_splitratio "0"
 cl_crosshair_dynamic_splitalpha_innermod "1"
 cl_crosshair_dynamic_splitalpha_outermod "0.5"
 cl_crosshair_dynamic_splitdist "7"
 cl_crosshair_friendly_warning "0"
 cl_crosshair_outlinethickness "0"
 cl_crosshair_sniper_show_normal_inaccuracy "0"
-cl_crosshair_sniper_width "0"
 cl_crosshair_t "0"
 cl_crosshairalpha "255"
 cl_crosshaircolor 5
-cl_crosshaircolor_b "145"
+cl_crosshaircolor_b "255"
 cl_crosshaircolor_g "255"
 cl_crosshaircolor_r "0"
 cl_crosshairdot "0"
-cl_crosshairgap "-4"
+cl_crosshairgap "-3.9"
 cl_crosshairgap_useweaponvalue "0"
-cl_crosshairsize "1"
+cl_crosshairsize "0.9"
 cl_crosshairstyle "4"
-cl_crosshairthickness "1"
+cl_crosshairthickness "1.5"
 cl_crosshairusealpha "1"
 ;//狙击枪瞄准线宽度
 cl_crosshair_sniper_width "2"
+;//投掷物准星
+cl_fixedcrosshaigap "3"
+cl_grenadecrosshair_decoy 1
+cl_grenadecrosshair_explosive 1
+cl_grenadecrosshair_fire 1
+cl_grenadecrosshair_flash 1
+cl_grenadecrosshair_keepusercrosshair 1
+cl_grenadecrosshair_smoke 1
+cl_grenadecrosshairdelay_decoy "0.114345"
+cl_grenadecrosshairdelay_explosive "0.114345"
+cl_grenadecrosshairdelay_fire "0.114345"
+cl_grenadecrosshairdelay_flash "0.114345"
+cl_grenadecrosshairdelay_smoke "0.114345"
+cl_observed_bot_crosshair 2
+cl_show_observer_crosshair 2
+cl_teamid_overhead_fade_near_crosshair "0.5"
 ;//持枪视角
 viewmodel_fov 68
 viewmodel_offset_x 1.5
@@ -305,28 +320,43 @@ bind "\" "key_listboundkeys"
 
 //Crosshair
 cl_crosshair_drawoutline "0"
-cl_crosshair_dynamic_maxdist_splitratio "0.3"
+cl_crosshair_dynamic_maxdist_splitratio "0"
 cl_crosshair_dynamic_splitalpha_innermod "1"
 cl_crosshair_dynamic_splitalpha_outermod "0.5"
 cl_crosshair_dynamic_splitdist "7"
 cl_crosshair_friendly_warning "0"
 cl_crosshair_outlinethickness "0"
 cl_crosshair_sniper_show_normal_inaccuracy "0"
-cl_crosshair_sniper_width "0"
 cl_crosshair_t "0"
 cl_crosshairalpha "255"
 cl_crosshaircolor 5
-cl_crosshaircolor_b "145"
+cl_crosshaircolor_b "255"
 cl_crosshaircolor_g "255"
 cl_crosshaircolor_r "0"
 cl_crosshairdot "0"
-cl_crosshairgap "-4"
+cl_crosshairgap "-3.9"
 cl_crosshairgap_useweaponvalue "0"
-cl_crosshairsize "1"
+cl_crosshairsize "0.9"
 cl_crosshairstyle "4"
-cl_crosshairthickness "1"
+cl_crosshairthickness "1.5"
 cl_crosshairusealpha "1"
 cl_crosshair_sniper_width "2"
+
+cl_fixedcrosshaigap "3"
+cl_grenadecrosshair_decoy 1
+cl_grenadecrosshair_explosive 1
+cl_grenadecrosshair_fire 1
+cl_grenadecrosshair_flash 1
+cl_grenadecrosshair_keepusercrosshair 1
+cl_grenadecrosshair_smoke 1
+cl_grenadecrosshairdelay_decoy "0.114345"
+cl_grenadecrosshairdelay_explosive "0.114345"
+cl_grenadecrosshairdelay_fire "0.114345"
+cl_grenadecrosshairdelay_flash "0.114345"
+cl_grenadecrosshairdelay_smoke "0.114345"
+cl_observed_bot_crosshair 2
+cl_show_observer_crosshair 2
+cl_teamid_overhead_fade_near_crosshair "0.5"
 
 //Gun's view
 viewmodel_fov 68
