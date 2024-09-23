@@ -16,8 +16,8 @@ GitHub项目地址: https://github.com/Hex-Dragon/PCL2
 
 >- 一般通过这种途径下载，将会得到一个 ***.zip*** 压缩包文件，然后找到一个文件夹解压下来，将会得到两个程序文件：
 
-![HMCL](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-05_22-57-23.png?raw=true)
-![PCL2](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-05_22-57-33.png?raw=true)
+![HMCL](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-05_22-57-23.png?raw=true)
+![PCL2](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-05_22-57-33.png?raw=true)
 
 - ***官方启动器*** --由 ***Mojang*** 制作（当然游戏也是人家做的）
 网址：https://www.minecraft.net/zh-hans
