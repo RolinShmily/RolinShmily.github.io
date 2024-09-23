@@ -23,8 +23,8 @@ GitHub项目地址: https://github.com/Hex-Dragon/PCL2
 网址：https://www.minecraft.net/zh-hans
 >- 在这里我们能找到购买游戏的途径（Minecraft游戏其实是付费的），购买之后就能够得到 ***Java版*** 和 ***基岩版***，如果不行的话，可以去 ***Microsoft Store***（俗称微软商店）中购买
 
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-15_16-44-39.png?raw=true)
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Minecraft/Snipaste_2024-07-15_16-48-37.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-15_16-44-39.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-15_16-48-37.png?raw=true)
 >- 购买游戏其实对 ***Java版*** 影响不大，因为微软接手后大力发展的是 在自家 ***XBox***平台上的 ***基岩版*** minecraft，但是购买了游戏后，***Java版*** 用户将会被分配一个唯一的 ***uuid***，用于 ***Java*** 服务器的 ***正版验证*** ，从而进行有效 ***联机*** 
 >- ***uuid*** 查询网站：https://mcuuid.net/
 ### 二、游戏本体下载
