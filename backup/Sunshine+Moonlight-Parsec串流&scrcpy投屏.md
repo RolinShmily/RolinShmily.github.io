@@ -9,11 +9,11 @@
 1. ***Sunshine*** 可以简单理解为PC的信息流发射端，也就是将视频和音频信息打包，准备发送。
     下载地址：https://github.com/LizardByte/Sunshine/releases
 
-![Sunshine](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_19-48-30.png?raw=true)
+![Sunshine](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_19-48-30.png?raw=true)
 - 下载后在右下角托盘处，选择 ***open sunshine*** 打开web端，注册一个账户，随后登录。
 - 在 ***configuration*** 的 ***General*** 里改为简体中文，***save***->***apply***
 
-![config1](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-10.png?raw=true)
+![config1](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-10.png?raw=true)
 ![config2](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-39.png?raw=true)
 
 - 在 ***配置*** 里的 ***Network*** 里，将 ***UPnP开启***，***开启IPv4+IPv6***
