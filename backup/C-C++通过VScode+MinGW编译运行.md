@@ -8,36 +8,36 @@
 ### 1.***宇宙最强编辑器--Visual Studio Code***
 - 下载地址： https://code.visualstudio.com/
 
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_12-01-14.png?raw=true)
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_12-04-28.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-01-14.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-04-28.png?raw=true)
 - 全部勾选即可
 - 打开后在左侧，选择拓展
 
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_13-29-39.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_13-29-39.png?raw=true)
 - 搜索 ***chinese*** 和 ***c*** 安装这两个拓展，***C/C++*** 拓展是个包，只需安装一个，另外几个都会自动安装。
 
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_13-31-05.png?raw=true)
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_13-31-21.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_13-31-05.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_13-31-21.png?raw=true)
 ### 2.***Windows系统下的GCC编译器----MinGW-w64***
 > 最初的原版 ***gcc*** 编译器并不能在现如今更流行的 ***windows系统*** 下使用，因此我们用的是 ***MinGW(全称Minimalist GNU on Windows)***
 > 其下有两个版本 ***MinGW*** 和 ***MinGW-w64***，前者只能编译生成32位程序，而后者能够编译生成32位或64位程序，因此我们选择后者。
 - ***MinGW-w64*** 下载地址： https://sourceforge.net/projects/mingw-w64/files/
 - 进去之后向下滑动找到如下版本：
 
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_12-28-43.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-28-43.png?raw=true)
 - 下载完成后会得到一个压缩包，在任意盘符下创建文件夹，名为 ***MinGW***，将压缩文件拖进该文件夹中解压，我这里在 ***D盘*** 中演示
 
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_12-33-35.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-33-35.png?raw=true)
 - 打开 ***bin*** 文件夹后，里面的 ***gcc.exe***是 ***C语言***的编译器，***g++.exe*** 是 ***C++语言*** 的编译器，***gdb.exe*** 是用来调试程序的 ***debug工具***
 ### 3.***配置帐户环境变量***
 - 打开 ***windows搜索栏***，输入 ***环境变量***
 
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_12-39-23.png?raw=true)
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_12-43-29.png?raw=true)
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_12-47-49.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-39-23.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-43-29.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-47-49.png?raw=true)
 - 此后我们打开 ***cmd命令行***
 
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_12-51-12.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-51-12.png?raw=true)
 - 此时需要重新启动电脑
 ### 4.***文件结构***
 - ***学习阶段*** 大多数文件都是独立运行，或者是非拓展性文件间的互相访问，这是一种使用环境。
@@ -49,7 +49,7 @@
 - 此时在 ***C_Single*** 文件夹下就可以创建用于测试的项目文件夹，比如名为 ***test_v*** 的文件夹，在此文件夹下创建 ***test.c*** 文件来编写代码，当我们去编译执行代码时，将会产生一个 ***exe可执行程序文件***，我们可以在项目文件夹 ***test_v*** 下创建 ***bin*** 文件夹来存放生成的程序文件。
 - example：
 
-![](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/Vscode/Snipaste_2024-07-14_13-07-17.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_13-07-17.png?raw=true)
 - 在多文件结构中，只需要在单文件结构中存放代码文件的位置，替换成存放文件夹就好，源代码和exe文件均在这个文件夹中。
 ### 5.***基于文件结构的VScode配置文件***
 - 简单来说，我们需要创建两个文件 ***tasks.json*** 文件和 ***launch.json*** 文件来分别实现 ***build*** 构建功能和 ***debug*** 调试功能
