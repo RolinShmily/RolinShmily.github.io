@@ -14,11 +14,11 @@
 - 在 ***configuration*** 的 ***General*** 里改为简体中文，***save***->***apply***
 
 ![config1](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-10.png?raw=true)
-![config2](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-39.png?raw=true)
+![config2](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-39.png?raw=true)
 
 - 在 ***配置*** 里的 ***Network*** 里，将 ***UPnP开启***，***开启IPv4+IPv6***
 
-![config3](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-14-26.png?raw=true)
+![config3](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-14-26.png?raw=true)
 
 - 最后保证 ***sunshine*** 在 ***Windows的防火墙*** 保护范围外，或者 ***关闭防火墙***
 
@@ -30,7 +30,7 @@
 
 3. 在 ***moonlight*** 端发送连接请求后，会要求 ***sunshine*** 端输入对应 ***pin码***
 
-![pin](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-33-58.png?raw=true)
+![pin](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-33-58.png?raw=true)
 
 ### 二、***Parsec***
 - 与 ***sunshine+moonlight*** 的逻辑差不多
@@ -42,11 +42,11 @@
 
 - 在创建一个屏幕之后，我们要保存它提供的视频输出命令
 
-![display](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-44-36.png?raw=true)
+![display](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-44-36.png?raw=true)
 
 - 打开 ***sunshine*** web端，在配置下的 ***Audio/Video*** 里找到 ***输出名称***，输入软件提供的命令行
 
-![display2](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-48-55.png?raw=true)
+![display2](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-48-55.png?raw=true)
 
 - 最后记得 ***保存+应用***
 
@@ -56,24 +56,24 @@
 1. 在第一次进行投屏时，请使用数据线连接手机与pc，并打开手机的 ***usb调试*** 功能
 >- ***USB调试*** 一般在 ***开发者选项*** 中，需要在 ***设置*** 里找到 ***关于手机*** -> ***版本信息*** -> 多次点击 ***软件版本*** （出现提示 ***处于开发者模式***）-> 回退到 ***系统与升级*** -> ***开发者选项***
 - 运行程序文件，等待手机界面出现，如果不行，可以将手机的usb模式选择为 ***管理文件***
-![scrcpy](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-06-18.png?raw=true)
+![scrcpy](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-06-18.png?raw=true)
 
 2. ***WiFi*** 连接配置：
 - 保持有线连接状态，在程序根目录下运行cmd
 
-![cmd](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-12-21.png?raw=true)
+![cmd](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-12-21.png?raw=true)
 
 - 输入指令：`.\scrcpy.exe -d` 运行后关闭手机界面
 
-![scrcpy1](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-15-57.png?raw=true)
+![scrcpy1](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-15-57.png?raw=true)
 
 - 输入指令：`.\scrcpy.exe --tcpip` 此后，保证手机处于PC的wifi连接下，可拔掉数据线。
 
-![scrcpy2](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-19-34.png?raw=true)
+![scrcpy2](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-19-34.png?raw=true)
 
 >- 在此cmd下输入`.\scrcpy.exe -h`即可查看所有指令
 3. ***连接方式***：
 - 如果使用 ***有线连接***，则直接运行程序文件 ***scrcpy.exe*** 即可
 - 如果使用 ***wifi连接***，则可以在根目录下新建一个 ***start.bat*** 文件（可以先创建 ***start.txt*** 再将后缀名改为 ***bat***），***编辑***，写入代码`.\scrcpy.exe -e`保存，双击运行 ***start.bat*** 即可
 
-![bat](https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-31-26.png?raw=true)
+![bat](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-31-26.png?raw=true)
