@@ -193,7 +193,7 @@ cl_autohelp "false";//禁用自动帮助提示
 mm_dedicated_search_maxping "70";//先选择延迟在 70 毫秒以内的服务器
 func_break_max_pieces 0;//游戏会根据物体的属性生成默认数量的碎片
 r_drawtracers_firstperson 0;//禁用第一人称视角中的子弹轨迹
-r_fullscreen_gamma 2.4;//调整游戏画面伽马值
+r_fullscreen_gamma 2.6;//调整游戏画面伽马值
 cl_teamid_overhead_mode 3;//始终显示队友名称与装备
 ;//Ending
 echo AutoConfig Enabled!;//控制台打印
@@ -353,7 +353,7 @@ cl_autohelp "false"
 mm_dedicated_search_maxping "70"
 func_break_max_pieces 0
 r_drawtracers_firstperson 0
-r_fullscreen_gamma 2.4
+r_fullscreen_gamma 2.6
 cl_teamid_overhead_mode 3
 
 
