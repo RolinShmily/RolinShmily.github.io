@@ -184,10 +184,12 @@ cl_show_observer_crosshair 2
 cl_teamid_overhead_fade_near_crosshair "0.5"
 ;//持枪视角
 viewmodel_fov 68
-viewmodel_offset_x 1.5
-viewmodel_offset_y 2
-viewmodel_offset_z -1
+Viewmodel_offset_x 2.5
+Viewmodel_offset_y -1
+Viewmodel_offset_z -2
 viewmodel_presetpos 3
+;// "/"键超广角持枪
+bind "/" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
 ;//雷达
 cl_radar_always_centered "0"
 cl_radar_scale "0.37"
@@ -260,6 +262,9 @@ mp_weapons_glow_on_ground 1;
 ```
 ### 四、autoexec.cfg
 ```ini
+alias +pwaswitchknife slot3
+alias -pwaswitchknife lastinv
+alias "refundall" "sellback 0;sellback 1;sellback 2;sellback 3;sellback 4;sellback 5;sellback 6;sellback 8;sellback 9;sellback 10;sellback 11;sellback 12;sellback 13;sellback 14;sellback 15;sellback 16;sellback 17;sellback 18;sellback 26;sellback 26;sellback 27;sellback 28;sellback 29;sellback 30;sellback 32;sellback 33;sellback 34;sellback 35;play ui\panorama\itemtile_click_02.vsnd_c"
 //tips01
 alias "att0" "bind mouse1 +firr1;bind mouse2 +firr2"
 alias "att1" "bind mouse1 +attack;bind mouse2 +attack2"
@@ -340,8 +345,11 @@ cl_crosshairsize "0.9"
 cl_crosshairstyle "4"
 cl_crosshairthickness "1.5"
 cl_crosshairusealpha "1"
+
+//sniper_crosshair
 cl_crosshair_sniper_width "2"
 
+//more_crosshair
 cl_fixedcrosshaigap "3"
 cl_grenadecrosshair_decoy 1
 cl_grenadecrosshair_explosive 1
@@ -360,10 +368,12 @@ cl_teamid_overhead_fade_near_crosshair "0.5"
 
 //Gun's view
 viewmodel_fov 68
-viewmodel_offset_x 1.5
-viewmodel_offset_y 2
-viewmodel_offset_z -1
+Viewmodel_offset_x 2.5
+Viewmodel_offset_y -1
+Viewmodel_offset_z -2
 viewmodel_presetpos 3
+
+bind "/" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
 
 //Radar
 cl_radar_always_centered "0"
@@ -384,6 +394,7 @@ mm_dedicated_search_maxping "70"
 func_break_max_pieces 0
 r_drawtracers_firstperson 0
 r_fullscreen_gamma 2.6
+cl_use_opens_buy_menu false
 cl_teamid_overhead_mode 3
 
 
@@ -412,7 +423,7 @@ alias "knife19" "subclass_change 524; alias knife knife20"
 alias "knife20" "subclass_change 525; alias knife knife21"
 alias "knife21" "subclass_change 526; alias knife knife1"
 
-//noob
+//nob
 alias "noob01" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob02"";
 alias "noob02" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob03"";
 alias "noob03" "say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind "[" "noob04"";
