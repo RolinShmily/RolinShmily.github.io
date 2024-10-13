@@ -144,12 +144,12 @@ bind "\" "key_listboundkeys";//在控制台打印所有按键功能
 sensitivity 1.00
 ;//准星
 cl_crosshair_drawoutline "0"
-cl_crosshair_dynamic_maxdist_splitratio "0"
-cl_crosshair_dynamic_splitalpha_innermod "1"
-cl_crosshair_dynamic_splitalpha_outermod "0.5"
-cl_crosshair_dynamic_splitdist "7"
+cl_crosshair_dynamic_maxdist_splitratio "1"
+cl_crosshair_dynamic_splitalpha_innermod "0"
+cl_crosshair_dynamic_splitalpha_outermod "1"
+cl_crosshair_dynamic_splitdist "3"
 cl_crosshair_friendly_warning "0"
-cl_crosshair_outlinethickness "0"
+cl_crosshair_outlinethickness "1"
 cl_crosshair_sniper_show_normal_inaccuracy "0"
 cl_crosshair_t "0"
 cl_crosshairalpha "255"
@@ -158,13 +158,14 @@ cl_crosshaircolor_b "255"
 cl_crosshaircolor_g "255"
 cl_crosshaircolor_r "0"
 cl_crosshairdot "0"
-cl_crosshairgap "-3.9"
+cl_crosshairgap "-3.644676"
 cl_crosshairgap_useweaponvalue "0"
-cl_crosshairsize "0.9"
+cl_crosshairsize "0.901125"
 cl_crosshairstyle "4"
-cl_crosshairthickness "1.5"
+cl_crosshairthickness "0.961664"
 cl_crosshairusealpha "1"
-;//狙击枪瞄准线宽度
+;//圆圈准星
+bind "," "cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.5";cl_crosshair_dynamic_splitdist "7";cl_crosshair_friendly_warning "0";cl_crosshair_outlinethickness "0";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor 5;cl_crosshaircolor_b "255";cl_crosshaircolor_g "255";cl_crosshaircolor_r "0";cl_crosshairdot "0";cl_crosshairgap "-3.9";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "0.9";cl_crosshairstyle "4";cl_crosshairthickness "1.5";cl_crosshairusealpha "1";";//狙击枪瞄准线宽度
 cl_crosshair_sniper_width "2"
 ;//投掷物准星
 cl_fixedcrosshaigap "3"
@@ -188,8 +189,8 @@ Viewmodel_offset_x 2.5
 Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
-;// "/"键超广角持枪
-bind "/" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
+;// "."键超广角持枪
+bind "." "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
 ;//雷达
 cl_radar_always_centered "0"
 cl_radar_scale "0.37"
@@ -325,12 +326,12 @@ bind "\" "key_listboundkeys"
 
 //Crosshair
 cl_crosshair_drawoutline "0"
-cl_crosshair_dynamic_maxdist_splitratio "0"
-cl_crosshair_dynamic_splitalpha_innermod "1"
-cl_crosshair_dynamic_splitalpha_outermod "0.5"
-cl_crosshair_dynamic_splitdist "7"
+cl_crosshair_dynamic_maxdist_splitratio "1"
+cl_crosshair_dynamic_splitalpha_innermod "0"
+cl_crosshair_dynamic_splitalpha_outermod "1"
+cl_crosshair_dynamic_splitdist "3"
 cl_crosshair_friendly_warning "0"
-cl_crosshair_outlinethickness "0"
+cl_crosshair_outlinethickness "1"
 cl_crosshair_sniper_show_normal_inaccuracy "0"
 cl_crosshair_t "0"
 cl_crosshairalpha "255"
@@ -339,14 +340,14 @@ cl_crosshaircolor_b "255"
 cl_crosshaircolor_g "255"
 cl_crosshaircolor_r "0"
 cl_crosshairdot "0"
-cl_crosshairgap "-3.9"
+cl_crosshairgap "-3.644676"
 cl_crosshairgap_useweaponvalue "0"
-cl_crosshairsize "0.9"
+cl_crosshairsize "0.901125"
 cl_crosshairstyle "4"
-cl_crosshairthickness "1.5"
+cl_crosshairthickness "0.961664"
 cl_crosshairusealpha "1"
 
-//sniper_crosshair
+bind "," "cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.5";cl_crosshair_dynamic_splitdist "7";cl_crosshair_friendly_warning "0";cl_crosshair_outlinethickness "0";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor 5;cl_crosshaircolor_b "255";cl_crosshaircolor_g "255";cl_crosshaircolor_r "0";cl_crosshairdot "0";cl_crosshairgap "-3.9";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "0.9";cl_crosshairstyle "4";cl_crosshairthickness "1.5";cl_crosshairusealpha "1";"//sniper_crosshair
 cl_crosshair_sniper_width "2"
 
 //more_crosshair
@@ -373,7 +374,7 @@ Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
 
-bind "/" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
+bind "." "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
 
 //Radar
 cl_radar_always_centered "0"

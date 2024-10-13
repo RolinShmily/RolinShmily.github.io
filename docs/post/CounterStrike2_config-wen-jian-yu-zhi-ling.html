@@ -156,12 +156,12 @@ bind '\' 'key_listboundkeys';//在控制台打印所有按键功能
 sensitivity 1.00
 ;//准星
 cl_crosshair_drawoutline '0'
-cl_crosshair_dynamic_maxdist_splitratio '0'
-cl_crosshair_dynamic_splitalpha_innermod '1'
-cl_crosshair_dynamic_splitalpha_outermod '0.5'
-cl_crosshair_dynamic_splitdist '7'
+cl_crosshair_dynamic_maxdist_splitratio '1'
+cl_crosshair_dynamic_splitalpha_innermod '0'
+cl_crosshair_dynamic_splitalpha_outermod '1'
+cl_crosshair_dynamic_splitdist '3'
 cl_crosshair_friendly_warning '0'
-cl_crosshair_outlinethickness '0'
+cl_crosshair_outlinethickness '1'
 cl_crosshair_sniper_show_normal_inaccuracy '0'
 cl_crosshair_t '0'
 cl_crosshairalpha '255'
@@ -170,13 +170,14 @@ cl_crosshaircolor_b '255'
 cl_crosshaircolor_g '255'
 cl_crosshaircolor_r '0'
 cl_crosshairdot '0'
-cl_crosshairgap '-3.9'
+cl_crosshairgap '-3.644676'
 cl_crosshairgap_useweaponvalue '0'
-cl_crosshairsize '0.9'
+cl_crosshairsize '0.901125'
 cl_crosshairstyle '4'
-cl_crosshairthickness '1.5'
+cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
-;//狙击枪瞄准线宽度
+;//圆圈准星
+bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';';//狙击枪瞄准线宽度
 cl_crosshair_sniper_width '2'
 ;//投掷物准星
 cl_fixedcrosshaigap '3'
@@ -200,8 +201,8 @@ Viewmodel_offset_x 2.5
 Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
-;// '/'键超广角持枪
-bind '/' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
+;// '.'键超广角持枪
+bind '.' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
 ;//雷达
 cl_radar_always_centered '0'
 cl_radar_scale '0.37'
@@ -337,12 +338,12 @@ bind '\' 'key_listboundkeys'
 
 //Crosshair
 cl_crosshair_drawoutline '0'
-cl_crosshair_dynamic_maxdist_splitratio '0'
-cl_crosshair_dynamic_splitalpha_innermod '1'
-cl_crosshair_dynamic_splitalpha_outermod '0.5'
-cl_crosshair_dynamic_splitdist '7'
+cl_crosshair_dynamic_maxdist_splitratio '1'
+cl_crosshair_dynamic_splitalpha_innermod '0'
+cl_crosshair_dynamic_splitalpha_outermod '1'
+cl_crosshair_dynamic_splitdist '3'
 cl_crosshair_friendly_warning '0'
-cl_crosshair_outlinethickness '0'
+cl_crosshair_outlinethickness '1'
 cl_crosshair_sniper_show_normal_inaccuracy '0'
 cl_crosshair_t '0'
 cl_crosshairalpha '255'
@@ -351,14 +352,14 @@ cl_crosshaircolor_b '255'
 cl_crosshaircolor_g '255'
 cl_crosshaircolor_r '0'
 cl_crosshairdot '0'
-cl_crosshairgap '-3.9'
+cl_crosshairgap '-3.644676'
 cl_crosshairgap_useweaponvalue '0'
-cl_crosshairsize '0.9'
+cl_crosshairsize '0.901125'
 cl_crosshairstyle '4'
-cl_crosshairthickness '1.5'
+cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
 
-//sniper_crosshair
+bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'//sniper_crosshair
 cl_crosshair_sniper_width '2'
 
 //more_crosshair
@@ -385,7 +386,7 @@ Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
 
-bind '/' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
+bind '.' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
 
 //Radar
 cl_radar_always_centered '0'
@@ -614,12 +615,12 @@ bind '\' 'key_listboundkeys';//在控制台打印所有按键功能
 sensitivity 1.00
 ;//准星
 cl_crosshair_drawoutline '0'
-cl_crosshair_dynamic_maxdist_splitratio '0'
-cl_crosshair_dynamic_splitalpha_innermod '1'
-cl_crosshair_dynamic_splitalpha_outermod '0.5'
-cl_crosshair_dynamic_splitdist '7'
+cl_crosshair_dynamic_maxdist_splitratio '1'
+cl_crosshair_dynamic_splitalpha_innermod '0'
+cl_crosshair_dynamic_splitalpha_outermod '1'
+cl_crosshair_dynamic_splitdist '3'
 cl_crosshair_friendly_warning '0'
-cl_crosshair_outlinethickness '0'
+cl_crosshair_outlinethickness '1'
 cl_crosshair_sniper_show_normal_inaccuracy '0'
 cl_crosshair_t '0'
 cl_crosshairalpha '255'
@@ -628,13 +629,14 @@ cl_crosshaircolor_b '255'
 cl_crosshaircolor_g '255'
 cl_crosshaircolor_r '0'
 cl_crosshairdot '0'
-cl_crosshairgap '-3.9'
+cl_crosshairgap '-3.644676'
 cl_crosshairgap_useweaponvalue '0'
-cl_crosshairsize '0.9'
+cl_crosshairsize '0.901125'
 cl_crosshairstyle '4'
-cl_crosshairthickness '1.5'
+cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
-;//狙击枪瞄准线宽度
+;//圆圈准星
+bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';';//狙击枪瞄准线宽度
 cl_crosshair_sniper_width '2'
 ;//投掷物准星
 cl_fixedcrosshaigap '3'
@@ -658,8 +660,8 @@ Viewmodel_offset_x 2.5
 Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
-;// '/'键超广角持枪
-bind '/' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
+;// '.'键超广角持枪
+bind '.' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
 ;//雷达
 cl_radar_always_centered '0'
 cl_radar_scale '0.37'
@@ -795,12 +797,12 @@ bind '\' 'key_listboundkeys'
 
 //Crosshair
 cl_crosshair_drawoutline '0'
-cl_crosshair_dynamic_maxdist_splitratio '0'
-cl_crosshair_dynamic_splitalpha_innermod '1'
-cl_crosshair_dynamic_splitalpha_outermod '0.5'
-cl_crosshair_dynamic_splitdist '7'
+cl_crosshair_dynamic_maxdist_splitratio '1'
+cl_crosshair_dynamic_splitalpha_innermod '0'
+cl_crosshair_dynamic_splitalpha_outermod '1'
+cl_crosshair_dynamic_splitdist '3'
 cl_crosshair_friendly_warning '0'
-cl_crosshair_outlinethickness '0'
+cl_crosshair_outlinethickness '1'
 cl_crosshair_sniper_show_normal_inaccuracy '0'
 cl_crosshair_t '0'
 cl_crosshairalpha '255'
@@ -809,14 +811,14 @@ cl_crosshaircolor_b '255'
 cl_crosshaircolor_g '255'
 cl_crosshaircolor_r '0'
 cl_crosshairdot '0'
-cl_crosshairgap '-3.9'
+cl_crosshairgap '-3.644676'
 cl_crosshairgap_useweaponvalue '0'
-cl_crosshairsize '0.9'
+cl_crosshairsize '0.901125'
 cl_crosshairstyle '4'
-cl_crosshairthickness '1.5'
+cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
 
-//sniper_crosshair
+bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'//sniper_crosshair
 cl_crosshair_sniper_width '2'
 
 //more_crosshair
@@ -843,7 +845,7 @@ Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
 
-bind '/' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
+bind '.' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
 
 //Radar
 cl_radar_always_centered '0'
@@ -1134,12 +1136,12 @@ bind <span class="pl-s"><span class="pl-pds">"</span>\<span class="pl-pds">"</sp
 sensitivity 1.00
 <span class="pl-c"><span class="pl-c">;</span>//准星</span>
 cl_crosshair_drawoutline <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshair_dynamic_maxdist_splitratio <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshair_dynamic_splitalpha_innermod <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
-cl_crosshair_dynamic_splitalpha_outermod <span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span>
-cl_crosshair_dynamic_splitdist <span class="pl-s"><span class="pl-pds">"</span>7<span class="pl-pds">"</span></span>
+cl_crosshair_dynamic_maxdist_splitratio <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
+cl_crosshair_dynamic_splitalpha_innermod <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
+cl_crosshair_dynamic_splitalpha_outermod <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
+cl_crosshair_dynamic_splitdist <span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span>
 cl_crosshair_friendly_warning <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshair_outlinethickness <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
+cl_crosshair_outlinethickness <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
 cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
 cl_crosshair_t <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
 cl_crosshairalpha <span class="pl-s"><span class="pl-pds">"</span>255<span class="pl-pds">"</span></span>
@@ -1148,13 +1150,14 @@ cl_crosshaircolor_b <span class="pl-s"><span class="pl-pds">"</span>255<span cla
 cl_crosshaircolor_g <span class="pl-s"><span class="pl-pds">"</span>255<span class="pl-pds">"</span></span>
 cl_crosshaircolor_r <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
 cl_crosshairdot <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshairgap <span class="pl-s"><span class="pl-pds">"</span>-3.9<span class="pl-pds">"</span></span>
+cl_crosshairgap <span class="pl-s"><span class="pl-pds">"</span>-3.644676<span class="pl-pds">"</span></span>
 cl_crosshairgap_useweaponvalue <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshairsize <span class="pl-s"><span class="pl-pds">"</span>0.9<span class="pl-pds">"</span></span>
+cl_crosshairsize <span class="pl-s"><span class="pl-pds">"</span>0.901125<span class="pl-pds">"</span></span>
 cl_crosshairstyle <span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span>
-cl_crosshairthickness <span class="pl-s"><span class="pl-pds">"</span>1.5<span class="pl-pds">"</span></span>
+cl_crosshairthickness <span class="pl-s"><span class="pl-pds">"</span>0.961664<span class="pl-pds">"</span></span>
 cl_crosshairusealpha <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
-<span class="pl-c"><span class="pl-c">;</span>//狙击枪瞄准线宽度</span>
+<span class="pl-c"><span class="pl-c">;</span>//圆圈准星</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>,<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_crosshair_drawoutline <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_maxdist_splitratio <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_innermod <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_outermod <span class="pl-pds">"</span></span>0.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitdist <span class="pl-pds">"</span></span>7<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_friendly_warning <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_outlinethickness <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_t <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairalpha <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor 5;cl_crosshaircolor_b <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_g <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_r <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairdot <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap <span class="pl-pds">"</span></span>-3.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap_useweaponvalue <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairsize <span class="pl-pds">"</span></span>0.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairstyle <span class="pl-pds">"</span></span>4<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairthickness <span class="pl-pds">"</span></span>1.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairusealpha <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span>//狙击枪瞄准线宽度</span>
 cl_crosshair_sniper_width <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>
 <span class="pl-c"><span class="pl-c">;</span>//投掷物准星</span>
 cl_fixedcrosshaigap <span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span>
@@ -1178,8 +1181,8 @@ Viewmodel_offset_x 2.5
 Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
-<span class="pl-c"><span class="pl-c">;</span>// "/"键超广角持枪</span>
-bind <span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">;</span>// "."键超广角持枪</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>.<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;<span class="pl-pds">"</span></span>
 <span class="pl-c"><span class="pl-c">;</span>//雷达</span>
 cl_radar_always_centered <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
 cl_radar_scale <span class="pl-s"><span class="pl-pds">"</span>0.37<span class="pl-pds">"</span></span>
@@ -1326,12 +1329,12 @@ bind <span class="pl-s"><span class="pl-pds">"</span>\<span class="pl-pds">"</sp
 
 //Crosshair
 cl_crosshair_drawoutline <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshair_dynamic_maxdist_splitratio <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshair_dynamic_splitalpha_innermod <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
-cl_crosshair_dynamic_splitalpha_outermod <span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span>
-cl_crosshair_dynamic_splitdist <span class="pl-s"><span class="pl-pds">"</span>7<span class="pl-pds">"</span></span>
+cl_crosshair_dynamic_maxdist_splitratio <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
+cl_crosshair_dynamic_splitalpha_innermod <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
+cl_crosshair_dynamic_splitalpha_outermod <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
+cl_crosshair_dynamic_splitdist <span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span>
 cl_crosshair_friendly_warning <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshair_outlinethickness <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
+cl_crosshair_outlinethickness <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
 cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
 cl_crosshair_t <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
 cl_crosshairalpha <span class="pl-s"><span class="pl-pds">"</span>255<span class="pl-pds">"</span></span>
@@ -1340,14 +1343,14 @@ cl_crosshaircolor_b <span class="pl-s"><span class="pl-pds">"</span>255<span cla
 cl_crosshaircolor_g <span class="pl-s"><span class="pl-pds">"</span>255<span class="pl-pds">"</span></span>
 cl_crosshaircolor_r <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
 cl_crosshairdot <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshairgap <span class="pl-s"><span class="pl-pds">"</span>-3.9<span class="pl-pds">"</span></span>
+cl_crosshairgap <span class="pl-s"><span class="pl-pds">"</span>-3.644676<span class="pl-pds">"</span></span>
 cl_crosshairgap_useweaponvalue <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
-cl_crosshairsize <span class="pl-s"><span class="pl-pds">"</span>0.9<span class="pl-pds">"</span></span>
+cl_crosshairsize <span class="pl-s"><span class="pl-pds">"</span>0.901125<span class="pl-pds">"</span></span>
 cl_crosshairstyle <span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span>
-cl_crosshairthickness <span class="pl-s"><span class="pl-pds">"</span>1.5<span class="pl-pds">"</span></span>
+cl_crosshairthickness <span class="pl-s"><span class="pl-pds">"</span>0.961664<span class="pl-pds">"</span></span>
 cl_crosshairusealpha <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
 
-//sniper_crosshair
+bind <span class="pl-s"><span class="pl-pds">"</span>,<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_crosshair_drawoutline <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_maxdist_splitratio <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_innermod <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_outermod <span class="pl-pds">"</span></span>0.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitdist <span class="pl-pds">"</span></span>7<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_friendly_warning <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_outlinethickness <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_t <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairalpha <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor 5;cl_crosshaircolor_b <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_g <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_r <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairdot <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap <span class="pl-pds">"</span></span>-3.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap_useweaponvalue <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairsize <span class="pl-pds">"</span></span>0.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairstyle <span class="pl-pds">"</span></span>4<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairthickness <span class="pl-pds">"</span></span>1.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairusealpha <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;<span class="pl-pds">"</span></span>//sniper_crosshair
 cl_crosshair_sniper_width <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>
 
 //more_crosshair
@@ -1374,7 +1377,7 @@ cl_teamid_overhead_fade_near_crosshair <span class="pl-s"><span class="pl-pds">"
 <span class="pl-s">Viewmodel_offset_z -2</span>
 <span class="pl-s">viewmodel_presetpos 3</span>
 <span class="pl-s"></span>
-<span class="pl-s">bind "/" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"</span>
+<span class="pl-s">bind "." "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"</span>
 <span class="pl-s"></span>
 <span class="pl-s">//Radar</span>
 <span class="pl-s">cl_radar_always_centered "0"</span>
