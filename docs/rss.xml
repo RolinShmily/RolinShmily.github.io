@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sun, 13 Oct 2024 13:08:58 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## *游戏自用config文件与部分指令分享*&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Tue, 15 Oct 2024 07:00:43 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## *游戏自用config文件与部分指令分享*&#13;
 ### 一、自动加载cfg简介&#13;
 &gt;- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，完整版放在最后&#13;
 - **1. p** 键 开启自定义房间, **k** 键 掉刀, **l** 键 回看投掷物, **n** 键 开启飞行&#13;
@@ -142,31 +142,31 @@ bind '\' 'key_listboundkeys';//在控制台打印所有按键功能&#13;
 - **6. 灵敏度、准星、持枪视角、雷达**&#13;
 ```ini&#13;
 ;//鼠标灵敏度&#13;
-sensitivity 1.00&#13;
+sensitivity 0.80&#13;
 ;//准星&#13;
-cl_crosshair_drawoutline '0'
-cl_crosshair_dynamic_maxdist_splitratio '1'
-cl_crosshair_dynamic_splitalpha_innermod '0'
-cl_crosshair_dynamic_splitalpha_outermod '1'
-cl_crosshair_dynamic_splitdist '3'
-cl_crosshair_friendly_warning '0'
-cl_crosshair_outlinethickness '1'
-cl_crosshair_sniper_show_normal_inaccuracy '0'
-cl_crosshair_t '0'
-cl_crosshairalpha '255'
-cl_crosshaircolor 5
-cl_crosshaircolor_b '255'
-cl_crosshaircolor_g '255'
-cl_crosshaircolor_r '0'
-cl_crosshairdot '0'
-cl_crosshairgap '-3.644676'
-cl_crosshairgap_useweaponvalue '0'
-cl_crosshairsize '0.901125'
-cl_crosshairstyle '4'
-cl_crosshairthickness '0.961664'
-cl_crosshairusealpha '1'
-;//圆圈准星
-bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
+cl_crosshair_drawoutline '0'&#13;
+cl_crosshair_dynamic_maxdist_splitratio '1'&#13;
+cl_crosshair_dynamic_splitalpha_innermod '0'&#13;
+cl_crosshair_dynamic_splitalpha_outermod '1'&#13;
+cl_crosshair_dynamic_splitdist '3'&#13;
+cl_crosshair_friendly_warning '0'&#13;
+cl_crosshair_outlinethickness '1'&#13;
+cl_crosshair_sniper_show_normal_inaccuracy '0'&#13;
+cl_crosshair_t '0'&#13;
+cl_crosshairalpha '255'&#13;
+cl_crosshaircolor 5&#13;
+cl_crosshaircolor_b '255'&#13;
+cl_crosshaircolor_g '255'&#13;
+cl_crosshaircolor_r '0'&#13;
+cl_crosshairdot '0'&#13;
+cl_crosshairgap '-3.644676'&#13;
+cl_crosshairgap_useweaponvalue '0'&#13;
+cl_crosshairsize '0.901125'&#13;
+cl_crosshairstyle '4'&#13;
+cl_crosshairthickness '0.961664'&#13;
+cl_crosshairusealpha '1'&#13;
+;//圆圈准星&#13;
+bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'&#13;
 ;//狙击枪瞄准线宽度&#13;
 cl_crosshair_sniper_width '2'&#13;
 ;//投掷物准星&#13;
@@ -278,7 +278,7 @@ alias '+firr2' '+attack2'&#13;
 alias '-firr2' '-attack2;slot2;slot1;att1;'&#13;
 &#13;
 //Mouse&#13;
-sensitivity 1.00&#13;
+sensitivity 0.80&#13;
 &#13;
 //Keys&#13;
 bind 'w' '+forward'&#13;
@@ -326,31 +326,31 @@ bind 'h' 'toggleradarscale' &#13;
 bind 'o' 'exec autoexec.cfg'&#13;
 bind '\' 'key_listboundkeys'&#13;
 &#13;
-//Crosshair
-cl_crosshair_drawoutline '0'
-cl_crosshair_dynamic_maxdist_splitratio '1'
-cl_crosshair_dynamic_splitalpha_innermod '0'
-cl_crosshair_dynamic_splitalpha_outermod '1'
-cl_crosshair_dynamic_splitdist '3'
-cl_crosshair_friendly_warning '0'
-cl_crosshair_outlinethickness '1'
-cl_crosshair_sniper_show_normal_inaccuracy '0'
-cl_crosshair_t '0'
-cl_crosshairalpha '255'
-cl_crosshaircolor 5
-cl_crosshaircolor_b '255'
-cl_crosshaircolor_g '255'
-cl_crosshaircolor_r '0'
-cl_crosshairdot '0'
-cl_crosshairgap '-3.644676'
-cl_crosshairgap_useweaponvalue '0'
-cl_crosshairsize '0.901125'
-cl_crosshairstyle '4'
-cl_crosshairthickness '0.961664'
-cl_crosshairusealpha '1'
-
-bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
-
+//Crosshair&#13;
+cl_crosshair_drawoutline '0'&#13;
+cl_crosshair_dynamic_maxdist_splitratio '1'&#13;
+cl_crosshair_dynamic_splitalpha_innermod '0'&#13;
+cl_crosshair_dynamic_splitalpha_outermod '1'&#13;
+cl_crosshair_dynamic_splitdist '3'&#13;
+cl_crosshair_friendly_warning '0'&#13;
+cl_crosshair_outlinethickness '1'&#13;
+cl_crosshair_sniper_show_normal_inaccuracy '0'&#13;
+cl_crosshair_t '0'&#13;
+cl_crosshairalpha '255'&#13;
+cl_crosshaircolor 5&#13;
+cl_crosshaircolor_b '255'&#13;
+cl_crosshaircolor_g '255'&#13;
+cl_crosshaircolor_r '0'&#13;
+cl_crosshairdot '0'&#13;
+cl_crosshairgap '-3.644676'&#13;
+cl_crosshairgap_useweaponvalue '0'&#13;
+cl_crosshairsize '0.901125'&#13;
+cl_crosshairstyle '4'&#13;
+cl_crosshairthickness '0.961664'&#13;
+cl_crosshairusealpha '1'&#13;
+&#13;
+bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'&#13;
+&#13;
 //sniper_crosshair&#13;
 cl_crosshair_sniper_width '2'&#13;
 &#13;
