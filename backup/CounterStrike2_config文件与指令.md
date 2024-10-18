@@ -125,8 +125,8 @@ bind "v" "slot10; switchhandsright" ;//火
 bind "i" "+spray_menu"; //打开涂鸦菜单
 bind "u" "messagemode2";//团队聊天框
 bind "y" "messagemode";//全局聊天框
-bind "alt" "+voicerecord";//打开麦克风
-bind "mouse4" "clutch_mode_toggle";//静音队伍语音
+bind "mouse4" "+voicerecord";//打开麦克风
+bind "alt" "clutch_mode_toggle";//静音队伍语音
 bind "mouse5" "player_ping";//玩家标志
 bind "mwheeldown" "+jump" ;//滚轮跳
 bind "mwheelup" "+jump";//滚轮跳
@@ -311,8 +311,8 @@ bind "q" "lastinv; att1;"
 bind "i" "+spray_menu"
 bind "u" "messagemode2"
 bind "y" "messagemode"
-bind "alt" "+voicerecord"
-bind "mouse4" "clutch_mode_toggle"
+bind "mouse4" "+voicerecord"
+bind "alt" "clutch_mode_toggle"
 bind "mouse5" "player_ping"
 bind "mwheeldown" "+jump" 
 bind "mwheelup" "+jump"
