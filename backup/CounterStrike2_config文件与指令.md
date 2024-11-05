@@ -75,31 +75,7 @@ bind "5" "slot5; att1; switchhandsright" ; //C4
 bind "q" "lastinv; att1;" ; //切换最近的武器装备
 ```
 
-- **4. 全局字符画** " **[** " 键 'Noob'  " **]** " 键 'Good'
-```ini
-//noob
-alias "noob01" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob02"";
-alias "noob02" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob03"";
-alias "noob03" "say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind "[" "noob04"";
-alias "noob04" "say ⣿⡏⢹⠀⢸⠀⡇⠀⣿⣿;bind "[" "noob05"";
-alias "noob05" "say ⣿⡇⠈⠀⠈⠀⠀⠀⡏⢻;bind "[" "noob06"";
-alias "noob06" "say ⣿⡇⠀⠀⠀⠀⠀⠀⠁⣼;bind "[" "noob07"";
-alias "noob07" "say ⣿⣇⠀⠀⠀⠀⠀⠀⣰⣿;bind "[" "noob08"";
-alias "noob08" "say ⣿⣧⣤⣤⣤⣤⣤⣤⣿⣿;bind "[" "noob01""
-bind "[" "noob01"
-//good
-alias "good01" "say ⣿⣿⣿⣿⣿⣿⣿⡏⠀⠈⢿⣿⣿⣿⣿⣿;bind "]" "good02"";
-alias "good02" "say ⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣿⣿;bind "]" "good03"";
-alias "good03" "say ⣿⠿⠿⠿⢿⡿⠟⠀⠀⠀⠸⠿⠿⣿⣿⣿;bind "]" "good04"";
-alias "good04" "say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind "]" "good05"";
-alias "good05" "say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind "]" "good06"";
-alias "good06" "say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind "]" "good07"";
-alias "good07" "say ⣿⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿;bind "]" "good08"";
-alias "good08" "say ⣿⣷⣶⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣾⣿⣿;bind "]" "good01"";
-bind "]" "good01"
-```
-
-- **5. 基础绑定**
+- **4. 基础绑定**
 ```ini
 //键位
 bind "w" "+forward"; //前进
@@ -141,7 +117,7 @@ bind "\" "key_listboundkeys";//在控制台打印所有按键功能
 - **6. 灵敏度、准星、持枪视角、雷达**
 ```ini
 ;//鼠标灵敏度
-sensitivity 0.80
+sensitivity 0.54
 ;//准星
 cl_crosshair_drawoutline "0"
 cl_crosshair_dynamic_maxdist_splitratio "1"
@@ -165,7 +141,7 @@ cl_crosshairstyle "4"
 cl_crosshairthickness "0.961664"
 cl_crosshairusealpha "1"
 ;//圆圈准星
-bind "," "cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.5";cl_crosshair_dynamic_splitdist "7";cl_crosshair_friendly_warning "0";cl_crosshair_outlinethickness "0";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor 5;cl_crosshaircolor_b "255";cl_crosshaircolor_g "255";cl_crosshaircolor_r "0";cl_crosshairdot "0";cl_crosshairgap "-3.9";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "0.9";cl_crosshairstyle "4";cl_crosshairthickness "1.5";cl_crosshairusealpha "1";"
+bind "[" "cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.5";cl_crosshair_dynamic_splitdist "7";cl_crosshair_friendly_warning "0";cl_crosshair_outlinethickness "0";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor 5;cl_crosshaircolor_b "255";cl_crosshaircolor_g "255";cl_crosshaircolor_r "0";cl_crosshairdot "0";cl_crosshairgap "-3.9";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "0.9";cl_crosshairstyle "4";cl_crosshairthickness "1.5";cl_crosshairusealpha "1";"
 ;//狙击枪瞄准线宽度
 cl_crosshair_sniper_width "2"
 ;//投掷物准星
@@ -190,8 +166,8 @@ Viewmodel_offset_x 2.5
 Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
-;// "."键超广角持枪
-bind "." "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
+;// "]"键超广角持枪
+bind "]" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
 ;//雷达
 cl_radar_always_centered "0"
 cl_radar_scale "0.37"
@@ -277,7 +253,7 @@ alias "+firr2" "+attack2"
 alias "-firr2" "-attack2;slot2;slot1;att1;"
 
 //Mouse
-sensitivity 0.80
+sensitivity 0.54
 
 //Keys
 bind "w" "+forward"
@@ -348,7 +324,7 @@ cl_crosshairstyle "4"
 cl_crosshairthickness "0.961664"
 cl_crosshairusealpha "1"
 
-bind "," "cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.5";cl_crosshair_dynamic_splitdist "7";cl_crosshair_friendly_warning "0";cl_crosshair_outlinethickness "0";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor 5;cl_crosshaircolor_b "255";cl_crosshaircolor_g "255";cl_crosshaircolor_r "0";cl_crosshairdot "0";cl_crosshairgap "-3.9";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "0.9";cl_crosshairstyle "4";cl_crosshairthickness "1.5";cl_crosshairusealpha "1";"
+bind "[" "cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.5";cl_crosshair_dynamic_splitdist "7";cl_crosshair_friendly_warning "0";cl_crosshair_outlinethickness "0";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor 5;cl_crosshaircolor_b "255";cl_crosshaircolor_g "255";cl_crosshaircolor_r "0";cl_crosshairdot "0";cl_crosshairgap "-3.9";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "0.9";cl_crosshairstyle "4";cl_crosshairthickness "1.5";cl_crosshairusealpha "1";"
 
 //sniper_crosshair
 cl_crosshair_sniper_width "2"
@@ -377,7 +353,7 @@ Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
 
-bind "." "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
+bind "]" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
 
 //Radar
 cl_radar_always_centered "0"
@@ -426,28 +402,6 @@ alias "knife18" "subclass_change 523; alias knife knife19"
 alias "knife19" "subclass_change 524; alias knife knife20"
 alias "knife20" "subclass_change 525; alias knife knife21"
 alias "knife21" "subclass_change 526; alias knife knife1"
-
-//nob
-alias "noob01" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob02"";
-alias "noob02" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob03"";
-alias "noob03" "say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind "[" "noob04"";
-alias "noob04" "say ⣿⡏⢹⠀⢸⠀⡇⠀⣿⣿;bind "[" "noob05"";
-alias "noob05" "say ⣿⡇⠈⠀⠈⠀⠀⠀⡏⢻;bind "[" "noob06"";
-alias "noob06" "say ⣿⡇⠀⠀⠀⠀⠀⠀⠁⣼;bind "[" "noob07"";
-alias "noob07" "say ⣿⣇⠀⠀⠀⠀⠀⠀⣰⣿;bind "[" "noob08"";
-alias "noob08" "say ⣿⣧⣤⣤⣤⣤⣤⣤⣿⣿;bind "[" "noob01""
-bind "[" "noob01"
-
-//good
-alias "good01" "say ⣿⣿⣿⣿⣿⣿⣿⡏⠀⠈⢿⣿⣿⣿⣿⣿;bind "]" "good02"";
-alias "good02" "say ⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣿⣿;bind "]" "good03"";
-alias "good03" "say ⣿⠿⠿⠿⢿⡿⠟⠀⠀⠀⠸⠿⠿⣿⣿⣿;bind "]" "good04"";
-alias "good04" "say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind "]" "good05"";
-alias "good05" "say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind "]" "good06"";
-alias "good06" "say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind "]" "good07"";
-alias "good07" "say ⣿⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿;bind "]" "good08"";
-alias "good08" "say ⣿⣷⣶⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣾⣿⣿;bind "]" "good01"";
-bind "]" "good01"
 
 //Ending
 echo AutoConfig Enabled!

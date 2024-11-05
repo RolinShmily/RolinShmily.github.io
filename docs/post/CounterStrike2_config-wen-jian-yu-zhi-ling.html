@@ -87,31 +87,7 @@ bind '5' 'slot5; att1; switchhandsright' ; //C4
 bind 'q' 'lastinv; att1;' ; //切换最近的武器装备
 ```
 
-- **4. 全局字符画** ' **[** ' 键 'Noob'  ' **]** ' 键 'Good'
-```ini
-//noob
-alias 'noob01' 'say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind '[' 'noob02'';
-alias 'noob02' 'say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind '[' 'noob03'';
-alias 'noob03' 'say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind '[' 'noob04'';
-alias 'noob04' 'say ⣿⡏⢹⠀⢸⠀⡇⠀⣿⣿;bind '[' 'noob05'';
-alias 'noob05' 'say ⣿⡇⠈⠀⠈⠀⠀⠀⡏⢻;bind '[' 'noob06'';
-alias 'noob06' 'say ⣿⡇⠀⠀⠀⠀⠀⠀⠁⣼;bind '[' 'noob07'';
-alias 'noob07' 'say ⣿⣇⠀⠀⠀⠀⠀⠀⣰⣿;bind '[' 'noob08'';
-alias 'noob08' 'say ⣿⣧⣤⣤⣤⣤⣤⣤⣿⣿;bind '[' 'noob01''
-bind '[' 'noob01'
-//good
-alias 'good01' 'say ⣿⣿⣿⣿⣿⣿⣿⡏⠀⠈⢿⣿⣿⣿⣿⣿;bind ']' 'good02'';
-alias 'good02' 'say ⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣿⣿;bind ']' 'good03'';
-alias 'good03' 'say ⣿⠿⠿⠿⢿⡿⠟⠀⠀⠀⠸⠿⠿⣿⣿⣿;bind ']' 'good04'';
-alias 'good04' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good05'';
-alias 'good05' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good06'';
-alias 'good06' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good07'';
-alias 'good07' 'say ⣿⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿;bind ']' 'good08'';
-alias 'good08' 'say ⣿⣷⣶⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣾⣿⣿;bind ']' 'good01'';
-bind ']' 'good01'
-```
-
-- **5. 基础绑定**
+- **4. 基础绑定**
 ```ini
 //键位
 bind 'w' '+forward'; //前进
@@ -153,7 +129,7 @@ bind '\' 'key_listboundkeys';//在控制台打印所有按键功能
 - **6. 灵敏度、准星、持枪视角、雷达**
 ```ini
 ;//鼠标灵敏度
-sensitivity 0.80
+sensitivity 0.54
 ;//准星
 cl_crosshair_drawoutline '0'
 cl_crosshair_dynamic_maxdist_splitratio '1'
@@ -177,7 +153,7 @@ cl_crosshairstyle '4'
 cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
 ;//圆圈准星
-bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
+bind '[' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
 ;//狙击枪瞄准线宽度
 cl_crosshair_sniper_width '2'
 ;//投掷物准星
@@ -202,8 +178,8 @@ Viewmodel_offset_x 2.5
 Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
-;// '.'键超广角持枪
-bind '.' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
+;// ']'键超广角持枪
+bind ']' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
 ;//雷达
 cl_radar_always_centered '0'
 cl_radar_scale '0.37'
@@ -289,7 +265,7 @@ alias '+firr2' '+attack2'
 alias '-firr2' '-attack2;slot2;slot1;att1;'
 
 //Mouse
-sensitivity 0.80
+sensitivity 0.54
 
 //Keys
 bind 'w' '+forward'
@@ -360,7 +336,7 @@ cl_crosshairstyle '4'
 cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
 
-bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
+bind '[' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
 
 //sniper_crosshair
 cl_crosshair_sniper_width '2'
@@ -389,7 +365,7 @@ Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
 
-bind '.' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
+bind ']' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
 
 //Radar
 cl_radar_always_centered '0'
@@ -438,28 +414,6 @@ alias 'knife18' 'subclass_change 523; alias knife knife19'
 alias 'knife19' 'subclass_change 524; alias knife knife20'
 alias 'knife20' 'subclass_change 525; alias knife knife21'
 alias 'knife21' 'subclass_change 526; alias knife knife1'
-
-//nob
-alias 'noob01' 'say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind '[' 'noob02'';
-alias 'noob02' 'say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind '[' 'noob03'';
-alias 'noob03' 'say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind '[' 'noob04'';
-alias 'noob04' 'say ⣿⡏⢹⠀⢸⠀⡇⠀⣿⣿;bind '[' 'noob05'';
-alias 'noob05' 'say ⣿⡇⠈⠀⠈⠀⠀⠀⡏⢻;bind '[' 'noob06'';
-alias 'noob06' 'say ⣿⡇⠀⠀⠀⠀⠀⠀⠁⣼;bind '[' 'noob07'';
-alias 'noob07' 'say ⣿⣇⠀⠀⠀⠀⠀⠀⣰⣿;bind '[' 'noob08'';
-alias 'noob08' 'say ⣿⣧⣤⣤⣤⣤⣤⣤⣿⣿;bind '[' 'noob01''
-bind '[' 'noob01'
-
-//good
-alias 'good01' 'say ⣿⣿⣿⣿⣿⣿⣿⡏⠀⠈⢿⣿⣿⣿⣿⣿;bind ']' 'good02'';
-alias 'good02' 'say ⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣿⣿;bind ']' 'good03'';
-alias 'good03' 'say ⣿⠿⠿⠿⢿⡿⠟⠀⠀⠀⠸⠿⠿⣿⣿⣿;bind ']' 'good04'';
-alias 'good04' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good05'';
-alias 'good05' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good06'';
-alias 'good06' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good07'';
-alias 'good07' 'say ⣿⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿;bind ']' 'good08'';
-alias 'good08' 'say ⣿⣷⣶⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣾⣿⣿;bind ']' 'good01'';
-bind ']' 'good01'
 
 //Ending
 echo AutoConfig Enabled!
@@ -549,31 +503,7 @@ bind '5' 'slot5; att1; switchhandsright' ; //C4
 bind 'q' 'lastinv; att1;' ; //切换最近的武器装备
 ```
 
-- **4. 全局字符画** ' **[** ' 键 'Noob'  ' **]** ' 键 'Good'
-```ini
-//noob
-alias 'noob01' 'say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind '[' 'noob02'';
-alias 'noob02' 'say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind '[' 'noob03'';
-alias 'noob03' 'say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind '[' 'noob04'';
-alias 'noob04' 'say ⣿⡏⢹⠀⢸⠀⡇⠀⣿⣿;bind '[' 'noob05'';
-alias 'noob05' 'say ⣿⡇⠈⠀⠈⠀⠀⠀⡏⢻;bind '[' 'noob06'';
-alias 'noob06' 'say ⣿⡇⠀⠀⠀⠀⠀⠀⠁⣼;bind '[' 'noob07'';
-alias 'noob07' 'say ⣿⣇⠀⠀⠀⠀⠀⠀⣰⣿;bind '[' 'noob08'';
-alias 'noob08' 'say ⣿⣧⣤⣤⣤⣤⣤⣤⣿⣿;bind '[' 'noob01''
-bind '[' 'noob01'
-//good
-alias 'good01' 'say ⣿⣿⣿⣿⣿⣿⣿⡏⠀⠈⢿⣿⣿⣿⣿⣿;bind ']' 'good02'';
-alias 'good02' 'say ⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣿⣿;bind ']' 'good03'';
-alias 'good03' 'say ⣿⠿⠿⠿⢿⡿⠟⠀⠀⠀⠸⠿⠿⣿⣿⣿;bind ']' 'good04'';
-alias 'good04' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good05'';
-alias 'good05' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good06'';
-alias 'good06' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good07'';
-alias 'good07' 'say ⣿⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿;bind ']' 'good08'';
-alias 'good08' 'say ⣿⣷⣶⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣾⣿⣿;bind ']' 'good01'';
-bind ']' 'good01'
-```
-
-- **5. 基础绑定**
+- **4. 基础绑定**
 ```ini
 //键位
 bind 'w' '+forward'; //前进
@@ -615,7 +545,7 @@ bind '\' 'key_listboundkeys';//在控制台打印所有按键功能
 - **6. 灵敏度、准星、持枪视角、雷达**
 ```ini
 ;//鼠标灵敏度
-sensitivity 0.80
+sensitivity 0.54
 ;//准星
 cl_crosshair_drawoutline '0'
 cl_crosshair_dynamic_maxdist_splitratio '1'
@@ -639,7 +569,7 @@ cl_crosshairstyle '4'
 cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
 ;//圆圈准星
-bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
+bind '[' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
 ;//狙击枪瞄准线宽度
 cl_crosshair_sniper_width '2'
 ;//投掷物准星
@@ -664,8 +594,8 @@ Viewmodel_offset_x 2.5
 Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
-;// '.'键超广角持枪
-bind '.' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
+;// ']'键超广角持枪
+bind ']' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
 ;//雷达
 cl_radar_always_centered '0'
 cl_radar_scale '0.37'
@@ -751,7 +681,7 @@ alias '+firr2' '+attack2'
 alias '-firr2' '-attack2;slot2;slot1;att1;'
 
 //Mouse
-sensitivity 0.80
+sensitivity 0.54
 
 //Keys
 bind 'w' '+forward'
@@ -822,7 +752,7 @@ cl_crosshairstyle '4'
 cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
 
-bind ',' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
+bind '[' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
 
 //sniper_crosshair
 cl_crosshair_sniper_width '2'
@@ -851,7 +781,7 @@ Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
 
-bind '.' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
+bind ']' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
 
 //Radar
 cl_radar_always_centered '0'
@@ -900,28 +830,6 @@ alias 'knife18' 'subclass_change 523; alias knife knife19'
 alias 'knife19' 'subclass_change 524; alias knife knife20'
 alias 'knife20' 'subclass_change 525; alias knife knife21'
 alias 'knife21' 'subclass_change 526; alias knife knife1'
-
-//nob
-alias 'noob01' 'say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind '[' 'noob02'';
-alias 'noob02' 'say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind '[' 'noob03'';
-alias 'noob03' 'say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind '[' 'noob04'';
-alias 'noob04' 'say ⣿⡏⢹⠀⢸⠀⡇⠀⣿⣿;bind '[' 'noob05'';
-alias 'noob05' 'say ⣿⡇⠈⠀⠈⠀⠀⠀⡏⢻;bind '[' 'noob06'';
-alias 'noob06' 'say ⣿⡇⠀⠀⠀⠀⠀⠀⠁⣼;bind '[' 'noob07'';
-alias 'noob07' 'say ⣿⣇⠀⠀⠀⠀⠀⠀⣰⣿;bind '[' 'noob08'';
-alias 'noob08' 'say ⣿⣧⣤⣤⣤⣤⣤⣤⣿⣿;bind '[' 'noob01''
-bind '[' 'noob01'
-
-//good
-alias 'good01' 'say ⣿⣿⣿⣿⣿⣿⣿⡏⠀⠈⢿⣿⣿⣿⣿⣿;bind ']' 'good02'';
-alias 'good02' 'say ⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣿⣿;bind ']' 'good03'';
-alias 'good03' 'say ⣿⠿⠿⠿⢿⡿⠟⠀⠀⠀⠸⠿⠿⣿⣿⣿;bind ']' 'good04'';
-alias 'good04' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good05'';
-alias 'good05' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good06'';
-alias 'good06' 'say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind ']' 'good07'';
-alias 'good07' 'say ⣿⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿;bind ']' 'good08'';
-alias 'good08' 'say ⣿⣷⣶⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣾⣿⣿;bind ']' 'good01'';
-bind ']' 'good01'
 
 //Ending
 echo AutoConfig Enabled!
@@ -1075,30 +983,7 @@ bind <span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</sp
 bind <span class="pl-s"><span class="pl-pds">"</span>5<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot5; att1; switchhandsright<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">;</span> //C4</span>
 bind <span class="pl-s"><span class="pl-pds">"</span>q<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>lastinv; att1;<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">;</span> //切换最近的武器装备</span></pre></div>
 <ul>
-<li><strong>4. 全局字符画</strong> " <strong>[</strong> " 键 'Noob'  " <strong>]</strong> " 键 'Good'</li>
-</ul>
-<div class="highlight highlight-source-ini"><pre class="notranslate">//noob
-alias <span class="pl-s"><span class="pl-pds">"</span>noob01<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind <span class="pl-pds">"</span></span>[<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>noob02<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>noob02<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind <span class="pl-pds">"</span></span>[<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>noob03<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>noob03<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind <span class="pl-pds">"</span></span>[<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>noob04<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>noob04<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⡏⢹⠀⢸⠀⡇⠀⣿⣿;bind <span class="pl-pds">"</span></span>[<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>noob05<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>noob05<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⡇⠈⠀⠈⠀⠀⠀⡏⢻;bind <span class="pl-pds">"</span></span>[<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>noob06<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>noob06<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⡇⠀⠀⠀⠀⠀⠀⠁⣼;bind <span class="pl-pds">"</span></span>[<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>noob07<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>noob07<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⣇⠀⠀⠀⠀⠀⠀⣰⣿;bind <span class="pl-pds">"</span></span>[<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>noob08<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>noob08<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⣧⣤⣤⣤⣤⣤⣤⣿⣿;bind <span class="pl-pds">"</span></span>[<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>noob01<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>[<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>noob01<span class="pl-pds">"</span></span>
-//good
-alias <span class="pl-s"><span class="pl-pds">"</span>good01<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⣿⣿⣿⣿⣿⣿⡏⠀⠈⢿⣿⣿⣿⣿⣿;bind <span class="pl-pds">"</span></span>]<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>good02<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>good02<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣿⣿;bind <span class="pl-pds">"</span></span>]<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>good03<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>good03<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⠿⠿⠿⢿⡿⠟⠀⠀⠀⠸⠿⠿⣿⣿⣿;bind <span class="pl-pds">"</span></span>]<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>good04<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>good04<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind <span class="pl-pds">"</span></span>]<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>good05<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>good05<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind <span class="pl-pds">"</span></span>]<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>good06<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>good06<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind <span class="pl-pds">"</span></span>]<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>good07<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>good07<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿;bind <span class="pl-pds">"</span></span>]<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>good08<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-alias <span class="pl-s"><span class="pl-pds">"</span>good08<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>say ⣿⣷⣶⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣾⣿⣿;bind <span class="pl-pds">"</span></span>]<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>good01<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>]<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>good01<span class="pl-pds">"</span></span></pre></div>
-<ul>
-<li><strong>5. 基础绑定</strong></li>
+<li><strong>4. 基础绑定</strong></li>
 </ul>
 <div class="highlight highlight-source-ini"><pre class="notranslate">//键位
 bind <span class="pl-s"><span class="pl-pds">"</span>w<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+forward<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span> //前进</span>
@@ -1139,7 +1024,7 @@ bind <span class="pl-s"><span class="pl-pds">"</span>\<span class="pl-pds">"</sp
 <li><strong>6. 灵敏度、准星、持枪视角、雷达</strong></li>
 </ul>
 <div class="highlight highlight-source-ini"><pre class="notranslate"><span class="pl-c"><span class="pl-c">;</span>//鼠标灵敏度</span>
-sensitivity 0.80
+sensitivity 0.54
 <span class="pl-c"><span class="pl-c">;</span>//准星</span>
 cl_crosshair_drawoutline <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
 cl_crosshair_dynamic_maxdist_splitratio <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
@@ -1163,7 +1048,7 @@ cl_crosshairstyle <span class="pl-s"><span class="pl-pds">"</span>4<span class="
 cl_crosshairthickness <span class="pl-s"><span class="pl-pds">"</span>0.961664<span class="pl-pds">"</span></span>
 cl_crosshairusealpha <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
 <span class="pl-c"><span class="pl-c">;</span>//圆圈准星</span>
-bind <span class="pl-s"><span class="pl-pds">"</span>,<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_crosshair_drawoutline <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_maxdist_splitratio <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_innermod <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_outermod <span class="pl-pds">"</span></span>0.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitdist <span class="pl-pds">"</span></span>7<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_friendly_warning <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_outlinethickness <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_t <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairalpha <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor 5;cl_crosshaircolor_b <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_g <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_r <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairdot <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap <span class="pl-pds">"</span></span>-3.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap_useweaponvalue <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairsize <span class="pl-pds">"</span></span>0.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairstyle <span class="pl-pds">"</span></span>4<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairthickness <span class="pl-pds">"</span></span>1.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairusealpha <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>[<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_crosshair_drawoutline <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_maxdist_splitratio <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_innermod <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_outermod <span class="pl-pds">"</span></span>0.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitdist <span class="pl-pds">"</span></span>7<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_friendly_warning <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_outlinethickness <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_t <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairalpha <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor 5;cl_crosshaircolor_b <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_g <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_r <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairdot <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap <span class="pl-pds">"</span></span>-3.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap_useweaponvalue <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairsize <span class="pl-pds">"</span></span>0.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairstyle <span class="pl-pds">"</span></span>4<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairthickness <span class="pl-pds">"</span></span>1.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairusealpha <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;<span class="pl-pds">"</span></span>
 <span class="pl-c"><span class="pl-c">;</span>//狙击枪瞄准线宽度</span>
 cl_crosshair_sniper_width <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>
 <span class="pl-c"><span class="pl-c">;</span>//投掷物准星</span>
@@ -1188,8 +1073,8 @@ Viewmodel_offset_x 2.5
 Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
-<span class="pl-c"><span class="pl-c">;</span>// "."键超广角持枪</span>
-bind <span class="pl-s"><span class="pl-pds">"</span>.<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">;</span>// "]"键超广角持枪</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>]<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;<span class="pl-pds">"</span></span>
 <span class="pl-c"><span class="pl-c">;</span>//雷达</span>
 cl_radar_always_centered <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
 cl_radar_scale <span class="pl-s"><span class="pl-pds">"</span>0.37<span class="pl-pds">"</span></span>
@@ -1286,7 +1171,7 @@ alias <span class="pl-s"><span class="pl-pds">"</span>+firr2<span class="pl-pds"
 alias <span class="pl-s"><span class="pl-pds">"</span>-firr2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>-attack2;slot2;slot1;att1;<span class="pl-pds">"</span></span>
 
 //Mouse
-sensitivity 0.80
+sensitivity 0.54
 
 //Keys
 bind <span class="pl-s"><span class="pl-pds">"</span>w<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+forward<span class="pl-pds">"</span></span>
@@ -1357,7 +1242,7 @@ cl_crosshairstyle <span class="pl-s"><span class="pl-pds">"</span>4<span class="
 cl_crosshairthickness <span class="pl-s"><span class="pl-pds">"</span>0.961664<span class="pl-pds">"</span></span>
 cl_crosshairusealpha <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
 
-bind <span class="pl-s"><span class="pl-pds">"</span>,<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_crosshair_drawoutline <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_maxdist_splitratio <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_innermod <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_outermod <span class="pl-pds">"</span></span>0.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitdist <span class="pl-pds">"</span></span>7<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_friendly_warning <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_outlinethickness <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_t <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairalpha <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor 5;cl_crosshaircolor_b <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_g <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_r <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairdot <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap <span class="pl-pds">"</span></span>-3.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap_useweaponvalue <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairsize <span class="pl-pds">"</span></span>0.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairstyle <span class="pl-pds">"</span></span>4<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairthickness <span class="pl-pds">"</span></span>1.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairusealpha <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>[<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_crosshair_drawoutline <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_maxdist_splitratio <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_innermod <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_outermod <span class="pl-pds">"</span></span>0.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitdist <span class="pl-pds">"</span></span>7<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_friendly_warning <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_outlinethickness <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_t <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairalpha <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor 5;cl_crosshaircolor_b <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_g <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_r <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairdot <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap <span class="pl-pds">"</span></span>-3.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap_useweaponvalue <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairsize <span class="pl-pds">"</span></span>0.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairstyle <span class="pl-pds">"</span></span>4<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairthickness <span class="pl-pds">"</span></span>1.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairusealpha <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;<span class="pl-pds">"</span></span>
 
 //sniper_crosshair
 cl_crosshair_sniper_width <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>
@@ -1386,7 +1271,7 @@ cl_teamid_overhead_fade_near_crosshair <span class="pl-s"><span class="pl-pds">"
 <span class="pl-s">Viewmodel_offset_z -2</span>
 <span class="pl-s">viewmodel_presetpos 3</span>
 <span class="pl-s"></span>
-<span class="pl-s">bind "." "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"</span>
+<span class="pl-s">bind "]" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"</span>
 <span class="pl-s"></span>
 <span class="pl-s">//Radar</span>
 <span class="pl-s">cl_radar_always_centered "0"</span>
@@ -1435,28 +1320,6 @@ cl_teamid_overhead_fade_near_crosshair <span class="pl-s"><span class="pl-pds">"
 <span class="pl-s">alias "knife19" "subclass_change 524; alias knife knife20"</span>
 <span class="pl-s">alias "knife20" "subclass_change 525; alias knife knife21"</span>
 <span class="pl-s">alias "knife21" "subclass_change 526; alias knife knife1"</span>
-<span class="pl-s"></span>
-<span class="pl-s">//nob</span>
-<span class="pl-s">alias "noob01" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob02"";</span>
-<span class="pl-s">alias "noob02" "say ⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿;bind "[" "noob03"";</span>
-<span class="pl-s">alias "noob03" "say ⣿⣿⣿⡿⢿⠀⡿⢿⣿⣿;bind "[" "noob04"";</span>
-<span class="pl-s">alias "noob04" "say ⣿⡏⢹⠀⢸⠀⡇⠀⣿⣿;bind "[" "noob05"";</span>
-<span class="pl-s">alias "noob05" "say ⣿⡇⠈⠀⠈⠀⠀⠀⡏⢻;bind "[" "noob06"";</span>
-<span class="pl-s">alias "noob06" "say ⣿⡇⠀⠀⠀⠀⠀⠀⠁⣼;bind "[" "noob07"";</span>
-<span class="pl-s">alias "noob07" "say ⣿⣇⠀⠀⠀⠀⠀⠀⣰⣿;bind "[" "noob08"";</span>
-<span class="pl-s">alias "noob08" "say ⣿⣧⣤⣤⣤⣤⣤⣤⣿⣿;bind "[" "noob01""</span>
-<span class="pl-s">bind "[" "noob01"</span>
-<span class="pl-s"></span>
-<span class="pl-s">//good</span>
-<span class="pl-s">alias "good01" "say ⣿⣿⣿⣿⣿⣿⣿⡏⠀⠈⢿⣿⣿⣿⣿⣿;bind "]" "good02"";</span>
-<span class="pl-s">alias "good02" "say ⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣿⣿;bind "]" "good03"";</span>
-<span class="pl-s">alias "good03" "say ⣿⠿⠿⠿⢿⡿⠟⠀⠀⠀⠸⠿⠿⣿⣿⣿;bind "]" "good04"";</span>
-<span class="pl-s">alias "good04" "say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind "]" "good05"";</span>
-<span class="pl-s">alias "good05" "say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind "]" "good06"";</span>
-<span class="pl-s">alias "good06" "say ⣿⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿;bind "]" "good07"";</span>
-<span class="pl-s">alias "good07" "say ⣿⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿;bind "]" "good08"";</span>
-<span class="pl-s">alias "good08" "say ⣿⣷⣶⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣾⣿⣿;bind "]" "good01"";</span>
-<span class="pl-s">bind "]" "good01"</span>
 <span class="pl-s"></span>
 <span class="pl-s">//Ending</span>
 <span class="pl-s">echo AutoConfig Enabled!</span>
