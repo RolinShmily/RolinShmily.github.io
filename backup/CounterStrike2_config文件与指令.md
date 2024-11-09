@@ -240,9 +240,6 @@ mp_weapons_glow_on_ground 1;
 ```
 ### 四、autoexec.cfg
 ```ini
-alias +pwaswitchknife slot3
-alias -pwaswitchknife lastinv
-alias "refundall" "sellback 0;sellback 1;sellback 2;sellback 3;sellback 4;sellback 5;sellback 6;sellback 8;sellback 9;sellback 10;sellback 11;sellback 12;sellback 13;sellback 14;sellback 15;sellback 16;sellback 17;sellback 18;sellback 26;sellback 26;sellback 27;sellback 28;sellback 29;sellback 30;sellback 32;sellback 33;sellback 34;sellback 35;play ui\panorama\itemtile_click_02.vsnd_c"
 //tips01
 alias "att0" "bind mouse1 +firr1;bind mouse2 +firr2"
 alias "att1" "bind mouse1 +attack;bind mouse2 +attack2"

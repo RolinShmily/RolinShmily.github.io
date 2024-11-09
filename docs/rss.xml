@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Tue, 05 Nov 2024 13:25:30 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## *游戏自用config文件与部分指令分享*&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sat, 09 Nov 2024 06:17:29 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## *游戏自用config文件与部分指令分享*&#13;
 ### 一、自动加载cfg简介&#13;
 &gt;- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，完整版放在最后&#13;
 - **1. p** 键 开启自定义房间, **k** 键 掉刀, **l** 键 回看投掷物, **n** 键 开启飞行&#13;
@@ -241,9 +241,6 @@ mp_weapons_glow_on_ground 1; &#13;
 ```&#13;
 ### 四、autoexec.cfg&#13;
 ```ini&#13;
-alias +pwaswitchknife slot3&#13;
-alias -pwaswitchknife lastinv&#13;
-alias 'refundall' 'sellback 0;sellback 1;sellback 2;sellback 3;sellback 4;sellback 5;sellback 6;sellback 8;sellback 9;sellback 10;sellback 11;sellback 12;sellback 13;sellback 14;sellback 15;sellback 16;sellback 17;sellback 18;sellback 26;sellback 26;sellback 27;sellback 28;sellback 29;sellback 30;sellback 32;sellback 33;sellback 34;sellback 35;play ui\panorama\itemtile_click_02.vsnd_c'&#13;
 //tips01&#13;
 alias 'att0' 'bind mouse1 +firr1;bind mouse2 +firr2'&#13;
 alias 'att1' 'bind mouse1 +attack;bind mouse2 +attack2'&#13;
