@@ -10,10 +10,14 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="## *游戏自用config文件与部分指令分享*
-### 一、自动加载cfg简介
->- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，完整版放在最后
+<meta name="description" content="## _游戏自用 config 文件与部分指令分享_
+
+### 一、cfg 功能简介
+
+> - 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，完整版放在最后
+
 - **1. p** 键 开启自定义房间, **k** 键 掉刀, **l** 键 回看投掷物, **n** 键 开启飞行
+
 ```ini
 sv_cheats 1; //开启作弊模式
 bot_kick; //踢出机器人
@@ -36,16 +40,19 @@ sv_infinite_ammo 2; //设置无限弹药模式(道具无限)，但仍需换弹�
 sv_showimpacts 1; //开启弹痕
 say Practice Enabled;//全局喊话：练习模式
 ```
+
 ```ini
 bind 'p' 'sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999;mp_buytime 99999;mp_ignore_round_win_conditions 1; mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_friendlyfire 1;ammo_grenade_limit_total 6;mp_spectators_max 9; mp_autokick 0; mp_restartgame 1;sv_grenade_trajectory_prac_pipreview 1; sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;sv_showimpacts 1;say Practice Enabled'
 bind 'k' 'give weapon_knife'
 bind 'l' 'sv_rethrow_last_grenade'
 bind 'n' 'noclip'
 ```
+
 - **2. j** 键对准刀具更换模型
+
 ```ini
 //knife_change
-bind 'j' 'mp_drop_knife_enable 1;knife'                                                    
+bind 'j' 'mp_drop_knife_enable 1;knife'
 alias 'knife' 'knife1'
 alias 'knife1' 'subclass_change 500; alias knife knife2'
 alias 'knife2' 'subclass_change 503; alias knife knife3'
@@ -71,6 +78,7 @@ alias 'knife21' 'subclass_change 526; alias knife knife1'
 ```
 
 - **3. 切出电击枪使用后快速自动切枪**
+
 ```ini
 alias 'att0' 'bind mouse1 +firr1;bind mouse2 +firr2'
 alias 'att1' 'bind mouse1 +attack;bind mouse2 +attack2'
@@ -88,6 +96,7 @@ bind 'q' 'lastinv; att1;' ; //切换最近的武器装备
 ```
 
 - **4. 基础绑定**
+
 ```ini
 //键位
 bind 'w' '+forward'; //前进
@@ -126,7 +135,8 @@ bind 'o' 'exec autoexec.cfg';//加载自启动cfg
 bind '\' 'key_listboundkeys';//在控制台打印所有按键功能
 ```
 
-- **6. 灵敏度、准星、持枪视角、雷达**
+- **5. 灵敏度、准星、持枪视角、雷达**
+
 ```ini
 ;//鼠标灵敏度
 sensitivity 0.54
@@ -187,7 +197,8 @@ cl_hud_radar_scale '1'
 cl_teammate_colors_show 2
 ```
 
-- **7. 杂项**
+- **6. 杂项**
+
 ```ini
 cl_hud_color '11';//HUD粉色
 con_enable '1';//启用控制台
@@ -206,51 +217,71 @@ cl_teamid_overhead_mode 3;//始终显示队友名称与装备
 echo AutoConfig Enabled!;//控制台打印
 say Hello!;//全局喊话
 ```
-### 二、cfg文件的位置和游戏自启动指令
->- 编辑好cfg文件要放入游戏文件夹对应位置才能生效
->- 相对路径：**.\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg**
->- 或者: **.\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo**
 
->- 在steam中的启动选项里可以方便设置一些东西：
->- **-allow_third_party_software** 允许第三方软件,例如**OBS**的窗口采集
->- **-perfectworld** 国服
->- **-worldwide** 国际服
->- 每条命令之间要留一个空格
+### 二、cfg 文件的位置和游戏自启动指令
+
+> - 编辑好 cfg 文件要放入游戏文件夹对应位置才能生效
+> - 相对路径：**.\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg**
+> - 或者: **.\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo**
+
+> - 在 steam 中的启动选项里可以方便设置一些东西：
+> - **-allow_third_party_software** 允许第三方软件,例如**OBS**的窗口采集
+> - **-perfectworld** 国服
+> - **-worldwide** 国际服
+> - 每条命令之间要留一个空格
 
 ### 三、一些好玩的指令
+
 - **爆头模式**
+
 ```
 mp_damage_headshot_only 1;
 ```
+
 - **生成一只鸡**
+
 ```
-ent_create chicken;  
+ent_create chicken;
 ```
+
 - **人机难度**
+
 ```
 custom_bot_difficulty 5;
 ```
+
 - **任意地点下包**
+
 ```
-mp_plant_c4_anywhere 1; 
+mp_plant_c4_anywhere 1;
 ```
-- **C4引爆时间**
+
+- **C4 引爆时间**
+
 ```
-mp_c4timer 40; 
+mp_c4timer 40;
 ```
+
 - **自动回血**
+
 ```
-sv_regeneration_force_on 1; 
+sv_regeneration_force_on 1;
 ```
+
 - **显示人物行走速度**
+
 ```
-cl_showpos 1; 
+cl_showpos 1;
 ```
+
 - **武器掉落高亮**
+
 ```
-mp_weapons_glow_on_ground 1; 
+mp_weapons_glow_on_ground 1;
 ```
+
 ### 四、autoexec.cfg
+
 ```ini
 //tips01
 alias 'att0' 'bind mouse1 +firr1;bind mouse2 +firr2'
@@ -269,28 +300,28 @@ bind 'w' '+forward'
 bind 's' '+back'
 bind 'a' '+left'
 bind 'd' '+right'
-bind 'mouse1' '+attack' 
+bind 'mouse1' '+attack'
 bind 'mouse2' '+attack2'
 bind 'e' '+use'
 bind 'f' '+lookatweapon'
-bind 'space' '+jump' 
-bind 'ctrl' '+duck' 
+bind 'space' '+jump'
+bind 'ctrl' '+duck'
 bind 'tab' '+showscores'
-bind 'g' 'drop' 
+bind 'g' 'drop'
 bind 'm' 'teammenu'
-bind 'shift' '+sprint' 
-bind 'b' 'buymenu' 
+bind 'shift' '+sprint'
+bind 'b' 'buymenu'
 bind '1' 'slot1; att1'
-bind '2' 'slot2; att1'  
-bind '3' 'slot3; att1' 
-bind '4' 'slot11; att0' 
+bind '2' 'slot2; att1'
+bind '3' 'slot3; att1'
+bind '4' 'slot11; att0'
 bind '5' 'slot5; att1; switchhandsright'
 
-bind 'z' 'slot6; switchhandsright' 
-bind 'x' 'slot3; slot7; switchhandsright' 
-bind 'c' 'slot8; switchhandsright' 
-bind '6' 'slot9; switchhandsright' 
-bind 'v' 'slot10; switchhandsright' 
+bind 'z' 'slot6; switchhandsright'
+bind 'x' 'slot3; slot7; switchhandsright'
+bind 'c' 'slot8; switchhandsright'
+bind '6' 'slot9; switchhandsright'
+bind 'v' 'slot10; switchhandsright'
 
 bind 'q' 'lastinv; att1;'
 bind 'i' '+spray_menu'
@@ -299,16 +330,19 @@ bind 'y' 'messagemode'
 bind 'mouse4' '+voicerecord'
 bind 'alt' 'clutch_mode_toggle'
 bind 'mouse5' 'player_ping'
-bind 'mwheeldown' '+jump' 
+bind 'mwheeldown' '+jump'
 bind 'mwheelup' '+jump'
 bind '`' 'toggleconsole'
 
 bind 't' 'switchhands'
-bind 'h' 'toggleradarscale' 
+bind 'h' 'toggleradarscale'
 
 //cfg
-bind 'o' 'exec autoexec.cfg'
-bind '\' 'key_listboundkeys'
+bind 'o' 'exec autoexec.cfg;say auto!'
+bind '\' 'key_listboundkeys;say keys_log!'
+bind 'j' 'exec knife.cfg;say knife_model!'
+bind 'p' 'exec train.cfg;say train_model!'
+bind '[' 'exec crosshair_view;say crosshair_view!'
 
 //Crosshair
 cl_crosshair_drawoutline '0'
@@ -332,8 +366,6 @@ cl_crosshairsize '0.901125'
 cl_crosshairstyle '4'
 cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
-
-bind '[' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
 
 //sniper_crosshair
 cl_crosshair_sniper_width '2'
@@ -362,8 +394,6 @@ Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
 
-bind ']' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
-
 //Radar
 cl_radar_always_centered '0'
 cl_radar_scale '0.37'
@@ -375,8 +405,8 @@ cl_hud_color '11'
 con_enable '1'
 fps_max 999
 cl_join_advertise '2'
-cl_use_opens_buy_menu '0' 
-cl_dm_buyrandomweapons 0 
+cl_use_opens_buy_menu '0'
+cl_dm_buyrandomweapons 0
 gameinstructor_enable '0'
 cl_autohelp 'false'
 mm_dedicated_search_maxping '70'
@@ -386,9 +416,15 @@ r_fullscreen_gamma 2.6
 cl_use_opens_buy_menu false
 cl_teamid_overhead_mode 3
 
+//Ending
+echo AutoConfig Enabled!
+```
 
+### 五、knife.cfg
+
+```ini
 //knife_change
-bind 'j' 'mp_drop_knife_enable 1;knife'                                                    
+bind 'j' 'mp_drop_knife_enable 1;knife'
 alias 'knife' 'knife1'
 alias 'knife1' 'subclass_change 500; alias knife knife2'
 alias 'knife2' 'subclass_change 503; alias knife knife3'
@@ -411,22 +447,46 @@ alias 'knife18' 'subclass_change 523; alias knife knife19'
 alias 'knife19' 'subclass_change 524; alias knife knife20'
 alias 'knife20' 'subclass_change 525; alias knife knife21'
 alias 'knife21' 'subclass_change 526; alias knife knife1'
+```
 
-//Ending
-echo AutoConfig Enabled!
-say Hello!
+### 六、crosshair_view.cfg
 
+```ini
+say niko_PI:'[',nanyi:']'
+//niko_PI
+bind '[' 'PI'
+alias 'PI' 'PI00'
+
+alias 'PI00' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';alias PI PI01;say niko_PI_01/02!'
+
+alias 'PI01' 'cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';alias PI PI00;say niko_PI_02/02!'
+
+//guangjiao
+bind ']' 'p'
+alias 'p' 'p01'
+
+alias 'p01' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;say guangjiao!'
+```
+
+### 七、train.cfg
+
+```ini
 //Train
 bind 'k' 'give weapon_knife'
 bind 'l' 'sv_rethrow_last_grenade'
 bind 'n' 'noclip'
 bind 'p' 'sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999;mp_buytime 99999;mp_ignore_round_win_conditions 1; mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_friendlyfire 1;ammo_grenade_limit_total 6;mp_spectators_max 9; mp_autokick 0; mp_restartgame 1;sv_grenade_trajectory_prac_pipreview 1; sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;sv_showimpacts 1;say Practice Enabled'
-```。">
+```
+。">
 <meta property="og:title" content="CounterStrike2_config文件与指令">
-<meta property="og:description" content="## *游戏自用config文件与部分指令分享*
-### 一、自动加载cfg简介
->- 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，完整版放在最后
+<meta property="og:description" content="## _游戏自用 config 文件与部分指令分享_
+
+### 一、cfg 功能简介
+
+> - 自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，完整版放在最后
+
 - **1. p** 键 开启自定义房间, **k** 键 掉刀, **l** 键 回看投掷物, **n** 键 开启飞行
+
 ```ini
 sv_cheats 1; //开启作弊模式
 bot_kick; //踢出机器人
@@ -449,16 +509,19 @@ sv_infinite_ammo 2; //设置无限弹药模式(道具无限)，但仍需换弹�
 sv_showimpacts 1; //开启弹痕
 say Practice Enabled;//全局喊话：练习模式
 ```
+
 ```ini
 bind 'p' 'sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999;mp_buytime 99999;mp_ignore_round_win_conditions 1; mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_friendlyfire 1;ammo_grenade_limit_total 6;mp_spectators_max 9; mp_autokick 0; mp_restartgame 1;sv_grenade_trajectory_prac_pipreview 1; sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;sv_showimpacts 1;say Practice Enabled'
 bind 'k' 'give weapon_knife'
 bind 'l' 'sv_rethrow_last_grenade'
 bind 'n' 'noclip'
 ```
+
 - **2. j** 键对准刀具更换模型
+
 ```ini
 //knife_change
-bind 'j' 'mp_drop_knife_enable 1;knife'                                                    
+bind 'j' 'mp_drop_knife_enable 1;knife'
 alias 'knife' 'knife1'
 alias 'knife1' 'subclass_change 500; alias knife knife2'
 alias 'knife2' 'subclass_change 503; alias knife knife3'
@@ -484,6 +547,7 @@ alias 'knife21' 'subclass_change 526; alias knife knife1'
 ```
 
 - **3. 切出电击枪使用后快速自动切枪**
+
 ```ini
 alias 'att0' 'bind mouse1 +firr1;bind mouse2 +firr2'
 alias 'att1' 'bind mouse1 +attack;bind mouse2 +attack2'
@@ -501,6 +565,7 @@ bind 'q' 'lastinv; att1;' ; //切换最近的武器装备
 ```
 
 - **4. 基础绑定**
+
 ```ini
 //键位
 bind 'w' '+forward'; //前进
@@ -539,7 +604,8 @@ bind 'o' 'exec autoexec.cfg';//加载自启动cfg
 bind '\' 'key_listboundkeys';//在控制台打印所有按键功能
 ```
 
-- **6. 灵敏度、准星、持枪视角、雷达**
+- **5. 灵敏度、准星、持枪视角、雷达**
+
 ```ini
 ;//鼠标灵敏度
 sensitivity 0.54
@@ -600,7 +666,8 @@ cl_hud_radar_scale '1'
 cl_teammate_colors_show 2
 ```
 
-- **7. 杂项**
+- **6. 杂项**
+
 ```ini
 cl_hud_color '11';//HUD粉色
 con_enable '1';//启用控制台
@@ -619,51 +686,71 @@ cl_teamid_overhead_mode 3;//始终显示队友名称与装备
 echo AutoConfig Enabled!;//控制台打印
 say Hello!;//全局喊话
 ```
-### 二、cfg文件的位置和游戏自启动指令
->- 编辑好cfg文件要放入游戏文件夹对应位置才能生效
->- 相对路径：**.\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg**
->- 或者: **.\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo**
 
->- 在steam中的启动选项里可以方便设置一些东西：
->- **-allow_third_party_software** 允许第三方软件,例如**OBS**的窗口采集
->- **-perfectworld** 国服
->- **-worldwide** 国际服
->- 每条命令之间要留一个空格
+### 二、cfg 文件的位置和游戏自启动指令
+
+> - 编辑好 cfg 文件要放入游戏文件夹对应位置才能生效
+> - 相对路径：**.\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg**
+> - 或者: **.\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo**
+
+> - 在 steam 中的启动选项里可以方便设置一些东西：
+> - **-allow_third_party_software** 允许第三方软件,例如**OBS**的窗口采集
+> - **-perfectworld** 国服
+> - **-worldwide** 国际服
+> - 每条命令之间要留一个空格
 
 ### 三、一些好玩的指令
+
 - **爆头模式**
+
 ```
 mp_damage_headshot_only 1;
 ```
+
 - **生成一只鸡**
+
 ```
-ent_create chicken;  
+ent_create chicken;
 ```
+
 - **人机难度**
+
 ```
 custom_bot_difficulty 5;
 ```
+
 - **任意地点下包**
+
 ```
-mp_plant_c4_anywhere 1; 
+mp_plant_c4_anywhere 1;
 ```
-- **C4引爆时间**
+
+- **C4 引爆时间**
+
 ```
-mp_c4timer 40; 
+mp_c4timer 40;
 ```
+
 - **自动回血**
+
 ```
-sv_regeneration_force_on 1; 
+sv_regeneration_force_on 1;
 ```
+
 - **显示人物行走速度**
+
 ```
-cl_showpos 1; 
+cl_showpos 1;
 ```
+
 - **武器掉落高亮**
+
 ```
-mp_weapons_glow_on_ground 1; 
+mp_weapons_glow_on_ground 1;
 ```
+
 ### 四、autoexec.cfg
+
 ```ini
 //tips01
 alias 'att0' 'bind mouse1 +firr1;bind mouse2 +firr2'
@@ -682,28 +769,28 @@ bind 'w' '+forward'
 bind 's' '+back'
 bind 'a' '+left'
 bind 'd' '+right'
-bind 'mouse1' '+attack' 
+bind 'mouse1' '+attack'
 bind 'mouse2' '+attack2'
 bind 'e' '+use'
 bind 'f' '+lookatweapon'
-bind 'space' '+jump' 
-bind 'ctrl' '+duck' 
+bind 'space' '+jump'
+bind 'ctrl' '+duck'
 bind 'tab' '+showscores'
-bind 'g' 'drop' 
+bind 'g' 'drop'
 bind 'm' 'teammenu'
-bind 'shift' '+sprint' 
-bind 'b' 'buymenu' 
+bind 'shift' '+sprint'
+bind 'b' 'buymenu'
 bind '1' 'slot1; att1'
-bind '2' 'slot2; att1'  
-bind '3' 'slot3; att1' 
-bind '4' 'slot11; att0' 
+bind '2' 'slot2; att1'
+bind '3' 'slot3; att1'
+bind '4' 'slot11; att0'
 bind '5' 'slot5; att1; switchhandsright'
 
-bind 'z' 'slot6; switchhandsright' 
-bind 'x' 'slot3; slot7; switchhandsright' 
-bind 'c' 'slot8; switchhandsright' 
-bind '6' 'slot9; switchhandsright' 
-bind 'v' 'slot10; switchhandsright' 
+bind 'z' 'slot6; switchhandsright'
+bind 'x' 'slot3; slot7; switchhandsright'
+bind 'c' 'slot8; switchhandsright'
+bind '6' 'slot9; switchhandsright'
+bind 'v' 'slot10; switchhandsright'
 
 bind 'q' 'lastinv; att1;'
 bind 'i' '+spray_menu'
@@ -712,16 +799,19 @@ bind 'y' 'messagemode'
 bind 'mouse4' '+voicerecord'
 bind 'alt' 'clutch_mode_toggle'
 bind 'mouse5' 'player_ping'
-bind 'mwheeldown' '+jump' 
+bind 'mwheeldown' '+jump'
 bind 'mwheelup' '+jump'
 bind '`' 'toggleconsole'
 
 bind 't' 'switchhands'
-bind 'h' 'toggleradarscale' 
+bind 'h' 'toggleradarscale'
 
 //cfg
-bind 'o' 'exec autoexec.cfg'
-bind '\' 'key_listboundkeys'
+bind 'o' 'exec autoexec.cfg;say auto!'
+bind '\' 'key_listboundkeys;say keys_log!'
+bind 'j' 'exec knife.cfg;say knife_model!'
+bind 'p' 'exec train.cfg;say train_model!'
+bind '[' 'exec crosshair_view;say crosshair_view!'
 
 //Crosshair
 cl_crosshair_drawoutline '0'
@@ -745,8 +835,6 @@ cl_crosshairsize '0.901125'
 cl_crosshairstyle '4'
 cl_crosshairthickness '0.961664'
 cl_crosshairusealpha '1'
-
-bind '[' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';'
 
 //sniper_crosshair
 cl_crosshair_sniper_width '2'
@@ -775,8 +863,6 @@ Viewmodel_offset_y -1
 Viewmodel_offset_z -2
 viewmodel_presetpos 3
 
-bind ']' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;'
-
 //Radar
 cl_radar_always_centered '0'
 cl_radar_scale '0.37'
@@ -788,8 +874,8 @@ cl_hud_color '11'
 con_enable '1'
 fps_max 999
 cl_join_advertise '2'
-cl_use_opens_buy_menu '0' 
-cl_dm_buyrandomweapons 0 
+cl_use_opens_buy_menu '0'
+cl_dm_buyrandomweapons 0
 gameinstructor_enable '0'
 cl_autohelp 'false'
 mm_dedicated_search_maxping '70'
@@ -799,9 +885,15 @@ r_fullscreen_gamma 2.6
 cl_use_opens_buy_menu false
 cl_teamid_overhead_mode 3
 
+//Ending
+echo AutoConfig Enabled!
+```
 
+### 五、knife.cfg
+
+```ini
 //knife_change
-bind 'j' 'mp_drop_knife_enable 1;knife'                                                    
+bind 'j' 'mp_drop_knife_enable 1;knife'
 alias 'knife' 'knife1'
 alias 'knife1' 'subclass_change 500; alias knife knife2'
 alias 'knife2' 'subclass_change 503; alias knife knife3'
@@ -824,17 +916,37 @@ alias 'knife18' 'subclass_change 523; alias knife knife19'
 alias 'knife19' 'subclass_change 524; alias knife knife20'
 alias 'knife20' 'subclass_change 525; alias knife knife21'
 alias 'knife21' 'subclass_change 526; alias knife knife1'
+```
 
-//Ending
-echo AutoConfig Enabled!
-say Hello!
+### 六、crosshair_view.cfg
 
+```ini
+say niko_PI:'[',nanyi:']'
+//niko_PI
+bind '[' 'PI'
+alias 'PI' 'PI00'
+
+alias 'PI00' 'cl_crosshair_drawoutline '0';cl_crosshair_dynamic_maxdist_splitratio '0';cl_crosshair_dynamic_splitalpha_innermod '1';cl_crosshair_dynamic_splitalpha_outermod '0.5';cl_crosshair_dynamic_splitdist '7';cl_crosshair_friendly_warning '0';cl_crosshair_outlinethickness '0';cl_crosshair_sniper_show_normal_inaccuracy '0';alias PI PI01;say niko_PI_01/02!'
+
+alias 'PI01' 'cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_crosshaircolor_b '255';cl_crosshaircolor_g '255';cl_crosshaircolor_r '0';cl_crosshairdot '0';cl_crosshairgap '-3.9';cl_crosshairgap_useweaponvalue '0';cl_crosshairsize '0.9';cl_crosshairstyle '4';cl_crosshairthickness '1.5';cl_crosshairusealpha '1';alias PI PI00;say niko_PI_02/02!'
+
+//guangjiao
+bind ']' 'p'
+alias 'p' 'p01'
+
+alias 'p01' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;say guangjiao!'
+```
+
+### 七、train.cfg
+
+```ini
 //Train
 bind 'k' 'give weapon_knife'
 bind 'l' 'sv_rethrow_last_grenade'
 bind 'n' 'noclip'
 bind 'p' 'sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999;mp_buytime 99999;mp_ignore_round_win_conditions 1; mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_friendlyfire 1;ammo_grenade_limit_total 6;mp_spectators_max 9; mp_autokick 0; mp_restartgame 1;sv_grenade_trajectory_prac_pipreview 1; sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;sv_showimpacts 1;say Practice Enabled'
-```。">
+```
+。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/142618699?v=4">
@@ -899,8 +1011,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h2><em>游戏自用config文件与部分指令分享</em></h2>
-<h3>一、自动加载cfg简介</h3>
+<div class="markdown-body" id="postBody"><h2><em>游戏自用 config 文件与部分指令分享</em></h2>
+<h3>一、cfg 功能简介</h3>
 <blockquote>
 <ul>
 <li>自动加载文件，里面包含了一些键位设置，鼠标设置，和一键绑定，完整版放在最后</li>
@@ -937,7 +1049,7 @@ bind <span class="pl-s"><span class="pl-pds">"</span>n<span class="pl-pds">"</sp
 <li><strong>2. j</strong> 键对准刀具更换模型</li>
 </ul>
 <div class="highlight highlight-source-ini"><pre class="notranslate">//knife_change
-bind <span class="pl-s"><span class="pl-pds">"</span>j<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>mp_drop_knife_enable 1;knife<span class="pl-pds">"</span></span>                                                    
+bind <span class="pl-s"><span class="pl-pds">"</span>j<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>mp_drop_knife_enable 1;knife<span class="pl-pds">"</span></span>
 alias <span class="pl-s"><span class="pl-pds">"</span>knife<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>knife1<span class="pl-pds">"</span></span>
 alias <span class="pl-s"><span class="pl-pds">"</span>knife1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 500; alias knife knife2<span class="pl-pds">"</span></span>
 alias <span class="pl-s"><span class="pl-pds">"</span>knife2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 503; alias knife knife3<span class="pl-pds">"</span></span>
@@ -1015,7 +1127,7 @@ bind <span class="pl-s"><span class="pl-pds">"</span>h<span class="pl-pds">"</sp
 bind <span class="pl-s"><span class="pl-pds">"</span>o<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec autoexec.cfg<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span>//加载自启动cfg</span>
 bind <span class="pl-s"><span class="pl-pds">"</span>\<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>key_listboundkeys<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span>//在控制台打印所有按键功能</span></pre></div>
 <ul>
-<li><strong>6. 灵敏度、准星、持枪视角、雷达</strong></li>
+<li><strong>5. 灵敏度、准星、持枪视角、雷达</strong></li>
 </ul>
 <div class="highlight highlight-source-ini"><pre class="notranslate"><span class="pl-c"><span class="pl-c">;</span>//鼠标灵敏度</span>
 sensitivity 0.54
@@ -1075,7 +1187,7 @@ cl_radar_scale <span class="pl-s"><span class="pl-pds">"</span>0.37<span class="
 cl_hud_radar_scale <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
 cl_teammate_colors_show 2</pre></div>
 <ul>
-<li><strong>7. 杂项</strong></li>
+<li><strong>6. 杂项</strong></li>
 </ul>
 <div class="highlight highlight-source-ini"><pre class="notranslate">cl_hud_color <span class="pl-s"><span class="pl-pds">"</span>11<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span>//HUD粉色</span>
 con_enable <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span>//启用控制台</span>
@@ -1093,17 +1205,17 @@ cl_teamid_overhead_mode 3<span class="pl-c"><span class="pl-c">;</span>//始终�
 <span class="pl-c"><span class="pl-c">;</span>//Ending</span>
 echo AutoConfig Enabled!<span class="pl-c"><span class="pl-c">;</span>//控制台打印</span>
 say Hello!<span class="pl-c"><span class="pl-c">;</span>//全局喊话</span></pre></div>
-<h3>二、cfg文件的位置和游戏自启动指令</h3>
+<h3>二、cfg 文件的位置和游戏自启动指令</h3>
 <blockquote>
 <ul>
-<li>编辑好cfg文件要放入游戏文件夹对应位置才能生效</li>
+<li>编辑好 cfg 文件要放入游戏文件夹对应位置才能生效</li>
 <li>相对路径：<strong>.\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg</strong></li>
 <li>或者: <strong>.\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo</strong></li>
 </ul>
 </blockquote>
 <blockquote>
 <ul>
-<li>在steam中的启动选项里可以方便设置一些东西：</li>
+<li>在 steam 中的启动选项里可以方便设置一些东西：</li>
 <li><strong>-allow_third_party_software</strong> 允许第三方软件,例如<strong>OBS</strong>的窗口采集</li>
 <li><strong>-perfectworld</strong> 国服</li>
 <li><strong>-worldwide</strong> 国际服</li>
@@ -1119,7 +1231,7 @@ say Hello!<span class="pl-c"><span class="pl-c">;</span>//全局喊话</span></p
 <ul>
 <li><strong>生成一只鸡</strong></li>
 </ul>
-<pre class="notranslate"><code class="notranslate">ent_create chicken;  
+<pre class="notranslate"><code class="notranslate">ent_create chicken;
 </code></pre>
 <ul>
 <li><strong>人机难度</strong></li>
@@ -1129,27 +1241,27 @@ say Hello!<span class="pl-c"><span class="pl-c">;</span>//全局喊话</span></p
 <ul>
 <li><strong>任意地点下包</strong></li>
 </ul>
-<pre class="notranslate"><code class="notranslate">mp_plant_c4_anywhere 1; 
+<pre class="notranslate"><code class="notranslate">mp_plant_c4_anywhere 1;
 </code></pre>
 <ul>
-<li><strong>C4引爆时间</strong></li>
+<li><strong>C4 引爆时间</strong></li>
 </ul>
-<pre class="notranslate"><code class="notranslate">mp_c4timer 40; 
+<pre class="notranslate"><code class="notranslate">mp_c4timer 40;
 </code></pre>
 <ul>
 <li><strong>自动回血</strong></li>
 </ul>
-<pre class="notranslate"><code class="notranslate">sv_regeneration_force_on 1; 
+<pre class="notranslate"><code class="notranslate">sv_regeneration_force_on 1;
 </code></pre>
 <ul>
 <li><strong>显示人物行走速度</strong></li>
 </ul>
-<pre class="notranslate"><code class="notranslate">cl_showpos 1; 
+<pre class="notranslate"><code class="notranslate">cl_showpos 1;
 </code></pre>
 <ul>
 <li><strong>武器掉落高亮</strong></li>
 </ul>
-<pre class="notranslate"><code class="notranslate">mp_weapons_glow_on_ground 1; 
+<pre class="notranslate"><code class="notranslate">mp_weapons_glow_on_ground 1;
 </code></pre>
 <h3>四、autoexec.cfg</h3>
 <div class="highlight highlight-source-ini"><pre class="notranslate">//tips01
@@ -1169,28 +1281,28 @@ bind <span class="pl-s"><span class="pl-pds">"</span>w<span class="pl-pds">"</sp
 bind <span class="pl-s"><span class="pl-pds">"</span>s<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+back<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+left<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>d<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+right<span class="pl-pds">"</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>mouse1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+attack<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>mouse1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+attack<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>mouse2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+attack2<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>e<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+use<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>f<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+lookatweapon<span class="pl-pds">"</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>space<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+jump<span class="pl-pds">"</span></span> 
-bind <span class="pl-s"><span class="pl-pds">"</span>ctrl<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+duck<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>space<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+jump<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>ctrl<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+duck<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>tab<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+showscores<span class="pl-pds">"</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>g<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>drop<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>g<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>drop<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>m<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>teammenu<span class="pl-pds">"</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>shift<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+sprint<span class="pl-pds">"</span></span> 
-bind <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>buymenu<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>shift<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+sprint<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>buymenu<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot1; att1<span class="pl-pds">"</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot2; att1<span class="pl-pds">"</span></span>  
-bind <span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot3; att1<span class="pl-pds">"</span></span> 
-bind <span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot11; att0<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot2; att1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot3; att1<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot11; att0<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>5<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot5; att1; switchhandsright<span class="pl-pds">"</span></span>
 
-bind <span class="pl-s"><span class="pl-pds">"</span>z<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot6; switchhandsright<span class="pl-pds">"</span></span> 
-bind <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot3; slot7; switchhandsright<span class="pl-pds">"</span></span> 
-bind <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot8; switchhandsright<span class="pl-pds">"</span></span> 
-bind <span class="pl-s"><span class="pl-pds">"</span>6<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot9; switchhandsright<span class="pl-pds">"</span></span> 
-bind <span class="pl-s"><span class="pl-pds">"</span>v<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot10; switchhandsright<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>z<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot6; switchhandsright<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot3; slot7; switchhandsright<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot8; switchhandsright<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>6<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot9; switchhandsright<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>v<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot10; switchhandsright<span class="pl-pds">"</span></span>
 
 bind <span class="pl-s"><span class="pl-pds">"</span>q<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>lastinv; att1;<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>i<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+spray_menu<span class="pl-pds">"</span></span>
@@ -1199,16 +1311,19 @@ bind <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</sp
 bind <span class="pl-s"><span class="pl-pds">"</span>mouse4<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+voicerecord<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>alt<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>clutch_mode_toggle<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>mouse5<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>player_ping<span class="pl-pds">"</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>mwheeldown<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+jump<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>mwheeldown<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+jump<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>mwheelup<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+jump<span class="pl-pds">"</span></span>
 bind <span class="pl-s"><span class="pl-pds">"</span>`<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>toggleconsole<span class="pl-pds">"</span></span>
 
 bind <span class="pl-s"><span class="pl-pds">"</span>t<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>switchhands<span class="pl-pds">"</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>h<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>toggleradarscale<span class="pl-pds">"</span></span> 
+bind <span class="pl-s"><span class="pl-pds">"</span>h<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>toggleradarscale<span class="pl-pds">"</span></span>
 
 //cfg
-bind <span class="pl-s"><span class="pl-pds">"</span>o<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec autoexec.cfg<span class="pl-pds">"</span></span>
-bind <span class="pl-s"><span class="pl-pds">"</span>\<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>key_listboundkeys<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>o<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec autoexec.cfg;say auto!<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>\<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>key_listboundkeys;say keys_log!<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>j<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec knife.cfg;say knife_model!<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>p<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec train.cfg;say train_model!<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>[<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>exec crosshair_view;say crosshair_view!<span class="pl-pds">"</span></span>
 
 //Crosshair
 cl_crosshair_drawoutline <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
@@ -1232,8 +1347,6 @@ cl_crosshairsize <span class="pl-s"><span class="pl-pds">"</span>0.901125<span c
 cl_crosshairstyle <span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span>
 cl_crosshairthickness <span class="pl-s"><span class="pl-pds">"</span>0.961664<span class="pl-pds">"</span></span>
 cl_crosshairusealpha <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>
-
-bind <span class="pl-s"><span class="pl-pds">"</span>[<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_crosshair_drawoutline <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_maxdist_splitratio <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_innermod <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_outermod <span class="pl-pds">"</span></span>0.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitdist <span class="pl-pds">"</span></span>7<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_friendly_warning <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_outlinethickness <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_t <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairalpha <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor 5;cl_crosshaircolor_b <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_g <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_r <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairdot <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap <span class="pl-pds">"</span></span>-3.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap_useweaponvalue <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairsize <span class="pl-pds">"</span></span>0.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairstyle <span class="pl-pds">"</span></span>4<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairthickness <span class="pl-pds">"</span></span>1.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairusealpha <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;<span class="pl-pds">"</span></span>
 
 //sniper_crosshair
 cl_crosshair_sniper_width <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>
@@ -1262,8 +1375,6 @@ cl_teamid_overhead_fade_near_crosshair <span class="pl-s"><span class="pl-pds">"
 <span class="pl-s">Viewmodel_offset_z -2</span>
 <span class="pl-s">viewmodel_presetpos 3</span>
 <span class="pl-s"></span>
-<span class="pl-s">bind "]" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"</span>
-<span class="pl-s"></span>
 <span class="pl-s">//Radar</span>
 <span class="pl-s">cl_radar_always_centered "0"</span>
 <span class="pl-s">cl_radar_scale "0.37"</span>
@@ -1275,8 +1386,8 @@ cl_teamid_overhead_fade_near_crosshair <span class="pl-s"><span class="pl-pds">"
 <span class="pl-s">con_enable "1"</span>
 <span class="pl-s">fps_max 999</span>
 <span class="pl-s">cl_join_advertise "2"</span>
-<span class="pl-s">cl_use_opens_buy_menu "0" </span>
-<span class="pl-s">cl_dm_buyrandomweapons 0 </span>
+<span class="pl-s">cl_use_opens_buy_menu "0"</span>
+<span class="pl-s">cl_dm_buyrandomweapons 0</span>
 <span class="pl-s">gameinstructor_enable "0"</span>
 <span class="pl-s">cl_autohelp "false"</span>
 <span class="pl-s">mm_dedicated_search_maxping "70"</span>
@@ -1286,41 +1397,54 @@ cl_teamid_overhead_fade_near_crosshair <span class="pl-s"><span class="pl-pds">"
 <span class="pl-s">cl_use_opens_buy_menu false</span>
 <span class="pl-s">cl_teamid_overhead_mode 3</span>
 <span class="pl-s"></span>
-<span class="pl-s"></span>
-<span class="pl-s">//knife_change</span>
-<span class="pl-s">bind "j" "mp_drop_knife_enable 1;knife"                                                    </span>
-<span class="pl-s">alias "knife" "knife1"</span>
-<span class="pl-s">alias "knife1" "subclass_change 500; alias knife knife2"</span>
-<span class="pl-s">alias "knife2" "subclass_change 503; alias knife knife3"</span>
-<span class="pl-s">alias "knife3" "subclass_change 505; alias knife knife4"</span>
-<span class="pl-s">alias "knife4" "subclass_change 506; alias knife knife5"</span>
-<span class="pl-s">alias "knife5" "subclass_change 507; alias knife knife6"</span>
-<span class="pl-s">alias "knife6" "subclass_change 508; alias knife knife7"</span>
-<span class="pl-s">alias "knife7" "subclass_change 509; alias knife knife8"</span>
-<span class="pl-s">alias "knife8" "subclass_change 512; alias knife knife9"</span>
-<span class="pl-s">alias "knife9" "subclass_change 514; alias knife knife10"</span>
-<span class="pl-s">alias "knife10" "subclass_change 515; alias knife knife11"</span>
-<span class="pl-s">alias "knife11" "subclass_change 516; alias knife knife12"</span>
-<span class="pl-s">alias "knife12" "subclass_change 517; alias knife knife13"</span>
-<span class="pl-s">alias "knife13" "subclass_change 518; alias knife knife14"</span>
-<span class="pl-s">alias "knife14" "subclass_change 519; alias knife knife15"</span>
-<span class="pl-s">alias "knife15" "subclass_change 520; alias knife knife16"</span>
-<span class="pl-s">alias "knife16" "subclass_change 521; alias knife knife17"</span>
-<span class="pl-s">alias "knife17" "subclass_change 522; alias knife knife18"</span>
-<span class="pl-s">alias "knife18" "subclass_change 523; alias knife knife19"</span>
-<span class="pl-s">alias "knife19" "subclass_change 524; alias knife knife20"</span>
-<span class="pl-s">alias "knife20" "subclass_change 525; alias knife knife21"</span>
-<span class="pl-s">alias "knife21" "subclass_change 526; alias knife knife1"</span>
-<span class="pl-s"></span>
 <span class="pl-s">//Ending</span>
-<span class="pl-s">echo AutoConfig Enabled!</span>
-<span class="pl-s">say Hello!</span>
-<span class="pl-s"></span>
-<span class="pl-s">//Train</span>
-<span class="pl-s">bind "k" "give weapon_knife"</span>
-<span class="pl-s">bind "l" "sv_rethrow_last_grenade"</span>
-<span class="pl-s">bind "n" "noclip"</span>
-<span class="pl-s">bind "p" "sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999;mp_buytime 99999;mp_ignore_round_win_conditions 1; mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_friendlyfire 1;ammo_grenade_limit_total 6;mp_spectators_max 9; mp_autokick 0; mp_restartgame 1;sv_grenade_trajectory_prac_pipreview 1; sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;sv_showimpacts 1;say Practice Enabled"</span></pre></div></div>
+<span class="pl-s">echo AutoConfig Enabled!</span></pre></div>
+<h3>五、knife.cfg</h3>
+<div class="highlight highlight-source-ini"><pre class="notranslate">//knife_change
+bind <span class="pl-s"><span class="pl-pds">"</span>j<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>mp_drop_knife_enable 1;knife<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>knife1<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 500; alias knife knife2<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 503; alias knife knife3<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife3<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 505; alias knife knife4<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife4<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 506; alias knife knife5<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife5<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 507; alias knife knife6<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife6<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 508; alias knife knife7<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife7<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 509; alias knife knife8<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife8<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 512; alias knife knife9<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife9<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 514; alias knife knife10<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife10<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 515; alias knife knife11<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife11<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 516; alias knife knife12<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife12<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 517; alias knife knife13<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife13<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 518; alias knife knife14<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife14<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 519; alias knife knife15<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife15<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 520; alias knife knife16<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife16<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 521; alias knife knife17<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife17<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 522; alias knife knife18<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife18<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 523; alias knife knife19<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife19<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 524; alias knife knife20<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife20<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 525; alias knife knife21<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>knife21<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>subclass_change 526; alias knife knife1<span class="pl-pds">"</span></span></pre></div>
+<h3>六、crosshair_view.cfg</h3>
+<div class="highlight highlight-source-ini"><pre class="notranslate">say niko_PI:<span class="pl-s"><span class="pl-pds">"</span>[<span class="pl-pds">"</span></span>,nanyi:<span class="pl-s"><span class="pl-pds">"</span>]<span class="pl-pds">"</span></span>
+//niko_PI
+bind <span class="pl-s"><span class="pl-pds">"</span>[<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>PI<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>PI<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>PI00<span class="pl-pds">"</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>PI00<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_crosshair_drawoutline <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_maxdist_splitratio <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_innermod <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitalpha_outermod <span class="pl-pds">"</span></span>0.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_dynamic_splitdist <span class="pl-pds">"</span></span>7<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_friendly_warning <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_outlinethickness <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;alias PI PI01;say niko_PI_01/02!<span class="pl-pds">"</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>PI01<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>cl_crosshair_t <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairalpha <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor 5;cl_crosshaircolor_b <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_g <span class="pl-pds">"</span></span>255<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshaircolor_r <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairdot <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap <span class="pl-pds">"</span></span>-3.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairgap_useweaponvalue <span class="pl-pds">"</span></span>0<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairsize <span class="pl-pds">"</span></span>0.9<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairstyle <span class="pl-pds">"</span></span>4<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairthickness <span class="pl-pds">"</span></span>1.5<span class="pl-s"><span class="pl-pds">"</span>;cl_crosshairusealpha <span class="pl-pds">"</span></span>1<span class="pl-s"><span class="pl-pds">"</span>;alias PI PI00;say niko_PI_02/02!<span class="pl-pds">"</span></span>
+
+//guangjiao
+bind <span class="pl-s"><span class="pl-pds">"</span>]<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>p<span class="pl-pds">"</span></span>
+alias <span class="pl-s"><span class="pl-pds">"</span>p<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>p01<span class="pl-pds">"</span></span>
+
+alias <span class="pl-s"><span class="pl-pds">"</span>p01<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;say guangjiao!<span class="pl-pds">"</span></span></pre></div>
+<h3>七、train.cfg</h3>
+<div class="highlight highlight-source-ini"><pre class="notranslate">//Train
+bind <span class="pl-s"><span class="pl-pds">"</span>k<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>give weapon_knife<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>l<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>sv_rethrow_last_grenade<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>n<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>noclip<span class="pl-pds">"</span></span>
+bind <span class="pl-s"><span class="pl-pds">"</span>p<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999;mp_buytime 99999;mp_ignore_round_win_conditions 1; mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_friendlyfire 1;ammo_grenade_limit_total 6;mp_spectators_max 9; mp_autokick 0; mp_restartgame 1;sv_grenade_trajectory_prac_pipreview 1; sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;sv_showimpacts 1;say Practice Enabled<span class="pl-pds">"</span></span></pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;">by RolinShmily 转载请注明出处</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
