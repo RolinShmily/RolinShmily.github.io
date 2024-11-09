@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sat, 09 Nov 2024 09:02:06 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## _游戏自用 config 文件与部分指令分享_&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sat, 09 Nov 2024 09:03:14 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## _游戏自用 config 文件与部分指令分享_&#13;
 &#13;
 ### 一、cfg 功能简介&#13;
 &#13;
@@ -332,6 +332,7 @@ bind '\' 'key_listboundkeys;say keys_log!'&#13;
 bind 'j' 'exec knife.cfg;say knife_model!'&#13;
 bind 'p' 'exec train.cfg;say train_model!'&#13;
 bind '[' 'exec crosshair_view;say crosshair_view!'&#13;
+bind ']' 'exec crosshair_view;say crosshair_view!'&#13;
 &#13;
 //Crosshair&#13;
 cl_crosshair_drawoutline '0'&#13;

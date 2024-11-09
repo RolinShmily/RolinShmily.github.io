@@ -331,6 +331,7 @@ bind "\" "key_listboundkeys;say keys_log!"
 bind "j" "exec knife.cfg;say knife_model!"
 bind "p" "exec train.cfg;say train_model!"
 bind "[" "exec crosshair_view;say crosshair_view!"
+bind "]" "exec crosshair_view;say crosshair_view!"
 
 //Crosshair
 cl_crosshair_drawoutline "0"
