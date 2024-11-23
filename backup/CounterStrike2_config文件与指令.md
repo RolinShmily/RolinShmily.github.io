@@ -121,7 +121,7 @@ bind "h" "toggleradarscale"; //切换小地图缩放
 bind "o" "exec autoexec.cfg";//加载自启动cfg
 bind "\" "key_listboundkeys";//在控制台打印所有按键功能
 
-bind "alt" "toggle cl_teamid_overhead_mode 1 3"
+bind "alt" "toggle cl_teamid_overhead_mode 1 3";//一键切换队友装备显示
 ```
 
 - **5. 灵敏度、准星、持枪视角、雷达**
