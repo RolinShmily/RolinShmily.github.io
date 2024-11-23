@@ -111,7 +111,7 @@ bind "i" "+spray_menu"; //打开涂鸦菜单
 bind "u" "messagemode2";//团队聊天框
 bind "y" "messagemode";//全局聊天框
 bind "mouse4" "+voicerecord";//打开麦克风
-bind "alt" "clutch_mode_toggle";//静音队伍语音
+bind "delete" "clutch_mode_toggle";//静音队伍语音
 bind "mouse5" "player_ping";//玩家标志
 bind "mwheeldown" "+jump" ;//滚轮跳
 bind "mwheelup" "+jump";//滚轮跳
@@ -121,6 +121,8 @@ bind "h" "toggleradarscale"; //切换小地图缩放
 
 bind "o" "exec autoexec.cfg";//加载自启动cfg
 bind "\" "key_listboundkeys";//在控制台打印所有按键功能
+
+bind "alt" "toggle cl_teamid_overhead_mode 1 3"
 ```
 
 - **5. 灵敏度、准星、持枪视角、雷达**
@@ -316,7 +318,7 @@ bind "i" "+spray_menu"
 bind "u" "messagemode2"
 bind "y" "messagemode"
 bind "mouse4" "+voicerecord"
-bind "alt" "clutch_mode_toggle"
+bind "delete" "clutch_mode_toggle"
 bind "mouse5" "player_ping"
 bind "mwheeldown" "+jump"
 bind "mwheelup" "+jump"
@@ -324,6 +326,8 @@ bind "`" "toggleconsole"
 
 bind "t" "switchhands"
 bind "h" "toggleradarscale"
+
+bind "alt" "toggle cl_teamid_overhead_mode 1 3"
 
 //cfg
 bind "o" "exec autoexec.cfg;say auto!"
