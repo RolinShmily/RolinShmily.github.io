@@ -79,7 +79,7 @@ bind "1" "slot1; att1" ; //主武器
 bind "2" "slot2; att1" ; //副武器
 bind "3" "slot3; att1" ; //近身武器
 bind "4" "slot11; att0" ; //电击枪
-bind "5" "slot5; att1; switchhandsright" ; //C4
+bind "5" "slot5; att1" ; //C4
 bind "q" "lastinv; att1;" ; //切换最近的武器装备
 ```
 
@@ -102,11 +102,11 @@ bind "g" "drop" ; // 丢弃装备
 bind "m" "teammenu"; //选择队伍
 bind "shift" "+sprint"; //静步
 bind "b" "buymenu" ;//购买菜单
-bind "z" "slot6; switchhandsright" ;//雷
-bind "x" "slot3; slot7; switchhandsright" ;//闪
-bind "c" "slot8; switchhandsright" ;//烟
-bind "6" "slot9; switchhandsright" ;//诱饵弹
-bind "v" "slot10; switchhandsright" ;//火
+bind "z" "slot6" ;//雷
+bind "x" "slot3; slot7" ;//闪
+bind "c" "slot8" ;//烟
+bind "6" "slot9" ;//诱饵弹
+bind "v" "slot10" ;//火
 bind "i" "+spray_menu"; //打开涂鸦菜单
 bind "u" "messagemode2";//团队聊天框
 bind "y" "messagemode";//全局聊天框
@@ -303,13 +303,13 @@ bind "1" "slot1; att1"
 bind "2" "slot2; att1"
 bind "3" "slot3; att1"
 bind "4" "slot11; att0"
-bind "5" "slot5; att1; switchhandsright"
+bind "5" "slot5; att1"
 
-bind "z" "slot6; switchhandsright"
-bind "x" "slot3; slot7; switchhandsright"
-bind "c" "slot8; switchhandsright"
-bind "6" "slot9; switchhandsright"
-bind "v" "slot10; switchhandsright"
+bind "z" "slot6"
+bind "x" "slot3; slot7"
+bind "c" "slot8"
+bind "6" "slot9"
+bind "v" "slot10"
 
 bind "q" "lastinv; att1;"
 bind "i" "+spray_menu"
