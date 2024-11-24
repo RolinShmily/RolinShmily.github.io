@@ -122,6 +122,7 @@ bind "o" "exec autoexec.cfg";//加载自启动cfg
 bind "\" "key_listboundkeys";//在控制台打印所有按键功能
 
 bind "alt" "toggle cl_teamid_overhead_mode 1 3";//一键切换队友装备显示
+bind "/" "radio2;slot12";//开关x射线光
 ```
 
 - **5. 灵敏度、准星、持枪视角、雷达**
@@ -326,6 +327,7 @@ bind "t" "switchhands"
 bind "h" "toggleradarscale"
 
 bind "alt" "toggle cl_teamid_overhead_mode 1 3"
+bind "/" "radio2;slot12"
 
 //cfg
 bind "o" "exec autoexec.cfg;say auto!"

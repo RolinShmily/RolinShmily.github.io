@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sat, 23 Nov 2024 14:19:04 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## _游戏自用 config 文件与部分指令分享_&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Sun, 24 Nov 2024 03:53:15 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## _游戏自用 config 文件与部分指令分享_&#13;
 &#13;
 ### 一、cfg 功能简介&#13;
 &#13;
@@ -123,6 +123,7 @@ bind 'o' 'exec autoexec.cfg';//加载自启动cfg&#13;
 bind '\' 'key_listboundkeys';//在控制台打印所有按键功能&#13;
 &#13;
 bind 'alt' 'toggle cl_teamid_overhead_mode 1 3';//一键切换队友装备显示&#13;
+bind '/' 'radio2;slot12';//开关x射线光&#13;
 ```&#13;
 &#13;
 - **5. 灵敏度、准星、持枪视角、雷达**&#13;
@@ -327,6 +328,7 @@ bind 't' 'switchhands'&#13;
 bind 'h' 'toggleradarscale'&#13;
 &#13;
 bind 'alt' 'toggle cl_teamid_overhead_mode 1 3'&#13;
+bind '/' 'radio2;slot12'&#13;
 &#13;
 //cfg&#13;
 bind 'o' 'exec autoexec.cfg;say auto!'&#13;
