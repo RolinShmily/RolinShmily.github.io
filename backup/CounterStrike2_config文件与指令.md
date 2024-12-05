@@ -192,7 +192,7 @@ cl_teammate_colors_show 2
 ```ini
 cl_hud_color "11";//HUD粉色
 con_enable "1";//启用控制台
-fps_max 999;//fps上限999
+fps_max 0;//fps无上限
 cl_join_advertise "2";//显示玩家计划加入反恐精英队
 cl_use_opens_buy_menu "0"; //禁用在靠近购买区域时按下使用键（E键）自动打开购买菜单的功能
 cl_dm_buyrandomweapons 0 ;//死亡竞技模式中禁用自动购买随机武器
@@ -396,7 +396,7 @@ cl_teammate_colors_show 2
 //Others
 cl_hud_color "11"
 con_enable "1"
-fps_max 999
+fps_max 0
 cl_join_advertise "2"
 cl_use_opens_buy_menu "0"
 cl_dm_buyrandomweapons 0
