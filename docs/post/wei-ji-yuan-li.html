@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/142618699?v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 微型计算机系统
+1. 硬件系统
+   - 1. 微型计算机（主机）
+   - - 1. 微处理器
+   - - - 1. ALU（运算器）
+   - - - 2. 寄存器
+   - - - 3. 控制器
+   - - 2. 存储器
+   - - 3. I/O接口
+   - - 4. 总线
+   - 2. 外设
+   - - 1. 输入设备
+   - - 2. 输出设备
+   - - 3. 存储设备
+2. 软件系统
+   - 系统软件
+   - 应用软件
+![微型计算机系统](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-03_16-59-41.png)
+
+
+## 一、系统总线
+1. 地址总线AB
+- 决定系统直接寻址存储器的范围
+2. 数据总线DB
+- 决定一次能够传送数据的位数
+3. 控制总线CB
+- 决定系统总线特点
+
+## 二、微处理器
+1. ALU 逻辑运算单元
+- 累加器A 与 总线提供数
+2. 寄存器组
+- PC——程序计数器
+- AR——地址寄存器
+- DR——数据寄存器
+- ID——指令译码器
+- IR——指令寄存器
+- 标志寄存器
+3. 可编程逻辑阵列（控制器）
+![CPU](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-03_17-00-02.png)
+
+## 三、存储器
+1. 内存单元的地址和内容
+- 每个内存单元包含8bit
+- 以字节为单位进行编制，1Byte=8bit
+- 内存单元也成地址单元
+2. 数据在内存中的存放规则
+- 数据在内存中从低地址到高地址顺序存放
+- 数据大于8bit，高字节放高地址，低字节放低地址
+- 1234H 放入为 100H：34H  101H：12H 
+- 高位数据存放地址定义为为低地址存放地址
+3. 数据单位概念
+- **位**（bit）：计算机所能表示的最小最基本的数据单位
+- **字节**（Byte）：8个二进制位组成。">
+<meta property="og:title" content="微机原理">
+<meta property="og:description" content="# 微型计算机系统
+1. 硬件系统
+   - 1. 微型计算机（主机）
+   - - 1. 微处理器
+   - - - 1. ALU（运算器）
+   - - - 2. 寄存器
+   - - - 3. 控制器
+   - - 2. 存储器
+   - - 3. I/O接口
+   - - 4. 总线
+   - 2. 外设
+   - - 1. 输入设备
+   - - 2. 输出设备
+   - - 3. 存储设备
+2. 软件系统
+   - 系统软件
+   - 应用软件
+![微型计算机系统](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-03_16-59-41.png)
+
+
+## 一、系统总线
+1. 地址总线AB
+- 决定系统直接寻址存储器的范围
+2. 数据总线DB
+- 决定一次能够传送数据的位数
+3. 控制总线CB
+- 决定系统总线特点
+
+## 二、微处理器
+1. ALU 逻辑运算单元
+- 累加器A 与 总线提供数
+2. 寄存器组
+- PC——程序计数器
+- AR——地址寄存器
+- DR——数据寄存器
+- ID——指令译码器
+- IR——指令寄存器
+- 标志寄存器
+3. 可编程逻辑阵列（控制器）
+![CPU](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-03_17-00-02.png)
+
+## 三、存储器
+1. 内存单元的地址和内容
+- 每个内存单元包含8bit
+- 以字节为单位进行编制，1Byte=8bit
+- 内存单元也成地址单元
+2. 数据在内存中的存放规则
+- 数据在内存中从低地址到高地址顺序存放
+- 数据大于8bit，高字节放高地址，低字节放低地址
+- 1234H 放入为 100H：34H  101H：12H 
+- 高位数据存放地址定义为为低地址存放地址
+3. 数据单位概念
+- **位**（bit）：计算机所能表示的最小最基本的数据单位
+- **字节**（Byte）：8个二进制位组成。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://RolinShmily.github.io/post/wei-ji-yuan-li.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/142618699?v=4">
+<title>微机原理</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">微机原理</h1>
+<div class="title-right">
+    <a href="https://RolinShmily.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>微型计算机系统</h1>
+<ol>
+<li>硬件系统
+<ul>
+<li>
+<ol>
+<li>微型计算机（主机）</li>
+</ol>
+</li>
+<li>
+<ul>
+<li>
+<ol>
+<li>微处理器</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ol>
+<li>ALU（运算器）</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ol start="2">
+<li>寄存器</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ol start="3">
+<li>控制器</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol start="2">
+<li>存储器</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol start="3">
+<li>I/O接口</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol start="4">
+<li>总线</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>外设</li>
+</ol>
+</li>
+<li>
+<ul>
+<li>
+<ol>
+<li>输入设备</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol start="2">
+<li>输出设备</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol start="3">
+<li>存储设备</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>软件系统
+<ul>
+<li>系统软件</li>
+<li>应用软件<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a4cd47f1dec35a4152043502027b02e1b5f0a5209d5cc565d00455360bf25128/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30335f31362d35392d34312e706e67"><img src="https://camo.githubusercontent.com/a4cd47f1dec35a4152043502027b02e1b5f0a5209d5cc565d00455360bf25128/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30335f31362d35392d34312e706e67" alt="微型计算机系统" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-03_16-59-41.png" style="max-width: 100%;"></a></li>
+</ul>
+</li>
+</ol>
+<h2>一、系统总线</h2>
+<ol>
+<li>地址总线AB</li>
+</ol>
+<ul>
+<li>决定系统直接寻址存储器的范围</li>
+</ul>
+<ol start="2">
+<li>数据总线DB</li>
+</ol>
+<ul>
+<li>决定一次能够传送数据的位数</li>
+</ul>
+<ol start="3">
+<li>控制总线CB</li>
+</ol>
+<ul>
+<li>决定系统总线特点</li>
+</ul>
+<h2>二、微处理器</h2>
+<ol>
+<li>ALU 逻辑运算单元</li>
+</ol>
+<ul>
+<li>累加器A 与 总线提供数</li>
+</ul>
+<ol start="2">
+<li>寄存器组</li>
+</ol>
+<ul>
+<li>PC——程序计数器</li>
+<li>AR——地址寄存器</li>
+<li>DR——数据寄存器</li>
+<li>ID——指令译码器</li>
+<li>IR——指令寄存器</li>
+<li>标志寄存器</li>
+</ul>
+<ol start="3">
+<li>可编程逻辑阵列（控制器）<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/61d37c41f3fa9b3272a5a924ca8305dc5ca3a84b9484a57feea745e502616b09/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30335f31372d30302d30322e706e67"><img src="https://camo.githubusercontent.com/61d37c41f3fa9b3272a5a924ca8305dc5ca3a84b9484a57feea745e502616b09/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30335f31372d30302d30322e706e67" alt="CPU" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-03_17-00-02.png" style="max-width: 100%;"></a></li>
+</ol>
+<h2>三、存储器</h2>
+<ol>
+<li>内存单元的地址和内容</li>
+</ol>
+<ul>
+<li>每个内存单元包含8bit</li>
+<li>以字节为单位进行编制，1Byte=8bit</li>
+<li>内存单元也成地址单元</li>
+</ul>
+<ol start="2">
+<li>数据在内存中的存放规则</li>
+</ol>
+<ul>
+<li>数据在内存中从低地址到高地址顺序存放</li>
+<li>数据大于8bit，高字节放高地址，低字节放低地址</li>
+<li>1234H 放入为 100H：34H  101H：12H</li>
+<li>高位数据存放地址定义为为低地址存放地址</li>
+</ul>
+<ol start="3">
+<li>数据单位概念</li>
+</ol>
+<ul>
+<li><strong>位</strong>（bit）：计算机所能表示的最小最基本的数据单位</li>
+<li><strong>字节</strong>（Byte）：8个二进制位组成。</li>
+<li>1K=1024，1M=1024K，1G=1024M，1T=1024G，1P=1024T</li>
+<li><strong>字</strong>（word）：作为整体的一组二进制数，为字节的整数倍。</li>
+<li><strong>字长</strong>：字的位数，一般一个字为16位，双字为32位。</li>
+<li><strong>内存容量</strong>：内存单元的个数，字节为单位，与CPU地址总线宽度有关：<strong>若地址总线宽度为n，则存储空间为2^n</strong></li>
+</ul>
+<ol start="4">
+<li>内存操作</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>cpu把内存单元地址放在AB上</li>
+</ol>
+</li>
+<li>若“读”：</li>
+<li>
+<ul>
+<li>
+<ol start="2">
+<li>cpu发出读命令</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol start="3">
+<li>内存读，数据放DB</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol start="4">
+<li>cpu从db取，放回寄存器</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>若“写”：</li>
+<li>
+<ul>
+<li>
+<ol start="2">
+<li>cpu把数放在db上</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol start="3">
+<li>内存写，把数写进内存单元<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/70a283e8d9fc98909493687176b9bca933a7d430c542dd6f118500180f5d3bbe/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30335f31372d32312d35322e706e67"><img src="https://camo.githubusercontent.com/70a283e8d9fc98909493687176b9bca933a7d430c542dd6f118500180f5d3bbe/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30335f31372d32312d35322e706e67" alt="内存操作" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-03_17-21-52.png" style="max-width: 100%;"></a></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2>四、I/O接口</h2>
+<ul>
+<li>主机cpu与外部设备之间进行数据传输的桥梁</li>
+</ul>
+<ol>
+<li>具有缓冲数据的传送功能，实现数据同步</li>
+<li>转换数据格式，串行与并行数据转换</li>
+<li>信号量转换，数字量与模拟量转换<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/70a283e8d9fc98909493687176b9bca933a7d430c542dd6f118500180f5d3bbe/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30335f31372d32312d35322e706e67"><img src="https://camo.githubusercontent.com/70a283e8d9fc98909493687176b9bca933a7d430c542dd6f118500180f5d3bbe/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30335f31372d32312d35322e706e67" alt="IO接口" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-03_17-21-52.png" style="max-width: 100%;"></a></li>
+</ol>
+<h2>五、指令执行过程</h2>
+<ul>
+<li>取指、译码、（取操作数）、执行、（存结果）</li>
+</ul>
+<ol>
+<li>指令在PC中，由操作系统装入</li>
+<li>程序计数器PC，会在指令结束后自动+1</li>
+<li>操作数来自存储器/寄存器</li>
+</ol>
+<h3>读指令过程</h3>
+<ol>
+<li>指令地址给PC</li>
+<li>PC给AR，PC+1</li>
+<li>AR内容送内存，地址译码后选择相应单元</li>
+<li>CPU控制器发读命令</li>
+<li>把选中单元内容读到DB</li>
+<li>把内容给数据寄存器DR</li>
+<li>指令译码：DR内容送指令寄存器IR，再送指令译码器ID</li>
+</ol>
+<h3>tips：</h3>
+<ul>
+<li>冯诺依曼计算机结构包括五个部分,分别是输入设备、运算器、控制器、存储器和输出设备。其核心原理即<strong>存储程序</strong>的工作原理。</li>
+</ul>
+<h1>计算机数制与运算</h1>
+<h2>计算机中的数的性质</h2>
+<ul>
+<li>计算机中的数也称为机器数，分为<strong>有符号数</strong>和<strong>无符号数</strong>，其中<strong>有符号数</strong>最高位为符号位，0代表正数，1代表负数。</li>
+<li>B代表2进制数，D代表10进制数，H代表16进制数。</li>
+<li>进制转换--略</li>
+</ul>
+<ol>
+<li>二进制数逻辑运算
+<ul>
+<li>与 AND</li>
+<li>或 OR</li>
+<li>非 NOT</li>
+<li>异或 XOR</li>
+</ul>
+</li>
+<li>机器数与真值
+<ul>
+<li>机器数所表示的值为真值（带符号）</li>
+<li>机器数：把一个数及其符号位在机器中用一组二进制数表示形式（在机器中默认为一个字节8位二进制数）</li>
+<li>机器数常用的表示方法有原码、反码、补码。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ul>
+<li>n为机器字长，原码定义：<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ed264f788299653254f1d7c033600831e91862f75ca32e3426a452fcf6bed47d/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30365f32312d30362d33352e706e67"><img src="https://camo.githubusercontent.com/ed264f788299653254f1d7c033600831e91862f75ca32e3426a452fcf6bed47d/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30365f32312d30362d33352e706e67" alt="原码" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-06_21-06-35.png" style="max-width: 100%;"></a></li>
+<li>反码定义：<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/b5470dbf9533db0e2e33e7c3b8cc8bd1e6d42fc8e02b3f7132aaa32a176141f3/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f30392d34382d31342e706e67"><img src="https://camo.githubusercontent.com/b5470dbf9533db0e2e33e7c3b8cc8bd1e6d42fc8e02b3f7132aaa32a176141f3/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f30392d34382d31342e706e67" alt="反码" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_09-48-14.png" style="max-width: 100%;"></a></li>
+<li>补码定义：<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/09c4e56e4993aaae468bbb2287e7ca9a8f3ff9595f291424d13afc9682fe8306/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f30392d34392d33342e706e67"><img src="https://camo.githubusercontent.com/09c4e56e4993aaae468bbb2287e7ca9a8f3ff9595f291424d13afc9682fe8306/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f30392d34392d33342e706e67" alt="补码" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_09-49-34.png" style="max-width: 100%;"></a></li>
+<li>8位二进制补码表示数的范围为-128~+127</li>
+<li>8位二进制反码表示数的范围为-127~+127</li>
+<li>8位二进制原码表示数的范围为-127~+127</li>
+</ul>
+<ol start="3">
+<li>进位与溢出
+<ul>
+<li>CF符号位进位状态，若有进位则为1，否则为0</li>
+<li>DF数值最高位进位状态，若有为1，否则为0</li>
+<li>OF=CF XOR DF，若为1，则溢出，否则未溢出</li>
+</ul>
+</li>
+<li>编码
+<ul>
+<li>BCD码：将1位十进制的0~9分别用4位二进制码表示</li>
+<li>8421 BCD码：用0000<del>1001来表示0</del>9</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>压缩型BCD码：用一个字节表示两位十进制数</li>
+<li>非压缩型BCD码：用一个字节表示一位十进制数</li>
+</ul>
+<hr>
+<ul>
+<li>ASCII字符编码<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5a2d2ad072a2639dd5ff05df9ab1c1cc6eceefa4317d340b71428f67ca7e3de2/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d30302d34342e706e67"><img src="https://camo.githubusercontent.com/5a2d2ad072a2639dd5ff05df9ab1c1cc6eceefa4317d340b71428f67ca7e3de2/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d30302d34342e706e67" alt="ASCII" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_10-00-44.png" style="max-width: 100%;"></a></li>
+<li>用7位二进制进行编码</li>
+<li>数字0<del>9的编码是0110000</del>0111001，它们的高3位均是011，后4位正好与其对应的二进制代码（BCD码）相符</li>
+<li>英文字母A<del>Z的ASCII码从1000001（41H）开始顺序递增，字母a</del>z的ASCII码从1100001（61H）开始顺序递增</li>
+</ul>
+<h1>80X86微处理器</h1>
+<ul>
+<li>集成度：晶体管数</li>
+<li>主频：主时钟频率</li>
+<li>数据总线：数据传送的公共通道</li>
+<li>地址总线：传送存储器或I/O端口的地址信息</li>
+<li>8086CPU有16根数据线和20根地址线</li>
+<li>8088片外数据线8根，而8086有16根</li>
+</ul>
+<h2>8086的内部结构</h2>
+<ul>
+<li>总线接口单元BIU：负责CPU对存储器和外设的访问</li>
+<li>执行单元EU：负责指令的译码执行，数据运算<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e750efa7b7f42477efee460ff049a6f744673e08fb487131b121823a62912733/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d31322d35332e706e67"><img src="https://camo.githubusercontent.com/e750efa7b7f42477efee460ff049a6f744673e08fb487131b121823a62912733/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d31322d35332e706e67" alt="8086内部结构" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_10-12-53.png" style="max-width: 100%;"></a></li>
+</ul>
+<h3>寄存器结构</h3>
+<ol>
+<li>功能：存放操作数地址、操作数、中间结果</li>
+<li>分类：通用寄存器、段寄存器、指令和变址寄存器、指令指针和标志寄存器</li>
+</ol>
+<h4>通用寄存器 X I P</h4>
+<ol>
+<li>数据寄存器 X
+<ul>
+<li>AX累加器:多用于存放中间运算结果</li>
+<li>BX基数寄存器:存放内存单元的偏移地址</li>
+<li>CX计数寄存器:存放循环次数或重复次数</li>
+<li>DX数据寄存器:存放一般数据</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>它们既是16位寄存器，每个寄存器又可以分开当作两个8位寄存器使用</li>
+</ul>
+<ol start="2">
+<li>变址寄存器 I
+<ul>
+<li>SI源变址寄存器:存放源操作数的偏移地址</li>
+<li>DI目的变址寄存器:存放目标操作数的偏移地址</li>
+</ul>
+</li>
+<li>指针寄存器 P
+<ul>
+<li>BP基址指针寄存器:存放内存单元的偏移地址</li>
+<li>SP堆栈指针寄存器:堆栈栈顶单元的偏移地址</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>这两个寄存器都默认与堆栈段寄存器（SS）联合使用</li>
+</ul>
+<h4>段寄存器 S</h4>
+<ul>
+<li>DS数据段寄存器</li>
+<li>ES附加段寄存器</li>
+<li>SS堆栈段寄存器</li>
+<li>CS代码段寄存器</li>
+</ul>
+<h4>控制寄存器</h4>
+<ul>
+<li>IP指令指针寄存器:下一条要执行的指令的偏移地址</li>
+<li>PSW状态标志寄存器FLAGS:16位寄存器，只用其中的9位，对应9个标志
+<ul>
+<li>状态标志：CF、SF、AF、PF、OF、ZF</li>
+<li>控制标志：IF、TF、DF<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/cf0e714f58f82c58c9c2598a611c144d16f179e0150e29ca62ddd3ac8023cae5/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d33312d33322e706e67"><img src="https://camo.githubusercontent.com/cf0e714f58f82c58c9c2598a611c144d16f179e0150e29ca62ddd3ac8023cae5/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d33312d33322e706e67" alt="标志寄存器" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_10-31-32.png" style="max-width: 100%;"></a></li>
+</ul>
+</li>
+</ul>
+<h5>标志寄存器</h5>
+<ol>
+<li>CF：进位标志位，最高位的进位借位，有则1</li>
+<li>PF：奇偶校验标志位，运算结果的低8位中有偶数个1时，为1</li>
+<li>AF：辅助进位标志位，低字节的低4位向高4位进位借位，为1</li>
+<li>ZF：全零标志位，结果为0时为1</li>
+<li>SF：符号标志位，结果为负时为1</li>
+<li>OF:溢出标志位，为1 则溢出</li>
+</ol>
+<hr>
+<ol>
+<li>TF：单步标志位，为1时，每执行完一条指令，自动产生一次内部中断，用于用户调试</li>
+<li>IF：中断标志位，为1时，运存CPU响应可屏蔽中断，为0时，即使外部设备有中断申请，CPU也不响应</li>
+<li>DF：方向标志位
+<ul>
+<li>DF=0，地址指针自动增量，即由低地址向高地址进行串操作</li>
+<li>DF=1，地址指针自动减量，即由高地址向低地址进行串操作<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f24f65272d82847ec75bebe43de1fbaf7dd45c6ad9523ee1c8a8415922a8b58a/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d32332d31342e706e67"><img src="https://camo.githubusercontent.com/f24f65272d82847ec75bebe43de1fbaf7dd45c6ad9523ee1c8a8415922a8b58a/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d32332d31342e706e67" alt="寄存器内部结构" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_10-23-14.png" style="max-width: 100%;"></a></li>
+</ul>
+</li>
+</ol>
+<h3>最小组态引脚</h3>
+<ol>
+<li>数据和地址引脚 A19/S6～A16/S3（Address/Status）</li>
+<li>数据和读写控制引脚
+<ul>
+<li>ALE（Address Latch Enable）</li>
+<li>IO/M*（Input and Output/Memory） 引脚输出高电平时，表示CPU将访问I/O端口， 引脚输出低电平时，表示CPU将访问存储器</li>
+<li>WR*（Write）写控制</li>
+<li>RD*（Read） 读控制</li>
+<li>READY 存储器或I/O口就绪。 在总线操作周期中，8086 CPU会在第3个时钟周期的前沿测试该引脚</li>
+<li>如果测到高有效，CPU直接进入第4个时钟周期</li>
+<li>如果测到无效，CPU将插入等待周期Tw<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f9b8b991ea4c4078ffdf080529e1f76816a8b51ff860b5cb883f49bc87095079/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d35392d34322e706e67"><img src="https://camo.githubusercontent.com/f9b8b991ea4c4078ffdf080529e1f76816a8b51ff860b5cb883f49bc87095079/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31302d35392d34322e706e67" alt="总线周期" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_10-59-42.png" style="max-width: 100%;"></a></li>
+<li>DEN*（Data Enable）  数据允许 有效时，表示当前数据总线上正在传送数据，<br>
+可利用他来控制对数据总线的驱动</li>
+<li>DT/R* 数据发送/接收 高电平时数据自CPU输出（发送） 低电平时数据输入CPU（接收）</li>
+<li>BHE*／S7(Bus High Enable／Status)</li>
+</ul>
+</li>
+<li>中断请求和响应引脚
+<ul>
+<li>INTR（Interrupt Request） 可屏蔽中断请求 有效时，表示请求设备向CPU申请可屏蔽中断</li>
+<li>INTA*（Interrupt Acknowledge） 可屏蔽中断响应 有效时，表示来自INTR引脚的中断请求已被CPU响应，CPU进入中断响应周期</li>
+<li>NMI（Non-Maskable Interrupt） 不可屏蔽中断请求 有效时，表示外界向CPU申请不可屏蔽中断</li>
+</ul>
+</li>
+<li>总线请求和响应引脚
+<ul>
+<li>HOLD 总线保持（即总线请求），有效时，表示总线请求设备向CPU申请占有总线</li>
+<li>HLDA（HOLD Acknowledge） 总线保持响应（即总线响应），有效时，表示CPU已响应总线请求并已将总线释放</li>
+</ul>
+</li>
+<li>其他引脚
+<ul>
+<li>RESET 复位请求 该信号有效，将使CPU回到其初始状态；当他再度返回无效时，CPU将重新开始工作</li>
+<li>CLK（Clock）  时钟输入</li>
+<li>Vcc</li>
+<li>GND</li>
+<li>MN/MX*（Minimum/Maximum）组态选择 接高电平时，8088引脚工作在最小组态；反之，8088工作在最大组态</li>
+<li>TEST* 测试</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ul>
+<li>CPU引脚是如何与外部连接的呢？</li>
+<li>总线形成</li>
+</ul>
+<h3>最大组态引脚</h3>
+<ul>
+<li>LOCK*(Lock)：引脚29，总线封锁信号，输出</li>
+<li>QS1、QS0(Instruction Queue Status)：引脚24、25，指令队列状态信号</li>
+<li>RQ/GT1、RQ/GT0(Request/Grant)：引脚30、31，总线请求信号(输入)/总线请求允许信号(输出)</li>
+</ul>
+<h3>8086微处理器时序</h3>
+<ul>
+<li>时序（Timing）描述各信号随时间变化的规律及信号间相互关系</li>
+<li>总线时序描述总线操作中相关信号的时序；它由总线主控设备产生</li>
+<li>总线操作是指CPU通过总线对外进行的各种操作</li>
+<li>时钟周期：由时钟发生器产生。是计算机内部的最小时间单位，用Ti表示。时钟周期等于主频的倒数。</li>
+<li>总线周期（Bus Cycle）是指CPU通过总线与外部（存储器或I/O端口）进行一次数据交换的过程，即完成一次总线操作的时间</li>
+<li>指令周期：通常需要一个或多个总线周期</li>
+</ul>
+<ol>
+<li>存储器写总线周期<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/bddc798e1bb88d3ff0eafdc365c4e1d93aea8d9850107f7b0534eca9a91b26a9/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31332d33392e706e67"><img src="https://camo.githubusercontent.com/bddc798e1bb88d3ff0eafdc365c4e1d93aea8d9850107f7b0534eca9a91b26a9/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31332d33392e706e67" alt="存储器写总线周期1" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_11-13-39.png" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c70663d15e4466304bb95d0ad292e9889b7f58cb8e42927276ab2cacaed3b0fd/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31342d33332e706e67"><img src="https://camo.githubusercontent.com/c70663d15e4466304bb95d0ad292e9889b7f58cb8e42927276ab2cacaed3b0fd/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31342d33332e706e67" alt="存储器写总线周期2" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_11-14-33.png" style="max-width: 100%;"></a></li>
+<li>存储器读总线周期<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/753a1522d64c0ae3b7a70c59bcdb06bac5f456f89a6af1672e3a902998968337/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31352d34332e706e67"><img src="https://camo.githubusercontent.com/753a1522d64c0ae3b7a70c59bcdb06bac5f456f89a6af1672e3a902998968337/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31352d34332e706e67" alt="存储器读总线周期1" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_11-15-43.png" style="max-width: 100%;"></a></li>
+<li>I/O写总线周期<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5462c0a551a6dcdb34f0da47b9f0a81ed4964ada05a5f3d910d1974abf366d90/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31362d33382e706e67"><img src="https://camo.githubusercontent.com/5462c0a551a6dcdb34f0da47b9f0a81ed4964ada05a5f3d910d1974abf366d90/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31362d33382e706e67" alt="I/O写总线周期1" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_11-16-38.png" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d305764aabaea531922276bd995cf65e6e7d87cfef953b824de164616adaf08/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31372d33322e706e67"><img src="https://camo.githubusercontent.com/3d305764aabaea531922276bd995cf65e6e7d87cfef953b824de164616adaf08/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31372d33322e706e67" alt="I/O写总线周期2" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_11-17-32.png" style="max-width: 100%;"></a></li>
+<li>I/O读总线周期<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c2095334eddf54406eb1e3b604fffd936d3a0e699838bad4c77abcf78e110d36/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31382d30322e706e67"><img src="https://camo.githubusercontent.com/c2095334eddf54406eb1e3b604fffd936d3a0e699838bad4c77abcf78e110d36/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31382d30322e706e67" alt="I/O读总线周期1" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_11-18-02.png" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/de69d78aebe301387ae27004fc986c2d27a7d59a47a2989fe34885fef3225693/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31382d35372e706e67"><img src="https://camo.githubusercontent.com/de69d78aebe301387ae27004fc986c2d27a7d59a47a2989fe34885fef3225693/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d31382d35372e706e67" alt="I/O读总线周期2" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_11-18-57.png" style="max-width: 100%;"></a></li>
+</ol>
+<hr>
+<ul>
+<li>T1、T2进行准备，T3、T4进行读写操作，Tw在ready为0时被插入一个或多个</li>
+<li>CPU 访问存储器进行读写操作时,通常在T3状态去检测 READY</li>
+</ul>
+<h3>8086存储空间</h3>
+<ul>
+<li>最低有效位LSB（Least Significant Bit）：指数据的最低位，即D0位</li>
+<li>最高有效位MSB（Most Significant Bit）：指数据的最高位，对应字节、字、双字分别指D7、D15、D31位</li>
+</ul>
+<h4>存储单元的地址属性</h4>
+<ol>
+<li>物理地址
+<ul>
+<li>8088/8086：20根地址线，可寻址220（1MB）个存储单元</li>
+<li>CPU送到AB上的20位地址称为物理地址</li>
+<li>8088/8086的地址总线宽度为20位，所以访问内存时必须指定一个20位的地址。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ul>
+<li>寄存器为16位，如何指定20位地址？ --存储器分段<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f8633a1f38e7507bf405394ea033da3bd3c966be34327e391121ea46d6d8e4c6/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d33312d33352e706e67"><img src="https://camo.githubusercontent.com/f8633a1f38e7507bf405394ea033da3bd3c966be34327e391121ea46d6d8e4c6/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31312d33312d33352e706e67" alt="存储器分段" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_11-31-35.png" style="max-width: 100%;"></a></li>
+<li>一个存储段，最小为16B，最大为64KB</li>
+</ul>
+<ol start="2">
+<li>逻辑地址 = 段地址（段基地址）: 偏移地址（段内偏移）<br>
+物理地址=段地址 × 10H + 偏移地址</li>
+</ol>
+<ul>
+<li>取指令时,段地址由CS寄存器提供,偏移地址由IP寄存器提供。</li>
+</ul>
+<h4>8086存储器分体结构</h4>
+<ul>
+<li>偶地址存储体+奇地址存储体，各为512KB，共1MB</li>
+<li>偶地址存储体与数据总线低8位相连，当A0=0时，被访问</li>
+<li>奇地址存储体与数据总线高8位相连，当A0=1时，被访问</li>
+</ul>
+<h4>堆栈操作</h4>
+<ul>
+<li>堆栈段由段定义语句在存储器中定义。可在存储器1MB空间内浮动，容量小于64KB。</li>
+<li>段基地址由堆栈寄存器SS指定，栈顶由堆栈指针SP指定。</li>
+<li>栈底为高地址，由段定义大小决定地址</li>
+</ul>
+<hr>
+<ul>
+<li>8086CPU数据总线的作用：传送指令机器码、立即数、偏移地址量</li>
+<li>指令队列作用：暂存预取指令</li>
+</ul>
+<h1>8086指令</h1>
+<h2>80X86 指令格式</h2>
+<ol>
+<li>指令由 <strong>操作码</strong> 和 <strong>操作数</strong> 两部分组成
+<ul>
+<li>eg： 操作码 操作数1 操作数2；</li>
+<li>操作数2，常被称为源操作数src</li>
+<li>操作数1，常被称为目的操作数dest</li>
+</ul>
+</li>
+<li>操作数分类
+<ul>
+<li>立即数：只能用于源操作数（取值范围同补码）</li>
+<li>寄存器操作数：8个通用寄存器和4个段寄存器的内容</li>
+<li>存储器操作数：分为字节、字、双字</li>
+</ul>
+</li>
+</ol>
+<h2>80X86 寻址方式</h2>
+<ol>
+<li>立即数寻址
+<ul>
+<li>只能作为源操作数src</li>
+<li>立即数为指令的一部分，紧跟在操作码之后放在代码段内</li>
+<li>数字以A~F开头，前边必须加0</li>
+</ul>
+</li>
+<li>寄存器寻址
+<ul>
+<li>源操作数与目的操作数字长要相同</li>
+<li>寄存器寻址与段地址无关</li>
+<li>ps：寄存器外不需方括号，与存储器寻址区分</li>
+</ul>
+</li>
+<li>存储器寻址
+<ul>
+<li>指令中只需给出操作数的偏移地址（有效地址EA）</li>
+<li>段地址一般在默认的段寄存器中</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3>存储器寻址</h3>
+<ol>
+<li>直接寻址
+<ul>
+<li>存储单元的有效地址EA直接由指令给出，一般存放在代码段中指令的操作码后。故需先求出操作数的物理地址，在从存储器中出的操作数。</li>
+<li>操作数物理地址=10H×DS+EA</li>
+<li>DS为默认的段寄存器</li>
+<li>指令中的有效地址表示为 [立即数]</li>
+</ul>
+</li>
+<li>寄存器间接寻址
+<ul>
+<li>操作数的有效地址放在寄存器中</li>
+<li>使用的寄存器为BX、BP、SI、DI</li>
+<li>因此代码中源操作数src不能出现[AX][CX][DX]</li>
+<li>ps：寄存器名称外必须加方括号</li>
+<li>段超越前缀是用来从默认段以外的段中取得数据</li>
+<li>
+<h4>默认段</h4>
+</li>
+<li>
+<ol>
+<li>指定寄存器BX、SI、DI，默认操作数放在DS中</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>指令寄存器BP，默认操作数放在SS中</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>寄存器相对寻址
+<ul>
+<li>操作数的有效地址是基址或变址寄存器的内容与8位或16位位移量之和</li>
+<li>EA=[BX]/[BP]/[SI]/[DI]+偏移量</li>
+<li>寄存器外必须加方括号，偏移量可在括号内也可括号外</li>
+</ul>
+</li>
+<li>基址变址寻址
+<ul>
+<li>操作数有效地址是一个基址寄存器（BX、BP）的内容与一个变址寄存器（SI、DI）的内容之和</li>
+<li>注意两组寄存器的对应关系</li>
+</ul>
+</li>
+<li>基址变址相对寻址
+<ul>
+<li>操作数有效地址是一个基址寄存器和一个变址寄存器的内容之和，再加上8位或16位偏移量</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="4">
+<li>I/O端口寻址
+<ul>
+<li>端口直接寻址方式：端口地址用8位立即数表示</li>
+<li>端口间接寻址方式：当端口地址大于FFH时，必须事先将端口地址放在DX寄存器中</li>
+</ul>
+</li>
+<li>地址寻址
+<ul>
+<li>找出程序转移的地址</li>
+<li>分为：段内直接/间接寻址、段间直接/间接寻址</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3>地址寻址</h3>
+<ol>
+<li>段内直接寻址
+<ul>
+<li>转移的目标地址由指令直接给出，实际上是一个相对于IP的位移量</li>
+</ul>
+</li>
+<li>段内间接寻址
+<ul>
+<li>转移的目标地址由寄存器或存储单元的内容给出</li>
+</ul>
+</li>
+<li>段间直接寻址
+<ul>
+<li>指令中直接给出要转移的目的段地址和偏移地址</li>
+<li>若为符号地址，其前方要加操作符FAR PTR</li>
+</ul>
+</li>
+<li>段间间接寻址
+<ul>
+<li>转移的目标地址（段和偏移）在两个相邻的字存储单元中<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f9856099f35ad499922acf66c07c695c6f17c8f3f0993ebdb17977a90da6adea/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31352d30342d32342e706e67"><img src="https://camo.githubusercontent.com/f9856099f35ad499922acf66c07c695c6f17c8f3f0993ebdb17977a90da6adea/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31352d30342d32342e706e67" alt="段间间接寻址" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_15-04-24.png" style="max-width: 100%;"></a></li>
+</ul>
+</li>
+</ol>
+<h2>80X86指令系统</h2>
+<ul>
+<li>操作数不能是CS和IP</li>
+<li>除串操作指令外，其他指令的源和目的操作数不能都是存储器操作数</li>
+<li>src和dest不能都是段寄存器</li>
+<li>src与dest至少有一个类型要能确定，二者类型确定时必须一致</li>
+</ul>
+<h3>数据传送指令</h3>
+<h4>1. 通用数据传送</h4>
+<ol>
+<li>mov dest，src
+<ul>
+<li>如果两个操作数都不是寄存器，则要表明dest的类型</li>
+<li>mov不能再两个存储单元之间直接传送数据，也不能在段寄存器之间直接传送数据，还不能再立即数和段寄存器之间传送</li>
+</ul>
+</li>
+<li>堆栈操作指令
+<ul>
+<li>堆栈以字为单位进行压入弹出</li>
+<li>SS指示段基址，SP指示栈顶、其初值决定堆栈大小</li>
+</ul>
+</li>
+<li>压栈 push src：将src压入</li>
+<li>出栈 pop dest：取出栈顶给dest</li>
+</ol>
+<ul>
+<li>SP自动进行增减+—2</li>
+</ul>
+<ol start="3">
+<li>交换指令XCHG
+<ul>
+<li>XCHG dest，src 将两个操作数内容互换</li>
+<li>两操作数中必须有一个寄存器</li>
+<li>操作数不能为段寄存器或立即数</li>
+</ul>
+</li>
+<li>查表转换指令XLAT
+<ul>
+<li>XLAT ；AL&lt;-[(BX)+(AL)]</li>
+<li>使用前建立表格</li>
+<li>将转换表起始地址装入BX寄存器</li>
+<li>将要查的某项与表头地址的偏移量给AL</li>
+<li>执行后，从AL中查到转换后的代码值</li>
+</ul>
+</li>
+</ol>
+<h4>2.输入输出指令</h4>
+<ul>
+<li>I/O指令用于数据的输入输出</li>
+<li>输入输出操作必须以累加器AX为中建桥梁</li>
+<li>指令中必须指出I/O端口地址，地址放在DX中</li>
+</ul>
+<ol>
+<li>输入指令IN
+<ul>
+<li>IN acc,port/DX</li>
+<li>acc为累加器AX，port为0~255端口地址</li>
+</ul>
+</li>
+<li>输出指令OUT
+<ul>
+<li>OUt port/DX,acc</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>输入输出指令不影响标志位</li>
+</ul>
+<h4>3.地址目标传送指令</h4>
+<ol>
+<li>LEA取有效地址指令
+<ul>
+<li>LEA dest，src</li>
+<li>src必须为存储单元，dest是除段寄存器外的16位寄存器</li>
+</ul>
+</li>
+<li>LDS将双字指针送到寄存器和DS指令
+<ul>
+<li>LDS dest，src</li>
+<li>src的存储单元中，取双字的前两个字节（高地址，表示变量的偏移地址）送入dest，后两个字节（低地址，表示变量的段地址）送入DS寄存器</li>
+<li>dest常用SI寄存器，不能是段寄存器</li>
+</ul>
+</li>
+<li>LES 将双字指针送到寄存器和ES指令
+<ul>
+<li>LES dest，src</li>
+<li>同上</li>
+<li>dest常用DI寄存器</li>
+</ul>
+</li>
+</ol>
+<h4>4,标志传送指令</h4>
+<ol>
+<li>读标志指令LAHF
+<ul>
+<li>把标志寄存器低8位中的5个标志位传送到AH中的指定位<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5dd409719471a6f13e10034101b5119ada03b7e7078a07f6e3410ee7b9654489/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31352d34302d33302e706e67"><img src="https://camo.githubusercontent.com/5dd409719471a6f13e10034101b5119ada03b7e7078a07f6e3410ee7b9654489/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31352d34302d33302e706e67" alt="LAHF" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_15-40-30.png" style="max-width: 100%;"></a></li>
+</ul>
+</li>
+<li>设置标志指令SAHF
+<ul>
+<li>与LAHF功能相反</li>
+</ul>
+</li>
+<li>PUSHF标志入栈指令
+<ul>
+<li>将标志寄存器PSW中的内容压入堆栈，并修改指针</li>
+</ul>
+</li>
+<li>POPF标志出栈指令
+<ul>
+<li>将堆栈指针SP所指的一个字弹入标志寄存器PSW，并修改指针</li>
+</ul>
+</li>
+</ol>
+<h3>算术运算指令</h3>
+<h4>1.加法指令</h4>
+<ol>
+<li>不带进位的加法指令ADD
+<ul>
+<li>ADD dest，src</li>
+<li>影响全部状态标志位</li>
+</ul>
+</li>
+<li>带进位的加法指令ADC
+<ul>
+<li>ADC dest，src</li>
+<li>运算时要加上CF的内容，即dest&lt;-dest+src+CF</li>
+</ul>
+</li>
+<li>加1指令INC
+<ul>
+<li>INC reg/mem</li>
+<li>对指定操作数加1</li>
+<li>除CF外，其他状态标志都会影响</li>
+</ul>
+</li>
+</ol>
+<h4>2.减法指令</h4>
+<ol>
+<li>不带借位的减法指令SUB
+<ul>
+<li>SUB dest，src</li>
+<li>影响全部6个状态标志位</li>
+</ul>
+</li>
+<li>带借位的建发指定SBB
+<ul>
+<li>SBB dest,src</li>
+<li>dest&lt;-dest-src-CF</li>
+<li>影响全部转台标志位</li>
+</ul>
+</li>
+<li>减1指令DEC
+<ul>
+<li>DEC reg/mem</li>
+<li>除CF外，其他状态标志位均受到影响</li>
+</ul>
+</li>
+<li>求补指令NEG
+<ul>
+<li>NEG reg/mem</li>
+<li>对指定的操作数求补码，原理是拿0减操作数</li>
+<li>若操作数为正数，则结果为该数负数的补码</li>
+<li>若操作数为负数，则结果为该数的绝对值</li>
+</ul>
+</li>
+<li>比较指令CMP
+<ul>
+<li>CMP dest,src ; dest-src</li>
+<li>CMP操作将两数相减，但不送结果，只是将状态反映在标志位上。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>CMP判断结果，根据ZF判断相等，若为1则相等。</li>
+<li>
+<ol>
+<li>比较无符号数，若CF=0，则dest&gt;src,反之</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>比较有符号数，若OF XOR SF =0,则dest&gt;src,反之</li>
+</ol>
+</li>
+</ul>
+<h4>3.乘法指令</h4>
+<ul>
+<li>AL（AX）为隐含的被乘数寄存器</li>
+<li>AX(DX:AX)为隐含的乘积寄存器</li>
+<li>src不能是立即数</li>
+<li>执行后，除CF和OF外，其他标志位无定义</li>
+<li>8位×8位-&gt;16位乘积</li>
+</ul>
+<ol>
+<li>无符号数乘法指令MUL
+<ul>
+<li>MUL reg/mem (src)</li>
+<li>只影响CF和OF</li>
+<li>若结果的高半部分不为零，则CF和OF均为1，否则为0</li>
+</ul>
+</li>
+<li>有符号数乘法指令IMUL
+<ul>
+<li>IMUL reg/mem (src)</li>
+<li>乘积的高半部分不是低半部分的符号拓展（不全为0或1），则CF和OF均为1，否则为0</li>
+</ul>
+</li>
+</ol>
+<h4>4.除法指令</h4>
+<ul>
+<li>16位/8位-&gt;8位商，8位余数</li>
+<li>AX（DX：AX）被除数隐含</li>
+<li>AL（AX）商隐含</li>
+<li>AH（DX）余数隐含</li>
+<li>执行后，所有状态标志位均无定义</li>
+</ul>
+<ol>
+<li>无符号数触发指令DIV
+<ul>
+<li>DIV reg/mem (src)</li>
+<li>若除数为0或AL中的商大于FFH，则CPU产生一个0号中断</li>
+</ul>
+</li>
+<li>有符号数除法指令IDIV
+<ul>
+<li>IDIV reg/mem (src)</li>
+<li>余数符号总是与被除数符号相同</li>
+</ul>
+</li>
+<li>CBW把字节转换为字
+<ul>
+<li>CBW</li>
+<li>把AL中的字节的符号位扩充到AH的所有位</li>
+</ul>
+</li>
+<li>CWD把字转换为双字
+<ul>
+<li>CWD</li>
+<li>把AX中字的符号值扩充到DX寄存器的所有位</li>
+</ul>
+</li>
+</ol>
+<h3>逻辑运算和移位指令</h3>
+<h4>1.逻辑运算</h4>
+<ul>
+<li>按bit操作，没有进位借位</li>
+</ul>
+<ol>
+<li>逻辑 与 AND<br>
+-AND dest,src</li>
+<li>逻辑 或 OR
+<ul>
+<li>OR dest,src</li>
+</ul>
+</li>
+<li>逻辑 非 NOT
+<ul>
+<li>NOT mem/reg</li>
+</ul>
+</li>
+<li>逻辑 异或 XOR
+<ul>
+<li>XOR dest,src</li>
+</ul>
+</li>
+<li>测试指令TEST
+<ul>
+<li>TEST dest,src</li>
+<li>与AND指令做相同与操作，但不将结果送入dest，只影响标志位</li>
+</ul>
+</li>
+</ol>
+<h4>2.移位指令</h4>
+<ol>
+<li>非循环移位指令
+<ul>
+<li>算术/逻辑左移 SAL/SHL dest,计数值;  LSB补0,最高有效位MSB进CF</li>
+<li>若移位1次，则计数值为1，大于一次，要将移位次数送进CL</li>
+<li>移位1次，最高位改变则OF置1，多次时不确定</li>
+<li>CF总等于最后被移出的值</li>
+<li>每移一次相当于乘2</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ul>
+<li>逻辑右移 SHR dest,计数值</li>
+<li>每移一次，低位进CF，高位补0</li>
+<li>相当于除以2 但丢掉余数</li>
+</ul>
+<hr>
+<ul>
+<li>算术右移 SAR dest,计数值</li>
+<li>每移一次，低位进CF，高位不变</li>
+<li>相当于除以2</li>
+</ul>
+<ol start="2">
+<li>循环移位指令
+<ul>
+<li>循环左移 ROL dest，计数值</li>
+<li>循环右移 ROR dest，计数值</li>
+<li>通过进位位循环左移 RCL dest，计数值</li>
+<li>通过进位位循环右移 RCR dest，计数值<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5cc2550d9b2279aed20d09ce3bed98fcb2db59f0243004d1408bb94da9c055d6/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31362d33312d32322e706e67"><img src="https://camo.githubusercontent.com/5cc2550d9b2279aed20d09ce3bed98fcb2db59f0243004d1408bb94da9c055d6/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31362d33312d32322e706e67" alt="循环移位" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_16-31-22.png" style="max-width: 100%;"></a></li>
+<li>移位次数由CL寄存器指定，默认为1</li>
+<li>CF的值总是由最后一次被移出的值决定</li>
+<li>OF在移位次数为1时有效，最高位发生变化，OF置1，反之</li>
+</ul>
+</li>
+</ol>
+<h3>字符串处理指令</h3>
+<ul>
+<li>隐含约定：</li>
+</ul>
+<ol>
+<li>源串：起始地址为DS:SI</li>
+<li>目的串：起始地址ES:DI，不允许使用段超越前缀修改</li>
+<li>指针：每执行一次指令，SI和DI会自动修改</li>
+<li>DF标志：控制字符串处理方向。DF=0递增，DF=1递减。STD使DF置1，CLD将DF清0</li>
+<li>串长度：要处理的字符串长度放在CX寄存器</li>
+</ol>
+<ul>
+<li>重复前缀：</li>
+<li>每重复一次，CX的值自动减1</li>
+</ul>
+<ol>
+<li>REP：无条件重复(Repeat)，常与(MOVS)连用，连续传送字符串。直到传送完毕，即CX＝0为止</li>
+<li>REPE/REPZ：相等/结果为零则重复(Repeat while Equal/Zero)，连续比较字符串。当两个字符串对应字符相等(ZF＝1)和CX≠0时，则重复进行比较，直到ZF＝0或CX＝0为止</li>
+<li>REPNE/REPNZ ：不相等/结果非零则重复Repeat while Not Equal/NotZero),常与(SCAS)连用，当结果非0(ZF＝0)和CX≠0时，重复进行扫描，直到ZF＝1或CX＝0为止<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/33554ecb4ce5dfab60254a8c80a27cb23f1472ca442f999e1c6ac0e733b2dd6a/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31362d34312d30312e706e67"><img src="https://camo.githubusercontent.com/33554ecb4ce5dfab60254a8c80a27cb23f1472ca442f999e1c6ac0e733b2dd6a/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31362d34312d30312e706e67" alt="串指令使用方法" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_16-41-01.png" style="max-width: 100%;"></a></li>
+</ol>
+<hr>
+<ol>
+<li>串传送指令MOVS
+<ul>
+<li>MOVS dest,src</li>
+<li>dest用DS:SI, src用ES:DI</li>
+</ul>
+</li>
+<li>串比较指令CMPS
+<ul>
+<li>CMPS dest,src</li>
+<li>CMPSB; SI+-1,DI+-1</li>
+<li>CMPSW; SI+-2.DI+-2</li>
+</ul>
+</li>
+<li>串扫描指令SCAS
+<ul>
+<li>将AL/AX的内容与目的串中的字符逐个进行比较，结果只影响标志位</li>
+</ul>
+</li>
+<li>串装入指令LODS
+<ul>
+<li>从串中取一个元素送到累加器</li>
+<li>通常不加重复前缀</li>
+</ul>
+</li>
+<li>串存储指令STOS
+<ul>
+<li>用于把一块存储区域填充成某一相同值</li>
+<li>允许前缀REP</li>
+</ul>
+</li>
+</ol>
+<h3>控制转移类指令</h3>
+<ul>
+<li>改变CS和IP的值，从而改变指令的执行顺序</li>
+</ul>
+<h4>1.转移指令</h4>
+<ol>
+<li>无条件转移指令 JMP
+<ul>
+<li>段内直接：JMP disp，指令中的位移量加到IP，CS不变</li>
+<li>段内间接：JMP reg/mem， 16位偏移地址送IP，CS不变</li>
+<li>段间直接：JMP segment:offset。将16位的段和16位的偏移地址送CS和IP</li>
+<li>段间间接：JMP mem32。将16位段和16位偏移地址送到CS和IP</li>
+</ul>
+</li>
+<li>条件转移指令
+<ul>
+<li>均为段内短转移</li>
+<li>目的地址=当前IP值+8位相对位移量</li>
+<li>直接标志转移指令<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f81956bfef717a0bfab4438c194fb7aefebbe348f7e77fc82a30cd58050ea42c/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31372d35302d34312e706e67"><img src="https://camo.githubusercontent.com/f81956bfef717a0bfab4438c194fb7aefebbe348f7e77fc82a30cd58050ea42c/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31372d35302d34312e706e67" alt="直接标志转移指令" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_17-50-41.png" style="max-width: 100%;"></a></li>
+<li>间接标志转移</li>
+<li>指令应用通常放在比较指令CMP之后</li>
+<li>根据CX的内容来决定是否转移的转移指令 JCXZ label，若CX=0，则转移到label处执行。<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/55c7b0495b7908a0ac71ba458d1f51562fece527f7cff023a057d328cae9fd7f/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31372d35352d30302e706e67"><img src="https://camo.githubusercontent.com/55c7b0495b7908a0ac71ba458d1f51562fece527f7cff023a057d328cae9fd7f/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f536e6970617374655f323032342d31322d30375f31372d35352d30302e706e67" alt="间接标志转移指令" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-12-07_17-55-00.png" style="max-width: 100%;"></a></li>
+</ul>
+</li>
+</ol>
+<h4>2.循环控制指令</h4>
+<ul>
+<li>增强型的条件转移指令，重复次数存于CX寄存器中</li>
+<li>指令字节数均为2，第一字节为操作码，第二字节是8位偏移量</li>
+<li>偏移量都是负值</li>
+<li>不影响任何标志位</li>
+</ul>
+<ol>
+<li>loop循环指令
+<ul>
+<li>控制执行一系列指令，每执行一次，CX自动减1</li>
+<li>LOOP 短标号</li>
+</ul>
+</li>
+<li>LOOPE/LOOPZ相等或结果为0时循环
+<ul>
+<li>LOOPE label或LOOPZ label</li>
+</ul>
+</li>
+<li>LOOPNE/LOONZ不相等或结果不为零时循环
+<ul>
+<li>同上</li>
+</ul>
+</li>
+</ol>
+<h4>3.过程调用和返回指令</h4>
+<ul>
+<li>过程：程序中能完成特定功能而又独立的模块，也称子程序</li>
+<li>过程嵌套:在过程中又去调用另一个过程</li>
+<li>过程调用和返回指令的格式： CALL 过程名; RET</li>
+</ul>
+<ol>
+<li>调用指令CALL
+<ul>
+<li>CALL sub；</li>
+<li>sub为子程序入口，根据子程序入口寻址方式，子程序调用四类</li>
+<li>段内直接调用、段内间接调用、段间直接调用、段间间接调用</li>
+</ul>
+</li>
+<li>返回指令RET
+<ul>
+<li>从栈中弹出返回地址，使程序返回主程序继续执行。</li>
+</ul>
+</li>
+</ol>
+<h4>4. 中断指令</h4>
+<ul>
+<li>中断调用INT n</li>
+<li>中断返回IRET</li>
+</ul>
+<h3>处理器控制指令</h3>
+<h4>1.标志操作指令</h4>
+<ol>
+<li>CF设置指令
+<ul>
+<li>CLC；CF为0</li>
+<li>STC；CF为1</li>
+<li>CMC；CF变反</li>
+</ul>
+</li>
+<li>DF设置指令
+<ul>
+<li>CLD；DF为0（串操作指针移动方向，从低到高）</li>
+<li>STD；DF取1</li>
+</ul>
+</li>
+<li>IF设置指令
+<ul>
+<li>CLI； IF取0（进制INTR中断）</li>
+<li>STI；IF取1</li>
+</ul>
+</li>
+</ol>
+<h4>2.外部同步指令</h4>
+<ol>
+<li>ESC换码指令
+<ul>
+<li>用来实现8086对8087协处理器的控制</li>
+</ul>
+</li>
+<li>WAIT等待指令</li>
+<li>LOCK封锁总线指令</li>
+</ol>
+<ul>
+<li>一种前缀，加在指令前端，用来维持8086的总线封锁信号有效，禁止其他协处理器使用总线。</li>
+</ul>
+<h4>3.停机指令和空操作指令</h4>
+<ol>
+<li>HLT停机指令（halt）
+<ul>
+<li>CPU进入暂停状态，不进行任何操作。</li>
+<li>在RESET线上加复位信号、在NMI引脚出现中断请求信号、在允许中断的情况下在INTR引脚上出现中断请求信号，出现如上情况，才会脱离暂停状态</li>
+</ul>
+</li>
+<li>NOP空操作或无操作指令
+<ul>
+<li>单字节指令，执行需耗费3个时钟周期 ，但不进行任何操作。</li>
+</ul>
+</li>
+</ol></div>
+<div style="font-size:small;margin-top:8px;float:right;">by RolinShmily 转载请注明出处</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://RolinShmily.github.io">RolinShmily</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("06/22/2024"!=""){
+    var startSite=new Date("06/22/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","RolinShmily/RolinShmily.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+
+</html>
