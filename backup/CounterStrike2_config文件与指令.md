@@ -122,7 +122,11 @@ bind "o" "exec autoexec.cfg";//加载自启动cfg
 bind "\" "key_listboundkeys";//在控制台打印所有按键功能
 
 bind "alt" "toggle cl_teamid_overhead_mode 1 3";//一键切换队友装备显示
-bind "/" "radio2;slot12";//开关x射线光
+bind "ralt" "radio2;slot12";//无线电与X光
+
+bind "-" "toggle cl_draw_only_deathnotices 1 0";//UI开关
+bind "=" "toggle cl_drawhud_force_radar 1 0";//雷达显示
+
 ```
 
 - **5. 灵敏度、准星、持枪视角、雷达**
@@ -327,8 +331,10 @@ bind "t" "switchhands"
 bind "h" "toggleradarscale"
 
 bind "alt" "toggle cl_teamid_overhead_mode 1 3"
-bind "/" "radio2;slot12"
+bind "ralt" "radio2;slot12"
 
+bind "-" "toggle cl_draw_only_deathnotices 1 0"
+bind "=" "toggle cl_drawhud_force_radar 1 0"
 //cfg
 bind "o" "exec autoexec.cfg;say auto!"
 bind "\" "key_listboundkeys;say keys_log!"
