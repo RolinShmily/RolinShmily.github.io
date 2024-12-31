@@ -103,7 +103,7 @@ bind "m" "teammenu"; //选择队伍
 bind "shift" "+sprint"; //静步
 bind "b" "buymenu" ;//购买菜单
 bind "z" "slot6" ;//雷
-bind "x" "slot3; slot7" ;//闪
+bind "x" "slot3" ;//闪
 bind "c" "slot8" ;//烟
 bind "6" "slot9" ;//诱饵弹
 bind "v" "slot10" ;//火
@@ -179,9 +179,9 @@ cl_teamid_overhead_fade_near_crosshair "0.5"
 ;//持枪视角
 viewmodel_fov 68
 Viewmodel_offset_x 2.5
-Viewmodel_offset_y -1
-Viewmodel_offset_z -2
-viewmodel_presetpos 3
+Viewmodel_offset_y 0
+Viewmodel_offset_z -1.5
+viewmodel_presetpos 2
 ;// "]"键超广角持枪
 bind "]" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;"
 ;//雷达
@@ -312,7 +312,7 @@ bind "4" "slot11; att0"
 bind "5" "slot5; att1"
 
 bind "z" "slot6"
-bind "x" "slot3; slot7"
+bind "x" "slot3"
 bind "c" "slot8"
 bind "6" "slot9"
 bind "v" "slot10"
@@ -389,9 +389,9 @@ cl_teamid_overhead_fade_near_crosshair "0.5"
 //Gun's view
 viewmodel_fov 68
 Viewmodel_offset_x 2.5
-Viewmodel_offset_y -1
-Viewmodel_offset_z -2
-viewmodel_presetpos 3
+Viewmodel_offset_y 0
+Viewmodel_offset_z -1.5
+viewmodel_presetpos 2
 
 //Radar
 cl_radar_always_centered "0"
