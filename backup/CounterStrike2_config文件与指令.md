@@ -103,7 +103,7 @@ bind "m" "teammenu"; //选择队伍
 bind "shift" "+sprint"; //静步
 bind "b" "buymenu" ;//购买菜单
 bind "z" "slot6" ;//雷
-bind "x" "slot3" ;//闪
+bind "x" "slot7" ;//闪
 bind "c" "slot8" ;//烟
 bind "6" "slot9" ;//诱饵弹
 bind "v" "slot10" ;//火
@@ -205,7 +205,7 @@ cl_autohelp "false";//禁用自动帮助提示
 mm_dedicated_search_maxping "70";//先选择延迟在 70 毫秒以内的服务器
 func_break_max_pieces 0;//游戏会根据物体的属性生成默认数量的碎片
 r_drawtracers_firstperson 1;//开启第一人称视角中的子弹轨迹
-r_fullscreen_gamma 2.6;//调整游戏画面伽马值
+r_fullscreen_gamma 3.0;//调整游戏画面伽马值
 cl_teamid_overhead_mode 3;//始终显示队友名称与装备
 ;//Ending
 echo AutoConfig Enabled!;//控制台打印
@@ -312,7 +312,7 @@ bind "4" "slot11; att0"
 bind "5" "slot5; att1"
 
 bind "z" "slot6"
-bind "x" "slot3"
+bind "x" "slot7"
 bind "c" "slot8"
 bind "6" "slot9"
 bind "v" "slot10"
@@ -411,7 +411,7 @@ cl_autohelp "false"
 mm_dedicated_search_maxping "70"
 func_break_max_pieces 0
 r_drawtracers_firstperson 1
-r_fullscreen_gamma 2.6
+r_fullscreen_gamma 3.0
 cl_use_opens_buy_menu false
 cl_teamid_overhead_mode 3
 
