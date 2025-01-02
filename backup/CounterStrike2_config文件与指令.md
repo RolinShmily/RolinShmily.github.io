@@ -65,25 +65,7 @@ alias "knife20" "subclass_change 525; alias knife knife21"
 alias "knife21" "subclass_change 526; alias knife knife1"
 ```
 
-- **3. 切出电击枪使用后快速自动切枪**
-
-```ini
-alias "att0" "bind mouse1 +firr1;bind mouse2 +firr2"
-alias "att1" "bind mouse1 +attack;bind mouse2 +attack2"
-alias "+firr1" "+attack"
-alias "-firr1" "-attack;slot2;slot1;att1;"
-alias "+firr2" "+attack2"
-alias "-firr2" "-attack2;slot2;slot1;att1;"
-
-bind "1" "slot1; att1" ; //主武器
-bind "2" "slot2; att1" ; //副武器
-bind "3" "slot3; att1" ; //近身武器
-bind "4" "slot11; att0" ; //电击枪
-bind "5" "slot5; att1" ; //C4
-bind "q" "lastinv; att1;" ; //切换最近的武器装备
-```
-
-- **4. 基础绑定**
+- **3. 基础绑定**
 
 ```ini
 //键位
@@ -129,11 +111,11 @@ bind "=" "toggle cl_drawhud_force_radar 1 0";//雷达显示
 
 ```
 
-- **5. 灵敏度、准星、持枪视角、雷达**
+- **4. 灵敏度、准星、持枪视角、雷达**
 
 ```ini
 ;//鼠标灵敏度
-sensitivity 0.54
+sensitivity 0.50
 ;//准星
 cl_crosshair_drawoutline "0"
 cl_crosshair_dynamic_maxdist_splitratio "1"
@@ -191,7 +173,7 @@ cl_hud_radar_scale "1"
 cl_teammate_colors_show 2
 ```
 
-- **6. 杂项**
+- **5. 杂项**
 
 ```ini
 cl_hud_color "11";//HUD粉色
@@ -277,65 +259,58 @@ mp_weapons_glow_on_ground 1;
 ### 四、autoexec.cfg
 
 ```ini
-//tips01
-alias "att0" "bind mouse1 +firr1;bind mouse2 +firr2"
-alias "att1" "bind mouse1 +attack;bind mouse2 +attack2"
-
-alias "+firr1" "+attack"
-alias "-firr1" "-attack;slot2;slot1;att1;"
-alias "+firr2" "+attack2"
-alias "-firr2" "-attack2;slot2;slot1;att1;"
-
 //Mouse
-sensitivity 0.54
+sensitivity 0.50
 
 //Keys
 bind "w" "+forward"
 bind "s" "+back"
 bind "a" "+left"
 bind "d" "+right"
-bind "mouse1" "+attack"
+bind "mouse1" "+attack" 
 bind "mouse2" "+attack2"
 bind "e" "+use"
 bind "f" "+lookatweapon"
-bind "space" "+jump"
-bind "ctrl" "+duck"
+bind "space" "+jump" 
+bind "ctrl" "+duck" 
 bind "tab" "+showscores"
-bind "g" "drop"
+bind "g" "drop" 
 bind "m" "teammenu"
-bind "shift" "+sprint"
-bind "b" "buymenu"
-bind "1" "slot1; att1"
-bind "2" "slot2; att1"
-bind "3" "slot3; att1"
-bind "4" "slot11; att0"
-bind "5" "slot5; att1"
+bind "shift" "+sprint" 
+bind "b" "buymenu" 
+bind "1" "slot1"
+bind "2" "slot2"  
+bind "3" "slot3" 
+bind "4" "slot11" 
+bind "5" "slot5"
 
-bind "z" "slot6"
-bind "x" "slot7"
-bind "c" "slot8"
-bind "6" "slot9"
-bind "v" "slot10"
+bind "z" "slot6;" 
+bind "x" "slot7" 
+bind "c" "slot8" 
+bind "6" "slot9" 
+bind "v" "slot10" 
 
-bind "q" "lastinv; att1;"
+bind "q" "lastinv"
 bind "i" "+spray_menu"
 bind "u" "messagemode2"
 bind "y" "messagemode"
 bind "mouse4" "+voicerecord"
 bind "mouse5" "player_ping"
-bind "mwheeldown" "+jump"
+bind "mwheeldown" "+jump" 
 bind "mwheelup" "+jump"
 bind "`" "toggleconsole"
 
 bind "t" "switchhands"
-bind "h" "toggleradarscale"
+bind "h" "toggleradarscale" 
 
 bind "alt" "toggle cl_teamid_overhead_mode 1 3"
 bind "ralt" "radio2;slot12"
 
 bind "-" "toggle cl_draw_only_deathnotices 1 0"
 bind "=" "toggle cl_drawhud_force_radar 1 0"
+
 //cfg
+exec zeus.cfg
 bind "o" "exec autoexec.cfg;say auto!"
 bind "\" "key_listboundkeys;say keys_log!"
 bind "j" "exec knife.cfg;say knife_model!"
@@ -404,8 +379,8 @@ cl_hud_color "11"
 con_enable "1"
 fps_max 0
 cl_join_advertise "2"
-cl_use_opens_buy_menu "0"
-cl_dm_buyrandomweapons 0
+cl_use_opens_buy_menu "0" 
+cl_dm_buyrandomweapons 0 
 gameinstructor_enable "0"
 cl_autohelp "false"
 mm_dedicated_search_maxping "70"
@@ -475,4 +450,30 @@ bind "k" "give weapon_knife"
 bind "l" "sv_rethrow_last_grenade"
 bind "n" "noclip"
 bind "p" "sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999;mp_buytime 99999;mp_ignore_round_win_conditions 1; mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_friendlyfire 1;ammo_grenade_limit_total 6;mp_spectators_max 9; mp_autokick 0; mp_restartgame 1;sv_grenade_trajectory_prac_pipreview 1; sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;sv_showimpacts 1;say Practice Enabled"
+```
+
+### 八、zeus.cfg
+- 电击枪使用后快速回收
+```ini
+alias "att0" "bind mouse1 +firr1;bind mouse2 +firr2"
+alias "att1" "bind mouse1 +attack;bind mouse2 +attack2"
+
+alias "+firr1" "+attack"
+alias "-firr1" "-attack;slot2;slot1;att1;"
+alias "+firr2" "+attack2"
+alias "-firr2" "-attack2;slot2;slot1;att1;"
+
+unbind 1
+unbind 2
+unbind 3
+unbind 4
+unbind 5
+unbind q
+
+bind "1" "slot1; att1"
+bind "2" "slot2; att1"  
+bind "3" "slot3; att1" 
+bind "4" "slot11; att0" 
+bind "5" "slot5; att1"
+bind "q" "lastinv; att1;"
 ```
