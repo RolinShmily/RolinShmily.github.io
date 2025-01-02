@@ -477,3 +477,78 @@ bind "4" "slot11; att0"
 bind "5" "slot5; att1"
 bind "q" "lastinv; att1;"
 ```
+
+### 九、lastinv.cfg
+
+```ini
+//Weapon viewmodel script for Launders. Based on a TF2 script by /u/genemilder (http://pastebin.com/7beau8BP). Modified for csgo by /u/Flapadiddle (http://steamcommunity.com/id/flapadiddle) 2014/12/29
+ 
+//This script allows one to create individual settings for each inventory slot while preserving quickswitching functionality. There is also the option to use mouse scrolling if desired. Slot4 is excluded because the grenade cycle functionality is not compatiable with this logic.  
+ 
+//Place this in your autoexec after verifiying that it works. You may have to remove existing binds to the keys that you use here to avoid complications.  
+ 
+// ========== BINDS ==========
+   //Bind whatever keys you like. next/previous inventory binds are commented by default, uncomment and add keys to enable.  
+//根据国外牛人改编，适用于CS2
+//代码功能是在按3切刀或者按Q切刀时自动检视，但在按Q切枪时不进行自动检视，弯刀用户狂喜
+//解绑重置接下来需要自定义的键
+unbind 1
+unbind 2
+unbind 3
+//unbind 4
+//unbind 5
+unbind q
+
+bind 1            eq_slot1   //绑定主武器按键
+bind 2            eq_slot2  //绑定副武器按键
+bind 3            eq_slot3  //绑定刀按键
+bind q            eq_lastinv //快速切换上次使用的武器按键，这里重写了lastinv函数，即此时的 eq_lastinv，所以没用到官方的函数lastinv
+//bind 4            eq_slot4
+//bind 5            eq_slot5
+//bind 6            eq_slot6
+//bind 7            eq_slot7
+//bind 8            eq_slot8
+//bind 9            eq_slot9
+
+//修复了滚轮切枪时Q不记忆的问题，即就算使用滚轮切枪，还是进行最后一次按键切枪的快速切枪操作， 但还有个BUG是4有烟火雷闪多个道具时不能切换，只能切换到道具中第一个，我的建议是滚轮切枪就不要自动检视了，不会吧真有人还用滚轮切枪（狗头保命）
+//bind MWHEELDOWN      eq_invnext //选择下一个武器
+//bind MWHEELUP      eq_invprev //选择上一个武器
+ 
+// ========== SETTINGS ==========
+  //insert any settings you wish to add for individual slots (xhair, viewmodel, sensitivity etc.) with a semicolon and the command. the example below puts only the knife in your left hand.
+//按键功能配置映射
+
+alias see "+lookatweapon;-lookatweapon"    //CS2最新检视命令
+alias eq_slot1    "slot1; set_slot1;"
+alias eq_slot2    "slot2; set_slot2;"  
+alias eq_slot3    "slot3; set_slot3;see"   //只要切换到刀就会自动检视，无论是按3切刀还是按Q切刀
+//alias eq_slot4    "slot4; set_slot4;"  
+//alias eq_slot5    "slot5; set_slot5;"
+//alias eq_slot6    "slot6; set_slot6;"
+//alias eq_slot7    "slot7; set_slot7;"
+//alias eq_slot8    "slot8; set_slot8;"
+//alias eq_slot9    "slot9; set_slot9;"  
+//alias eq_invprev "invprev"
+//alias eq_invnext "invnext"
+
+ 
+// ========== LOGIC ==========
+  //No touching. Basically this manually implements quiswitching without the 'lastinv' command and next/previous inventory selection 
+//下面的代码不要动，它可以不使用游戏自带的代码lastinv但能实现同样的切换上一把武器的效果，大概实现原理是每次按下一个键（假设是1）后会执行你按下的上一个键（假设是3）里面的set_lastinv函数，而每一个按键的set_lastinv函数都会覆盖重写，定义按下q时切换到当前按键的武器，即此时的下一个武器（就是先按3再按1后，set_lastinv函数还是指向3），从而实现切换上一个武器效果 
+//关于这里为什么重写lastinv函数而不用游戏中自带的函数，我认为是为了在切换到上一个武器过程中添加自定义操作（检视刀并且不检视其他枪），官方的lastinv函数显然做不到这点
+
+alias qs_slot1    "alias eq_invnext eq_slot2; alias eq_invprev eq_slot9; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot1; alias set_slot1 ; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot2    "alias eq_invnext eq_slot3; alias eq_invprev eq_slot1; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot2; alias set_slot1 qs_slot1; alias set_slot2 ; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot3    "alias eq_invnext eq_slot5; alias eq_invprev eq_slot2; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot3; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 ; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+//alias qs_slot4    "alias eq_invnext eq_slot5; alias eq_invprev eq_slot3; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot4; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3 ;alias set_slot4;  alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot5    "alias eq_invnext eq_slot6; alias eq_invprev eq_slot3; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot5; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 ; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot6    "alias eq_invnext eq_slot7; alias eq_invprev eq_slot5; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot6; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 ; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot7    "alias eq_invnext eq_slot8; alias eq_invprev eq_slot6; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot7; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 ; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"  
+alias qs_slot8    "alias eq_invnext eq_slot9; alias eq_invprev eq_slot7; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot8; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 ; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot9    "alias eq_invnext eq_slot1; alias eq_invprev eq_slot8; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot9; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 ; alias set_slot10 qs_slot10"
+//alias qs_slot10   "alias eq_invnext eq_slot1; alias eq_invprev eq_slot9; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot10; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 "
+ 
+//代码初始化
+qs_slot2
+eq_slot1
+```
