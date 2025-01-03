@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Thu, 02 Jan 2025 11:33:08 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>微机原理</title><link>https://RolinShmily.github.io/post/wei-ji-yuan-li.html</link><description># 微型计算机系统&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Fri, 03 Jan 2025 11:50:20 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>微机原理</title><link>https://RolinShmily.github.io/post/wei-ji-yuan-li.html</link><description># 微型计算机系统&#13;
 1. 硬件系统&#13;
    - 1. 微型计算机（主机）&#13;
    - - 1. 微处理器&#13;
@@ -52,7 +52,7 @@
 - 高位数据存放地址定义为为低地址存放地址&#13;
 3. 数据单位概念&#13;
 - **位**（bit）：计算机所能表示的最小最基本的数据单位&#13;
-- **字节**（Byte）：8个二进制位组成。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/wei-ji-yuan-li.html</guid><pubDate>Sat, 07 Dec 2024 11:11:55 +0000</pubDate></item><item><title>CounterStrike2_config文件与指令</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</link><description>## _游戏自用 config 文件与部分指令分享_&#13;
+- **字节**（Byte）：8个二进制位组成。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/wei-ji-yuan-li.html</guid><pubDate>Sat, 07 Dec 2024 11:11:55 +0000</pubDate></item><item><title>CounterStrike2_config文件与指令（旧版）</title><link>https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling-%EF%BC%88-jiu-ban-%EF%BC%89.html</link><description>## _游戏自用 config 文件与部分指令分享_&#13;
 &#13;
 ### 一、cfg 功能简介&#13;
 &#13;
@@ -567,7 +567,7 @@ alias qs_slot9    'alias eq_invnext eq_slot1; alias eq_invprev eq_slot8; set_las
 //代码初始化&#13;
 qs_slot2&#13;
 eq_slot1&#13;
-```。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling.html</guid><pubDate>Tue, 20 Aug 2024 09:19:37 +0000</pubDate></item><item><title>Sunshine+Moonlight/Parsec串流&amp;scrcpy投屏</title><link>https://RolinShmily.github.io/post/Sunshine%2BMoonlight-Parsec-chuan-liu-%26scrcpy-tou-ping.html</link><description>## 串流&#13;
+```。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling-%EF%BC%88-jiu-ban-%EF%BC%89.html</guid><pubDate>Tue, 20 Aug 2024 09:19:37 +0000</pubDate></item><item><title>Sunshine+Moonlight/Parsec串流&amp;scrcpy投屏</title><link>https://RolinShmily.github.io/post/Sunshine%2BMoonlight-Parsec-chuan-liu-%26scrcpy-tou-ping.html</link><description>## 串流&#13;
 - 影音串流技术是一种线上即时影音播放技术，有别于传统的MPEG或MP3等影音播放方式，应用串流(streaming)技术传送多媒体的特点，在于可以边看边下载，大幅节省使用者等待的时间。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Sunshine%2BMoonlight-Parsec-chuan-liu-%26scrcpy-tou-ping.html</guid><pubDate>Wed, 24 Jul 2024 16:33:39 +0000</pubDate></item><item><title>Python与Pytorch环境</title><link>https://RolinShmily.github.io/post/Python-yu-Pytorch-huan-jing.html</link><description>## ***使用VScode搭建Python与Pytorch环境***&#13;
 ### 1.***Anaconda***&#13;
 - ***Anaconda*** 是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Python-yu-Pytorch-huan-jing.html</guid><pubDate>Thu, 18 Jul 2024 07:00:07 +0000</pubDate></item><item><title>C/C++通过VScode+MinGW编译运行</title><link>https://RolinShmily.github.io/post/C-C%2B%2B-tong-guo-VScode%2BMinGW-bian-yi-yun-xing.html</link><description>## 前言&#13;
