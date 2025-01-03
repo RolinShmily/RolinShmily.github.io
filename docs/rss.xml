@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Fri, 03 Jan 2025 13:18:12 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>cs</title><link>https://RolinShmily.github.io/post/cs.html</link><description>### autoexec.cfg&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Fri, 03 Jan 2025 13:20:59 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CS2_cfgs</title><link>https://RolinShmily.github.io/post/CS2_cfgs.html</link><description>### autoexec.cfg&#13;
 ```ini&#13;
 //Mouse&#13;
 sensitivity 0.50&#13;
@@ -240,7 +240,7 @@ alias 'PI01' 'cl_crosshair_t '0';cl_crosshairalpha '255';cl_crosshaircolor 5;cl_
 bind ']' 'p'&#13;
 alias 'p' 'p01'&#13;
 alias 'p01' 'viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;say nanyi!'&#13;
-```。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/cs.html</guid><pubDate>Fri, 03 Jan 2025 13:10:21 +0000</pubDate></item><item><title>微机原理</title><link>https://RolinShmily.github.io/post/wei-ji-yuan-li.html</link><description># 微型计算机系统&#13;
+```。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/CS2_cfgs.html</guid><pubDate>Fri, 03 Jan 2025 13:10:21 +0000</pubDate></item><item><title>微机原理</title><link>https://RolinShmily.github.io/post/wei-ji-yuan-li.html</link><description># 微型计算机系统&#13;
 1. 硬件系统&#13;
    - 1. 微型计算机（主机）&#13;
    - - 1. 微处理器&#13;
