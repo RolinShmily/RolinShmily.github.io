@@ -19,7 +19,7 @@
 <meta property="og:url" content="https://RolinShmily.github.io/post/C-C%2B%2B-tong-guo-VScode%2BMinGW-bian-yi-yun-xing.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/142618699?v=4">
 <title>C/C++通过VScode+MinGW编译运行</title>
-<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
 
 
 </head>
@@ -43,17 +43,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     body {padding: 8px;}
     .postTitle{font-size:24px;}
 }
-.copy-feedback {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 50px;
-    color: var(--color-fg-on-emphasis);
-    background-color: var(--color-fg-muted);
-    border-radius: 3px;
-    padding: 5px 8px;
-    font-size: 12px;
-}
+
 </style>
 
 
@@ -172,145 +162,149 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li><em><strong>单文件结构</strong></em><br>
 <em><strong>tasks.json</strong></em></li>
 </ol>
-<div class="highlight highlight-source-json"><pre class="notranslate">{
-    <span class="pl-ent">"version"</span>: <span class="pl-s"><span class="pl-pds">"</span>2.0.0<span class="pl-pds">"</span></span>,
-    <span class="pl-ent">"tasks"</span>: [
-        {<span class="pl-ii">//这个大括号里是‘构建（build）’任务</span>
-            <span class="pl-ent">"label"</span>: <span class="pl-s"><span class="pl-pds">"</span>build<span class="pl-pds">"</span></span>, <span class="pl-ii">//任务名称，可以更改，不过不建议改</span>
-            <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>shell<span class="pl-pds">"</span></span>, <span class="pl-ii">//任务类型，process是vsc把预定义变量和转义解析后直接全部传给command；shell相当于先打开shell再输入命令，所以args还会经过shell再解析一遍</span>
-            <span class="pl-ent">"command"</span>: <span class="pl-s"><span class="pl-pds">"</span>gcc<span class="pl-pds">"</span></span>, <span class="pl-ii">//编译命令，这里是gcc，编译c++的话换成g++</span>
-            <span class="pl-ent">"args"</span>: [    <span class="pl-ii">//方括号里是传给gcc命令的一系列参数，用于实现一些功能</span>
-                <span class="pl-s"><span class="pl-pds">"</span>${file}<span class="pl-pds">"</span></span>, <span class="pl-ii">//指定要编译的是当前文件</span>
-                <span class="pl-s"><span class="pl-pds">"</span>-o<span class="pl-pds">"</span></span>, <span class="pl-ii">//指定输出文件的路径和名称</span>
-                <span class="pl-s"><span class="pl-pds">"</span>${fileDirname}<span class="pl-cce">\\</span>bin<span class="pl-cce">\\</span>${fileBasenameNoExtension}.exe<span class="pl-pds">"</span></span>, <span class="pl-ii">//承接上一步的-o，让可执行文件输出到源码文件所在的文件夹下的bin文件夹内，并且让它的名字和源码文件相同</span>
-                <span class="pl-s"><span class="pl-pds">"</span>-g<span class="pl-pds">"</span></span>, <span class="pl-ii">//生成和调试有关的信息</span>
-                <span class="pl-s"><span class="pl-pds">"</span>-Wall<span class="pl-pds">"</span></span>, <span class="pl-ii">// 开启额外警告</span>
-                <span class="pl-s"><span class="pl-pds">"</span>-static-libgcc<span class="pl-pds">"</span></span>,  <span class="pl-ii">// 静态链接libgcc</span>
-                <span class="pl-s"><span class="pl-pds">"</span>-fexec-charset=GBK<span class="pl-pds">"</span></span>, <span class="pl-ii">// 生成的程序使用GBK编码，不加这一条会导致Win下输出中文乱码</span>
-                <span class="pl-s"><span class="pl-pds">"</span>-std=c11<span class="pl-pds">"</span></span>, <span class="pl-ii">// 语言标准，可根据自己的需要进行修改，写c++要换成c++的语言标准，比如c++11</span>
+<pre lang="json" class="notranslate"><code class="notranslate">{
+    "version": "2.0.0",
+    "tasks": [
+        {//这个大括号里是‘构建（build）’任务
+            "label": "build", //任务名称，可以更改，不过不建议改
+            "type": "shell", //任务类型，process是vsc把预定义变量和转义解析后直接全部传给command；shell相当于先打开shell再输入命令，所以args还会经过shell再解析一遍
+            "command": "gcc", //编译命令，这里是gcc，编译c++的话换成g++
+            "args": [    //方括号里是传给gcc命令的一系列参数，用于实现一些功能
+                "${file}", //指定要编译的是当前文件
+                "-o", //指定输出文件的路径和名称
+                "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe", //承接上一步的-o，让可执行文件输出到源码文件所在的文件夹下的bin文件夹内，并且让它的名字和源码文件相同
+                "-g", //生成和调试有关的信息
+                "-Wall", // 开启额外警告
+                "-static-libgcc",  // 静态链接libgcc
+                "-fexec-charset=GBK", // 生成的程序使用GBK编码，不加这一条会导致Win下输出中文乱码
+                "-std=c11", // 语言标准，可根据自己的需要进行修改，写c++要换成c++的语言标准，比如c++11
             ],
-            <span class="pl-ent">"group"</span>: {  <span class="pl-ii">//group表示‘组’，我们可以有很多的task，然后把他们放在一个‘组’里</span>
-                <span class="pl-ent">"kind"</span>: <span class="pl-s"><span class="pl-pds">"</span>build<span class="pl-pds">"</span></span>,<span class="pl-ii">//表示这一组任务类型是构建</span>
-                <span class="pl-ent">"isDefault"</span>: <span class="pl-ii">true//表示这个任务是当前这组任务中的默认任务</span>
+            "group": {  //group表示‘组’，我们可以有很多的task，然后把他们放在一个‘组’里
+                "kind": "build",//表示这一组任务类型是构建
+                "isDefault": true//表示这个任务是当前这组任务中的默认任务
             },
-            <span class="pl-ent">"presentation"</span>: { <span class="pl-ii">//执行这个任务时的一些其他设定</span>
-                <span class="pl-ent">"echo"</span>: <span class="pl-c1">true</span>,<span class="pl-ii">//表示在执行任务时在终端要有输出</span>
-                <span class="pl-ent">"reveal"</span>: <span class="pl-s"><span class="pl-pds">"</span>always<span class="pl-pds">"</span></span>, <span class="pl-ii">//执行任务时是否跳转到终端面板，可以为always，silent，never</span>
-                <span class="pl-ent">"focus"</span>: <span class="pl-c1">false</span>, <span class="pl-ii">//设为true后可以使执行task时焦点聚集在终端，但对编译来说，设为true没有意义，因为运行的时候才涉及到输入</span>
-                <span class="pl-ent">"panel"</span>: <span class="pl-s"><span class="pl-pds">"</span>new<span class="pl-pds">"</span></span> <span class="pl-ii">//每次执行这个task时都新建一个终端面板，也可以设置为shared，共用一个面板，不过那样会出现‘任务将被终端重用’的提示，比较烦人</span>
+            "presentation": { //执行这个任务时的一些其他设定
+                "echo": true,//表示在执行任务时在终端要有输出
+                "reveal": "always", //执行任务时是否跳转到终端面板，可以为always，silent，never
+                "focus": false, //设为true后可以使执行task时焦点聚集在终端，但对编译来说，设为true没有意义，因为运行的时候才涉及到输入
+                "panel": "new" //每次执行这个task时都新建一个终端面板，也可以设置为shared，共用一个面板，不过那样会出现‘任务将被终端重用’的提示，比较烦人
             },
-            <span class="pl-ent">"problemMatcher"</span>: <span class="pl-s"><span class="pl-pds">"</span>$gcc<span class="pl-pds">"</span></span> <span class="pl-ii">//捕捉编译时编译器在终端里显示的报错信息，将其显示在vscode的‘问题’面板里</span>
+            "problemMatcher": "$gcc" //捕捉编译时编译器在终端里显示的报错信息，将其显示在vscode的‘问题’面板里
         },
-        {<span class="pl-ii">//这个大括号里是‘运行(run)’任务，一些设置与上面的构建任务性质相同</span>
-            <span class="pl-ent">"label"</span>: <span class="pl-s"><span class="pl-pds">"</span>run<span class="pl-pds">"</span></span>, 
-            <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>shell<span class="pl-pds">"</span></span>, 
-            <span class="pl-ent">"dependsOn"</span>: <span class="pl-s"><span class="pl-pds">"</span>build<span class="pl-pds">"</span></span>, <span class="pl-ii">//任务依赖，因为要运行必须先构建，所以执行这个任务前必须先执行build任务，</span>
-            <span class="pl-ent">"command"</span>: <span class="pl-s"><span class="pl-pds">"</span>${fileDirname}<span class="pl-cce">\\</span>bin<span class="pl-cce">\\</span>${fileBasenameNoExtension}.exe<span class="pl-pds">"</span></span>, <span class="pl-ii">//执行exe文件，只需要指定这个exe文件在哪里就好</span>
-            <span class="pl-ent">"group"</span>: {
-                <span class="pl-ent">"kind"</span>: <span class="pl-s"><span class="pl-pds">"</span>test<span class="pl-pds">"</span></span>, <span class="pl-ii">//这一组是‘测试’组，将run任务放在test组里方便我们用快捷键执行</span>
-                <span class="pl-ent">"isDefault"</span>: <span class="pl-c1">true</span>
+        {//这个大括号里是‘运行(run)’任务，一些设置与上面的构建任务性质相同
+            "label": "run", 
+            "type": "shell", 
+            "dependsOn": "build", //任务依赖，因为要运行必须先构建，所以执行这个任务前必须先执行build任务，
+            "command": "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe", //执行exe文件，只需要指定这个exe文件在哪里就好
+            "group": {
+                "kind": "test", //这一组是‘测试’组，将run任务放在test组里方便我们用快捷键执行
+                "isDefault": true
             },
-            <span class="pl-ent">"presentation"</span>: {
-                <span class="pl-ent">"echo"</span>: <span class="pl-c1">true</span>,
-                <span class="pl-ent">"reveal"</span>: <span class="pl-s"><span class="pl-pds">"</span>always<span class="pl-pds">"</span></span>,
-                <span class="pl-ent">"focus"</span>: <span class="pl-c1">true</span>, <span class="pl-ii">//这个就设置为true了，运行任务后将焦点聚集到终端，方便进行输入</span>
-                <span class="pl-ent">"panel"</span>: <span class="pl-s"><span class="pl-pds">"</span>new<span class="pl-pds">"</span></span>
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true, //这个就设置为true了，运行任务后将焦点聚集到终端，方便进行输入
+                "panel": "new"
             }
         }
 
     ]
-}</pre></div>
+}
+</code></pre>
 <p><em><strong>launch.json</strong></em></p>
-<div class="highlight highlight-source-json"><pre class="notranslate">{
-    <span class="pl-ent">"version"</span>: <span class="pl-s"><span class="pl-pds">"</span>0.2.0<span class="pl-pds">"</span></span>,
-    <span class="pl-ent">"configurations"</span>: [
-        {<span class="pl-ii">//这个大括号里是我们的‘调试(Debug)’配置</span>
-            <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Debug<span class="pl-pds">"</span></span>, <span class="pl-ii">// 配置名称</span>
-            <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>cppdbg<span class="pl-pds">"</span></span>, <span class="pl-ii">// 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg</span>
-            <span class="pl-ent">"request"</span>: <span class="pl-s"><span class="pl-pds">"</span>launch<span class="pl-pds">"</span></span>, <span class="pl-ii">// 请求配置类型，可以为launch（启动）或attach（附加）</span>
-            <span class="pl-ent">"program"</span>: <span class="pl-s"><span class="pl-pds">"</span>${fileDirname}<span class="pl-cce">\\</span>bin<span class="pl-cce">\\</span>${fileBasenameNoExtension}.exe<span class="pl-pds">"</span></span>, <span class="pl-ii">// 将要进行调试的程序的路径</span>
-            <span class="pl-ent">"args"</span>: [], <span class="pl-ii">// 程序调试时传递给程序的命令行参数，这里设为空即可</span>
-            <span class="pl-ent">"stopAtEntry"</span>: <span class="pl-c1">false</span>, <span class="pl-ii">// 设为true时程序将暂停在程序入口处，相当于在main上打断点</span>
-            <span class="pl-ent">"cwd"</span>: <span class="pl-s"><span class="pl-pds">"</span>${fileDirname}<span class="pl-pds">"</span></span>, <span class="pl-ii">// 调试程序时的工作目录，此处为源码文件所在目录</span>
-            <span class="pl-ent">"environment"</span>: [], <span class="pl-ii">// 环境变量，这里设为空即可</span>
-            <span class="pl-ent">"externalConsole"</span>: <span class="pl-c1">false</span>, <span class="pl-ii">// 为true时使用单独的cmd窗口，跳出小黑框；设为false则是用vscode的内置终端，建议用内置终端</span>
-            <span class="pl-ent">"internalConsoleOptions"</span>: <span class="pl-s"><span class="pl-pds">"</span>neverOpen<span class="pl-pds">"</span></span>, <span class="pl-ii">// 如果不设为neverOpen，调试时会跳到“调试控制台”选项卡，新手调试用不到</span>
-            <span class="pl-ent">"MIMode"</span>: <span class="pl-s"><span class="pl-pds">"</span>gdb<span class="pl-pds">"</span></span>, <span class="pl-ii">// 指定连接的调试器，gdb是minGW中的调试程序</span>
-            <span class="pl-ent">"miDebuggerPath"</span>: <span class="pl-s"><span class="pl-pds">"</span>D:<span class="pl-cce">\\</span>MinGW<span class="pl-cce">\\</span>mingw64<span class="pl-cce">\\</span>bin<span class="pl-cce">\\</span>gdb.exe<span class="pl-pds">"</span></span>, <span class="pl-ii">// 指定调试器所在路径，如果你的minGW装在别的地方，则要改成你自己的路径，注意间隔是\\</span>
-            <span class="pl-ent">"preLaunchTask"</span>: <span class="pl-s"><span class="pl-pds">"</span>build<span class="pl-pds">"</span></span> <span class="pl-ii">// 调试开始前执行的任务，我们在调试前要编译构建。与tasks.json的label相对应，名字要一样</span>
+<pre lang="json" class="notranslate"><code class="notranslate">{
+    "version": "0.2.0",
+    "configurations": [
+        {//这个大括号里是我们的‘调试(Debug)’配置
+            "name": "Debug", // 配置名称
+            "type": "cppdbg", // 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg
+            "request": "launch", // 请求配置类型，可以为launch（启动）或attach（附加）
+            "program": "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe", // 将要进行调试的程序的路径
+            "args": [], // 程序调试时传递给程序的命令行参数，这里设为空即可
+            "stopAtEntry": false, // 设为true时程序将暂停在程序入口处，相当于在main上打断点
+            "cwd": "${fileDirname}", // 调试程序时的工作目录，此处为源码文件所在目录
+            "environment": [], // 环境变量，这里设为空即可
+            "externalConsole": false, // 为true时使用单独的cmd窗口，跳出小黑框；设为false则是用vscode的内置终端，建议用内置终端
+            "internalConsoleOptions": "neverOpen", // 如果不设为neverOpen，调试时会跳到“调试控制台”选项卡，新手调试用不到
+            "MIMode": "gdb", // 指定连接的调试器，gdb是minGW中的调试程序
+            "miDebuggerPath": "D:\\MinGW\\mingw64\\bin\\gdb.exe", // 指定调试器所在路径，如果你的minGW装在别的地方，则要改成你自己的路径，注意间隔是\\
+            "preLaunchTask": "build" // 调试开始前执行的任务，我们在调试前要编译构建。与tasks.json的label相对应，名字要一样
     }]
-}</pre></div>
+}
+</code></pre>
 <ol start="2">
 <li><em><strong>多文件结构</strong></em><br>
 <em><strong>tasks.json</strong></em></li>
 </ol>
-<div class="highlight highlight-source-json"><pre class="notranslate">{
-    <span class="pl-ent">"version"</span>: <span class="pl-s"><span class="pl-pds">"</span>2.0.0<span class="pl-pds">"</span></span>,
-    <span class="pl-ent">"tasks"</span>: [
+<pre lang="json" class="notranslate"><code class="notranslate">{
+    "version": "2.0.0",
+    "tasks": [
         {
-            <span class="pl-ent">"label"</span>: <span class="pl-s"><span class="pl-pds">"</span>build<span class="pl-pds">"</span></span>,
-            <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>shell<span class="pl-pds">"</span></span>,
-            <span class="pl-ent">"command"</span>: <span class="pl-s"><span class="pl-pds">"</span>gcc<span class="pl-pds">"</span></span>, <span class="pl-ii">//写c++换成g++</span>
-            <span class="pl-ent">"args"</span>: [
-                <span class="pl-s"><span class="pl-pds">"</span>${fileDirname}<span class="pl-cce">\\</span>*.c<span class="pl-pds">"</span></span>, <span class="pl-ii">//写c++把 *.c 换成 *.cpp</span>
-                <span class="pl-s"><span class="pl-pds">"</span>-o<span class="pl-pds">"</span></span>,
-                <span class="pl-s"><span class="pl-pds">"</span>${fileDirname}<span class="pl-cce">\\</span>${fileBasenameNoExtension}.exe<span class="pl-pds">"</span></span>,
-                <span class="pl-s"><span class="pl-pds">"</span>-g<span class="pl-pds">"</span></span>,
-                <span class="pl-s"><span class="pl-pds">"</span>-Wall<span class="pl-pds">"</span></span>, 
-                <span class="pl-s"><span class="pl-pds">"</span>-static-libgcc<span class="pl-pds">"</span></span>,   
-                <span class="pl-s"><span class="pl-pds">"</span>-fexec-charset=GBK<span class="pl-pds">"</span></span>,
-                <span class="pl-s"><span class="pl-pds">"</span>-std=c11<span class="pl-pds">"</span></span>,  <span class="pl-ii">//写c++换成c++标准</span>
+            "label": "build",
+            "type": "shell",
+            "command": "gcc", //写c++换成g++
+            "args": [
+                "${fileDirname}\\*.c", //写c++把 *.c 换成 *.cpp
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-g",
+                "-Wall", 
+                "-static-libgcc",   
+                "-fexec-charset=GBK",
+                "-std=c11",  //写c++换成c++标准
             ],
-            <span class="pl-ent">"group"</span>: {
-                <span class="pl-ent">"kind"</span>: <span class="pl-s"><span class="pl-pds">"</span>build<span class="pl-pds">"</span></span>,
-                <span class="pl-ent">"isDefault"</span>: <span class="pl-c1">true</span>
+            "group": {
+                "kind": "build",
+                "isDefault": true
             },
-            <span class="pl-ent">"presentation"</span>: {
-                <span class="pl-ent">"echo"</span>: <span class="pl-c1">true</span>,
-                <span class="pl-ent">"reveal"</span>: <span class="pl-s"><span class="pl-pds">"</span>always<span class="pl-pds">"</span></span>,
-                <span class="pl-ent">"focus"</span>: <span class="pl-c1">false</span>,
-                <span class="pl-ent">"panel"</span>: <span class="pl-s"><span class="pl-pds">"</span>new<span class="pl-pds">"</span></span>
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
             },
-            <span class="pl-ent">"problemMatcher"</span>: <span class="pl-s"><span class="pl-pds">"</span>$gcc<span class="pl-pds">"</span></span>
+            "problemMatcher": "$gcc"
         },
         {
-            <span class="pl-ent">"label"</span>: <span class="pl-s"><span class="pl-pds">"</span>run<span class="pl-pds">"</span></span>,
-            <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>shell<span class="pl-pds">"</span></span>,
-            <span class="pl-ent">"dependsOn"</span>: <span class="pl-s"><span class="pl-pds">"</span>build<span class="pl-pds">"</span></span>,
-            <span class="pl-ent">"command"</span>: <span class="pl-s"><span class="pl-pds">"</span>${fileDirname}<span class="pl-cce">\\</span>${fileBasenameNoExtension}.exe<span class="pl-pds">"</span></span>,
-            <span class="pl-ent">"group"</span>: {
-                <span class="pl-ent">"kind"</span>: <span class="pl-s"><span class="pl-pds">"</span>test<span class="pl-pds">"</span></span>,
-                <span class="pl-ent">"isDefault"</span>: <span class="pl-c1">true</span>
+            "label": "run",
+            "type": "shell",
+            "dependsOn": "build",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "group": {
+                "kind": "test",
+                "isDefault": true
             },
-            <span class="pl-ent">"presentation"</span>: {
-                <span class="pl-ent">"echo"</span>: <span class="pl-c1">true</span>,
-                <span class="pl-ent">"reveal"</span>: <span class="pl-s"><span class="pl-pds">"</span>always<span class="pl-pds">"</span></span>,
-                <span class="pl-ent">"focus"</span>: <span class="pl-c1">true</span>,
-                <span class="pl-ent">"panel"</span>: <span class="pl-s"><span class="pl-pds">"</span>new<span class="pl-pds">"</span></span>
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
             }
         }
 
     ]
-}</pre></div>
+}
+</code></pre>
 <p><em><strong>launch.json</strong></em></p>
-<div class="highlight highlight-source-json"><pre class="notranslate">{
-    <span class="pl-ent">"version"</span>: <span class="pl-s"><span class="pl-pds">"</span>0.2.0<span class="pl-pds">"</span></span>,
-    <span class="pl-ent">"configurations"</span>: [{
-        <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Debug<span class="pl-pds">"</span></span>, 
-        <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>cppdbg<span class="pl-pds">"</span></span>, 
-        <span class="pl-ent">"request"</span>: <span class="pl-s"><span class="pl-pds">"</span>launch<span class="pl-pds">"</span></span>,
-        <span class="pl-ent">"program"</span>: <span class="pl-s"><span class="pl-pds">"</span>${fileDirname}<span class="pl-cce">\\</span>${fileBasenameNoExtension}.exe<span class="pl-pds">"</span></span>,
-        <span class="pl-ent">"args"</span>: [],
-        <span class="pl-ent">"stopAtEntry"</span>: <span class="pl-c1">false</span>, 
-        <span class="pl-ent">"cwd"</span>: <span class="pl-s"><span class="pl-pds">"</span>${fileDirname}<span class="pl-pds">"</span></span>, 
-        <span class="pl-ent">"environment"</span>: [], 
-        <span class="pl-ent">"externalConsole"</span>: <span class="pl-c1">false</span>,
-        <span class="pl-ent">"internalConsoleOptions"</span>: <span class="pl-s"><span class="pl-pds">"</span>neverOpen<span class="pl-pds">"</span></span>,
-        <span class="pl-ent">"MIMode"</span>: <span class="pl-s"><span class="pl-pds">"</span>gdb<span class="pl-pds">"</span></span>, 
-        <span class="pl-ent">"miDebuggerPath"</span>: <span class="pl-s"><span class="pl-pds">"</span>D:<span class="pl-cce">\\</span>MinGW<span class="pl-cce">\\</span>mingw64<span class="pl-cce">\\</span>bin<span class="pl-cce">\\</span>gdb.exe<span class="pl-pds">"</span></span>, 
-        <span class="pl-ent">"preLaunchTask"</span>: <span class="pl-s"><span class="pl-pds">"</span>build<span class="pl-pds">"</span></span> 
+<pre lang="json" class="notranslate"><code class="notranslate">{
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "Debug", 
+        "type": "cppdbg", 
+        "request": "launch",
+        "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "args": [],
+        "stopAtEntry": false, 
+        "cwd": "${fileDirname}", 
+        "environment": [], 
+        "externalConsole": false,
+        "internalConsoleOptions": "neverOpen",
+        "MIMode": "gdb", 
+        "miDebuggerPath": "D:\\MinGW\\mingw64\\bin\\gdb.exe", 
+        "preLaunchTask": "build" 
     }]
-}</pre></div>
+}
+</code></pre>
 <ul>
 <li>至此，在VScode中编写一个 Hello,World! 并编译执行，也就不成问题了。</li>
 </ul></div>
@@ -338,7 +332,7 @@ if("06/22/2024"!=""){
 </script></div>
 </body>
 <script>
-var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
 var utterancesLoad=0;
 
 let themeSettings={
@@ -411,70 +405,7 @@ function iFrameLoading(){
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const createClipboardHTML = (codeContent, additionalClasses = '') => `
-        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
-        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
-            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
-                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
-                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
-            </clipboard-copy>
-            <div class="copy-feedback">Copied!</div>
-        </div>
-    `;
 
-    const handleCodeElements = (selector = '') => {
-        document.querySelectorAll(selector).forEach(codeElement => {
-            const codeContent = codeElement.innerHTML;
-            const newStructure = document.createElement('div');
-            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
-            newStructure.innerHTML = createClipboardHTML(codeContent);
-
-            const parentElement = codeElement.parentElement;
-            if (selector.includes('highlight')) {
-                parentElement.insertBefore(newStructure, codeElement.nextSibling);
-                parentElement.removeChild(codeElement);
-            } else {
-                parentElement.parentElement.replaceChild(newStructure, parentElement);
-            }
-        });
-    };
-
-    handleCodeElements('pre.notranslate > code.notranslate');
-    handleCodeElements('div.highlight > pre.notranslate');
-
-    let currentFeedback = null;
-    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
-        copyButton.addEventListener('click', () => {
-            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
-            const tempTextArea = document.createElement('textarea');
-            tempTextArea.value = codeContent;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempTextArea);
-
-            const copyIcon = copyButton.querySelector('.octicon-copy');
-            const checkIcon = copyButton.querySelector('.octicon-check');
-            const copyFeedback = copyButton.nextElementSibling;
-
-            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
-            currentFeedback = copyFeedback;
-
-            copyIcon.classList.add('d-none');
-            checkIcon.classList.remove('d-none');
-            copyFeedback.style.display = 'block';
-            copyButton.style.borderColor = 'var(--color-success-fg)';
-
-            setTimeout(() => {
-                copyIcon.classList.remove('d-none');
-                checkIcon.classList.add('d-none');
-                copyFeedback.style.display = 'none';
-                copyButton.style.borderColor = '';
-            }, 2000);
-        });
-    });
-});
 
 </script>
 <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
