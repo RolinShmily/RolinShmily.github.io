@@ -32,9 +32,9 @@ bind "6" "slot9"
 bind "v" "slot10" 
 
 bind "q" "lastinv"
-bind "i" "+spray_menu"
-bind "u" "messagemode2"
-bind "y" "messagemode"
+bind "y" "+spray_menu"
+bind "i" "messagemode2"
+bind "u" "messagemode"
 bind "mouse4" "+voicerecord"
 bind "mouse5" "player_ping"
 bind "mwheeldown" "+jump" 
@@ -64,6 +64,7 @@ bind "f12" "sellbackall"
 //cfg
 exec zeus.cfg
 bind "o" "exec autoexec.cfg;say auto!"
+bind "." "exec rebind.cfg:say rebind!"
 bind "\" "key_listboundkeys;say keys_log!"
 bind "j" "exec knife.cfg;say knife_model!"
 bind "p" "exec train.cfg;say train_model!"
@@ -145,6 +146,7 @@ cl_teamid_overhead_mode 3
 
 //Ending
 echo AutoConfig Enabled!
+
 ```
 ### train.cfg
 ```ini
