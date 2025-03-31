@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Mon, 31 Mar 2025 14:05:27 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CS2_cfgs</title><link>https://RolinShmily.github.io/post/CS2_cfgs.html</link><description>### autoexec.cfg
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>RolinShmily</title><link>https://RolinShmily.github.io</link><description>Rolin's Personal Blog</description><copyright>RolinShmily</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/142618699?v=4</url><title>avatar</title><link>https://RolinShmily.github.io</link></image><lastBuildDate>Mon, 31 Mar 2025 14:07:27 +0000</lastBuildDate><managingEditor>RolinShmily</managingEditor><ttl>60</ttl><webMaster>RolinShmily</webMaster><item><title>CS2_cfgs</title><link>https://RolinShmily.github.io/post/CS2_cfgs.html</link><description>### autoexec.cfg
 ```ini
 //Mouse
 sensitivity 0.50
@@ -815,37 +815,45 @@ eq_slot1&#13;
 - 影音串流技术是一种线上即时影音播放技术，有别于传统的MPEG或MP3等影音播放方式，应用串流(streaming)技术传送多媒体的特点，在于可以边看边下载，大幅节省使用者等待的时间。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Sunshine%2BMoonlight-Parsec-chuan-liu-%26scrcpy-tou-ping.html</guid><pubDate>Wed, 24 Jul 2024 16:33:39 +0000</pubDate></item><item><title>Python与Pytorch环境</title><link>https://RolinShmily.github.io/post/Python-yu-Pytorch-huan-jing.html</link><description>## ***使用VScode搭建Python与Pytorch环境***&#13;
 ### 1.***Anaconda***&#13;
 - ***Anaconda*** 是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Python-yu-Pytorch-huan-jing.html</guid><pubDate>Thu, 18 Jul 2024 07:00:07 +0000</pubDate></item><item><title>C/C++通过VScode+MinGW编译运行</title><link>https://RolinShmily.github.io/post/C-C%2B%2B-tong-guo-VScode%2BMinGW-bian-yi-yun-xing.html</link><description>## 前言&#13;
-- 针对准备学习编程的新人，一般是从c语言开始，当然c++是可以兼容c语言的，且环境配置上差不太多，在这里一起讲。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/C-C%2B%2B-tong-guo-VScode%2BMinGW-bian-yi-yun-xing.html</guid><pubDate>Sun, 14 Jul 2024 05:36:51 +0000</pubDate></item><item><title>Minecraft下载&amp;Zerotier局域网联机</title><link>https://RolinShmily.github.io/post/Minecraft-xia-zai-%26Zerotier-ju-yu-wang-lian-ji.html</link><description>## Java版Minecraft下载&#13;
-----&#13;
-### 一、启动器 ***HMCL*** 、 ***PCL2*** 、 ***官方启动器***&#13;
-&#13;
-- ***HMCL*** --由 ***huangyuhui*** 制作&#13;
-主页: https://hmcl.huangyuhui.net/  &#13;
-GitHub项目地址:https://github.com/HMCL-dev/HMCL&#13;
-&#13;
-![HMCL主页](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/2024/09/23/Snipaste_2024-07-05_22-38-20.814574c5b4981436.png)&#13;
-&#13;
-- ***PCL2*** --由 ***龙腾猫跃*** 制作&#13;
-爱发电文件地址: https://afdian.com/p/0164034c016c11ebafcb52540025c377&#13;
-GitHub项目地址: https://github.com/Hex-Dragon/PCL2&#13;
-&#13;
-![PCL2](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-05_22-48-14.png?raw=true)&#13;
-&#13;
-&gt;- 一般通过这种途径下载，将会得到一个 ***.zip*** 压缩包文件，然后找到一个文件夹解压下来，将会得到两个程序文件：&#13;
-&#13;
-![HMCL](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-05_22-57-23.png?raw=true)&#13;
-![PCL2](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-05_22-57-33.png?raw=true)&#13;
-&#13;
-- ***官方启动器*** --由 ***Mojang*** 制作（当然游戏也是人家做的）&#13;
-网址：https://www.minecraft.net/zh-hans&#13;
-&gt;- 在这里我们能找到购买游戏的途径（Minecraft游戏其实是付费的），购买之后就能够得到 ***Java版*** 和 ***基岩版***，如果不行的话，可以去 ***Microsoft Store***（俗称微软商店）中购买&#13;
-&#13;
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-15_16-44-39.png?raw=true)&#13;
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Minecraft/Snipaste_2024-07-15_16-48-37.png?raw=true)&#13;
-&gt;- 购买游戏其实对 ***Java版*** 影响不大，因为微软接手后大力发展的是 在自家 ***XBox***平台上的 ***基岩版*** minecraft，但是购买了游戏后，***Java版*** 用户将会被分配一个唯一的 ***uuid***，用于 ***Java*** 服务器的 ***正版验证*** ，从而进行有效 ***联机*** &#13;
-&gt;- ***uuid*** 查询网站：https://mcuuid.net/&#13;
-### 二、游戏本体下载&#13;
-&gt;- 打开非官方启动器后都是可视化操作界面，接下来提一下游戏本体的下载。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Minecraft-xia-zai-%26Zerotier-ju-yu-wang-lian-ji.html</guid><pubDate>Sat, 22 Jun 2024 03:46:48 +0000</pubDate></item><item><title>Girls Band Cry</title><link>https://RolinShmily.github.io/post/Girls%20Band%20Cry.html</link><description>## ***TOGENASHI TOGEARI***&#13;
+- 针对准备学习编程的新人，一般是从c语言开始，当然c++是可以兼容c语言的，且环境配置上差不太多，在这里一起讲。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/C-C%2B%2B-tong-guo-VScode%2BMinGW-bian-yi-yun-xing.html</guid><pubDate>Sun, 14 Jul 2024 05:36:51 +0000</pubDate></item><item><title>Minecraft下载&amp;Zerotier局域网联机</title><link>https://RolinShmily.github.io/post/Minecraft-xia-zai-%26Zerotier-ju-yu-wang-lian-ji.html</link><description>
+
+# Java版Minecraft下载
+
+
+
+## 一、启动器 ***HMCL*** 、 ***PCL2*** 、 ***官方启动器***
+
+- ***HMCL*** --由 ***huangyuhui*** 制作
+  主页: https://hmcl.huangyuhui.net/
+  GitHub项目地址:https://github.com/HMCL-dev/HMCL
+
+![HMCL主页](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f323032342f30392f32332f536e6970617374655f323032342d30372d30355f32322d33382d32302e383134353734633562343938313433362e706e67.png)
+
+- ***PCL2*** --由 ***龙腾猫跃*** 制作
+  爱发电文件地址: https://afdian.com/p/0164034c016c11ebafcb52540025c377
+  GitHub项目地址: https://github.com/Hex-Dragon/PCL2
+
+![PCL2](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/Snipaste_2024-07-05_22-48-14.png)
+
+&gt; - 一般通过这种途径下载，将会得到一个 ***.zip*** 压缩包文件，然后找到一个文件夹解压下来，将会得到两个程序文件：
+
+![HMCL](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f4d696e6563726166742f536e6970617374655f323032342d30372d30355f32322d35372d32332e706.png)
+![PCL2](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f4d696e6563726166742f536e6970617374655f323032342d30372d30355f32322d35372d33332e706.png)
+
+- ***官方启动器*** --由 ***Mojang*** 制作（当然游戏也是人家做的）
+  网址：https://www.minecraft.net/zh-hans
+
+&gt; - 在这里我们能找到购买游戏的途径（Minecraft游戏其实是付费的），购买之后就能够得到 ***Java版*** 和 ***基岩版***，如果不行的话，可以去 ***Microsoft Store***（俗称微软商店）中购买
+
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f4d696e6563726166742f536e6970617374655f323032342d30372d31355f31362d34342d33392e706.png)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f4d696e6563726166742f536e6970617374655f323032342d30372d31355f31362d34382d33372e706.png)
+
+&gt; - 购买游戏其实对 ***Java版*** 影响不大，因为微软接手后大力发展的是 在自家 ***XBox*** 平台上的 ***基岩版*** minecraft，但是购买了游戏后，***Java版*** 用户将会被分配一个唯一的 ***uuid***，用于 ***Java*** 服务器的 ***正版验证*** ，从而进行有效 ***联机***
+&gt; - ***uuid*** 查询网站：https://mcuuid.net/
+
+## 二、游戏本体下载
+
+&gt; - 打开非官方启动器后都是可视化操作界面，接下来提一下游戏本体的下载。</description><guid isPermaLink="true">https://RolinShmily.github.io/post/Minecraft-xia-zai-%26Zerotier-ju-yu-wang-lian-ji.html</guid><pubDate>Sat, 22 Jun 2024 03:46:48 +0000</pubDate></item><item><title>Girls Band Cry</title><link>https://RolinShmily.github.io/post/Girls%20Band%20Cry.html</link><description>## ***TOGENASHI TOGEARI***&#13;
 - 取自Girls Band Cry官网：https://girls-band-cry.com/special/&#13;
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Girls%20Band%20Cry/GBC_PC%E5%A3%81%E7%B4%99-topaz.jpeg?raw=true)&#13;
 ![00](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/2024/09/23/1357957-topaz.jpeg)&#13;
