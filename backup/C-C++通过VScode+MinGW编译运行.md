@@ -1,62 +1,84 @@
-## 前言
+
+
+# 前言
+
 - 针对准备学习编程的新人，一般是从c语言开始，当然c++是可以兼容c语言的，且环境配置上差不太多，在这里一起讲。
-- 编程所用必备的工具一般是 ***IDE（集成开发环境）***，其中包含了代码 ***编辑器***、***编译器***、***调试器*** 和图形化操作界面，方便使用。
+- 编程所用必备的工具一般是 **IDE（集成开发环境）**，其中包含了代码 ***编辑器***、***编译器***、***调试器*** 和图形化操作界面，方便使用。
 - 而因为 ***VScode*** 它本质上是一个 ***编辑器***，而非 ***IDE***，也即只能写代码而不能直接编译运行，所以我们要配置环境，使得它能够完成代码生产的完整工具链。
 - 因此我们在这里需要安装 ***编辑器***，***编译器***，写配置文件 ***搭建环境***。
+
 > ***编辑器*** -- ***Visual Studio Code***
 > ***编译器*** -- ***GCC(GNU Compiler Collection)***
-### 1.***宇宙最强编辑器--Visual Studio Code***
+
+## 1.***宇宙最强编辑器--Visual Studio Code***
+
 - 下载地址： https://code.visualstudio.com/
 
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-01-14.png?raw=true)
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-04-28.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31322d30312d31342e706e673f7.png)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31322d30342d32382e706e673f7.png)
+
 - 全部勾选即可
 - 打开后在左侧，选择拓展
 
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_13-29-39.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31332d32392d33392e706e673f7.png)
+
 - 搜索 ***chinese*** 和 ***c*** 安装这两个拓展，***C/C++*** 拓展是个包，只需安装一个，另外几个都会自动安装。
 
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_13-31-05.png?raw=true)
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_13-31-21.png?raw=true)
-### 2.***Windows系统下的GCC编译器----MinGW-w64***
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31332d33312d30352e706e673f7.png)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250331205941.png)
+
+## 2.***Windows系统下的GCC编译器--MinGW-w64***
+
 > 最初的原版 ***gcc*** 编译器并不能在现如今更流行的 ***windows系统*** 下使用，因此我们用的是 ***MinGW(全称Minimalist GNU on Windows)***
 > 其下有两个版本 ***MinGW*** 和 ***MinGW-w64***，前者只能编译生成32位程序，而后者能够编译生成32位或64位程序，因此我们选择后者。
+
 - ***MinGW-w64*** 下载地址： https://sourceforge.net/projects/mingw-w64/files/
 - 进去之后向下滑动找到如下版本：
 
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-28-43.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31322d32382d34332e706e673f7.png)
+
 - 下载完成后会得到一个压缩包，在任意盘符下创建文件夹，名为 ***MinGW***，将压缩文件拖进该文件夹中解压，我这里在 ***D盘*** 中演示
 
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-33-35.png?raw=true)
-- 打开 ***bin*** 文件夹后，里面的 ***gcc.exe***是 ***C语言***的编译器，***g++.exe*** 是 ***C++语言*** 的编译器，***gdb.exe*** 是用来调试程序的 ***debug工具***
-### 3.***配置帐户环境变量***
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31322d33332d33352e706e673f7.png)
+
+- 打开 ***bin*** 文件夹后，里面的 **gcc.exe**是 **C语言**的编译器，***g++.exe*** 是 ***C++语言*** 的编译器，***gdb.exe*** 是用来调试程序的 ***debug工具***
+
+## 3.***配置帐户环境变量***
+
 - 打开 ***windows搜索栏***，输入 ***环境变量***
 
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-39-23.png?raw=true)
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-43-29.png?raw=true)
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-47-49.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31322d33392d32332e706e673f7.png)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31322d34332d32392e706e673f7.png)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31322d34372d34392e706e673f7.png)
+
 - 此后我们打开 ***cmd命令行***
 
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_12-51-12.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31322d35312d31322e706e673f7.png)
+
 - 此时需要重新启动电脑
-### 4.***文件结构***
+
+## 4.***文件结构***
+
 - ***学习阶段*** 大多数文件都是独立运行，或者是非拓展性文件间的互相访问，这是一种使用环境。
 - 而在 ***项目工作*** 中的文件夹中，有许多为了方便管理的拓展性文件，这又是一种使用环境。
 - 这两种环境我们要单独为其编写配置文件，分成 ***单文件结构*** 和 ***多文件结构***
-  
-
 - 我们可以在一个名为 ***project*** 的文件夹中创建名为 ***CODE_C*** 的文件夹来管理c语言文件，再在 ***CODE_C***文件夹下创建 ***C_Single*** 和 ***C_Multiple*** 来区分单文件与多文件结构。
 - 此时在 ***C_Single*** 文件夹下就可以创建用于测试的项目文件夹，比如名为 ***test_v*** 的文件夹，在此文件夹下创建 ***test.c*** 文件来编写代码，当我们去编译执行代码时，将会产生一个 ***exe可执行程序文件***，我们可以在项目文件夹 ***test_v*** 下创建 ***bin*** 文件夹来存放生成的程序文件。
 - example：
 
-![](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/Vscode/Snipaste_2024-07-14_13-07-17.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f5673636f64652f536e6970617374655f323032342d30372d31345f31332d30372d31372e706e673f7.png)
+
 - 在多文件结构中，只需要在单文件结构中存放代码文件的位置，替换成存放文件夹就好，源代码和exe文件均在这个文件夹中。
-### 5.***基于文件结构的VScode配置文件***
+
+## 5.***基于文件结构的VScode配置文件***
+
 - 简单来说，我们需要创建两个文件 ***tasks.json*** 文件和 ***launch.json*** 文件来分别实现 ***build*** 构建功能和 ***debug*** 调试功能
-- 创建文件的位置要求是，在存放源文件的文件夹的根目录，以c语言单文件为例，也就是在 ***C_Single***文件夹下创建。
+- 创建文件的位置要求是，在存放源文件的文件夹的根目录，以c语言单文件为例，也就是在 **C_Single**文件夹下创建。
 - 注意请大致看一看json文件的内容，要注意修改 ***某些路径***，配置默认编译器是调用gcc也即c语言编译器，若用c++语言请在json文件中修改对应参数。
+
 1. ***单文件结构***
-***tasks.json***
+   ***tasks.json***
+
 ```json
 {
     "version": "2.0.0",
@@ -107,7 +129,9 @@
     ]
 }
 ```
+
 ***launch.json***
+
 ```json
 {
     "version": "0.2.0",
@@ -129,8 +153,10 @@
     }]
 }
 ```
+
 2. ***多文件结构***
-***tasks.json***
+   ***tasks.json***
+
 ```json
 {
     "version": "2.0.0",
@@ -181,7 +207,9 @@
     ]
 }
 ```
+
 ***launch.json***
+
 ```json
 {
     "version": "0.2.0",
@@ -202,4 +230,5 @@
     }]
 }
 ```
+
 - 至此，在VScode中编写一个 Hello,World! 并编译执行，也就不成问题了。
