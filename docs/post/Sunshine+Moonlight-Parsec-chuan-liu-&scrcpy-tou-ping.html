@@ -10,10 +10,12 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="## 串流
+<meta name="description" content="# 串流
+
 - 影音串流技术是一种线上即时影音播放技术，有别于传统的MPEG或MP3等影音播放方式，应用串流(streaming)技术传送多媒体的特点，在于可以边看边下载，大幅节省使用者等待的时间。">
 <meta property="og:title" content="Sunshine+Moonlight/Parsec串流&scrcpy投屏">
-<meta property="og:description" content="## 串流
+<meta property="og:description" content="# 串流
+
 - 影音串流技术是一种线上即时影音播放技术，有别于传统的MPEG或MP3等影音播放方式，应用串流(streaming)技术传送多媒体的特点，在于可以边看边下载，大幅节省使用者等待的时间。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://RolinShmily.github.io/post/Sunshine%2BMoonlight-Parsec-chuan-liu-%26scrcpy-tou-ping.html">
@@ -69,7 +71,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h2>串流</h2>
+<div class="markdown-body" id="postBody"><h1>串流</h1>
 <ul>
 <li>影音串流技术是一种线上即时影音播放技术，有别于传统的MPEG或MP3等影音播放方式，应用串流(streaming)技术传送多媒体的特点，在于可以边看边下载，大幅节省使用者等待的时间。</li>
 </ul>
@@ -92,22 +94,22 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>注：默认 <em><strong>内网</strong></em> 条件下使用，没有内网条件的可以通过内网穿透，创造条件，比如 <em><strong>zerotier</strong></em> 的P2P连接，<em><strong>Sakura</strong></em> 的frp反向代理<br>
 如果有 <em><strong>IPv4或IPv6</strong></em> ，那就直接在 <em><strong>外网</strong></em> 条件下使用</li>
 </ul>
-<h3>一、<em><strong>Sunshine</strong></em>+<em><strong>Moonlight</strong></em></h3>
+<h2>一、<em><strong>Sunshine</strong></em>+<em><strong>Moonlight</strong></em></h2>
 <ol>
 <li><em><strong>Sunshine</strong></em> 可以简单理解为PC的信息流发射端，也就是将视频和音频信息打包，准备发送。<br>
 下载地址：<a href="https://github.com/LizardByte/Sunshine/releases">https://github.com/LizardByte/Sunshine/releases</a></li>
 </ol>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/62822074c3b52e785735d6c315c7275ff14b709b85ec3bf0c9a0afa64e5cb46f/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f31392d34382d33302e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/62822074c3b52e785735d6c315c7275ff14b709b85ec3bf0c9a0afa64e5cb46f/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f31392d34382d33302e706e673f7261773d74727565" alt="Sunshine" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_19-48-30.png?raw=true" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/02cb592b96aad42f22abcd1e6f3f89cf67dde2a2e44598be4340777e8c4d763c/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f32303235303333313231353933372e706e67"><img src="https://camo.githubusercontent.com/02cb592b96aad42f22abcd1e6f3f89cf67dde2a2e44598be4340777e8c4d763c/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f32303235303333313231353933372e706e67" alt="Sunshine" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250331215937.png" style="max-width: 100%;"></a></p>
 <ul>
 <li>下载后在右下角托盘处，选择 <em><strong>open sunshine</strong></em> 打开web端，注册一个账户，随后登录。</li>
 <li>在 <em><strong>configuration</strong></em> 的 <em><strong>General</strong></em> 里改为简体中文，<em><strong>save</strong></em>-&gt;<em><strong>apply</strong></em></li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/52a70f8b2409cf7ebe727ce02c740d20de67317815da62601d006cf21a4f1fd8/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32322d33332d31302e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/52a70f8b2409cf7ebe727ce02c740d20de67317815da62601d006cf21a4f1fd8/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32322d33332d31302e706e673f7261773d74727565" alt="config1" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-10.png?raw=true" style="max-width: 100%;"></a><br>
-<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/b9b943a914d5dbf57fdb1a2df6b81ec3f94be98a346fffe24188b75d0d61fc37/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32322d33332d33392e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/b9b943a914d5dbf57fdb1a2df6b81ec3f94be98a346fffe24188b75d0d61fc37/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32322d33332d33392e706e673f7261773d74727565" alt="config2" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-39.png?raw=true" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-10.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-10.png?raw=true" alt="config1" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-39.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_22-33-39.png?raw=true" alt="config2" style="max-width: 100%;"></a></p>
 <ul>
 <li>在 <em><strong>配置</strong></em> 里的 <em><strong>Network</strong></em> 里，将 <em><strong>UPnP开启</strong></em>，<em><strong>开启IPv4+IPv6</strong></em></li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/346346303d05cad68c46ad177fe6b4a9d286b5c134816ccac6530b780903f129/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32332d31342d32362e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/346346303d05cad68c46ad177fe6b4a9d286b5c134816ccac6530b780903f129/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32332d31342d32362e706e673f7261773d74727565" alt="config3" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-14-26.png?raw=true" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-14-26.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-14-26.png?raw=true" alt="config3" style="max-width: 100%;"></a></p>
 <ul>
 <li>最后保证 <em><strong>sunshine</strong></em> 在 <em><strong>Windows的防火墙</strong></em> 保护范围外，或者 <em><strong>关闭防火墙</strong></em></li>
 </ul>
@@ -126,29 +128,23 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <ol start="3">
 <li>在 <em><strong>moonlight</strong></em> 端发送连接请求后，会要求 <em><strong>sunshine</strong></em> 端输入对应 <em><strong>pin码</strong></em></li>
 </ol>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ebc7e98460bccb08571bc3b4e0c8b6c7560bbdafc9820c728e540af5abf975bb/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32332d33332d35382e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/ebc7e98460bccb08571bc3b4e0c8b6c7560bbdafc9820c728e540af5abf975bb/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32332d33332d35382e706e673f7261773d74727565" alt="pin" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-33-58.png?raw=true" style="max-width: 100%;"></a></p>
-<h3>二、<em><strong>Parsec</strong></em></h3>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-33-58.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-33-58.png?raw=true" alt="pin" style="max-width: 100%;"></a></p>
+<h2>二、<em><strong>Parsec</strong></em></h2>
 <ul>
 <li>与 <em><strong>sunshine+moonlight</strong></em> 的逻辑差不多</li>
 <li>官网地址：<a href="https://parsec.app/downloads" rel="nofollow">https://parsec.app/downloads</a></li>
 </ul>
-<h3>三、<em><strong>Parsec Virtual Display</strong></em></h3>
+<h2>三、<em><strong>Parsec Virtual Display</strong></em></h2>
 <ul>
-<li>
-<p>一个软件层 <em><strong>虚拟显示器</strong></em>，可以自定义屏幕，使串流的 <em><strong>moonlight端</strong></em> 充当 <em><strong>sunshine</strong></em> 的 <em><strong>副屏幕</strong></em></p>
-</li>
-<li>
-<p>下载地址：<a href="https://github.com/nomi-san/parsec-vdd/releases">https://github.com/nomi-san/parsec-vdd/releases</a></p>
-</li>
-<li>
-<p>在创建一个屏幕之后，我们要保存它提供的视频输出命令</p>
-</li>
+<li>一个软件层 <em><strong>虚拟显示器</strong></em>，可以自定义屏幕，使串流的 <em><strong>moonlight端</strong></em> 充当 <em><strong>sunshine</strong></em> 的 <em><strong>副屏幕</strong></em></li>
+<li>下载地址：<a href="https://github.com/nomi-san/parsec-vdd/releases">https://github.com/nomi-san/parsec-vdd/releases</a></li>
+<li>在创建一个屏幕之后，我们要保存它提供的视频输出命令</li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/fbfca2cb1f629dcc440bbf769d43212140058edc9ad0d4c7987d62e5aa563d51/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32332d34342d33362e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/fbfca2cb1f629dcc440bbf769d43212140058edc9ad0d4c7987d62e5aa563d51/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32332d34342d33362e706e673f7261773d74727565" alt="display" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-44-36.png?raw=true" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-44-36.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-44-36.png?raw=true" alt="display" style="max-width: 100%;"></a></p>
 <ul>
 <li>打开 <em><strong>sunshine</strong></em> web端，在配置下的 <em><strong>Audio/Video</strong></em> 里找到 <em><strong>输出名称</strong></em>，输入软件提供的命令行</li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/29cbfb425d6c989814d6c11efc87c2ee1767c8fc46f9e8a83dec6ca473293801/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32332d34382d35352e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/29cbfb425d6c989814d6c11efc87c2ee1767c8fc46f9e8a83dec6ca473293801/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32345f32332d34382d35352e706e673f7261773d74727565" alt="display2" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-48-55.png?raw=true" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-48-55.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-24_23-48-55.png?raw=true" alt="display2" style="max-width: 100%;"></a></p>
 <ul>
 <li>最后记得 <em><strong>保存+应用</strong></em></li>
 </ul>
@@ -167,7 +163,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </blockquote>
 <ul>
 <li>运行程序文件，等待手机界面出现，如果不行，可以将手机的usb模式选择为 <em><strong>管理文件</strong></em><br>
-<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/1ae6ba94f8ed1b0ebbfba6caa6de84c54fa0f0b1db1874aa1fe472f260dc1ce2/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d30362d31382e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/1ae6ba94f8ed1b0ebbfba6caa6de84c54fa0f0b1db1874aa1fe472f260dc1ce2/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d30362d31382e706e673f7261773d74727565" alt="scrcpy" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-06-18.png?raw=true" style="max-width: 100%;"></a></li>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-06-18.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-06-18.png?raw=true" alt="scrcpy" style="max-width: 100%;"></a></li>
 </ul>
 <ol start="2">
 <li><em><strong>WiFi</strong></em> 连接配置：</li>
@@ -175,18 +171,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <ul>
 <li>保持有线连接状态，在程序根目录下运行cmd</li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f9fe86b24b3c892edce0df227e7d0efe451f19cf4dac40cf7b447ec61a253628/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d31322d32312e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/f9fe86b24b3c892edce0df227e7d0efe451f19cf4dac40cf7b447ec61a253628/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d31322d32312e706e673f7261773d74727565" alt="cmd" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-12-21.png?raw=true" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-12-21.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-12-21.png?raw=true" alt="cmd" style="max-width: 100%;"></a></p>
 <ul>
 <li>输入指令：<code class="notranslate">.\scrcpy.exe -d</code> 运行后关闭手机界面</li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/44c15431b64a6ed295761ccb630a697063529f54933a4625e85edb8fb3c842dc/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d31352d35372e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/44c15431b64a6ed295761ccb630a697063529f54933a4625e85edb8fb3c842dc/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d31352d35372e706e673f7261773d74727565" alt="scrcpy1" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-15-57.png?raw=true" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-15-57.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-15-57.png?raw=true" alt="scrcpy1" style="max-width: 100%;"></a></p>
 <ul>
 <li>输入指令：<code class="notranslate">.\scrcpy.exe --tcpip</code> 此后，保证手机处于PC的wifi连接下，可拔掉数据线。</li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/95e8019a26fa3b73b12f7dffc249c2ef6bb3d0e1505d2aea9682b58130cc9a15/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d31392d33342e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/95e8019a26fa3b73b12f7dffc249c2ef6bb3d0e1505d2aea9682b58130cc9a15/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d31392d33342e706e673f7261773d74727565" alt="scrcpy2" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-19-34.png?raw=true" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-19-34.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-19-34.png?raw=true" alt="scrcpy2" style="max-width: 100%;"></a></p>
 <blockquote>
 <ul>
-<li>在此cmd下输入<code class="notranslate">.\scrcpy.exe -h</code>即可查看所有指令</li>
+<li>在此cmd下输入 <code class="notranslate">.\scrcpy.exe -h</code>即可查看所有指令</li>
 </ul>
 </blockquote>
 <ol start="3">
@@ -194,9 +190,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ol>
 <ul>
 <li>如果使用 <em><strong>有线连接</strong></em>，则直接运行程序文件 <em><strong>scrcpy.exe</strong></em> 即可</li>
-<li>如果使用 <em><strong>wifi连接</strong></em>，则可以在根目录下新建一个 <em><strong>start.bat</strong></em> 文件（可以先创建 <em><strong>start.txt</strong></em> 再将后缀名改为 <em><strong>bat</strong></em>），<em><strong>编辑</strong></em>，写入代码<code class="notranslate">.\scrcpy.exe -e</code>保存，双击运行 <em><strong>start.bat</strong></em> 即可</li>
+<li>如果使用 <em><strong>wifi连接</strong></em>，则可以在根目录下新建一个 <em><strong>start.bat</strong></em> 文件（可以先创建 <em><strong>start.txt</strong></em> 再将后缀名改为 <em><strong>bat</strong></em>），<em><strong>编辑</strong></em>，写入代码 <code class="notranslate">.\scrcpy.exe -e</code>保存，双击运行 <em><strong>start.bat</strong></em> 即可</li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/dd97c3b28b9c5b4512bdf9e23b87bef2a49b65ce3b9a00a75b7d12ce554125e6/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d33312d32362e706e673f7261773d74727565"><img src="https://camo.githubusercontent.com/dd97c3b28b9c5b4512bdf9e23b87bef2a49b65ce3b9a00a75b7d12ce554125e6/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f526f6c696e53686d696c792e6769746875622e696f406d61696e2f66696c65732f2545342542382542322545362542352538312f536e6970617374655f323032342d30372d32355f30302d33312d32362e706e673f7261773d74727565" alt="bat" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-31-26.png?raw=true" style="max-width: 100%;"></a></p></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-31-26.png?raw=true"><img src="https://github.com/RolinShmily/RolinShmily.github.io/blob/main/files/%E4%B8%B2%E6%B5%81/Snipaste_2024-07-25_00-31-26.png?raw=true" alt="bat" style="max-width: 100%;"></a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;">by RolinShmily 转载请注明出处</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
