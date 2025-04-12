@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/142618699?v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 什么是CFG
+**cfg** 是config(设置)的简写，可以理解为，拥有了cfg，你就拥有了在任何地点快速开一把cs的能力，不用再为设置而担忧。">
+<meta property="og:title" content="CounterStrike2_config文件与指令（新版）">
+<meta property="og:description" content="# 什么是CFG
+**cfg** 是config(设置)的简写，可以理解为，拥有了cfg，你就拥有了在任何地点快速开一把cs的能力，不用再为设置而担忧。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://RolinShmily.github.io/post/CounterStrike2_config-wen-jian-yu-zhi-ling-%EF%BC%88-xin-ban-%EF%BC%89.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/142618699?v=4">
+<title>CounterStrike2_config文件与指令（新版）</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">CounterStrike2_config文件与指令（新版）</h1>
+<div class="title-right">
+    <a href="https://RolinShmily.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>什么是CFG</h1>
+<p><strong>cfg</strong> 是config(设置)的简写，可以理解为，拥有了cfg，你就拥有了在任何地点快速开一把cs的能力，不用再为设置而担忧。</p>
+<h2>CFG存放位置</h2>
+<p>游戏全局cfg：</p>
+<ul>
+<li>如果你的游戏存放盘符与steam存放盘符不同，就参考前者，若相同，则后者。</li>
+</ul>
+<p><strong>...\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg</strong> 或 <strong>...\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg</strong></p>
+<ul>
+<li>当然也可以在steam程序中寻找，下面是步骤。</li>
+</ul>
+<ol>
+<li>打开steam库，找到Counter-Strike 2，右击选择属性</li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e1938c46e33094f814990f75ed9123e656fcb0916b02698fbd9d60ea9cc06a77/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31322d35322e77656270"><img src="https://camo.githubusercontent.com/e1938c46e33094f814990f75ed9123e656fcb0916b02698fbd9d60ea9cc06a77/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31322d35322e77656270" alt="steam" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/PixPin_2025-04-12_23-12-52.webp" style="max-width: 100%;"></a></p>
+<ol start="2">
+<li>选择“已安装文件”，点击浏览</li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c649ab0b00d4cee1bf9de9a0583816c3b0030a8a7a742d4024a0ec86f2dc817d/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31342d34382e77656270"><img src="https://camo.githubusercontent.com/c649ab0b00d4cee1bf9de9a0583816c3b0030a8a7a742d4024a0ec86f2dc817d/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31342d34382e77656270" alt="steam2" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/PixPin_2025-04-12_23-14-48.webp" style="max-width: 100%;"></a></p>
+<ol start="3">
+<li>进入“game”，进入“csgo”，选择“cfg”，该目录下就是存放cfg文件的位置</li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/1cd89b3a97f6b5250537e37b4d4dab3cf115fca5ecf753c0eed1cf820490c217/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31362d32372e77656270"><img src="https://camo.githubusercontent.com/1cd89b3a97f6b5250537e37b4d4dab3cf115fca5ecf753c0eed1cf820490c217/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31362d32372e77656270" alt="1" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/PixPin_2025-04-12_23-16-27.webp" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3c24416129ab81fe84bdf24828d072da0a902c3639d83d45452693383603d55c/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31382d30332e77656270"><img src="https://camo.githubusercontent.com/3c24416129ab81fe84bdf24828d072da0a902c3639d83d45452693383603d55c/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31382d30332e77656270" alt="2" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/PixPin_2025-04-12_23-18-03.webp" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ac2d838dee07c61a1d5b0eeda88a063c8d8c9d892c6e255c2f18a5a316e8a552/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31382d33322e77656270"><img src="https://camo.githubusercontent.com/ac2d838dee07c61a1d5b0eeda88a063c8d8c9d892c6e255c2f18a5a316e8a552/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31382d33322e77656270" alt="3" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/PixPin_2025-04-12_23-18-32.webp" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/45ec917fd52a239578e584bc3b93fa552b92570a71c7bf6dd16f8332ed7ca095/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31392d30302e77656270"><img src="https://camo.githubusercontent.com/45ec917fd52a239578e584bc3b93fa552b92570a71c7bf6dd16f8332ed7ca095/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d31392d30302e77656270" alt="4" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/PixPin_2025-04-12_23-19-00.webp" style="max-width: 100%;"></a></p>
+<p>个人用户cfg：<br>
+<strong>...\Steam\userdata\123456789\730\local\cfg</strong></p>
+<ul>
+<li>此处的“123456789”为steamID，可用于添加好友，如果你的PC上有多个steam账号登录过，那么在userdata文件夹中你会看到多个用户文件夹。</li>
+<li>与游戏全局cfg不同，个人用户cfg的设置只用于该steam账号，并且多了一个 <strong>cs2_video.txt</strong> 配置文件,我倾向于只用这个video配置来同步画面设置，而绑定键位等用全局cfg。</li>
+</ul>
+<h2>如何创建一个cfg文件</h2>
+<ol>
+<li>在桌面新建一个文本文档(也就是txt)，可以直接在这个txt文件中编写配置</li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/55b0b60ca9ce34785e6961514f65f179b625143d1746a66fce06fa999412c54b/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d33382d31372e77656270"><img src="https://camo.githubusercontent.com/55b0b60ca9ce34785e6961514f65f179b625143d1746a66fce06fa999412c54b/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d33382d31372e77656270" alt="1" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/PixPin_2025-04-12_23-38-17.webp" style="max-width: 100%;"></a></p>
+<ol start="2">
+<li>编写完成后，在文件资源管理器中找到这个文件，更改后缀为cfg。</li>
+</ol>
+<ul>
+<li>如果你无法显示后缀，按照下面操作</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/74c882813b521603506bb79036f43614835a216c2558be4799a1d410ebcb9892/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d34312d30322e77656270"><img src="https://camo.githubusercontent.com/74c882813b521603506bb79036f43614835a216c2558be4799a1d410ebcb9892/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31325f32332d34312d30322e77656270" alt="2" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/PixPin_2025-04-12_23-41-02.webp" style="max-width: 100%;"></a></p>
+<h2>autoexec.cfg</h2>
+<p>这是一个只要你游戏启动就会自动加载的cfg，所以基础设置与按键绑定，可以直接写在这个cfg文件里。</p>
+<ul>
+<li>下面给出一个模板，改写完成后要将文件名改为“autoexec.cfg”，并放在游戏全局cfg存放位置，才能生效。</li>
+</ul>
+<div class="highlight highlight-source-ini"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span>键位</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>w<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+forward<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>前进</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>s<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+back<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>后退</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+left<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>向左</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>d<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+right<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>向右</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>mouse1<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+attack<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>左键攻击</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>mouse2<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+attack2<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>右键特殊攻击</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>e<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+use<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>使用</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>f<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+lookatweapon<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>检视</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>space<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+jump<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span>跳跃</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>ctrl<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+duck<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span>蹲下</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>tab<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+showscores<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>打开计分板</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>g<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>drop<span class="pl-pds">"</span></span>   <span class="pl-c"><span class="pl-c">#</span>丢弃装备</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>m<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>teammenu<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>选择队伍</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>shift<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+sprint<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>静步</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>buymenu<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>购买菜单</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>z<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot6<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>雷</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot7<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>闪</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot8<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>烟</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>6<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot9<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>诱饵弹</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>v<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>slot10<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>火</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+spray_menu<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>打开涂鸦菜单</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>i<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>messagemode2<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">#</span>团队聊天框</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>u<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>messagemode<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">#</span>全局聊天框</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>mouse4<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+voicerecord<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">#</span>打开麦克风</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>mouse5<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>player_ping<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">#</span>玩家示意标志</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>mwheeldown<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+jump<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>滚轮下跳</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>mwheelup<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>+jump<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">#</span>滚轮上跳</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>`<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>toggleconsole<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">#</span>打开控制台</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>t<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>switchhands<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">#</span>切换左右手持枪</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>h<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>toggleradarscale<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>切换小地图缩放</span>
+bind <span class="pl-s"><span class="pl-pds">"</span>ralt<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>radio2;slot12<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>无线电与X光</span>
+
+<span class="pl-c"><span class="pl-c">#</span>准星</span>
+cl_crosshair_drawoutline <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用十字准星的轮廓线</span>
+cl_crosshair_dynamic_maxdist_splitratio <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 动态十字准星的最大分离距离比例</span>
+cl_crosshair_dynamic_splitalpha_innermod <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 动态十字准星内部分离部分的透明度</span>
+cl_crosshair_dynamic_splitalpha_outermod <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 动态十字准星外部分离部分的透明度</span>
+cl_crosshair_dynamic_splitdist <span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 动态十字准星的分离距离</span>
+cl_crosshair_friendly_warning <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用对友军的十字准星警告</span>
+cl_crosshair_outlinethickness <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 十字准星轮廓线的厚度</span>
+cl_crosshair_sniper_show_normal_inaccuracy <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用狙击枪十字准星显示正常不准确度</span>
+cl_crosshair_t <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用T形十字准星</span>
+cl_crosshairalpha <span class="pl-s"><span class="pl-pds">"</span>255<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 十字准星的透明度（255为完全不透明）</span>
+cl_crosshaircolor 5 <span class="pl-c"><span class="pl-c">#</span> 设置十字准星颜色为自定义（5表示自定义颜色）</span>
+cl_crosshaircolor_b <span class="pl-s"><span class="pl-pds">"</span>255<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 自定义十字准星的蓝色分量（255为最大）</span>
+cl_crosshaircolor_g <span class="pl-s"><span class="pl-pds">"</span>255<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 自定义十字准星的绿色分量（255为最大）</span>
+cl_crosshaircolor_r <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 自定义十字准星的红色分量（0为最小）</span>
+cl_crosshairdot <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用十字准星中心点</span>
+cl_crosshairgap <span class="pl-s"><span class="pl-pds">"</span>-3.644676<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 设置十字准星的间隙（负值表示向内收缩）</span>
+cl_crosshairgap_useweaponvalue <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用根据武器值调整十字准星间隙</span>
+cl_crosshairsize <span class="pl-s"><span class="pl-pds">"</span>0.901125<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 设置十字准星的大小</span>
+cl_crosshairstyle <span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 设置十字准星样式为经典静态（4表示经典静态）</span>
+cl_crosshairthickness <span class="pl-s"><span class="pl-pds">"</span>0.961664<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 设置十字准星的厚度</span>
+cl_crosshairusealpha <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 启用十字准星的透明度设置</span>
+
+<span class="pl-c"><span class="pl-c">#</span>狙击枪瞄准线宽度</span>
+cl_crosshair_sniper_width <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span>鼠标灵敏度</span>
+sensitivity 0.50
+
+<span class="pl-c"><span class="pl-c">#</span>持枪视角</span>
+viewmodel_fov 68 <span class="pl-c"><span class="pl-c">#</span> 设置第一人称视角的视野范围（FOV），值越大，视野越广</span>
+Viewmodel_offset_x 2.5 <span class="pl-c"><span class="pl-c">#</span> 调整武器模型在水平方向（X轴）上的偏移，正值向右，负值向左</span>
+Viewmodel_offset_y 0 <span class="pl-c"><span class="pl-c">#</span> 调整武器模型在垂直方向（Y轴）上的偏移，正值向上，负值向下</span>
+Viewmodel_offset_z -1.5 <span class="pl-c"><span class="pl-c">#</span> 调整武器模型在深度方向（Z轴）上的偏移，正值向前，负值向后</span>
+viewmodel_presetpos 2 <span class="pl-c"><span class="pl-c">#</span> 使用预设的武器模型位置（2表示经典位置）</span>
+
+<span class="pl-c"><span class="pl-c">#</span>雷达</span>
+cl_radar_always_centered <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用雷达始终以玩家为中心，雷达会显示地图的完整区域</span>
+cl_radar_scale <span class="pl-s"><span class="pl-pds">"</span>0.37<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 设置雷达的缩放比例，值越小，雷达显示的范围越大</span>
+cl_hud_radar_scale <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 设置HUD上雷达的缩放比例，1为默认大小</span>
+cl_teammate_colors_show 2 <span class="pl-c"><span class="pl-c">#</span> 设置队友颜色显示模式，2表示显示队友的轮廓颜色</span></pre></div>
+<h2>cs2_video.txt</h2>
+<p>同步画面设置</p>
+<ul>
+<li>给出模板</li>
+</ul>
+<div class="highlight highlight-source-ini"><pre class="notranslate"><span class="pl-s"><span class="pl-pds">"</span>video.cfg<span class="pl-pds">"</span></span>
+{
+	<span class="pl-s"><span class="pl-pds">"</span>Version<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>15<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 配置文件版本号</span>
+	<span class="pl-s"><span class="pl-pds">"</span>VendorID<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>4318<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 显卡厂商 ID（例如 NVIDIA、AMD）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>DeviceID<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>10464<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 显卡设备 ID</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.cpu_level<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> CPU 性能等级（0-3，3 为最高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.gpu_mem_level<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> GPU 显存性能等级（0-3，3 为最高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.gpu_level<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> GPU 性能等级（0-3，3 为最高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.knowndevice<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 是否识别为已知设备（0 为否，1 为是）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.defaultres<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>1920<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 默认分辨率宽度（1920x1080）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.defaultresheight<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>1080<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 默认分辨率高度（1920x1080）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.refreshrate_numerator<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 刷新率分子（0 表示使用默认值）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.refreshrate_denominator<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 刷新率分母（0 表示使用默认值）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.fullscreen<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 是否启用全屏模式（0 为否，1 为是）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.coop_fullscreen<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 合作模式是否启用全屏（1 为是）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.nowindowborder<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 是否启用无边框窗口模式（1 为是）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.mat_vsync<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 是否启用垂直同步（0 为否，1 为是）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.fullscreen_min_on_focus_loss<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 失去焦点时是否最小化全屏窗口（0 为否）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.high_dpi<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 是否启用高 DPI 缩放（0 为否）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>AutoConfig<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 自动配置等级（2 为自定义配置）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.shaderquality<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 着色器质量（0 为低，1 为中，2 为高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.r_texturefilteringquality<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 纹理过滤质量（0-3，3 为最高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.msaa_samples<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 多重采样抗锯齿（MSAA）采样数（4 为 4x MSAA）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.r_csgo_cmaa_enable<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 是否启用 CMAA 抗锯齿（0 为否）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.videocfg_shadow_quality<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 阴影质量（0 为低，1 为中，2 为高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.videocfg_dynamic_shadows<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 是否启用动态阴影（1 为是）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.videocfg_texture_detail<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 纹理细节（0 为低，1 为中，2 为高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.videocfg_particle_detail<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 粒子细节（0 为低，1 为中，2 为高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.videocfg_ao_detail<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 环境光遮蔽（AO）细节（0 为低，1 为中，2 为高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.videocfg_hdr_detail<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> HDR 细节（0-3，3 为最高）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.videocfg_fsr_detail<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> FSR（FidelityFX Super Resolution）细节（0 为禁用）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.monitor_index<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 显示器索引（0 为主显示器）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.r_low_latency<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 是否启用低延迟模式（1 为是）</span>
+	<span class="pl-s"><span class="pl-pds">"</span>setting.aspectratiomode<span class="pl-pds">"</span></span>		<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 宽高比模式（0 为自动，1 为 4:3，2 为 16:9）</span>
+}</pre></div>
+<h1>设置启动项</h1>
+<ul>
+<li>启动项设置位置：在steam库中选择CS2属性，选择“通用”，在下方黑框内填写。</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8738088588ee8e757739f236b2bb0f8d8d7af1ab64b1ceddcaa45c4a53cfd14e/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31335f30302d31312d32322e77656270"><img src="https://camo.githubusercontent.com/8738088588ee8e757739f236b2bb0f8d8d7af1ab64b1ceddcaa45c4a53cfd14e/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f526f6c696e53686d696c792f496d61676573406d61696e2f50697850696e5f323032352d30342d31335f30302d31312d32322e77656270" alt="qidong" data-canonical-src="https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/PixPin_2025-04-13_00-11-22.webp" style="max-width: 100%;"></a></p>
+<ul>
+<li>下面使一些常用启动项，需要注意的是，每一条指令之间要有一个空格。</li>
+</ul>
+<div class="highlight highlight-source-ini"><pre class="notranslate">-novid  <span class="pl-c"><span class="pl-c">#</span>关闭过场动画</span>
+-high  <span class="pl-c"><span class="pl-c">#</span>提高CSGO程序优先级，有可能负优化</span>
+-nojoy <span class="pl-c"><span class="pl-c">#</span>关闭手柄相关，降低内存占用</span>
+-perfectworld  <span class="pl-c"><span class="pl-c">#</span>直接进入国服</span>
+-worldwide  <span class="pl-c"><span class="pl-c">#</span>直接进入国际服</span>
+-w 1920 -h 1080  <span class="pl-c"><span class="pl-c">#</span>设置分辨率1920x1080</span>
++exec auto.cfg  <span class="pl-c"><span class="pl-c">#</span>加载auto.cfg</span>
++fps_max 300  <span class="pl-c"><span class="pl-c">#</span>限制fps最大300</span>
+-allow_third_party_software  <span class="pl-c"><span class="pl-c">#</span>允许OBS等第三方软件</span>
+-noreflex <span class="pl-c"><span class="pl-c">#</span>取消游戏内的reflex功能，可以在NVIDIA控制面板中开启</span></pre></div>
+<h1>控制台指令</h1>
+<p>了解控制台指令功能，可以将其绑定在按键上，并写入cfg文件，快速实现功能。</p>
+<ul>
+<li>下面给出亿些指令</li>
+</ul>
+<div class="highlight highlight-source-ini"><pre class="notranslate">sv_cheats 1 <span class="pl-c"><span class="pl-c">#</span> 开启作弊模式，允许使用作弊命令</span>
+bot_kick <span class="pl-c"><span class="pl-c">#</span> 踢出所有机器人</span>
+mp_buy_anywhere 1 <span class="pl-c"><span class="pl-c">#</span> 允许在任意位置购买装备</span>
+mp_freezetime 0 <span class="pl-c"><span class="pl-c">#</span> 设置赛前准备时间为0秒</span>
+mp_maxmoney 99999 <span class="pl-c"><span class="pl-c">#</span> 设置最大金钱数为99999</span>
+mp_startmoney 99999 <span class="pl-c"><span class="pl-c">#</span> 设置起始金钱数为99999</span>
+mp_buytime 99999 <span class="pl-c"><span class="pl-c">#</span> 设置购买时间为99999秒</span>
+mp_ignore_round_win_conditions 1 <span class="pl-c"><span class="pl-c">#</span> 回合永不结束</span>
+mp_respawn_on_death_ct 1 <span class="pl-c"><span class="pl-c">#</span> CT阵营无限复活</span>
+mp_respawn_on_death_t 1 <span class="pl-c"><span class="pl-c">#</span> T阵营无限复活</span>
+mp_friendlyfire 1 <span class="pl-c"><span class="pl-c">#</span> 开启队友伤害</span>
+ammo_grenade_limit_total 6 <span class="pl-c"><span class="pl-c">#</span> 设置手榴弹最大可携带数为6</span>
+mp_spectators_max 9 <span class="pl-c"><span class="pl-c">#</span> 设置游戏观察者最大数为9</span>
+mp_autokick 0 <span class="pl-c"><span class="pl-c">#</span> 禁用自动踢出服务器功能</span>
+mp_restartgame 1 <span class="pl-c"><span class="pl-c">#</span> 在1秒后重启回合</span>
+sv_grenade_trajectory_prac_pipreview 1 <span class="pl-c"><span class="pl-c">#</span> 启用手榴弹轨迹的预览</span>
+sv_grenade_trajectory_prac_trailtime 8 <span class="pl-c"><span class="pl-c">#</span> 设置手榴弹轨迹可见时间为8秒</span>
+sv_infinite_ammo 2 <span class="pl-c"><span class="pl-c">#</span> 设置无限弹药模式（道具无限），但仍需换弹夹</span>
+sv_showimpacts 1 <span class="pl-c"><span class="pl-c">#</span> 开启弹痕显示</span>
+
+exec autoexec.cfg <span class="pl-c"><span class="pl-c">#</span> 执行 autoexec.cfg 配置文件，加载自定义设置</span>
+key_listboundkeys <span class="pl-c"><span class="pl-c">#</span> 列出所有已绑定的按键及其对应的命令</span>
+toggle cl_teamid_overhead_mode 1 3 <span class="pl-c"><span class="pl-c">#</span> 切换队友头顶标识模式（1 为简单标识，3 为详细标识）</span>
+toggle cl_draw_only_deathnotices 1 0 <span class="pl-c"><span class="pl-c">#</span> 切换是否仅显示死亡通知（1 为仅显示，0 为显示完整 HUD）</span>
+toggle cl_drawhud_force_radar 1 0 <span class="pl-c"><span class="pl-c">#</span> 切换是否强制显示雷达（1 为强制显示，0 为正常显示）</span>
+
+cl_hud_color <span class="pl-s"><span class="pl-pds">"</span>11<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 设置 HUD 颜色为粉色</span>
+con_enable <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 启用控制台功能</span>
+fps_max 0 <span class="pl-c"><span class="pl-c">#</span> 设置 FPS 无上限，允许游戏以最高帧率运行</span>
+cl_join_advertise <span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 显示玩家计划加入反恐精英队的信息</span>
+cl_use_opens_buy_menu <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用在靠近购买区域时按下使用键（E键）自动打开购买菜单的功能</span>
+cl_dm_buyrandomweapons 0 <span class="pl-c"><span class="pl-c">#</span> 在死亡竞技模式中禁用自动购买随机武器</span>
+gameinstructor_enable <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用游戏指导功能</span>
+cl_autohelp <span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 禁用自动帮助提示</span>
+mm_dedicated_search_maxping <span class="pl-s"><span class="pl-pds">"</span>70<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> 优先选择延迟在 70 毫秒以内的服务器</span>
+func_break_max_pieces 0 <span class="pl-c"><span class="pl-c">#</span> 游戏会根据物体的属性生成默认数量的碎片</span>
+r_drawtracers_firstperson 1 <span class="pl-c"><span class="pl-c">#</span> 开启第一人称视角中的子弹轨迹显示</span>
+r_fullscreen_gamma 3.0 <span class="pl-c"><span class="pl-c">#</span> 调整游戏画面伽马值为 3.0</span>
+cl_teamid_overhead_mode 3 <span class="pl-c"><span class="pl-c">#</span> 始终显示队友名称与装备信息</span>
+echo AutoConfig Enabled! <span class="pl-c"><span class="pl-c">#</span> 在控制台打印 "AutoConfig Enabled!" 提示信息</span>
+
+mp_damage_headshot_only 1 <span class="pl-c"><span class="pl-c">#</span> 仅爆头才能造成伤害，其他部位攻击无效</span>
+ent_create chicken <span class="pl-c"><span class="pl-c">#</span> 在游戏中生成一只鸡（娱乐功能）</span>
+custom_bot_difficulty 5 <span class="pl-c"><span class="pl-c">#</span> 设置自定义 BOT 难度为最高（5 为最高难度）</span>
+mp_plant_c4_anywhere 1 <span class="pl-c"><span class="pl-c">#</span> 允许在任何位置安放 C4 炸弹</span>
+mp_c4timer 40 <span class="pl-c"><span class="pl-c">#</span> 设置 C4 炸弹的倒计时为 40 秒</span>
+sv_regeneration_force_on 1 <span class="pl-c"><span class="pl-c">#</span> 开启生命值自动回复功能</span>
+cl_showpos 1 <span class="pl-c"><span class="pl-c">#</span> 在屏幕上显示玩家当前的位置、速度和角度信息</span>
+mp_weapons_glow_on_ground 1 <span class="pl-c"><span class="pl-c">#</span> 开启地面武器的高亮显示功能</span></pre></div>
+<h1>自用配置分享</h1>
+<h2>启动项</h2>
+<pre class="notranslate"><code class="notranslate">-allow_third_party_software -noreflex -high -w 1920 -h 1440
+</code></pre>
+<h2>cs2_video.txt</h2>
+<pre class="notranslate"><code class="notranslate">"video.cfg"
+{
+	"Version"		"15"
+	"VendorID"		"4318"
+	"DeviceID"		"10464"
+	"setting.cpu_level"		"3"
+	"setting.gpu_mem_level"		"3"
+	"setting.gpu_level"		"3"
+	"setting.knowndevice"		"0"
+	"setting.defaultres"		"1920"
+	"setting.defaultresheight"		"1440"
+	"setting.refreshrate_numerator"		"0"
+	"setting.refreshrate_denominator"		"0"
+	"setting.fullscreen"		"0"
+	"setting.coop_fullscreen"		"1"
+	"setting.nowindowborder"		"1"
+	"setting.mat_vsync"		"0"
+	"setting.fullscreen_min_on_focus_loss"		"0"
+	"setting.high_dpi"		"0"
+	"AutoConfig"		"2"
+	"setting.shaderquality"		"0"
+	"setting.r_texturefilteringquality"		"3"
+	"setting.msaa_samples"		"4"
+	"setting.r_csgo_cmaa_enable"		"0"
+	"setting.videocfg_shadow_quality"		"1"
+	"setting.videocfg_dynamic_shadows"		"1"
+	"setting.videocfg_texture_detail"		"1"
+	"setting.videocfg_particle_detail"		"1"
+	"setting.videocfg_ao_detail"		"0"
+	"setting.videocfg_hdr_detail"		"3"
+	"setting.videocfg_fsr_detail"		"0"
+	"setting.monitor_index"		"0"
+	"setting.r_low_latency"		"1"
+	"setting.aspectratiomode"		"0"
+}
+</code></pre>
+<h2>autoexec.cfg</h2>
+<pre class="notranslate"><code class="notranslate">//Mouse
+sensitivity 0.50
+
+//Keys
+bind "w" "+forward"
+bind "s" "+back"
+bind "a" "+left"
+bind "d" "+right"
+bind "mouse1" "+attack" 
+bind "mouse2" "+attack2"
+bind "e" "+use"
+bind "f" "+lookatweapon"
+bind "space" "+jump" 
+bind "ctrl" "+duck" 
+bind "tab" "+showscores"
+bind "g" "drop" 
+bind "m" "teammenu"
+bind "shift" "+sprint" 
+bind "b" "buymenu" 
+bind "1" "slot1" 
+bind "2" "slot2"  
+bind "3" "slot3" 
+bind "4" "slot11" 
+bind "5" "slot5"
+
+bind "z" "slot6;" 
+bind "x" "slot7" 
+bind "c" "slot8" 
+bind "6" "slot9" 
+bind "v" "slot10" 
+
+bind "q" "lastinv"
+bind "y" "+spray_menu"
+bind "i" "messagemode2"
+bind "u" "messagemode"
+bind "mouse4" "+voicerecord"
+bind "mouse5" "player_ping"
+bind "mwheeldown" "+jump" 
+bind "mwheelup" "+jump"
+bind "`" "toggleconsole"
+
+bind "t" "switchhands"
+bind "h" "toggleradarscale" 
+
+bind "alt" "toggle cl_teamid_overhead_mode 1 3"
+bind "ralt" "radio2;slot12"
+
+bind "-" "toggle cl_draw_only_deathnotices 1 0"
+bind "=" "toggle cl_drawhud_force_radar 1 0"
+
+bind "f5" "buy hegrenade"
+bind "f6" "buy flashbang"
+bind "f7" "buy smokegrenade"
+bind "f8" "buy molotov;buy incgrenade"
+bind "f9" "buy vest"
+bind "f10" "buy vesthelm"
+bind "f11" "buy defuser"
+bind "f4" "buy rifle1"
+bind "f3" "buy secondary4"
+bind "f12" "sellbackall"
+
+//cfg
+exec zeus.cfg
+bind "o" "exec autoexec.cfg;say auto!"
+bind "." "exec rebind.cfg:say rebind!"
+bind "\" "key_listboundkeys;say keys_log!"
+bind "j" "exec knife.cfg;say knife_model!"
+bind "p" "exec train.cfg;say train_model!"
+bind "[" "exec crosshair_view;say crosshair_view!"
+bind "]" "exec crosshair_view;say crosshair_view!"
+bind "/" "exec lastinv.cfg;say lastinv!"
+
+//Crosshair
+cl_crosshair_drawoutline "0"
+cl_crosshair_dynamic_maxdist_splitratio "1"
+cl_crosshair_dynamic_splitalpha_innermod "0"
+cl_crosshair_dynamic_splitalpha_outermod "1"
+cl_crosshair_dynamic_splitdist "3"
+cl_crosshair_friendly_warning "0"
+cl_crosshair_outlinethickness "1"
+cl_crosshair_sniper_show_normal_inaccuracy "0"
+cl_crosshair_t "0"
+cl_crosshairalpha "255"
+cl_crosshaircolor 5
+cl_crosshaircolor_b "255"
+cl_crosshaircolor_g "255"
+cl_crosshaircolor_r "0"
+cl_crosshairdot "0"
+cl_crosshairgap "-3.644676"
+cl_crosshairgap_useweaponvalue "0"
+cl_crosshairsize "0.901125"
+cl_crosshairstyle "4"
+cl_crosshairthickness "0.961664"
+cl_crosshairusealpha "1"
+
+//sniper_crosshair
+cl_crosshair_sniper_width "2"
+
+//more_crosshair
+cl_fixedcrosshaigap "3"
+cl_grenadecrosshair_decoy 1
+cl_grenadecrosshair_explosive 1
+cl_grenadecrosshair_fire 1
+cl_grenadecrosshair_flash 1
+cl_grenadecrosshair_keepusercrosshair 1
+cl_grenadecrosshair_smoke 1
+cl_grenadecrosshairdelay_decoy "0.114345"
+cl_grenadecrosshairdelay_explosive "0.114345"
+cl_grenadecrosshairdelay_fire "0.114345"
+cl_grenadecrosshairdelay_flash "0.114345"
+cl_grenadecrosshairdelay_smoke "0.114345"
+cl_observed_bot_crosshair 2
+cl_show_observer_crosshair 2
+cl_teamid_overhead_fade_near_crosshair "0.5"
+
+//Gun's view
+viewmodel_fov 68
+Viewmodel_offset_x 2.5
+Viewmodel_offset_y 0
+Viewmodel_offset_z -1.5
+viewmodel_presetpos 2
+
+//Radar
+cl_radar_always_centered "0"
+cl_radar_scale "0.37"
+cl_hud_radar_scale "1"
+cl_teammate_colors_show 2
+
+//Others
+cl_hud_color "11"
+con_enable "1"
+fps_max 0
+cl_join_advertise "2"
+cl_use_opens_buy_menu "0" 
+cl_dm_buyrandomweapons 0 
+gameinstructor_enable "0"
+cl_autohelp "false"
+mm_dedicated_search_maxping "70"
+func_break_max_pieces 0
+r_drawtracers_firstperson 1
+r_fullscreen_gamma 3.0
+cl_use_opens_buy_menu false
+cl_teamid_overhead_mode 3
+
+//Ending
+echo AutoConfig Enabled!
+</code></pre>
+<h2>train.cfg</h2>
+<pre class="notranslate"><code class="notranslate">//Train
+bind "k" "sv_cheats 1;give weapon_knife"
+bind "l" "sv_rethrow_last_grenade"
+bind "n" "noclip"
+bind "p" "sv_cheats 1;bot_kick;mp_buy_anywhere 1;mp_freezetime 0;mp_maxmoney 99999;mp_startmoney 99999;mp_buytime 99999;mp_ignore_round_win_conditions 1; mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;mp_friendlyfire 1;ammo_grenade_limit_total 6;mp_spectators_max 9; mp_autokick 0; mp_restartgame 1;sv_grenade_trajectory_prac_pipreview 1; sv_grenade_trajectory_prac_trailtime 8;sv_infinite_ammo 2;sv_showimpacts 1;say Practice Enabled"
+</code></pre>
+<h2>knife.cfg</h2>
+<pre class="notranslate"><code class="notranslate">//knife_change
+bind "j" "mp_drop_knife_enable 1;knife"                                                    
+alias "knife" "knife1"
+alias "knife1" "subclass_change 500; alias knife knife2"
+alias "knife2" "subclass_change 503; alias knife knife3"
+alias "knife3" "subclass_change 505; alias knife knife4"
+alias "knife4" "subclass_change 506; alias knife knife5"
+alias "knife5" "subclass_change 507; alias knife knife6"
+alias "knife6" "subclass_change 508; alias knife knife7"
+alias "knife7" "subclass_change 509; alias knife knife8"
+alias "knife8" "subclass_change 512; alias knife knife9"
+alias "knife9" "subclass_change 514; alias knife knife10"
+alias "knife10" "subclass_change 515; alias knife knife11"
+alias "knife11" "subclass_change 516; alias knife knife12"
+alias "knife12" "subclass_change 517; alias knife knife13"
+alias "knife13" "subclass_change 518; alias knife knife14"
+alias "knife14" "subclass_change 519; alias knife knife15"
+alias "knife15" "subclass_change 520; alias knife knife16"
+alias "knife16" "subclass_change 521; alias knife knife17"
+alias "knife17" "subclass_change 522; alias knife knife18"
+alias "knife18" "subclass_change 523; alias knife knife19"
+alias "knife19" "subclass_change 524; alias knife knife20"
+alias "knife20" "subclass_change 525; alias knife knife21"
+alias "knife21" "subclass_change 526; alias knife knife1"
+</code></pre>
+<h2>lastinv.cfg</h2>
+<pre class="notranslate"><code class="notranslate">unbind 1
+unbind 2
+unbind 3
+unbind q
+bind 1  eq_slot1   
+bind 2  eq_slot2 
+bind 3  eq_slot3  
+bind q  eq_lastinv 
+alias see "+lookatweapon;-lookatweapon"   
+alias eq_slot1    "slot1; set_slot1;"
+alias eq_slot2    "slot2; set_slot2;"  
+alias eq_slot3    "slot3; set_slot3;see"   
+alias qs_slot1    "alias eq_invnext eq_slot2; alias eq_invprev eq_slot9; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot1; alias set_slot1 ; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot2    "alias eq_invnext eq_slot3; alias eq_invprev eq_slot1; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot2; alias set_slot1 qs_slot1; alias set_slot2 ; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot3    "alias eq_invnext eq_slot5; alias eq_invprev eq_slot2; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot3; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 ; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot5    "alias eq_invnext eq_slot6; alias eq_invprev eq_slot3; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot5; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 ; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot6    "alias eq_invnext eq_slot7; alias eq_invprev eq_slot5; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot6; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 ; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot7    "alias eq_invnext eq_slot8; alias eq_invprev eq_slot6; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot7; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 ; alias set_slot8 qs_slot8; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"  
+alias qs_slot8    "alias eq_invnext eq_slot9; alias eq_invprev eq_slot7; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot8; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 ; alias set_slot9 qs_slot9; alias set_slot10 qs_slot10"
+alias qs_slot9    "alias eq_invnext eq_slot1; alias eq_invprev eq_slot8; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot9; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 ; alias set_slot10 qs_slot10"
+qs_slot2
+eq_slot1
+</code></pre>
+<h2>zeus.cfg</h2>
+<pre class="notranslate"><code class="notranslate">alias "att0" "bind mouse1 +firr1;bind mouse2 +firr2"
+alias "att1" "bind mouse1 +attack;bind mouse2 +attack2"
+alias "+firr1" "+attack"
+alias "-firr1" "-attack;slot2;slot1;att1;"
+alias "+firr2" "+attack2"
+alias "-firr2" "-attack2;slot2;slot1;att1;"
+unbind 1
+unbind 2
+unbind 3
+unbind 4
+unbind 5
+unbind q
+bind "1" "slot1; att1"
+bind "2" "slot2; att1"  
+bind "3" "slot3; att1" 
+bind "4" "slot11; att0" 
+bind "5" "slot5; att1"
+bind "q" "lastinv; att1;"
+</code></pre>
+<h2>crosshair_view.cfg</h2>
+<pre class="notranslate"><code class="notranslate">say niko_PI:"[",nanyi:"]"
+//niko_PI
+bind "[" "PI"
+alias "PI" "PI00"
+alias "PI00" "cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.5";cl_crosshair_dynamic_splitdist "7";cl_crosshair_friendly_warning "0";cl_crosshair_outlinethickness "0";cl_crosshair_sniper_show_normal_inaccuracy "0";alias PI PI01;say niko_PI_01/02!"
+alias "PI01" "cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor 5;cl_crosshaircolor_b "255";cl_crosshaircolor_g "255";cl_crosshaircolor_r "0";cl_crosshairdot "0";cl_crosshairgap "-3.9";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "0.9";cl_crosshairstyle "4";cl_crosshairthickness "1.5";cl_crosshairusealpha "1";alias PI PI00;say niko_PI_02/02!"
+//nanyi
+bind "]" "p"
+alias "p" "p01"
+alias "p01" "viewmodel_fov 68;viewmodel_offset_x 1.5;viewmodel_offset_y 2;viewmodel_offset_z -1;viewmodel_presetpos 3;say nanyi!"
+</code></pre></div>
+<div style="font-size:small;margin-top:8px;float:right;">by RolinShmily 转载请注明出处</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://RolinShmily.github.io">RolinShmily</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("06/22/2024"!=""){
+    var startSite=new Date("06/22/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","RolinShmily/RolinShmily.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+
+</html>
