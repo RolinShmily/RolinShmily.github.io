@@ -1,0 +1,39 @@
+- class_name: 友情链接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: Zeruns's Blog
+      link: https://blog.zeruns.com/
+      avatar: https://blog.zeruns.com/favicon.ico
+      descr: zeruns的博客-我的学习笔记和技术分享
+    - name: 叶宇的个人站
+      link: https://www.aye10032.com/
+      avatar: https://www.aye10032.com/images/favicon.png
+      descr: 生信人，越学越是发现人类是有极限的自己的不足，也是在此过程中继续学习并成长着。
+    - name: Purp1eの知识小站
+      link: https://upup.cool/
+      avatar: https://upup.cool/img/favicon.ico
+      descr: B站UP主Purple-CSGO，南七技校下院的小生罢了
+    - name: 雪中小屋
+      link: https://blog.xueayi.site/
+      avatar: https://blog.xueayi.site/favicon.ico
+      descr: 一个普通的游戏玩家🎮
+    - name: 红烧猎人的博客
+      link: https://blog.enianteam.com/
+      avatar: https://blog.enianteam.com/static/upload/2022/05/18/632bbee6f5a874d7ecc8ed7e0f4cb3cd.png
+      descr: 红烧猎人的个人博客网站，常分享、收集、总结一些技术文章。
+    - name: Bug侠
+      link: https://bugxia.com/
+      avatar: https://bugxia.com/wp-content/themes/bugxia/asset/img/fav.ico
+      descr: Bug侠 -- 喵喵爸爸的七零八碎
+    - name: La02^ - Nyamu~❤
+      link: https://nyamuchi.com/
+      avatar: https://nyamuchi.com/favicon/favicon.ico
+      descr: Nyamuchi FUN - La02
+
+- class_name: 网站
+  class_desc: 优秀个人主页
+  link_list:
+    - name: JIEJOE | 视觉设计者
+      link: https://www.jiejoe.com/
+      avatar: https://www.jiejoe.com/meta/favicon_32.png
+      descr: JIEJOE,视觉设计者:包括网站、平面、视频、和交互设计
