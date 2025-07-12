@@ -1,0 +1,70 @@
+name: Pages
+
+on:
+  push:
+    branches:
+      - main # default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup SSH Key
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "RolinShmily@outlook.com"
+          git config --global user.name "RolinShmily"
+      
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          submodules: recursive
+      
+      - name: Use Node.js 23
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+      
+      - name: Cache NPM dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache-
+      
+      - name: Install Dependencies
+        run: |
+          npm install hexo-cli -g
+          npm install
+      
+      - name: Build
+        run: |
+          hexo clean
+          hexo generate
+      
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+  
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
