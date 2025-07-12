@@ -104,7 +104,9 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: git@github.com:RolinShmily/RolinShmily.github.io.git
+  branch: main
 
 # ---------------
 # bangumi插件：https://github.com/HCLonely/hexo-bilibili-bangumi
