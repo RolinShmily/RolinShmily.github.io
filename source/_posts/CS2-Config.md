@@ -290,7 +290,7 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 ## 启动项
 
 ```ini
--allow_third_party_software -noreflex -high -novid -nojoy -noborder
+-allow_third_party_software -noreflex -high -novid -nojoy -noborder -w 1440 -h 1080 -worldwide
 ```
 
 ## cs2_video.txt
@@ -305,8 +305,8 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 	"setting.gpu_mem_level"		"3"
 	"setting.gpu_level"		"3"
 	"setting.knowndevice"		"0"
-	"setting.defaultres"		"1920"
-	"setting.defaultresheight"		"1440"
+	"setting.defaultres"		"1440"
+	"setting.defaultresheight"		"1080"
 	"setting.refreshrate_numerator"		"0"
 	"setting.refreshrate_denominator"		"0"
 	"setting.fullscreen"		"0"
