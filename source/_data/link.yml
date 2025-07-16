@@ -31,9 +31,13 @@
       descr: Nyamuchi FUN - La02
 
 - class_name: 网站
-  class_desc: 优秀个人主页
+  class_desc: 
   link_list:
     - name: JIEJOE | 视觉设计者
       link: https://www.jiejoe.com/
       avatar: https://www.jiejoe.com/meta/favicon_32.png
       descr: JIEJOE,视觉设计者:包括网站、平面、视频、和交互设计
+    - name: RoL1n's Navigation
+      link: https://navi.srprolin.top
+      avatar: https://doc.sun-panel.top/images/logo.png
+      descr: 基于Sun-Panel搭建的个人导航页
