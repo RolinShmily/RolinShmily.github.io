@@ -376,14 +376,16 @@ bind "y" "+spray_menu"             // 打开喷漆菜单
 bind "i" "messagemode2"            // 打开团队聊天
 bind "u" "messagemode"             // 打开全局聊天
 bind "mouse4" "+voicerecord"       // 语音
-bind "mouse5" "player_ping"        // 玩家标记
+bind "alt" "+radialradio"          // 快捷聊天轮盘
+bind "mouse5" "player_ping"		   // 玩家标记
 bind "mwheeldown" "+jump"          // 鼠标滚轮向下跳跃
 bind "mwheelup" "+jump"            // 鼠标滚轮向上跳跃
 bind "`" "toggleconsole"                           // 打开/关闭控制台
 bind "t" "switchhands"                             // 切换武器持握方式（左手/右手）
 bind "h" "toggleradarscale"                        // 切换雷达缩放比例
-bind "alt" "toggle cl_teamid_overhead_mode 1 3"    // 切换队友头顶标识模式
-bind "ralt" "radio2;slot12"                        // 打开无线电菜单、X光显示、医疗针
+bind "ralt" "toggle cl_teamid_overhead_mode 1 3"   // 切换队友头顶标识模式
+bind ";" "radio2;slot12"                           // 打开无线电菜单、X光显示、医疗针
+//bind "'" "+quickinv"							   // 轮盘切装备
 bind "-" "toggle cl_draw_only_deathnotices 1 0"    // 切换是否仅显示死亡通知与准星
 bind "=" "toggle cl_drawhud_force_radar 1 0"       // 切换是否强制显示雷达
 bind F1 "vote 1"                                   // 投票选择同意
@@ -395,8 +397,8 @@ bind "f8" "buy molotov;buy incgrenade"             // 购买燃烧瓶/燃烧弹
 bind "f9" "buy vest"                               // 购买防弹衣
 bind "f10" "buy vesthelm"                          // 购买防弹衣+头盔
 bind "f11" "buy defuser"                           // 购买拆弹器
-bind "f4" "buy rifle1"                             // 购买主武器（步枪）
-bind "f3" "buy secondary4"                         // 购买副武器（手枪）
+bind "f4" "buy rifle1"                             // 购买主武器（步枪第二槽位）
+bind "f3" "buy secondary4"                         // 购买副武器（手枪第五槽位）
 bind "f12" "sellbackall"                           // 出售所有已购买物品
 //cfg
 exec zeus.cfg
@@ -553,8 +555,8 @@ bind "i" "messagemode2"            // 打开团队聊天
 bind "u" "messagemode"             // 打开全局聊天
 bind "v" "+voicerecord"       // 语音
 bind "mouse3" "player_ping"        // 玩家标记
-//bind "mwheeldown" "+jump"          // 鼠标滚轮向下跳跃
-//bind "mwheelup" "+jump"            // 鼠标滚轮向上跳跃
+bind "mwheeldown" "invnext"          // 鼠标滚轮切换装备
+bind "mwheelup" "invprev"            // 鼠标滚轮切换装备
 bind "`" "toggleconsole"                           // 打开/关闭控制台
 bind "h" "switchhands"                             // 切换武器持握方式（左手/右手）
 bind "t" "toggleradarscale"                        // 切换雷达缩放比例
