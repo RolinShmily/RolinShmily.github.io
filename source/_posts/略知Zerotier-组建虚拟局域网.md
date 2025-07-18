@@ -9,8 +9,8 @@ tags:
   - network
   - moon
   - p2p连接
-cover: https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/wallhaven-r2ykww.png
-abbrlink: 
+cover: 'https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/wallhaven-r2ykww.png'
+abbrlink: f175009a
 date: 2024-07-18 00:00:00
 updated: 2025-07-18 00:00:00
 ---
