@@ -1274,8 +1274,8 @@ alias "v01" "viewmodel_fov 60; viewmodel_offset_x 0; viewmodel_offset_y 1; viewm
 alias "v02" "viewmodel_fov 68; viewmodel_offset_x 2.5; viewmodel_offset_y -1; viewmodel_offset_z -2; viewmodel_presetpos 0;echo v02_enabled!;say_team 视角已更换为v02!"
 alias "v03" "viewmodel_fov 68; viewmodel_offset_x 1.5; viewmodel_offset_y -2; viewmodel_offset_z -2; viewmodel_presetpos 0;echo v03_enabled!;say_team 视角已更换为v03!"
 //绑定指令与按键
-bind "leftarrow" "toggle cl_crosshair_t 1 0"
-bind "rightarrow" "toggle cl_crosshairdot 1 0"
+bind "leftarrow" "toggle cl_crosshair_t 1 0;say_team T形准星状态更新!"
+bind "rightarrow" "toggle cl_crosshairdot 1 0;say_team 准星中心点状态更新!"
 bind "uparrow" "nothrow"
 bind "downarrow" "throw"
 alias "nothrow" "cl_grenadecrosshair_decoy 0;cl_grenadecrosshair_explosive 0;cl_grenadecrosshair_fire 0;cl_grenadecrosshair_flash 0;cl_grenadecrosshair_smoke 0;say_team 已关闭投掷物准星!"
@@ -1291,7 +1291,7 @@ alias "black" "cl_crosshaircolor "5"; cl_crosshaircolor_r "0"; cl_crosshaircolor
 alias "white" "cl_crosshaircolor "5"; cl_crosshaircolor_r "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_b "255"; say_team 准星颜色已更改为白色(White)!"
 alias "pink" "cl_crosshaircolor "5"; cl_crosshaircolor_r "255"; cl_crosshaircolor_g "192"; cl_crosshaircolor_b "203"; say_team 准星颜色已更改为粉色(Pink)!"
 alias "brown" "cl_crosshaircolor "5"; cl_crosshaircolor_r "165"; cl_crosshaircolor_g "42"; cl_crosshaircolor_b "42"; say_team 准星颜色已更改为棕色(Brown)!"
-alias "gray" "cl_crosshaircolor "5"; cl_crosshaircolor_r "128"; cl_crosshaircolor_g "128"; cl_crosshaircolor_b "128"; say_team 准星颜色已更改为灰色(Gray)!"cl_crosshaircolor_b \"128\"; say_team 准星颜色已更改为灰色(Gray)!"
+alias "gray" "cl_crosshaircolor "5"; cl_crosshaircolor_r "128"; cl_crosshaircolor_g "128"; cl_crosshaircolor_b "128"; say_team 准星颜色已更改为灰色(Gray)!"
 //控制台导航
 echo crosshair_view_mode enabled!
 echo ═════════════════════════════════════════════════════════════
@@ -1309,8 +1309,9 @@ echo ·输入 pink -> 更改准星颜色为粉色(Pink)     | RGB: 255/192/203
 echo ·输入 brown -> 更改准星颜色为棕色(Brown)   | RGB: 165/42/42
 echo ·输入 gray -> 更改准星颜色为灰色(Gray)     | RGB: 128/128/128
 echo ──── 投掷时保留玩家自定义准星		: cl_grenadecrosshair_keepusercrosshair 1;
-echo ──── 开启或关闭T形准星	            : ←键 (跑图模式按键冲突) | cl_crosshair_t 1;
-echo ──── 开启或关闭准星中心点		    : →键 (跑图模式按键冲突) | cl_crosshairdot 1;
+echo ──── 以下功能，在跑图模式下，产生按键冲突，后启动的模式按键优先：
+echo ──── 开启或关闭T形准星	            : ←键  | cl_crosshair_t 1;
+echo ──── 开启或关闭准星中心点		    : →键  | cl_crosshairdot 1;
 echo ·输入 nothrow | 快捷键↑    ->  关闭投掷物准星 
 echo ·输入  throw  | 快捷键↓    ->  开启投掷物准星 
 echo ──────────────────────   准星库   ─────────────────────────────
@@ -1426,6 +1427,7 @@ cl_crosshairstyle "4"
 cl_crosshairthickness "1.000000"
 cl_crosshairusealpha "true"
 ```
+---
 # lulu's cfg
 - [点我下载](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/%E7%92%90%E7%92%90cfg/autoexec.cfg) 下载完成后，直接放进cfg文件夹即可。
 - 注意要把文件名改为`autoexec.cfg`，`.cfg`是后缀名。
