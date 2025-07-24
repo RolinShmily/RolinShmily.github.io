@@ -133,7 +133,7 @@ zerotier提供的自托管服务有**节点网络控制器**和**根服务器**
 1. 执行`curl -O https://s3-us-west-1.amazonaws.com/key-networks/deb/ztncui/1/x86_64/ztncui_0.8.14_amd64.deb`命令，从 AWS S3 存储桶下载 ZTNCUI 0.8.14 版本的.deb 安装包。
 2. 执行`apt install ./ztncui_0.8.14_amd64.deb`命令，使用apt包管理器安装下载的 ZTNCUI 包。
 3. 在云服务器厂商处开放3443TCP端口。
-4. 执行`sh -c "echo ZT_TOKEN=`sudo cat /var/lib/zerotier-one/authtoken.secret` > /opt/key-networks/ztncui/.env"`命令，将 ZeroTier 的认证令牌写入 ZTNCUI 的环境配置文件。
+4. 执行```sh -c "echo ZT_TOKEN=`sudo cat /var/lib/zerotier-one/authtoken.secret` > /opt/key-networks/ztncui/.env"```命令，将 ZeroTier 的认证令牌写入 ZTNCUI 的环境配置文件。
 5. 执行`sh -c "echo HTTPS_PORT=3443 >> /opt/key-networks/ztncui/.env"`命令，配置 ZTNCUI 监听 HTTPS 的端口为 3443。
 6. 执行`sh -c "echo NODE_ENV=production >> /opt/key-networks/ztncui/.env"`命令，设置 Node.js 应用为生产环境，优化性能和安全性。
 7. 执行`chmod 400 /opt/key-networks/ztncui/.env`命令，限制.env 文件仅所有者可读（防止敏感信息泄露）。
