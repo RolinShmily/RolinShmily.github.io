@@ -286,7 +286,7 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250420121153.png)
 
 # 自用配置分享
-- [自用cfgs](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip)
+[点击下载自用cfgs](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip)，解压至cfg文件夹即可。
 ## 启动项
 
 ```ini
