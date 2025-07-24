@@ -403,12 +403,12 @@ bind "backspace" "sellbackall"                     // 出售所有已购买物�
 exec zeus.cfg                                           // 默认启动，电击枪自动切换。
 bind "o" "exec autoexec;say_team autoexec_enabled!"     // 恢复默认准星与持枪视角
 bind "j" "exec knife.cfg;say_team knife_enabled!"       // 更换匕首模型
-bind "p" "exec train.cfg;say_team train_model!"         // 加载跑图预设
+bind "p" "exec train.cfg;say_team train_mode!"          // 加载跑图预设
 bind "[" "exec crosshair_view;say_team crosshair_view!" // 准星与持枪预设
 bind "/" "exec lastinv.cfg;say_team lastinv_enabled!"   // 弯刀预设
 bind "k" "say_team !drop"                               // 一键发刀(平台)
 bing "\" "say_team .hp"                                 // 伤害统计(5E平台)  
-bind "]" "exec demo.cfg;say_team demo_model!"           // demo预设
+bind "]" "exec demo.cfg;say_team demo_mode!"            // demo预设
 //基础准星
 cl_crosshair_drawoutline "false"                     // 禁用准星轮廓绘制
 cl_crosshair_dynamic_maxdist_splitratio "0.300000"   // 动态准星最大分离距离的比例
