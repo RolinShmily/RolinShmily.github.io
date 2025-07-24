@@ -515,6 +515,7 @@ echo AutoConfig Enabled!
 - "\"键启用 cfg 按键指南，在控制台查看。
 
 ## 璐璐的cfg
+- [点我下载](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/%E7%92%90%E7%92%90cfg/autoexec.cfg) 下载完成后，直接放进cfg文件夹即可。
 - 注意要把文件名改为`autoexec.cfg`，`.cfg`是后缀名。
 ```
 //Mouse
