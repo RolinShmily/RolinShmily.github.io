@@ -1102,7 +1102,8 @@ echo ═════════════════════════
 - 匕首模型更换
 ```ini
 //knife_change
-bind "j" "mp_drop_knife_enable 1;knife"
+//J键轮换模式
+bind "j" "mp_drop_knife_enable 1;knife"                                                    
 alias "knife" "knife1"
 alias "knife1" "ent_fire weapon_knife changesubclass 500; alias knife knife2;say_team 已切换：刺刀"
 alias "knife2" "ent_fire weapon_knife changesubclass 503; alias knife knife3;say_team 已切换：海豹短刀"
@@ -1125,8 +1126,56 @@ alias "knife18" "ent_fire weapon_knife changesubclass 523; alias knife knife19;s
 alias "knife19" "ent_fire weapon_knife changesubclass 524; alias knife knife20;say_team 已切换：匕首"
 alias "knife20" "ent_fire weapon_knife changesubclass 525; alias knife knife21;say_team 已切换：骷髅匕首"
 alias "knife21" "ent_fire weapon_knife changesubclass 526; alias knife knife1;say_team 已切换：尼泊尔"
+//控制台指定模式
+alias "500" "ent_fire weapon_knife changesubclass 500;say 已切换：刺刀"
+alias "503" "ent_fire weapon_knife changesubclass 503;say 已切换：海豹短刀"
+alias "505" "ent_fire weapon_knife changesubclass 505;say 已切换：折叠刀"
+alias "506" "ent_fire weapon_knife changesubclass 506;say 已切换：穿肠刀"
+alias "507" "ent_fire weapon_knife changesubclass 507;say 已切换：爪子刀"
+alias "508" "ent_fire weapon_knife changesubclass 508;say 已切换：M9刺刀"
+alias "509" "ent_fire weapon_knife changesubclass 509;say 已切换：猎杀者匕首"
+alias "512" "ent_fire weapon_knife changesubclass 512;say 已切换：弯刀"
+alias "514" "ent_fire weapon_knife changesubclass 514;say 已切换：鲍伊猎刀"
+alias "515" "ent_fire weapon_knife changesubclass 515;say 已切换：蝴蝶刀"
+alias "516" "ent_fire weapon_knife changesubclass 516;say 已切换：暗影双匕"
+alias "517" "ent_fire weapon_knife changesubclass 517;say 已切换：系绳匕首"
+alias "518" "ent_fire weapon_knife changesubclass 518;say 已切换：求生匕首"
+alias "519" "ent_fire weapon_knife changesubclass 519;say 已切换：熊刀"
+alias "520" "ent_fire weapon_knife changesubclass 520;say 已切换：折刀"
+alias "521" "ent_fire weapon_knife changesubclass 521;say 已切换：流浪者匕首"
+alias "522" "ent_fire weapon_knife changesubclass 522;say 已切换：短剑"
+alias "523" "ent_fire weapon_knife changesubclass 523;say 已切换：锯齿爪刀"
+alias "524" "ent_fire weapon_knife changesubclass 524;say 已切换：匕首"
+alias "525" "ent_fire weapon_knife changesubclass 525;say 已切换：骷髅匕首"
+alias "526" "ent_fire weapon_knife changesubclass 526;say 已切换：尼泊尔"
+//控制台导航
+echo knife_mode enabled!
+echo ═════════════════════════════════════════════════════════════
+echo ──────────────────────  匕首模型库  ──────────────────────────
+echo ·输入 500 -> 更改匕首为 刺刀 | 刺刀 500
+echo ·输入 503 -> 更改匕首为 海豹短刀 | 海豹短刀 503
+echo ·输入 505 -> 更改匕首为 折叠刀 | 折叠刀 505
+echo ·输入 506 -> 更改匕首为 穿肠刀 | 穿肠刀 506
+echo ·输入 507 -> 更改匕首为 爪子刀 | 爪子刀 507
+echo ·输入 508 -> 更改匕首为 M9刺刀 | M9刺刀 508
+echo ·输入 509 -> 更改匕首为 猎杀者匕首 | 猎杀者匕首 509
+echo ·输入 512 -> 更改匕首为 弯刀 | 弯刀 512
+echo ·输入 514 -> 更改匕首为 鲍伊猎刀 | 鲍伊猎刀 514
+echo ·输入 515 -> 更改匕首为 蝴蝶刀 | 蝴蝶刀 515
+echo ·输入 516 -> 更改匕首为 暗影双匕 | 暗影双匕 516
+echo ·输入 517 -> 更改匕首为 系绳匕首 | 系绳匕首 517
+echo ·输入 518 -> 更改匕首为 求生匕首 | 求生匕首 518
+echo ·输入 519 -> 更改匕首为 熊刀 | 熊刀 519
+echo ·输入 520 -> 更改匕首为 折刀 | 折刀 520
+echo ·输入 521 -> 更改匕首为 流浪者匕首 | 流浪者匕首 521
+echo ·输入 522 -> 更改匕首为 短剑 | 短剑 522
+echo ·输入 523 -> 更改匕首为 锯齿爪刀 | 锯齿爪刀 523
+echo ·输入 524 -> 更改匕首为 默认匕首 | 默认匕首 524
+echo ·输入 525 -> 更改匕首为 骷髅匕首 | 骷髅匕首 525
+echo ·输入 526 -> 更改匕首为 尼泊尔 | 尼泊尔 526
+echo ═════════════════════════════════════════════════════════════
 ```
-
+- 注意控制台导航信息
 - “j”键启用，聊天框提示后，重新切刀即可。
 
 ## lastinv.cfg
@@ -1154,7 +1203,7 @@ alias qs_slot8    "alias eq_invnext eq_slot9; alias eq_invprev eq_slot7; set_las
 alias qs_slot9    "alias eq_invnext eq_slot1; alias eq_invprev eq_slot8; set_lastinv; alias set_lastinv alias eq_lastinv eq_slot9; alias set_slot1 qs_slot1; alias set_slot2 qs_slot2; alias set_slot3 qs_slot3; alias set_slot5 qs_slot5; alias set_slot6 qs_slot6; alias set_slot7 qs_slot7; alias set_slot8 qs_slot8; alias set_slot9 ; alias set_slot10 qs_slot10"
 qs_slot2
 eq_slot1
-bind "." "unbind 1;unbind 2;unbind 3;unbind q;bind "1" "slot1";bind "2" "slot2";bind "3" "slot3";bind "q" "lastinv";say_team rebind!"
+bind "." "unbind 1;unbind 2;unbind 3;unbind q;bind "1" "slot1";bind "2" "slot2";bind "3" "slot3";bind "q" "lastinv";say_team 切刀自动检视已取消!"
 ```
 
 - “/”键启用，启用后“.”键取消该设置，与弯刀搭配使用，避免了切刀时的双手动作。
