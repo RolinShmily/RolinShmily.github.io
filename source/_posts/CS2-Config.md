@@ -338,11 +338,11 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 ## autoexec.cfg
 
 ```ini
-//Mouse
+//鼠标设置
 sensitivity 0.50                   // 灵敏度
 zoom_sensitivity_ratio 1 		   // 开镜灵敏度
 m_yaw 0.022                        // x轴速度
-//Keys
+//按键绑定
 bind "w" "+forward"                // 向前移动
 bind "s" "+back"                   // 向后移动
 bind "a" "+left"                   // 向左移动
@@ -385,11 +385,10 @@ bind "t" "switchhands"                             // 切换武器持握方式�
 bind "h" "toggleradarscale"                        // 切换雷达缩放比例
 bind "ralt" "toggle cl_teamid_overhead_mode 1 3"   // 切换队友头顶标识模式
 bind "'" "radio2;slot12"                           // 打开无线电菜单、X光显示、医疗针
-//bind "'" "+quickinv"							   // 轮盘切装备
 bind "-" "toggle cl_draw_only_deathnotices 1 0"    // 切换是否仅显示死亡通知与准星
 bind "=" "toggle cl_drawhud_force_radar 1 0"       // 切换是否强制显示雷达
-bind F1 "vote 1"                                   // 投票选择同意
-bind F2 "vote 2"                                   // 投票选择拒绝
+bind "f1" "vote 1"                                 // 投票选择同意
+bind "f2" "vote 2"                                 // 投票选择拒绝
 bind "f5" "buy hegrenade"                          // 购买高爆手雷
 bind "f6" "buy flashbang"                          // 购买闪光弹
 bind "f7" "buy smokegrenade"                       // 购买烟雾弹
@@ -399,18 +398,19 @@ bind "f10" "buy vesthelm"                          // 购买防弹衣+头盔
 bind "f11" "buy defuser"                           // 购买拆弹器
 bind "f4" "buy rifle1"                             // 购买主武器（步枪第二槽位）
 bind "f3" "buy secondary4"                         // 购买副武器（手枪第五槽位）
-bind "f12" "sellbackall"                           // 出售所有已购买物品
-//cfg
-exec zeus.cfg
-bind "o" "exec crosshair_view;say_team crosshair_view!"
-bind "\" "say_team keys_log!;echoln "CFG按键指示";echoln "- 自启动：zeus电击枪快速切换";echoln "- o：autoexec重启配置";echoln "- j：knife匕首模型轮换";echoln "- p：train跑图模式";echoln "- [：crosshair轮换准星设置";echoln "- ]：view轮换持枪视角";echoln "- /：lastinv弯刀检视优化";echoln "- k：一键发刀";echoln "- o：默认准星与视角""
-bind "j" "exec knife.cfg;say_team knife_model!"
-bind "p" "exec train.cfg;say_team train_model!"
-bind "[" "exec crosshair_view;say_team crosshair_view!"
-bind "]" "exec crosshair_view;say_team crosshair_view!"
-bind "/" "exec lastinv.cfg;say_team lastinv!"
-bind "k" "say_team !drop"
-//准星
+bind "backspace" "sellbackall"                     // 出售所有已购买物品
+//启动cfg
+exec zeus.cfg                                           // 默认启动，电击枪自动切换。
+bind "o" "exec autoexec;say_team autoexec_enabled!"     // 恢复默认准星与持枪视角
+bind "j" "exec knife.cfg;say_team knife_enabled!"       // 更换匕首模型
+bind "p" "exec train.cfg;say_team train_model!"         // 加载跑图预设
+bind "[" "exec crosshair_view;say_team crosshair_view!" // 准星与持枪预设
+bind "/" "exec lastinv.cfg;say_team lastinv_enabled!"   // 弯刀预设
+bind "k" "say_team !drop"                               // 一键发刀(平台)
+bing "\" "say_team .hp"                                 // 伤害统计(5E平台)
+bind "." "say_team .p"                                  // 一键暂停(平台)    
+bind "]" "exec demo.cfg;say_team demo_model!"           // demo预设
+//基础准星
 cl_crosshair_drawoutline "false"                     // 禁用准星轮廓绘制
 cl_crosshair_dynamic_maxdist_splitratio "0.300000"   // 动态准星最大分离距离的比例
 cl_crosshair_dynamic_splitalpha_innermod "1.000000"  // 动态准星内部分离部分的透明度
@@ -491,7 +491,7 @@ snd_deathcamera_volume 0.08           // 死亡视角音量
 snd_mute_mvp_music_live_players 1     // 当双方团队成员都存活时关闭 MVP 音乐
 snd_mute_losefocus 0                  // 后台播放声音
 voice_modenable 1                     // 启用语音
-//HUD
+//HUD界面
 hud_showtargetid "1"               // 显示队友/敌人的 ID
 hud_scaling "0.85"                 // 设置 HUD 缩放比例
 safezonex "0.88"                   // 设置 HUD 水平占比
@@ -510,9 +510,20 @@ r_show_build_info 0                // 关闭版本信息
 spec_replay_autostart 0            // 关闭被击杀回放
 //Ending
 echo AutoConfig Enabled!
+echo ═════════════════════════════════════════════════════════════
+echo ──── 重启autoexec  		    : O键 | exec autoexec
+echo ──── 跑图,练习道具  			:  P键 | exec train
+echo ──── 更换匕首模型 			    :  J键 | exec knife
+echo ──── 弯刀适用Q键检视 	        :  /键 | exec lastinv
+echo ──── demo预设 	               :  ]键 | exec demo
+echo ──── 一键发刀(平台) 	        :  K键 | !drop
+echo ──── 一键伤害提示(5E平台)	    :  \键 | .hp
+echo ──── 一键暂停 	                :  .键 | .p
+echo ──── 准星与持枪视角预设         :  [键 | exec crosshair_view
+echo ═════════════════════════════════════════════════════════════
 ```
 
-- "\\"键启用 cfg 按键指南，在控制台查看。
+- cfg 按键指南，在控制台查看。
 
 ## train.cfg
 - 单人跑图
@@ -925,9 +936,9 @@ alias "T15" "echo \"没有这个出生点，请检查该地图的出生点个数
 
 ```ini
 // ═══════════════════════════════════════════
-//        Config Preset v2.6b by Purp1e
+//        Config Preset v2.6c by Purp1e
 //            CFG预设（Purp1e制作）
-//                #2024/11/10#
+//                #2025/7/9#
 //     https://space.bilibili.com/73115492
 // ═══════════════════════════════════════════
 // ─────────────────────────  绑定键位  ──────────────────────────────────
@@ -942,7 +953,7 @@ bind mouse4 "gear_down";                                     // 后侧键 -播�
 bind v      "toggle crosshair 0 1";                          // v 隐藏准心
 bind b      "toggle cl_drawhud";                             // b 隐藏所有hud包括击杀
 bind n      "toggle cl_drawhud_force_radar 1 -1";            // n 开关雷达
-bind m      "toggle host_timescale";                         // m 开关声音
+bind m      "toggle host_timescale";                         // m 加速时间
 bind pgup   "ScreenRecord;demo_resume; echo >>> 录屏开始"     // PageUp   (OBS..)录屏开始 需要录屏软件设置同样快捷键
 bind pgdn   "fps_max 200;demo_timescale 1;demo_pause;echo >>> 录屏结束" // PageDown (OBS..)录屏结束
 // ──────────────────────────  一次性命令  ──────────────────────────────
@@ -1042,7 +1053,7 @@ alias 300         "alias ScreenRecord fps_max 300;demo_timescale 1    ;echo [当
 echo;
 echo █▀▀█  █     █   █▀▀█  █▀▀█ ▄█   █▀▀▀    	█▀▀  █▀▀  █▀▀▀
 echo █▄▄█  █     █   █▄▄▀  █▄▄█   █   █▀▀▀    	█       █▀▀  █  ▀█
-echo █         ▀▄▄▀    █    █   █        ▄█▄ █▄▄▄   	▀▀▀  ▀       ▀▀▀▀	 v2.6b For CS2
+echo █         ▀▄▄▀    █    █   █        ▄█▄ █▄▄▄   	▀▀▀  ▀       ▀▀▀▀	 v2.6c For CS2
 echo ═════════════════════════════════════════════════════════════
 echo ──── 加载设置[auto.cfg]	:  exec auto 或 auto
 echo ──── 跑图,练习道具  		:  exec practice 或 pt
@@ -1058,7 +1069,7 @@ echo ──── x光       	   	:  x
 echo ──── 准心透明度      		:  v
 echo ──── 开关HUD      		:  b
 echo ──── 开关雷达      		:  n
-echo ──── 静音           	 	:  m
+echo ──── 加速时间         	 	:  m
 echo ──── 快退5s      		:  ,
 echo ──── 快进5s       		:  .
 echo ──── demo暂停/继续           	:  p/鼠标中键（mouse3）
