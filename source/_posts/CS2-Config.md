@@ -512,7 +512,7 @@ spec_replay_autostart 0            // 关闭被击杀回放
 echo AutoConfig Enabled!
 ```
 
-- "\"键启用 cfg 按键指南，在控制台查看。
+- "\\"键启用 cfg 按键指南，在控制台查看。
 
 ## train.cfg
 - 单人跑图
