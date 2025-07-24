@@ -281,9 +281,11 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250420121101.png)
 - 这里的参数就是准星参数
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250420121153.png)
-> 查看所有刚刚更改的按键绑定，应对不知键位名称的情况，下面这个文件里是所有按键绑定的参数
+> 查看所有刚刚更改的按键绑定，应对不知键位名称的情况。
+- 下面这个文件里就是所有的按键绑定
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-18-22.png)
 > 游戏的功能性设置，所对应的cfg代码参数，也有对应文件。以chatwheel轮盘配置为例说明。
+
 - 首先打开下面这个文件
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-20-46.png)
 - 下面的就是快捷轮盘对应槽位的关键词配置
