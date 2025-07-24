@@ -533,26 +533,26 @@ alias "spawn" "exec spawn/spawn.cfg"                                         // 
 alias gkd  "mp_respawn_on_death_ct 0;mp_respawn_on_death_t 0;sv_showimpacts 0;sv_infinite_ammo 0;sv_alltalk 0;mp_buy_anywhere 0;mp_freezetime 4;mp_restartgame 1;sv_cheats 0;" //标准实战模式
 alias gg   "sv_cheats 1;mp_respawn_on_death_ct 1;mp_respawn_on_death_t 1;sv_showimpacts 1;sv_infinite_ammo 1;sv_alltalk 1;mp_buy_anywhere 1;mp_freezetime 1"                   //跑图练习模式
 //功能按键绑定
-bind "n" "noclip"                                                            // n键飞行
-bind "uparrow" "toggle sv_showimpacts 1 0;toggle sv_grenade_trajectory 1 0"  // ↑键切换轨迹着弹点显示
-bind "f5" "toggle bot_crouch"                                                // F5键bot蹲下
+bind "n" "noclip;say 飞行状态updated!"                                        // n键飞行
+bind "uparrow" "toggle sv_showimpacts 1 0;toggle sv_grenade_trajectory 1 0;say 轨迹着弹点updated!"  // ↑键切换轨迹着弹点显示
+bind "f5" "toggle bot_crouch;say bot姿势updated!"                             // F5键bot蹲下
 bind "k" "toggle cl_showpos 0 1"                                             // k键显示速度信息
-bind "l" "sv_rethrow_last_grenade"                                           // l键重投上一个道具
-bind "downarrow" "bot_kill"                                                  // ↓键杀死bot
-bind "f4"   "bot_add"                                                        // F4键添加bot
-bind "f8"  "bot_kick"                                                        // F8键删除bot
-bind "mouse4" "bot_stop 1;bot_place"                                         // 上侧键在准心处放置一个机器人
-bind "rightarrow" "mp_restartgame 1"                                         // →键重新开始游戏
-bind "leftarrow" "toggle sv_grenade_trajectory_prac_pipreview"               // ←键切换投掷物轨迹预测
-bind "f6" "toggle bot_mimic 0 -1                                             // F6键机器人模仿动作
-bind "f7" "toggle fov_cs_debug 0 30"                                         // F7键放大视野
-bind "f1" "give item_assaultsuit;give weapon_flashbang;give weapon_hegrenade;give weapon_smokegrenade;give weapon_molotov" // F1键补甲补道具
-bind "f2" "toggle sv_regeneration_force_on 0 1"                              // F2键切换自动回血
-bind "F3" "toggle sv_falldamage_scale 0 1"                                   // F3键切换是否有掉落伤害
-bind "," "ent_fire smokegrenade_projectile kill;ent_fire flashbang_projectile kill;ent_fire incgrenade_projectile kill;ent_fire molotov_projectile kill;ent_fire hegrenade_projectile kill;ent_fire decoy_projectile kill;stopsound"                                    // ,键清除投掷物，燃烧弹、燃烧瓶碰地后无法清楚
+bind "l" "sv_rethrow_last_grenade;say 已重新投掷!"                            // l键重投上一个道具
+bind "downarrow" "bot_kill;say bot已全部处死!"                                // ↓键杀死bot
+bind "f4"   "bot_add;say 已添加bot!"                                          // F4键添加bot
+bind "f8"  "bot_kick;say bot已经被全部踢出!"                                   // F8键删除bot
+bind "mouse4" "bot_stop 1;bot_place;say 成功放置bot!"                         // 上侧键在准心处放置一个机器人
+bind "rightarrow" "mp_restartgame 1;say 1秒后游戏将重新开始!"                  // →键重新开始游戏
+bind "leftarrow" "toggle sv_grenade_trajectory_prac_pipreview;say 投掷物轨迹预测updated!"            // ←键切换投掷物轨迹预测
+bind "f6" "toggle bot_mimic 0 -1;say bot模仿状态updated!"                     // F6键机器人模仿动作
+bind "f7" "toggle fov_cs_debug 0 30;say 视野状态updated!"                     // F7键放大视野
+bind "f1" "give item_assaultsuit;give weapon_flashbang;give weapon_hegrenade;give weapon_smokegrenade;give weapon_molotov;say 已补甲补道具!" // F1键补甲补道具
+bind "f2" "toggle sv_regeneration_force_on 0 1;say 自动回血状态updated!"      // F2键切换自动回血
+bind "F3" "toggle sv_falldamage_scale 0 1l;say 摔落伤害状态updated!"          // F3键切换是否有掉落伤害
+bind "," "ent_fire smokegrenade_projectile kill;ent_fire flashbang_projectile kill;ent_fire incgrenade_projectile kill;ent_fire molotov_projectile kill;ent_fire hegrenade_projectile kill;ent_fire decoy_projectile kill;stopsound;say 已清除道具!"         // ,键清除投掷物，燃烧弹、燃烧瓶碰地后无法清楚
 bind "0" "+Pucci"                                                            // 0键加速时间，松开恢复
 //bhop开关
-bind "f12" "toggle sv_enablebunnyhopping;toggle sv_autobunnyhopping;toggle cl_showpos;toggle sv_airaccelerate 1000 12" // F12键切换连跳模式
+bind "f12" "toggle sv_enablebunnyhopping;toggle sv_autobunnyhopping;toggle cl_showpos;toggle sv_airaccelerate 1000 12;say bhop状态已更新" // F12键切换连跳模式
 sv_enablebunnyhopping 0;sv_autobunnyhopping 0;cl_showpos 0;sv_airaccelerate 12;                                        // 默认关闭bhop
 //主要内容
 sv_cheats                        1     //开启作弊
@@ -581,7 +581,6 @@ mp_free_armor                    2     //出生全甲<1.半甲 2.全甲 0.关闭
 mp_drop_knife_enable             1     //允许扔刀
 mp_drop_grenade_enable           1     //允许扔道具
 mp_items_prohibited              0     //去除物品购买限制
-mp_ignore_round_win_conditions   1     //禁用胜利条件
 mp_solid_teammates               1     //不允许穿过队友身体
 sv_grenade_trajectory_prac_pipreview 1 //启用投掷物视角与轨迹预览
 sv_grenade_trajectory_prac_trailtime 8 //投掷物轨迹持续8秒
@@ -1188,8 +1187,7 @@ bind "q" "lastinv; att1;"
 ## crosshair_view.cfg
 - 准星与持枪视角的存储与更换
 ```ini
-say_team 已恢复为默认准星与持枪视角
-say_team 正在加载准星与持枪视角预设库...
+say_team 已恢复为默认准星与持枪视角,正在加载准星与持枪视角预设库...
 //默认重置准星,准星代码:CSGO-hkk78-Mz6UK-XJ9t2-Dv3E3-qbOUD
 cl_crosshair_drawoutline "false"
 cl_crosshair_dynamic_maxdist_splitratio "0.300000"
