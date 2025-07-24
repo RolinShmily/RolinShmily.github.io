@@ -12,7 +12,7 @@ cover: >-
   https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240913084859.jpg
 abbrlink: b445fd38
 date: 2025-04-12 00:00:00
-updated: 2025-07-14 00:00:00
+updated: 2025-07-24 00:00:00
 description:
 keywords:
 ---
@@ -520,8 +520,7 @@ echo ──── 一键伤害提示(5E平台)	    :  \键 | .hp
 echo ──── 准星与持枪视角预设         :  [键 | exec crosshair_view
 echo ═════════════════════════════════════════════════════════════
 ```
-
-- cfg 按键指南，在控制台查看。
+- 注意查看控制台导航信息。
 
 ## train.cfg
 - 单人跑图
@@ -662,15 +661,15 @@ echo ═════════════════════════
 echo ·输入 gkd → 标准实战 | 输入 gg -> 恢复跑图模式
 echo ·输入 spawn 加载出生点传送预设
 ```
-
+- 注意查看控制台导航信息。
 - “p”键启用，出生点预设参考于 **Bad0RANG3** ，项目地址：https://github.com/Bad0RANG3/CS2PraticeCFG ，个人空间：https://space.bilibili.com/482966540
 
 ---
 
 > 注意以下 cfg 都需要存放在游戏全局 cfg 文件夹下的 spawn 文件夹内，比如 **...\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\spawn** 或 **...\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\spawn** 下。
 
-### spawn.cfg
-- 重生点预设置
+### spawn
+- 修改文件名为`spawn.cfg`
 ```ini
 // CS2 Spawn Positions Config
 // 初始化变量
@@ -712,9 +711,7 @@ echo "| shoots   | 射击训练   |"
 echo "| baggage  | 行李仓库   |"
 echo "+----------+------------+"
 ```
-
-### vertigo.cfg
-- 殒命大厦重生点
+- 修改文件名为`vertigo.cfg`
 ```ini
 // Vertigo出生点配置
 // 初始化所有出生点
@@ -732,9 +729,7 @@ alias "T4" "setpos_exact -1439.5718 -1251.7084 11505;setang 0 243.00003 0;say \"
 alias "T5" "setpos_exact -1468.8372 -1194.3975 11505;setang 0 272.5 0;say \"已传送至: Vertigo - T点 5号位置\""
 say "地图: Vertigo | CT: 5个出生点 | T: 5个出生点"
 ```
-
-### office.cfg
-- 办公室重生点
+- 修改文件名为`office.cfg`
 ```ini
 // Office出生点配置
 // 初始化所有出生点
@@ -752,9 +747,7 @@ alias "T4" "setpos_exact -1700 950 -100;setang 0 90 0;say \"已传送至: Office
 alias "T5" "setpos_exact -1700 850 -100;setang 0 90 0;say \"已传送至: Office - T点 5号位置\""
 say "地图: Office | CT: 5个出生点 | T: 5个出生点"
 ```
-
-### nuke.cfg
-- 核子危机重生点
+- 修改文件名为`nuke.cfg`
 ```ini
 // Nuke出生点配置
 // 初始化所有出生点
@@ -776,8 +769,7 @@ alias "T8" "setpos_exact -1808 -1089 -400.634;setang 0 340 0;say \"已传送至:
 say "地图: Nuke | CT: 5个出生点 | T: 8个出生点"
 ```
 
-### mirage.cfg
-- 荒漠迷城重生点
+- 修改文件名为`mirage.cfg`
 ```ini
 // Mirage出生点配置
 // 初始化所有出生点
@@ -801,8 +793,7 @@ alias "T10" "setpos_exact 1136 32 -144;setang 0 90 0;say \"已传送至: Mirage 
 say "地图: Mirage | CT: 5个出生点 | T: 10个出生点"
 ```
 
-### italy.cfg
-- 意大利重生点
+- 修改文件名为`italy.cfg`
 ```ini
 // Italy出生点配置
 // 初始化所有出生点
@@ -820,9 +811,7 @@ alias "T4" "setpos_exact -1100 750 100;setang 0 90 0;say \"已传送至: Italy -
 alias "T5" "setpos_exact -1100 650 100;setang 0 90 0;say \"已传送至: Italy - T点 5号位置\""
 say "地图: Italy | CT: 5个出生点 | T: 5个出生点"
 ```
-
-### inferno.cfg
-- 炼狱小镇重生点
+- 修改文件名为`inferno.cfg`
 ```ini
 // Inferno出生点配置
 // 初始化所有出生点
@@ -841,9 +830,7 @@ alias "T4" "setpos_exact -1675.62 351.695 -46;setang 0 48 0;say \"已传送至: 
 alias "T5" "setpos_exact -1662.18 288.762 -46;setang 0 77.5 0;say \"已传送至: Inferno - T点 5号位置\""
 say "地图: Inferno | CT: 6个出生点 | T: 5个出生点"
 ```
-
-### dust2.cfg
-- 沙漠2重生点
+- 修改文件名为`dust2.cfg`
 ```ini
 // Dust2出生点配置
 // 初始化所有出生点
@@ -876,9 +863,7 @@ alias "T14" "setpos_exact -367.000000 -808.000000 83.744965;setang_exact 0.00000
 alias "T15" "setpos_exact -332.000000 -754.000000 78.877106;setang_exact 0.000000 -147.500031 0.000000;say \"已传送至: Dust2 - T点 15号位置\""
 say "地图: Dust2 | CT: 5个出生点 | T: 15个出生点"
 ```
-
-### anubis.cfg
-- 阿努比斯重生点
+- 修改文件名为`anubis.cfg`
 ```ini
 // Anubis出生点配置
 // 初始化所有出生点
@@ -903,8 +888,7 @@ alias "T11" "setpos_exact -192 -1608 16;setang 0 90 0;say \"已传送至: Anubis
 say "地图: Anubis | CT: 5个出生点 | T: 11个出生点"
 ```
 
-### ancient.cfg
-- 远古遗迹重生点
+- 修改文件名为`ancient.cfg`
 ```ini
 // Ancient出生点配置
 // 初始化所有出生点
@@ -922,9 +906,7 @@ alias "T4" "setpos_exact -392 -2224 -156;setang 0 90 0;say \"已传送至: Ancie
 alias "T5" "setpos_exact -520 -2224 -156;setang 0 90 0;say \"已传送至: Ancient - T点 5号位置\""
 say "地图: Ancient | CT: 5个出生点 | T: 5个出生点"
 ```
-
-### init_spawns.cfg
-- 重生点初始化
+- 修改文件名为`init_spawns.cfg`
 ```ini
 // 初始化CT出生点
 alias "CT1" "echo \"没有这个出生点，请检查该地图的出生点个数以选择\""
@@ -1116,7 +1098,7 @@ echo ──── 录屏慢放快捷指令		:  60to240 90to360 120to240等
 echo ──── 限制FPS	           	:  60 → 限制 60FPS | 90 | 120 | 200
 echo ═════════════════════════════════════════════════════════════
 ```
-
+- 注意查看控制台导航信息。
 ## knife.cfg
 - 匕首模型更换
 ```ini
@@ -1206,8 +1188,9 @@ bind "q" "lastinv; att1;"
 ## crosshair_view.cfg
 - 准星与持枪视角的存储与更换
 ```ini
-say_team crosshair:"[",view:"]"
-//default
+say_team 已恢复为默认准星与持枪视角
+say_team 正在加载准星与持枪视角预设库...
+//默认重置准星,准星代码:CSGO-hkk78-Mz6UK-XJ9t2-Dv3E3-qbOUD
 cl_crosshair_drawoutline "false"
 cl_crosshair_dynamic_maxdist_splitratio "0.300000"
 cl_crosshair_dynamic_splitalpha_innermod "1.000000"
@@ -1229,33 +1212,173 @@ cl_crosshairstyle "4"
 cl_crosshairthickness "0.800000"
 cl_crosshairusealpha "true"
 cl_crosshair_sniper_width "2"
+//默认重置持枪视角
 viewmodel_fov 68
 viewmodel_offset_x 2
 viewmodel_offset_y 2
 viewmodel_offset_z -1
 viewmodel_presetpos 0
-//crosshair
-bind "[" "C"
-alias "C" "C00"
-alias "C00" "cl_crosshair_drawoutline "false";cl_crosshair_dynamic_maxdist_splitratio "0.300000";cl_crosshair_dynamic_splitalpha_innermod "1.000000";cl_crosshair_dynamic_splitalpha_outermod "0.500000";cl_crosshair_dynamic_splitdist "7";cl_crosshair_outlinethickness "0.500000";cl_crosshair_recoil "false";cl_crosshair_t "false";cl_crosshairalpha "255";cl_crosshaircolor "5";say_team a_50%!;alias C C01"
-alias "C01" "cl_crosshaircolor_b "255";cl_crosshaircolor_g "255";cl_crosshaircolor_r "0";cl_crosshairdot "false";cl_crosshairgap "-2.400000";cl_crosshairgap_useweaponvalue "false";cl_crosshairsize "1.100000";cl_crosshairstyle "4";cl_crosshairthickness "0.100000";cl_crosshairusealpha "true";say_team a_100%!;alias C C02"
-alias "C02" "cl_crosshair_drawoutline "false";cl_crosshair_dynamic_maxdist_splitratio "0.300000";cl_crosshair_dynamic_splitalpha_innermod "1.000000";cl_crosshair_dynamic_splitalpha_outermod "0.500000";cl_crosshair_dynamic_splitdist "7";cl_crosshair_outlinethickness "1.000000";cl_crosshair_recoil "false";cl_crosshair_t "false";cl_crosshairalpha "255";cl_crosshaircolor "5";say_team b_50%!;alias C C03"
-alias "C03" "cl_crosshaircolor_b "255";cl_crosshaircolor_g "255";cl_crosshaircolor_r "255";cl_crosshairdot "false";cl_crosshairgap "-3.300000";cl_crosshairgap_useweaponvalue "false";cl_crosshairsize "1.400000";cl_crosshairstyle "5";cl_crosshairthickness "0.000000";cl_crosshairusealpha "true";say_team b_100%!;alias C C04"
-alias "C04" "cl_crosshair_drawoutline "false";cl_crosshair_dynamic_maxdist_splitratio "0.000000";cl_crosshair_dynamic_splitalpha_innermod "1.000000";cl_crosshair_dynamic_splitalpha_outermod "1.000000";cl_crosshair_dynamic_splitdist "3";cl_crosshair_outlinethickness "1.000000";cl_crosshair_recoil "false";cl_crosshair_t "false";cl_crosshairalpha "255";cl_crosshaircolor "1";say_team c_50%!;alias C C05"
-alias "C05" "cl_crosshaircolor_b "255";cl_crosshaircolor_g "246";cl_crosshaircolor_r "205";cl_crosshairdot "false";cl_crosshairgap "-6.000000";cl_crosshairgap_useweaponvalue "false";cl_crosshairsize "1.000000";cl_crosshairstyle "2";cl_crosshairthickness "1.000000";cl_crosshairusealpha "true";say_team c_100%!;alias C C06"
-alias "C06" "cl_crosshair_drawoutline "true";cl_crosshair_dynamic_maxdist_splitratio "0.000000";cl_crosshair_dynamic_splitalpha_innermod "1.000000";cl_crosshair_dynamic_splitalpha_outermod "0.300000";cl_crosshair_dynamic_splitdist "5";cl_crosshair_outlinethickness "1.000000";cl_crosshair_recoil "false";cl_crosshair_t "false";cl_crosshairalpha "255";cl_crosshaircolor "2";say_team d_50%!;alias C C07"
-alias "C07" "cl_crosshaircolor_b "0";cl_crosshaircolor_g "0";cl_crosshaircolor_r "0";cl_crosshairdot "true";cl_crosshairgap "-4.000000";cl_crosshairgap_useweaponvalue "false";cl_crosshairsize "0.500000";cl_crosshairstyle "4";cl_crosshairthickness "1.000000";cl_crosshairusealpha "true";say_team d_100%!;alias C C00"
-//view
-bind "]" "V"
-alias "V" "V00"
-alias "V00" "viewmodel_fov 60; viewmodel_offset_x 0; viewmodel_offset_y 1; viewmodel_offset_z -2; viewmodel_presetpos 0;say_team v_1!;alias V V01"
-alias "V01" "viewmodel_fov 68; viewmodel_offset_x 2.5; viewmodel_offset_y -1; viewmodel_offset_z -2; viewmodel_presetpos 0;say_team v_2!;alias V V02"
-alias "V02" "viewmodel_fov 68; viewmodel_offset_x 1.5; viewmodel_offset_y -2; viewmodel_offset_z -2; viewmodel_presetpos 0;say_team v_3!;alias V V00"
+//绑定准星与持枪库
+alias "c01" "exec crosshair_library/01.cfg;echo c01_enabled!;say_team 准星已更换为c01!"
+alias "c02" "exec crosshair_library/02.cfg;echo c02_enabled!;say_team 准星已更换为c02!"
+alias "c03" "exec crosshair_library/03.cfg;echo c03_enabled!;say_team 准星已更换为c03!"
+alias "c04" "exec crosshair_library/04.cfg;echo c04_enabled!;say_team 准星已更换为c04!"
+alias "v01" "viewmodel_fov 60; viewmodel_offset_x 0; viewmodel_offset_y 1; viewmodel_offset_z -2; viewmodel_presetpos 0;echo v01_enabled!;say_team 视角已更换为v01!"
+alias "v02" "viewmodel_fov 68; viewmodel_offset_x 2.5; viewmodel_offset_y -1; viewmodel_offset_z -2; viewmodel_presetpos 0;echo v02_enabled!;say_team 视角已更换为v02!"
+alias "v03" "viewmodel_fov 68; viewmodel_offset_x 1.5; viewmodel_offset_y -2; viewmodel_offset_z -2; viewmodel_presetpos 0;echo v03_enabled!;say_team 视角已更换为v03!"
+//绑定指令与按键
+bind "leftarrow" "toggle cl_crosshair_t 1 0"
+bind "rightarrow" "toggle cl_crosshairdot 1 0"
+bind "uparrow" "nothrow"
+bind "downarrow" "throw"
+alias "nothrow" "cl_grenadecrosshair_decoy 0;cl_grenadecrosshair_explosive 0;cl_grenadecrosshair_fire 0;cl_grenadecrosshair_flash 0;cl_grenadecrosshair_smoke 0;say_team 已关闭投掷物准星!"
+alias "throw" "cl_grenadecrosshair_decoy 1;cl_grenadecrosshair_explosive 1;cl_grenadecrosshair_fire 1;cl_grenadecrosshair_flash 1;cl_grenadecrosshair_smoke 1;say_team 已开启投掷物准星!"
+alias "red" "cl_crosshaircolor "5"; cl_crosshaircolor_r "255"; cl_crosshaircolor_g "0"; cl_crosshaircolor_b "0";say_team 准星颜色已更改为红色(Red)!"
+alias "orange" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"255\"; cl_crosshaircolor_g \"165\"; cl_crosshaircolor_b \"0\"; say_team 准星颜色已更改为橙色(Orange)!"
+alias "yellow" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"255\"; cl_crosshaircolor_g \"255\"; cl_crosshaircolor_b \"0\"; say_team 准星颜色已更改为黄色(Yellow)!"
+alias "green" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"0\"; cl_crosshaircolor_g \"255\"; cl_crosshaircolor_b \"0\"; say_team 准星颜色已更改为绿色(Green)!"
+alias "cyan" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"0\"; cl_crosshaircolor_g \"255\"; cl_crosshaircolor_b \"255\"; say_team 准星颜色已更改为青色(Cyan)!"
+alias "blue" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"0\"; cl_crosshaircolor_g \"0\"; cl_crosshaircolor_b \"255\"; say_team 准星颜色已更改为蓝色(Blue)!"
+alias "purple" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"128\"; cl_crosshaircolor_g \"0\"; cl_crosshaircolor_b \"128\"; say_team 准星颜色已更改为紫色(Purple)!"
+alias "black" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"0\"; cl_crosshaircolor_g \"0\"; cl_crosshaircolor_b \"0\"; say_team 准星颜色已更改为黑色(Black)!"
+alias "white" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"255\"; cl_crosshaircolor_g \"255\"; cl_crosshaircolor_b \"255\"; say_team 准星颜色已更改为白色(White)!"
+alias "pink" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"255\"; cl_crosshaircolor_g \"192\"; cl_crosshaircolor_b \"203\"; say_team 准星颜色已更改为粉色(Pink)!"
+alias "brown" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"165\"; cl_crosshaircolor_g \"42\"; cl_crosshaircolor_b \"42\"; say_team 准星颜色已更改为棕色(Brown)!"
+alias "gray" "cl_crosshaircolor \"5\"; cl_crosshaircolor_r \"128\"; cl_crosshaircolor_g \"128\"; cl_crosshaircolor_b \"128\"; say_team 准星颜色已更改为灰色(Gray)!"
+//控制台导航
+echo crosshair_view_mode enabled!
+echo ═════════════════════════════════════════════════════════════
+echo ──────────────────────  指令与快捷键  ─────────────────────────────
+echo ·输入 red -> 更改准星颜色为红色(Red)       | RGB: 255/0/0
+echo ·输入 orange -> 更改准星颜色为橙色(Orange) | RGB: 255/165/0
+echo ·输入 yellow -> 更改准星颜色为黄色(Yellow) | RGB: 255/255/0
+echo ·输入 green -> 更改准星颜色为绿色(Green)   | RGB: 0/255/0
+echo ·输入 cyan -> 更改准星颜色为青色(Cyan)     | RGB: 0/255/255
+echo ·输入 blue -> 更改准星颜色为蓝色(Blue)     | RGB: 0/0/255
+echo ·输入 purple -> 更改准星颜色为紫色(Purple) | RGB: 128/0/128
+echo ·输入 black -> 更改准星颜色为黑色(Black)   | RGB: 0/0/0
+echo ·输入 white -> 更改准星颜色为白色(White)   | RGB: 255/255/255
+echo ·输入 pink -> 更改准星颜色为粉色(Pink)     | RGB: 255/192/203
+echo ·输入 brown -> 更改准星颜色为棕色(Brown)   | RGB: 165/42/42
+echo ·输入 gray -> 更改准星颜色为灰色(Gray)     | RGB: 128/128/128
+echo ──── 投掷时保留玩家自定义准星		: cl_grenadecrosshair_keepusercrosshair 1;
+echo ──── 开启或关闭T形准星	            : ←键 (跑图模式按键冲突) | cl_crosshair_t 1;
+echo ──── 开启或关闭准星中心点		    : →键 (跑图模式按键冲突) | cl_crosshairdot 1;
+echo ·输入 nothrow | 快捷键↑    ->  关闭投掷物准星 
+echo ·输入  throw  | 快捷键↓    ->  开启投掷物准星 
+echo ──────────────────────   准星库   ─────────────────────────────
+echo ·输入 c01 -> 细线静态标准小准星 | 准星代码: CSGO-H9mcs-8GDFZ-MfxkQ-2Kx7O-pTLoD
+echo ·输入 c02 -> 跟枪抖动动态准星 | 准星代码: CSGO-oK2db-LY2wT-seq73-YTnJB-3bOUD
+echo ·输入 c03 -> 移动聚焦动态准星 | 准星代码: CSGO-9StUb-FrcBs-HhYjr-mzVip-YScNE
+echo ·输入 c04 -> 小圆点静态准星 | 准星代码: CSGO-pqEaF-5AKXB-DCdnh-vpxAJ-94GSQ
+echo ────────────────────   持枪视角库   ────────────────────────────
+echo ·输入 v01 -> Niko中心视角 | 60/0/1/-2/0
+echo ·输入 v02 -> 大幅右拉开阔视角 | 68/2.5/-1/-2/0
+echo ·输入 v03 -> 偏中右拉开阔视角 | 68/1.5/-2/-2/0
+echo ═════════════════════════════════════════════════════════════
 ```
 
-- "["或"]"键启用，"["键用于轮换准星设置，"]"键用于轮换持枪视角。
+- "["键启用，注意查看控制台导航信息。
 --- 
-
+> 由于Valve的脚本指令单条有长度限制，而准星参数的设置已经超过该限制，故直接用cfg文件来保存准星预设。
+> 注意以下 cfg 都需要存放在游戏全局 cfg 文件夹下的 crosshair_library 文件夹内，比如 **...\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\crosshair_library** 或 **...\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\crosshair_library** 下。
+### crosshair_library
+- 修改文件名为`01.cfg`
+```ini
+//准星代码:CSGO-H9mcs-8GDFZ-MfxkQ-2Kx7O-pTLoD
+cl_crosshair_drawoutline "false"
+cl_crosshair_dynamic_maxdist_splitratio "0.300000"
+cl_crosshair_dynamic_splitalpha_innermod "1.000000"
+cl_crosshair_dynamic_splitalpha_outermod "0.500000"
+cl_crosshair_dynamic_splitdist "7"
+cl_crosshair_outlinethickness "0.500000"
+cl_crosshair_recoil "false"
+cl_crosshair_t "false"
+cl_crosshairalpha "255"
+cl_crosshaircolor "5"
+cl_crosshaircolor_b "255"
+cl_crosshaircolor_g "255"
+cl_crosshaircolor_r "0"
+cl_crosshairdot "false"
+cl_crosshairgap "-2.400000"
+cl_crosshairgap_useweaponvalue "false"
+cl_crosshairsize "1.100000"
+cl_crosshairstyle "4"
+cl_crosshairthickness "0.100000"
+cl_crosshairusealpha "true"
+```
+- 修改文件名为`02.cfg`
+```ini
+//准星代码:CSGO-oK2db-LY2wT-seq73-YTnJB-3bOUD
+cl_crosshair_drawoutline "false"
+cl_crosshair_dynamic_maxdist_splitratio "0.300000"
+cl_crosshair_dynamic_splitalpha_innermod "1.000000"
+cl_crosshair_dynamic_splitalpha_outermod "0.500000"
+cl_crosshair_dynamic_splitdist "7"
+cl_crosshair_outlinethickness "1.000000"
+cl_crosshair_recoil "false"
+cl_crosshair_t "false"
+cl_crosshairalpha "255"
+cl_crosshaircolor "5"
+cl_crosshaircolor_b "255"
+cl_crosshaircolor_g "255"
+cl_crosshaircolor_r "255"
+cl_crosshairdot "false"
+cl_crosshairgap "-3.300000"
+cl_crosshairgap_useweaponvalue "false"
+cl_crosshairsize "1.400000"
+cl_crosshairstyle "5"
+cl_crosshairthickness "0.000000"
+cl_crosshairusealpha "true"
+```
+- 修改文件名为`03.cfg`
+```ini
+//准星代码:CSGO-9StUb-FrcBs-HhYjr-mzVip-YScNE
+cl_crosshair_drawoutline "false"
+cl_crosshair_dynamic_maxdist_splitratio "0.000000"
+cl_crosshair_dynamic_splitalpha_innermod "1.000000"
+cl_crosshair_dynamic_splitalpha_outermod "1.000000"
+cl_crosshair_dynamic_splitdist "3"
+cl_crosshair_outlinethickness "1.000000"
+cl_crosshair_recoil "false"
+cl_crosshair_t "false"
+cl_crosshairalpha "255"
+cl_crosshaircolor "1"
+cl_crosshaircolor_b "255"
+cl_crosshaircolor_g "246"
+cl_crosshaircolor_r "205"
+cl_crosshairdot "false"
+cl_crosshairgap "-6.000000"
+cl_crosshairgap_useweaponvalue "false"
+cl_crosshairsize "1.000000"
+cl_crosshairstyle "2"
+cl_crosshairthickness "1.000000"
+cl_crosshairusealpha "true"
+```
+- 修改文件名为`04.cfg`
+```ini
+//准星代码:CSGO-pqEaF-5AKXB-DCdnh-vpxAJ-94GSQ
+cl_crosshair_drawoutline "true"
+cl_crosshair_dynamic_maxdist_splitratio "0.000000"
+cl_crosshair_dynamic_splitalpha_innermod "1.000000"
+cl_crosshair_dynamic_splitalpha_outermod "0.300000"
+cl_crosshair_dynamic_splitdist "5"
+cl_crosshair_outlinethickness "1.000000"
+cl_crosshair_recoil "false"
+cl_crosshair_t "false"
+cl_crosshairalpha "255"
+cl_crosshaircolor "2"
+cl_crosshaircolor_b "0"
+cl_crosshaircolor_g "0"
+cl_crosshaircolor_r "0"
+cl_crosshairdot "true"
+cl_crosshairgap "-4.000000"
+cl_crosshairgap_useweaponvalue "false"
+cl_crosshairsize "0.500000"
+cl_crosshairstyle "4"
+cl_crosshairthickness "1.000000"
+cl_crosshairusealpha "true"
+```
 # lulu's cfg
 - [点我下载](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/%E7%92%90%E7%92%90cfg/autoexec.cfg) 下载完成后，直接放进cfg文件夹即可。
 - 注意要把文件名改为`autoexec.cfg`，`.cfg`是后缀名。
