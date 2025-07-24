@@ -663,7 +663,7 @@ echo ·输入 gkd → 标准实战 | 输入 gg -> 恢复跑图模式
 echo ·输入 spawn 加载出生点传送预设
 ```
 
-- “p”键启用，参考于 **Bad0RANG3** ，项目地址：https://github.com/Bad0RANG3/CS2PraticeCFG ，个人空间：https://space.bilibili.com/482966540
+- “p”键启用，出生点预设参考于 **Bad0RANG3** ，项目地址：https://github.com/Bad0RANG3/CS2PraticeCFG ，个人空间：https://space.bilibili.com/482966540
 
 ---
 
