@@ -1213,7 +1213,7 @@ alias "V02" "viewmodel_fov 68; viewmodel_offset_x 1.5; viewmodel_offset_y -2; vi
 - "["或"]"键启用，"["键用于轮换准星设置，"]"键用于轮换持枪视角。
 --- 
 
-## lulu's cfg
+# lulu's cfg
 - [点我下载](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/%E7%92%90%E7%92%90cfg/autoexec.cfg) 下载完成后，直接放进cfg文件夹即可。
 - 注意要把文件名改为`autoexec.cfg`，`.cfg`是后缀名。
 ```
