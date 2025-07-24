@@ -275,16 +275,19 @@ cl_showpos 1 // 在屏幕上显示玩家当前的位置、速度和角度信息
 mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 ```
 
-# 如何查找准星代码与参数
+# 如何查找及时映射的cfg代码参数
 > 如果我们使用cfg来配置准星，是需要知道具体参数的，而CS提供的准星代码需要进游戏中导入，为了一键式配置，可参考以下方法，找到喜欢的准星导入后，在文件中找到准星具体参数复制。
 - 找到如下路径 **...\Steam\userdata\123456789\730\local\cfg** ,找到如下文件打开。
-
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250420121101.png)
-
 - 这里的参数就是准星参数
-
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250420121153.png)
-
+> 查看所有刚刚更改的按键绑定，应对不知键位名称的情况，下面这个文件里是所有按键绑定的参数
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-18-22.png)
+> 游戏的功能性设置，所对应的cfg代码参数，也有对应文件。以chatwheel轮盘配置为例说明。
+- 首先打开下面这个文件
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-20-46.png)
+- 下面的就是快捷轮盘对应槽位的关键词配置
+![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-23-37.png)
 # 自用配置分享
 [点击下载自用cfgs](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip)，解压至cfg文件夹即可。
 ## 启动项
@@ -476,6 +479,33 @@ r_drawtracers_firstperson 1        // 显示曳光弹
 r_fullscreen_gamma 2.6             // 设置亮度
 cl_teamid_overhead_mode 3          // 隔墙显示队友位置
 cl_teamid_overhead_colors_show 1   // 玩家ID上使用玩家颜色
+//快捷聊天轮盘
+cl_radial_radio_tap_to_ping false  // 关闭“地图标记”功能
+cl_radial_radio_tab 0              // 当前激活标签页：0（后续可通过操作切换1/2页）
+cl_radial_radio_tab_0_text_1 #Chatwheel_grenade         // 第0页选项1：请求手雷
+cl_radial_radio_tab_0_text_2 #Chatwheel_sniperspotted   // 第0页选项2：发现狙击手
+cl_radial_radio_tab_0_text_3 #Chatwheel_fire            // 第0页选项3：开火指令
+cl_radial_radio_tab_0_text_4 #Chatwheel_fallback        // 第0页选项4：撤退指令
+cl_radial_radio_tab_0_text_5 #Chatwheel_smoke           // 第0页选项5：请求烟雾弹
+cl_radial_radio_tab_0_text_6 #Chatwheel_gogogo          // 第0页选项6：进攻指令（冲！）
+cl_radial_radio_tab_0_text_7 #Chatwheel_flashbang       // 第0页选项7：请求闪光弹
+cl_radial_radio_tab_0_text_8 #Chatwheel_needbackup      // 第0页选项8：需要支援
+cl_radial_radio_tab_1_text_1 #Chatwheel_requestweapon   // 第1页选项1：请求武器
+cl_radial_radio_tab_1_text_2 #Chatwheel_requestspend    // 第1页选项2：请求经济支援
+cl_radial_radio_tab_1_text_3 #Chatwheel_bplan           // 第1页选项3：B点战术计划
+cl_radial_radio_tab_1_text_4 #Chatwheel_heardnoise      // 第1页选项4：听到动静（有声音）
+cl_radial_radio_tab_1_text_5 #Chatwheel_midplan         // 第1页选项5：中路战术计划
+cl_radial_radio_tab_1_text_6 #Chatwheel_ihavethebomb    // 第1页选项6：我持有炸弹
+cl_radial_radio_tab_1_text_7 #Chatwheel_aplan           // 第1页选项7：A点战术计划
+cl_radial_radio_tab_1_text_8 #Chatwheel_requestecoround // 第1页选项8：请求经济局（eco）
+cl_radial_radio_tab_2_text_1 #Chatwheel_affirmative     // 第2页选项1：收到/同意
+cl_radial_radio_tab_2_text_2 #Chatwheel_negative        // 第2页选项2：拒绝/不同意
+cl_radial_radio_tab_2_text_3 #Chatwheel_compliment      // 第2页选项3：称赞（打得好）
+cl_radial_radio_tab_2_text_4 #Chatwheel_thanks          // 第2页选项4：感谢
+cl_radial_radio_tab_2_text_5 #Chatwheel_cheer           // 第2页选项5：加油/鼓舞
+cl_radial_radio_tab_2_text_6 #Chatwheel_peptalk         // 第2页选项6：打气（稳住）
+cl_radial_radio_tab_2_text_7 #Chatwheel_sorry           // 第2页选项7：抱歉
+cl_radial_radio_tab_2_text_8 #Chatwheel_sectorclear     // 第2页选项8：区域安全
 //声音
 volume 1                              // 主音量
 snd_headphone_eq 0                    // 均衡器
@@ -507,9 +537,25 @@ cl_autohelp "false"                // 禁用自动帮助提示
 func_break_max_pieces 0            // 可破坏物体破碎时最大碎片数
 r_show_build_info 0                // 关闭版本信息
 spec_replay_autostart 0            // 关闭被击杀回放
+//绑定指令
+alias "lefthand" "cl_prefer_lefthanded 1;say_team 默认左手持枪!"
+alias "debounce" "cl_debounce_zoom 1;say_team 关闭连镜切换!"
+alias "silencer" "cl_silencer_mode 0;say_team 关闭卸下消音器!"
+alias "avatars" "cl_teamcounter_playercount_instead_of_avatars 0;say_team 显示对局头像!"
+alias "tracer" "r_drawtracers_firstperson 0;say_team 关闭曳光弹!"
+alias "ping" "cl_radial_radio_tap_to_ping true"
 //Ending
 echo AutoConfig Enabled!
 echo ═════════════════════════════════════════════════════════════
+echo ──────────────────────  常用指令  ─────────────────────────────
+echo ·输入 lefthand → 切换默认左手持枪 | cl_prefer_lefthanded 1;
+echo ·输入 debounce → 关闭连镜切换         | cl_debounce_zoom 1;
+echo ·输入 silencer → 关闭卸下消音器   | cl_silencer_mode 0;
+echo ·输入 avatars → 显示对局头像      | cl_teamcounter_playercount_instead_of_avatars 0;
+echo ·输入 tracer → 关闭曳光弹         | r_drawtracers_firstperson 0;
+echo ·输入 ping → 开启快捷轮盘标点     | cl_radial_radio_tap_to_ping true;
+echo ────快捷轮盘当前激活标签页：0（切换1/2页）  | cl_radial_radio_tab 0;
+echo ───────────────────────  快捷键  ─────────────────────────────
 echo ──── 重启autoexec  		    : O键 | exec autoexec
 echo ──── 跑图,练习道具  			:  P键 | exec train
 echo ──── 更换匕首模型 			    :  J键 | exec knife
@@ -518,6 +564,11 @@ echo ──── demo预设 	               :  ]键 | exec demo
 echo ──── 一键发刀(平台) 	        :  K键 | !drop
 echo ──── 一键伤害提示(5E平台)	    :  \键 | .hp
 echo ──── 准星与持枪视角预设         :  [键 | exec crosshair_view
+echo ──── 切换雷达缩放比例           :  h键 | toggleradarscale
+echo ──── 切换是否仅显示死亡通知与准星:  -键 | toggle cl_draw_only_deathnotices 1 0
+echo ──── 切换是否强制显示雷达       :  =键 | toggle cl_drawhud_force_radar 1 0
+echo ──── 快捷聊天轮盘              : alt键 | +radialradio
+echo ──── 切换队友头顶标识模式       : ralt键 toggle cl_teamid_overhead_mode 1 3
 echo ═════════════════════════════════════════════════════════════
 ```
 - 注意查看控制台导航信息。
