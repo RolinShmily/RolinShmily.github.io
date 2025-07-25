@@ -412,7 +412,7 @@ bind "p" "exec train.cfg;say_team train_mode!"          // 加载跑图预设
 bind "[" "exec crosshair_view;say_team crosshair_view!" // 准星与持枪预设
 bind "/" "exec lastinv.cfg;say_team lastinv_enabled!"   // 弯刀预设
 bind "k" "say_team !drop"                               // 一键发刀(平台)
-bing "\" "say_team .hp"                                 // 伤害统计(5E平台)  
+bind "\" "say_team .hp"                                 // 伤害统计(5E平台)  
 bind "]" "exec demo.cfg;say_team demo_mode!"            // demo预设
 //基础准星
 cl_crosshair_drawoutline "false"                     // 禁用准星轮廓绘制
