@@ -5,14 +5,9 @@ categories:
     - OBS Studio
 tags:
   - OBS Studio
-  - FFmpeg
-  - nvidia
-  - H.264
   - 编码器
   - 视频封装格式
   - 推流
-  - 比特率
-  - 码率
   - 虚拟摄像机
 cover: https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/001.jpg
 abbrlink: 

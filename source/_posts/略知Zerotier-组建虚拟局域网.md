@@ -8,7 +8,7 @@ tags:
   - zerotier
   - network
   - moon
-  - p2p连接
+  - p2p
 cover: 'https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/21313123.jpg?raw=true'
 abbrlink: f175009a
 date: 2025-07-18 00:00:00
