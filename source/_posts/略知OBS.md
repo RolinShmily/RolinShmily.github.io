@@ -5,9 +5,14 @@ categories:
     - OBS Studio
 tags:
   - OBS Studio
+  - FFmpeg
+  - nvidia
+  - H.264
   - 编码器
   - 视频封装格式
   - 推流
+  - 比特率
+  - 码率
   - 虚拟摄像机
 cover: https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/001.jpg
 abbrlink: 
@@ -31,11 +36,14 @@ updated: 2025-07-25 00:00:00
 这一部分主要是视频录制的快速实现。
 ![默认页面](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_13-06-16.jpg)
 1. 进入设置，点击左侧**视频**，设置**基础(画布)分辨率**为你想要录制的分辨率，默认推荐`1920×1080`；选择帧率，推荐为`30帧`或`60帧`。
+![视频设置](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_21-00-30.png)
 2. 点击输出，选择输出模式为**高级**，点击录制选项：设置你的录像路径、选择录像格式为`MPEG-4(.mp4)`；选择音频编码器为`FFmpeg AAC`。
 3. 选择视频编码器为`x264`或`QuickSync H.264`或`NVIDIA NVENC H.264`或`AMD HW H.264(AVC)`，如果存在多个，后两个更优，其次为第二个。
 4. 将上述编码器的设置中，**比特率控制**分别对应设置为`CRF`、`CQP`、`恒定QP`、`恒定QP`，并将**值**设置为`20`。
+![输出设置](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_21-06-12.jpg)
 5. 返回主页面，添加源，请选择**显示器采集**，随后自定义名称；然后选择你的显示器，确保画布中出现了显示器的画面；如果画布中显示不完全，请选择对应源右击，进行变换。
-![拉伸到全屏](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_13-53-12.jpg)
+![添加显示器源](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_20-49-02.jpg)
+![拉伸到全屏](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/Timeline%201_01_00_00_00.jpg)
 至此，可以进行正常的录制屏幕了。
 后面的详解配置将以此作为基础，进行优化和不同用法的介绍。
 # 客户端的基础设置
