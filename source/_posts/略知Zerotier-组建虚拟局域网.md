@@ -11,6 +11,7 @@ tags:
   - p2p
 cover: 'https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/21313123.jpg?raw=true'
 abbrlink: f175009a
+description: 构建虚拟局域网，主要是为了内网之间的设备互相访问。在一般的家庭网络中，设备联网会经过同一个路由转发，此时的设备就在同一局域网中。
 date: 2025-07-18 00:00:00
 updated: 2025-07-18 00:00:00
 ---
