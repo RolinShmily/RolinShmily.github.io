@@ -218,3 +218,7 @@ abbrlink:
   force: false    # Enable force mode. In this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had an abbrlink. (false in default)
   writeback: true # Whether to write changes to front-matters back to the actual markdown files. (true in default)
 
+# KaTeX数学公式渲染插件
+markdown:
+  plugins:
+    - '@renbaoshuo/markdown-it-katex'
