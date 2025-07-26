@@ -6,7 +6,7 @@ categories:
 tags:
   - Markdown
   - Obsidian
-cover: 
+cover: https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/Timeline%201_01_00_02_42.jpg
 abbrlink: 
 description: 
 date: 2025-07-26 12:44:00
