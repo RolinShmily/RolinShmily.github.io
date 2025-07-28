@@ -291,7 +291,7 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 - 下面的就是快捷轮盘对应槽位的关键词配置
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-23-37.png)
 # 自用配置分享
-[点击下载自用cfgs](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip)，解压至cfg文件夹即可。
+[点击下载1](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip) [点击下载2](https://github.com/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip)，解压至cfg文件夹即可。
 ## 启动项
 
 ```ini
@@ -1482,14 +1482,14 @@ cl_crosshairusealpha "true"
 ```
 ---
 # lulu's cfg
-- [点我下载](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/%E7%92%90%E7%92%90cfg/autoexec.cfg) 下载完成后，直接放进cfg文件夹即可。
-- 注意要把文件名改为`autoexec.cfg`，`.cfg`是后缀名。
-```
-//Mouse
+- [点我下载1](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@raw/refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) [点我下载2](https://github.com/RolinShmily/RolinShmily.github.io/raw/refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
+- 下面这个文件名是`autoexec.cfg`，`.cfg`是后缀名。
+```ini
+//鼠标设置
 sensitivity 1.25                   // 灵敏度
 zoom_sensitivity_ratio 1 		   // 开镜灵敏度
 m_yaw 0.022                        // x轴速度
-//Keys
+//按键绑定
 bind "w" "+forward"                // 向前移动
 bind "s" "+back"                   // 向后移动
 bind "a" "+left"                   // 向左移动
@@ -1518,23 +1518,24 @@ bind "q" "slot7"                   // 闪
 bind "c" "slot8"                   // 烟
 bind "6" "slot9"                   // 诱饵弹
 bind "x" "slot10"                  // 火
-// bind "q" "lastinv"                 // 切换到上一个武器
+//bind "q" "lastinv"                 // 切换到上一个武器
 bind "y" "+spray_menu"             // 打开喷漆菜单
 bind "i" "messagemode2"            // 打开团队聊天
 bind "u" "messagemode"             // 打开全局聊天
-bind "v" "+voicerecord"       // 语音
-bind "mouse3" "player_ping"        // 玩家标记
+bind "v" "+voicerecord"             // 语音
+bind "alt" "+radialradio"          // 快捷聊天轮盘
+bind "mouse3" "player_ping"		   // 玩家标记
 bind "mwheeldown" "invnext"          // 鼠标滚轮切换装备
 bind "mwheelup" "invprev"            // 鼠标滚轮切换装备
 bind "`" "toggleconsole"                           // 打开/关闭控制台
 bind "h" "switchhands"                             // 切换武器持握方式（左手/右手）
 bind "t" "toggleradarscale"                        // 切换雷达缩放比例
-bind "alt" "toggle cl_teamid_overhead_mode 1 3"    // 切换队友头顶标识模式
-bind "ralt" "radio2;slot12"                        // 打开无线电菜单、X光显示、医疗针
+bind "ralt" "toggle cl_teamid_overhead_mode 1 3"   // 切换队友头顶标识模式
+bind "'" "radio2;slot12"                           // 打开无线电菜单、X光显示、医疗针
 bind "-" "toggle cl_draw_only_deathnotices 1 0"    // 切换是否仅显示死亡通知与准星
 bind "=" "toggle cl_drawhud_force_radar 1 0"       // 切换是否强制显示雷达
-bind F1 "vote 1"                                   // 投票选择同意
-bind F2 "vote 2"                                   // 投票选择拒绝
+bind "f1" "vote 1"                                 // 投票选择同意
+bind "f2" "vote 2"                                 // 投票选择拒绝
 bind "f5" "buy hegrenade"                          // 购买高爆手雷
 bind "f6" "buy flashbang"                          // 购买闪光弹
 bind "f7" "buy smokegrenade"                       // 购买烟雾弹
@@ -1542,20 +1543,20 @@ bind "f8" "buy molotov;buy incgrenade"             // 购买燃烧瓶/燃烧弹
 bind "f9" "buy vest"                               // 购买防弹衣
 bind "f10" "buy vesthelm"                          // 购买防弹衣+头盔
 bind "f11" "buy defuser"                           // 购买拆弹器
-bind "f4" "buy rifle1"                             // 购买主武器（步枪）
-bind "f3" "buy secondary4"                         // 购买副武器（手枪）
-bind "f12" "sellbackall"                           // 出售所有已购买物品
-//cfg
-exec zeus.cfg
-bind "o" "exec crosshair_view;say_team crosshair_view!"
-bind "\" "say_team keys_log!;echoln "CFG按键指示";echoln "- 自启动：zeus电击枪快速切换";echoln "- o：autoexec重启配置";echoln "- j：knife匕首模型轮换";echoln "- p：train跑图模式";echoln "- [：crosshair轮换准星设置";echoln "- ]：view轮换持枪视角";echoln "- /：lastinv弯刀检视优化";echoln "- k：一键发刀";echoln "- o：默认准星与视角""
-bind "j" "exec knife.cfg;say_team knife_model!"
-bind "p" "exec train.cfg;say_team train_model!"
-bind "[" "exec crosshair_view;say_team crosshair_view!"
-bind "]" "exec crosshair_view;say_team crosshair_view!"
-bind "/" "exec lastinv.cfg;say_team lastinv!"
-bind "k" "say_team !drop"
-//准星
+bind "f4" "buy rifle1"                             // 购买主武器（步枪第二槽位）
+bind "f3" "buy secondary4"                         // 购买副武器（手枪第五槽位）
+bind "backspace" "sellbackall"                     // 出售所有已购买物品
+//启动cfg
+exec zeus.cfg                                           // 默认启动，电击枪自动切换。
+bind "o" "exec autoexec;say_team autoexec_enabled!"     // 恢复默认准星与持枪视角
+bind "j" "exec knife.cfg;say_team knife_enabled!"       // 更换匕首模型
+bind "p" "exec train.cfg;say_team train_mode!"          // 加载跑图预设
+bind "[" "exec crosshair_view;say_team crosshair_view!" // 准星与持枪预设
+bind "/" "exec lastinv.cfg;say_team lastinv_enabled!"   // 弯刀预设
+bind "k" "say_team !drop"                               // 一键发刀(平台)
+bind "\" "say_team .hp"                                 // 伤害统计(5E平台)  
+bind "]" "exec demo.cfg;say_team demo_mode!"            // demo预设
+//基础准星
 cl_crosshair_drawoutline "false"                     // 禁用准星轮廓绘制
 cl_crosshair_dynamic_maxdist_splitratio "0.300000"   // 动态准星最大分离距离的比例
 cl_crosshair_dynamic_splitalpha_innermod "1.000000"  // 动态准星内部分离部分的透明度
@@ -1617,11 +1618,38 @@ cl_debounce_zoom 0                 // 按住开镜键持续切换
 cl_silencer_mode 1                 // 开启卸下消音器
 cl_use_opens_buy_menu "0"          // 关闭E键打开购买菜单
 cl_dm_buyrandomweapons 0           // 关闭死斗随机买枪
-cl_teamcounter_playercount_instead_of_avatars 1 // 显示对局存活数字
+cl_teamcounter_playercount_instead_of_avatars 0 // 显示对局存活数字
 r_drawtracers_firstperson 1        // 显示曳光弹
 r_fullscreen_gamma 2.6             // 设置亮度
 cl_teamid_overhead_mode 3          // 隔墙显示队友位置
 cl_teamid_overhead_colors_show 1   // 玩家ID上使用玩家颜色
+//快捷聊天轮盘
+cl_radial_radio_tap_to_ping false  // 关闭“地图标记”功能
+cl_radial_radio_tab 0              // 当前激活标签页：0（后续可通过操作切换1/2页）
+cl_radial_radio_tab_0_text_1 #Chatwheel_grenade         // 第0页选项1：请求手雷
+cl_radial_radio_tab_0_text_2 #Chatwheel_sniperspotted   // 第0页选项2：发现狙击手
+cl_radial_radio_tab_0_text_3 #Chatwheel_fire            // 第0页选项3：开火指令
+cl_radial_radio_tab_0_text_4 #Chatwheel_fallback        // 第0页选项4：撤退指令
+cl_radial_radio_tab_0_text_5 #Chatwheel_smoke           // 第0页选项5：请求烟雾弹
+cl_radial_radio_tab_0_text_6 #Chatwheel_gogogo          // 第0页选项6：进攻指令（冲！）
+cl_radial_radio_tab_0_text_7 #Chatwheel_flashbang       // 第0页选项7：请求闪光弹
+cl_radial_radio_tab_0_text_8 #Chatwheel_needbackup      // 第0页选项8：需要支援
+cl_radial_radio_tab_1_text_1 #Chatwheel_requestweapon   // 第1页选项1：请求武器
+cl_radial_radio_tab_1_text_2 #Chatwheel_requestspend    // 第1页选项2：请求经济支援
+cl_radial_radio_tab_1_text_3 #Chatwheel_bplan           // 第1页选项3：B点战术计划
+cl_radial_radio_tab_1_text_4 #Chatwheel_heardnoise      // 第1页选项4：听到动静（有声音）
+cl_radial_radio_tab_1_text_5 #Chatwheel_midplan         // 第1页选项5：中路战术计划
+cl_radial_radio_tab_1_text_6 #Chatwheel_ihavethebomb    // 第1页选项6：我持有炸弹
+cl_radial_radio_tab_1_text_7 #Chatwheel_aplan           // 第1页选项7：A点战术计划
+cl_radial_radio_tab_1_text_8 #Chatwheel_requestecoround // 第1页选项8：请求经济局（eco）
+cl_radial_radio_tab_2_text_1 #Chatwheel_affirmative     // 第2页选项1：收到/同意
+cl_radial_radio_tab_2_text_2 #Chatwheel_negative        // 第2页选项2：拒绝/不同意
+cl_radial_radio_tab_2_text_3 #Chatwheel_compliment      // 第2页选项3：称赞（打得好）
+cl_radial_radio_tab_2_text_4 #Chatwheel_thanks          // 第2页选项4：感谢
+cl_radial_radio_tab_2_text_5 #Chatwheel_cheer           // 第2页选项5：加油/鼓舞
+cl_radial_radio_tab_2_text_6 #Chatwheel_peptalk         // 第2页选项6：打气（稳住）
+cl_radial_radio_tab_2_text_7 #Chatwheel_sorry           // 第2页选项7：抱歉
+cl_radial_radio_tab_2_text_8 #Chatwheel_sectorclear     // 第2页选项8：区域安全
 //声音
 volume 1                              // 主音量
 snd_headphone_eq 0                    // 均衡器
@@ -1636,7 +1664,7 @@ snd_deathcamera_volume 0.08           // 死亡视角音量
 snd_mute_mvp_music_live_players 1     // 当双方团队成员都存活时关闭 MVP 音乐
 snd_mute_losefocus 0                  // 后台播放声音
 voice_modenable 1                     // 启用语音
-//HUD
+//HUD界面
 hud_showtargetid "1"               // 显示队友/敌人的 ID
 hud_scaling "0.85"                 // 设置 HUD 缩放比例
 safezonex "0.88"                   // 设置 HUD 水平占比
@@ -1653,6 +1681,37 @@ cl_autohelp "false"                // 禁用自动帮助提示
 func_break_max_pieces 0            // 可破坏物体破碎时最大碎片数
 r_show_build_info 0                // 关闭版本信息
 spec_replay_autostart 0            // 关闭被击杀回放
+//绑定指令
+alias "lefthand" "cl_prefer_lefthanded 1;say_team 默认左手持枪!"
+alias "debounce" "cl_debounce_zoom 1;say_team 关闭连镜切换!"
+alias "silencer" "cl_silencer_mode 0;say_team 关闭卸下消音器!"
+alias "avatars" "cl_teamcounter_playercount_instead_of_avatars 0;say_team 显示对局头像!"
+alias "tracer" "r_drawtracers_firstperson 0;say_team 关闭曳光弹!"
+alias "ping" "cl_radial_radio_tap_to_ping true"
 //Ending
 echo AutoConfig Enabled!
+echo ═════════════════════════════════════════════════════════════
+echo ──────────────────────  常用指令  ─────────────────────────────
+echo ·输入 lefthand → 切换默认左手持枪 | cl_prefer_lefthanded 1;
+echo ·输入 debounce → 关闭连镜切换         | cl_debounce_zoom 1;
+echo ·输入 silencer → 关闭卸下消音器   | cl_silencer_mode 0;
+echo ·输入 avatars → 显示对局存活玩家数      | cl_teamcounter_playercount_instead_of_avatars 1;
+echo ·输入 tracer → 关闭曳光弹         | r_drawtracers_firstperson 0;
+echo ·输入 ping → 开启快捷轮盘标点     | cl_radial_radio_tap_to_ping true;
+echo ────快捷轮盘当前激活标签页：0（切换1/2页）  | cl_radial_radio_tab 0;
+echo ───────────────────────  快捷键  ─────────────────────────────
+echo ──── 重启autoexec  		    : O键 | exec autoexec
+echo ──── 跑图,练习道具  			:  P键 | exec train
+echo ──── 更换匕首模型 			    :  J键 | exec knife
+echo ──── 弯刀适用Q键检视,"."恢复 	 :  /键 | exec lastinv
+echo ──── demo预设 	               :  ]键 | exec demo
+echo ──── 一键发刀(平台) 	        :  K键 | !drop
+echo ──── 一键伤害提示(5E平台)	    :  \键 | .hp
+echo ──── 准星与持枪视角预设         :  [键 | exec crosshair_view
+echo ──── 切换雷达缩放比例           :  h键 | toggleradarscale
+echo ──── 切换是否仅显示死亡通知与准星:  -键 | toggle cl_draw_only_deathnotices 1 0
+echo ──── 切换是否强制显示雷达       :  =键 | toggle cl_drawhud_force_radar 1 0
+echo ──── 快捷聊天轮盘              : alt键 | +radialradio
+echo ──── 切换队友头顶标识模式       : ralt键 toggle cl_teamid_overhead_mode 1 3
+echo ═════════════════════════════════════════════════════════════
 ```
