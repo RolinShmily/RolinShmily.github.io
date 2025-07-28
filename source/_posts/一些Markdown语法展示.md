@@ -9,6 +9,8 @@ tags:
 cover: >-
   https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/Timeline%201_01_00_02_42.jpg
 abbrlink: af61e0e2
+toc: false
+toc_number: false
 date: 2025-07-26 00:00:00
 updated: 2025-07-26 00:00:00
 description:
