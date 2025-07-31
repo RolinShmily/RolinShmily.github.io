@@ -291,7 +291,7 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 - 下面的就是快捷轮盘对应槽位的关键词配置
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-23-37.png)
 # 自用配置分享
-[点击下载1](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip) [点击下载2](https://github.com/RolinShmily/RolinShmily.github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip)，解压至cfg文件夹即可。
+[点击下载1](https://cdn.jsdelivr.net/gh/RolinShmily/rolinshmily-github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip) [点击下载2](https://raw.githubusercontent.com/RolinShmily/rolinshmily-github.io/refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip)，解压至cfg文件夹即可。
 ## 启动项
 
 ```ini
@@ -1482,7 +1482,7 @@ cl_crosshairusealpha "true"
 ```
 ---
 # lulu's cfg
-- [点我下载1](https://cdn.jsdelivr.net/gh/RolinShmily/RolinShmily.github.io@raw/refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) [点我下载2](https://github.com/RolinShmily/RolinShmily.github.io/raw/refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
+- [点我下载1](https://cdn.jsdelivr.net/gh/RolinShmily/rolinshmily-github.io@refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) [点我下载2](https://raw.githubusercontent.com/RolinShmily/rolinshmily-github.io/refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
 - 下面这个文件名是`autoexec.cfg`，`.cfg`是后缀名。
 ```ini
 //鼠标设置
