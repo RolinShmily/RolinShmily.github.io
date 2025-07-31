@@ -13,7 +13,7 @@ cover: 'https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/21313123.jpg?raw=tru
 abbrlink: f175009a
 description: 构建虚拟局域网，主要是为了内网之间的设备互相访问。在一般的家庭网络中，设备联网会经过同一个路由转发，此时的设备就在同一局域网中。
 date: 2025-07-18 00:00:00
-updated: 2025-07-18 00:00:00
+updated: 2025-07-31 00:00:00
 ---
 # 使用场景与前言
 构建虚拟局域网，主要是为了**内网**之间的设备互相访问。  
@@ -98,7 +98,7 @@ zerotier提供的自托管服务有**节点网络控制器**和**根服务器**
 首先，自建moon服务器，需要一台拥有公网IP的设备，这里推荐用Linux云服务器，以此为例。具体教程查看[官方文档](https://docs.zerotier.com/roots/)。
 与云服务器建立ssh连接后，简要操作步骤如下：
 0. 前往云服务器厂商的管理后台，开放服务器的9993UDP端口，以便zerotier服务正常运行。
-1. 执行`curl -s https://install.zerotier.com | sudo bash`命令，安装zerotier。此时在命令窗里会显示当前设备的节点ID。
+1. 执行`curl -s https://install.zerotier.com | sudo bash`或者`sudo apt-get install zerotier-one`命令，安装zerotier。此时在命令窗里会显示当前设备的节点ID。
 2. 执行`cd /var/lib/zerotier-one`进入zerotier的配置文件夹
 3. 执行`zerotier-idtool initmoon identity.public >>moon.json`命令，导出moon配置文件。
 4. 执行`nano moon.json`命令，使用nano编辑器编辑配置文件。
