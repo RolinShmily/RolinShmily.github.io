@@ -14,8 +14,8 @@ tags:
   - 比特率
   - 码率
   - 虚拟摄像机
-cover: https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/001.jpg
-abbrlink: 
+cover: 'https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/001.jpg'
+abbrlink: bc4f008a
 date: 2025-07-25 00:00:00
 updated: 2025-07-25 00:00:00
 ---
