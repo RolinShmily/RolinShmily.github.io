@@ -265,7 +265,7 @@ footer:
   owner:
     enable: true
     since: 2024
-  custom_text: Hi, welcome to my blog!
+  custom_text: <a href="https://beian.miit.gov.cn/"><span>豫ICP备2025140316号-1</span></a>
   # Copyright of theme and framework
   copyright: true
 
