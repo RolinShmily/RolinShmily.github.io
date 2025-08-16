@@ -735,8 +735,6 @@ site_verification:
     content: cW1xRiHp03NA47zcbWIz-wwOYj4FJqC0sKPfOTZrtwA
   - name: baidu-site-verification
     content: codeva-NkPjLaCuAq
-  - name: msvalidate.01
-    content: 5DB2C9A2A7E7F356A6BC4294D57820DA
 
 # --------------------------------------
 # Beautify / Effect
