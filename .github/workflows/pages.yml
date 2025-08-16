@@ -89,6 +89,6 @@ jobs:
           python scripts/Refresh.py \
             -i ${{ secrets.ALIYUN_ACCESS_KEY_ID }} \
             -k ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }} \
-            -r urllist.txt \  # URL列表文件路径
+            -r ./scripts/urllist.txt \  # URL列表文件路径
             -t clear \        # 任务类型：刷新（clear）或预热（push）
             -o Directory      # 刷新类型：目录（Directory）或文件（File）
