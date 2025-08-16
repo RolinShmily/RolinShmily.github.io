@@ -68,3 +68,33 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+  refresh-cdn:
+    needs: deploy  
+    runs-on: ubuntu-latest
+    steps:
+      - name: 阿里云 CDN 缓存刷新
+        env:
+          ALIYUN_ACCESS_KEY_ID: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
+          ALIYUN_ACCESS_KEY_SECRET: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
+          REFRESH_PATH: ${{ secrets.REFRESH_PATH }}
+        run: |
+          # 构造基础请求参数
+          params="Action=RefreshObjectCaches&Format=JSON&Version=2018-05-10"
+          params+="&AccessKeyId=${ALIYUN_ACCESS_KEY_ID}"
+          params+="&SignatureMethod=HMAC-SHA1"
+          params+="&SignatureVersion=1.0"
+          params+="&SignatureNonce=$(date +%s%N)" # 生成唯一随机数
+          params+="&Timestamp=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" # UTC 时间
+          params+="&ObjectPath=${REFRESH_PATH}"
+          params+="&ObjectType=Directory" # 按目录刷新，可按需改为 File 等
+          params+="&Force=true" # 强制删除缓存
+
+          # 生成签名：按阿里云 API 规范，对请求参数排序、编码后生成
+          sorted_params=$(echo $params | tr '&' '\n' | sort | tr '\n' '&' | sed 's/&$//')
+          string_to_sign="POST&%2F&$(echo -n $sorted_params | awk -F'&' '{for(i=1;i<=NF;i++){printf "%s&", $i}}' | sed 's/&$//' | xxd -plain | tr -d '\n' | sed 's/\(..\)/%\1/g')"
+          signature=$(echo -n "$string_to_sign" | openssl dgst -sha1 -hmac "${ALIYUN_ACCESS_KEY_SECRET}&" -binary | openssl enc -base64)
+
+          # 发起 POST 请求调用阿里云 CDN 接口
+          curl -X POST "https://cdn.aliyuncs.com/?${sorted_params}&Signature=${signature}" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -H "User-Agent: GitHub-Actions-CDN-Refresh"
