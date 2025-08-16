@@ -152,3 +152,42 @@ zerotier提供的自托管服务有**节点网络控制器**和**根服务器**
 2. 然后将自己的可信任设备也加入这个网络，并授权。
 3. 随后在云服务器厂商处关闭ztncui服务的端口号3000和3443，此后在外网中，便无论如何也无法访问该面板。只有ztncui网络中的可信任设备可以通过服务器被分配的虚拟IP和端口号来访问面板。
 
+## zerotier常用指令
+- 查看节点ID：
+```bash
+zerotier-cli info
+```
+- 加入网络：
+```bash
+zerotier-cli join 网络ID
+```
+- 离开网络
+```bash
+zerotier-cli leave 网络ID
+```
+- 网络状态
+```bash
+zerotier-cli listnetworks
+```
+
+- 查看节点状态
+```bash
+zerotier-cli listpeers
+```
+
+- 连接moon
+```bash
+zerotier-cli orbit Moon节点ID Moon节点ID
+```
+- 取消moon
+```bash
+zerotier-cli deorbit Moon节点ID
+```
+
+- Windows重启zerotier：
+```bash
+net stop zerotier-one && net start zerotier-one
+```
+
+- 显示moon信息：
+`zerotier-cli listmoons`
