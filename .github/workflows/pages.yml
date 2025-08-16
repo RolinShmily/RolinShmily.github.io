@@ -9,17 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup SSH Key
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 700 ~/.ssh
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email "RolinShmily@outlook.com"
-          git config --global user.name "RolinShmily"
       
       - name: Checkout source
         uses: actions/checkout@v4
@@ -81,17 +70,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
-          
-      # 新增调试步骤：检查文件结构和参数
-      - name: Debug information
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Scripts directory contents:"
-          ls -la scripts/
-          echo "URL list file content:"
-          cat scripts/urllist.txt || echo "File not found"
-          echo "Access Key ID exists: ${{ secrets.ALIYUN_ACCESS_KEY_ID != '' }}"
-          echo "Access Key Secret exists: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET != '' }}"
 
       # 安装Python依赖并执行CDN刷新脚本
       - name: Refresh CDN Cache
