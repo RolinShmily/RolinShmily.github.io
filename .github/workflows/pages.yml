@@ -81,6 +81,18 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
+          
+      # 新增调试步骤：检查文件结构和参数
+      - name: Debug information
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Scripts directory contents:"
+          ls -la scripts/
+          echo "URL list file content:"
+          cat scripts/urllist.txt || echo "File not found"
+          echo "Access Key ID exists: ${{ secrets.ALIYUN_ACCESS_KEY_ID != '' }}"
+          echo "Access Key Secret exists: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET != '' }}"
+
       # 安装Python依赖并执行CDN刷新脚本
       - name: Refresh CDN Cache
         run: |
@@ -88,12 +100,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install aliyun-python-sdk-cdn aliyun-python-sdk-core
           
-          # 确保刷新脚本和URL列表在仓库中（如放在scripts目录下）
-          
-          # 执行刷新脚本（参数说明：-t clear为刷新，-o Directory为目录刷新）
-          python scripts/Refresh.py \
-            -i ${{ secrets.ALIYUN_ACCESS_KEY_ID }} \
-            -k ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }} \
-            -r scripts/urllist.txt \  # URL列表文件路径
-            -t clear \        # 任务类型：刷新（clear）或预热（push）
-            -o Directory      # 刷新类型：目录（Directory）或文件（File）
+          # 使用绝对路径和引号包裹参数
+          python ${{ github.workspace }}/scripts/Refresh.py \
+            -i "${{ secrets.ALIYUN_ACCESS_KEY_ID }}" \
+            -k "${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}" \
+            -r "${{ github.workspace }}/scripts/urllist.txt" \
+            -t "clear" \
+            -o "Directory"
