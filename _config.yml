@@ -222,3 +222,9 @@ abbrlink:
 markdown:
   plugins:
     - '@renbaoshuo/markdown-it-katex'
+
+# 站点地图
+baidusitemap:
+  path: baidusitemap.xml
+sitemap:
+  path: sitemap.xml
