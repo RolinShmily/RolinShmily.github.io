@@ -731,8 +731,8 @@ ad:
 # --------------------------------------
 
 site_verification:
-  # - name: google-site-verification
-  #   content: xxxxxx
+  - name: google-site-verification
+    content: cW1xRiHp03NA47zcbWIz-wwOYj4FJqC0sKPfOTZrtwA
   - name: baidu-site-verification
     content: codeva-NkPjLaCuAq
 
