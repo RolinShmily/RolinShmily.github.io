@@ -87,13 +87,14 @@ jobs:
           echo "const CDN20180510 = require('@alicloud/cdn20180510');
           const OpenApi = require('@alicloud/openapi-client');
           const Tea = require('@alicloud/tea-typescript');
-          const Credentials = require('@alicloud/credentials');
+          const { AccessKeyCredential } = require('@alicloud/credentials');
 
           async function main() {
-            const cred = new Credentials({
-              accessKeyId: process.env.ACCESS_KEY_ID,
-              accessKeySecret: process.env.ACCESS_KEY_SECRET
-            });
+            // 使用AccessKeyCredential替代Credentials
+            const cred = new AccessKeyCredential(
+              process.env.ACCESS_KEY_ID,
+              process.env.ACCESS_KEY_SECRET
+            );
             
             const config = new OpenApi.Config({
               credential: cred,
