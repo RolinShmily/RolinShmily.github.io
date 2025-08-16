@@ -733,7 +733,7 @@ ad:
 site_verification:
   # - name: google-site-verification
   #   content: xxxxxx
-  - name: baidu-site-verification
+   - name: baidu-site-verification
      content: codeva-NkPjLaCuAq
 
 # --------------------------------------
