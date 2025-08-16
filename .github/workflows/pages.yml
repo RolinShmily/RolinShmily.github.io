@@ -68,3 +68,54 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  refresh-cdn:
+    needs: deploy  
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install阿里云SDK
+        run: |
+          npm install @alicloud/cdn20180510 @alicloud/openapi-client @alicloud/tea-typescript @alicloud/credentials
+
+      - name: 刷新CDN缓存
+        env:
+          ACCESS_KEY_ID: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
+          ACCESS_KEY_SECRET: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
+          CDN_DOMAIN: ${{ secrets.CDN_DOMAIN }}
+          REFRESH_PATH: ${{ secrets.REFRESH_PATH }}
+        run: |
+          echo "const CDN20180510 = require('@alicloud/cdn20180510');
+          const OpenApi = require('@alicloud/openapi-client');
+          const Tea = require('@alicloud/tea-typescript');
+          const Credentials = require('@alicloud/credentials');
+
+          async function main() {
+            const cred = new Credentials({
+              accessKeyId: process.env.ACCESS_KEY_ID,
+              accessKeySecret: process.env.ACCESS_KEY_SECRET
+            });
+            
+            const config = new OpenApi.Config({
+              credential: cred,
+              regionId: 'cn-hangzhou',
+              endpoint: 'cdn.aliyuncs.com'
+            });
+
+            const client = new CDN20180510.default(config);
+            const refreshObjectCachesRequest = new CDN20180510.RefreshObjectCachesRequest({
+              objectPath: process.env.REFRESH_PATH,
+              objectType: 'Directory'
+            });
+
+            try {
+              const result = await client.refreshObjectCaches(refreshObjectCachesRequest);
+              console.log('CDN缓存刷新成功:', JSON.stringify(result));
+            } catch (error) {
+              console.error('CDN缓存刷新失败:', error);
+              process.exit(1);
+            }
+          }
+
+          main();" > refresh-cdn.js
+          
+          node refresh-cdn.js
