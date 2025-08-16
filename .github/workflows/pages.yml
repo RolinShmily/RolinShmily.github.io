@@ -73,14 +73,19 @@ jobs:
     needs: deploy  
     runs-on: ubuntu-latest
     steps:
-      # 步骤1：拉取仓库代码
+      # 拉取仓库代码
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 步骤2：安装Python依赖并执行CDN刷新脚本
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      # 安装Python依赖并执行CDN刷新脚本
       - name: Refresh CDN Cache
         run: |
           # 安装Python SDK
+          python -m pip install --upgrade pip
           pip install aliyun-python-sdk-cdn aliyun-python-sdk-core
           
           # 确保刷新脚本和URL列表在仓库中（如放在scripts目录下）
@@ -89,6 +94,6 @@ jobs:
           python scripts/Refresh.py \
             -i ${{ secrets.ALIYUN_ACCESS_KEY_ID }} \
             -k ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }} \
-            -r ./scripts/urllist.txt \  # URL列表文件路径
+            -r scripts/urllist.txt \  # URL列表文件路径
             -t clear \        # 任务类型：刷新（clear）或预热（push）
             -o Directory      # 刷新类型：目录（Directory）或文件（File）
