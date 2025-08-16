@@ -17,17 +17,17 @@ nav:
   fixed: false
 
 menu:
-  Home: / || fas fa-home
+  主页: / || fas fa-home
   归档: /archives/ || fas fa-archive
   分类: /categories/ || fas fa-folder-open
   标签: /tags/ || fas fa-tags
-  相册: /pictures/ || fas fa-images
-  说说: /shuoshuo/ || fa-regular fa-comment
+  # 相册: /pictures/ || fas fa-images
+  # 说说: /shuoshuo/ || fa-regular fa-comment
   友情链接: /link/ || fas fa-link  
-  List||fas fa-list:
+  番剧列表||fas fa-list:
     追番: /bangumis/ || fa-brands fa-bilibili
     追剧: /cinemas/ || fas fa-video
-  About: /about/ || fas fa-heart
+  关于: /about/ || fas fa-heart
 
 # --------------------------------------
 # Code Blocks Settings
