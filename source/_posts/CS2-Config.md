@@ -300,44 +300,8 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 
 ## cs2_video.txt
 
-```ini
-"video.cfg"
-{
-	"Version"		"15"
-	"VendorID"		"4318"
-	"DeviceID"		"10464"
-	"setting.cpu_level"		"3"
-	"setting.gpu_mem_level"		"3"
-	"setting.gpu_level"		"3"
-	"setting.knowndevice"		"0"
-	"setting.defaultres"		"1440"
-	"setting.defaultresheight"		"1080"
-	"setting.refreshrate_numerator"		"0"
-	"setting.refreshrate_denominator"		"0"
-	"setting.fullscreen"		"0"
-	"setting.coop_fullscreen"		"1"
-	"setting.nowindowborder"		"1"
-	"setting.mat_vsync"		"0"
-	"setting.fullscreen_min_on_focus_loss"		"0"
-	"setting.high_dpi"		"0"
-	"AutoConfig"		"2"
-	"setting.shaderquality"		"0"
-	"setting.r_texturefilteringquality"		"3"
-	"setting.msaa_samples"		"4"
-	"setting.r_csgo_cmaa_enable"		"0"
-	"setting.videocfg_shadow_quality"		"1"
-	"setting.videocfg_dynamic_shadows"		"1"
-	"setting.videocfg_texture_detail"		"1"
-	"setting.videocfg_particle_detail"		"1"
-	"setting.videocfg_ao_detail"		"0"
-	"setting.videocfg_hdr_detail"		"3"
-	"setting.videocfg_fsr_detail"		"0"
-	"setting.monitor_index"		"0"
-	"setting.r_low_latency"		"1"
-	"setting.aspectratiomode"		"0"
-}
-```
-
+[点击查看具体内容](./b445fd38/video_config/cs2_video.txt)
+下载视频配置文件：<a href="./b445fd38/video_config/cs2_video.txt" download="cs2.cfg">cs2_video.txt</a>
 - 集合了“高级视频选项”、“分辨率”、“显示模式”
 
 ## autoexec.cfg
