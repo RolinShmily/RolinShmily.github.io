@@ -79,9 +79,9 @@ jobs:
           pip install aliyun-python-sdk-cdn aliyun-python-sdk-core
           
           # 使用绝对路径和引号包裹参数
-          python ${{ github.workspace }}/scripts/Refresh.py \
+          python ${{ github.workspace }}/ScriptsForRefreshCDN/Refresh.py \
             -i "${{ secrets.ALIYUN_ACCESS_KEY_ID }}" \
             -k "${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}" \
-            -r "${{ github.workspace }}/scripts/urllist.txt" \
+            -r "${{ github.workspace }}/ScriptsForRefreshCDN/urllist.txt" \
             -t "clear" \
             -o "Directory"

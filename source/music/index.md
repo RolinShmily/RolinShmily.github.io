@@ -3,6 +3,10 @@ title: music
 date: 2025-08-17 09:59:46
 aplayer: true
 ---
+测试文本
+
+{% aplayer "Love Story" "Taylor Swift" "./LoveStory/lovestory.mp3" "https://upload.wikimedia.org/wikipedia/zh/6/60/Fearless_album.jpg" "lrc:./LoveStory/lovestory.txt" %}
+
 {% aplayerlist %}
 {
     "narrow": false,                          // （可选）播放器袖珍风格
