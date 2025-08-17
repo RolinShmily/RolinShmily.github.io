@@ -300,8 +300,8 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 
 ## cs2_video.txt
 
-[点击查看具体内容](./b445fd38/video_config/cs2_video.txt)
-下载视频配置文件：<a href="./b445fd38/video_config/cs2_video.txt" download="cs2.cfg">cs2_video.txt</a>
+[点击查看具体内容](./video_config/cs2_video.txt)
+下载视频配置文件：<a href="./video_config/cs2_video.txt" download="cs2.cfg">cs2_video.txt</a>
 - 集合了“高级视频选项”、“分辨率”、“显示模式”
 
 ## autoexec.cfg
