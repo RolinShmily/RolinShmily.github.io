@@ -429,7 +429,7 @@ async function packAndDownload() {
 }
 </script>
 
-- 下载可能会有延迟，请注意浏览器拦截下载。    
+- 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。 
 - 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
 ## 启动项
 
@@ -640,7 +640,7 @@ cl_crosshairusealpha "true"
 ```
 ---
 # lulu's cfg
-
+- 修改了一些autoexec的默认按键绑定，以适用于用户习惯。
 <button onclick="packAndDownload()" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
   打包并下载全部CFG文件
 </button>
@@ -778,5 +778,5 @@ async function packAndDownload() {
 }
 </script>
 - [备用链接1](https://cdn.jsdelivr.net/gh/RolinShmily/rolinshmily.github.io@refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) [备用链接2](https://raw.githubusercontent.com/RolinShmily/rolinshmily.github.io/refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) 
-- 下载可能会有延迟，请注意浏览器拦截下载。    
+- 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。    
 - 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
