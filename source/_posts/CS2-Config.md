@@ -719,7 +719,7 @@ async function packAndDownload() {
     margin: 0 auto;
     padding: 1.5rem;
     border-radius: 8px;
-    overflow: auto; /* 纵向滚动 */
+    overflow: auto;
     position: relative;
   }
   .cfg-close-btn {
@@ -733,7 +733,6 @@ async function packAndDownload() {
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 10; /* 确保按钮在内容上方 */
   }
   .cfg-download-btn {
     margin-top: 1rem;
@@ -744,63 +743,32 @@ async function packAndDownload() {
     border-radius: 4px;
     cursor: pointer;
   }
-  
-  /* 横向滚动容器 */
-  .horizontal-scroll-container {
-    overflow-x: auto; /* 横向滚动 */
-    padding-bottom: 10px; /* 为横向滚动条预留空间 */
-  }
   .cfg-file-content {
     white-space: pre; /* 保留文本中的空格和换行 */
-    font-family: monospace; /* 使用等宽字体 */
+    font-family: monospace; /* 使用等宽字体，适合代码/配置文件 */
     color: #333;
-    min-width: max-content; /* 确保内容宽度足够，触发横向滚动 */
   }
-
-  /* 深色主题样式 */
+  /* 深色主题样式 - 基于data-theme="dark" */
   html[data-theme="dark"] .cfg-preview-content {
-    background: #1e1e1e;
+    background: #1e1e1e; /* 深色背景 */
   }
   html[data-theme="dark"] .cfg-file-content {
-    color: #e0e0e0;
+    color: #e0e0e0; /* 浅色文本 */
   }
   html[data-theme="dark"] .cfg-close-btn {
-    background: #d12525;
+    background: #d12525; /* 深色主题下的关闭按钮颜色 */
   }
   html[data-theme="dark"] .cfg-download-btn {
-    background: #0b5ed7;
-  }
-  /* 横向滚动条样式优化 */
-  .horizontal-scroll-container::-webkit-scrollbar {
-    height: 8px;
-  }
-  .horizontal-scroll-container::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.1);
-    border-radius: 4px;
-  }
-  .horizontal-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.3);
-    border-radius: 4px;
-  }
-  html[data-theme="dark"] .horizontal-scroll-container::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.1);
-  }
-  html[data-theme="dark"] .horizontal-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3);
+    background: #0b5ed7; /* 深色主题下的下载按钮颜色 */
   }
 </style>
 
-<!-- 预览模态框 -->
+<!-- 预览模态框（默认隐藏） -->
 <div class="cfg-preview-modal" id="cfgPreviewModal">
   <div class="cfg-preview-content">
     <button class="cfg-close-btn" onclick="closePreview()">×</button>
     <h3 id="previewFileName"></h3>
-    
-    <!-- 横向滚动容器 -->
-    <div class="horizontal-scroll-container">
-      <pre class="cfg-file-content" id="previewContent"></pre>
-    </div>
-    
+    <pre class="cfg-file-content" id="previewContent"></pre>
     <button class="cfg-download-btn" onclick="downloadCurrentFile()">下载此文件</button>
   </div>
 </div>
