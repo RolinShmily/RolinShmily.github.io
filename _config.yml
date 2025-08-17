@@ -229,3 +229,7 @@ baidusitemap:
   path: baidusitemap.xml
 sitemap:
   path: sitemap.xml
+
+# 音乐播放器
+aplayer:
+  asset_inject: false

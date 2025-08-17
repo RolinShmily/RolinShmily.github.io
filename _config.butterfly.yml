@@ -24,6 +24,7 @@ menu:
   # 相册: /pictures/ || fas fa-images
   # 说说: /shuoshuo/ || fa-regular fa-comment
   友情链接: /link/ || fas fa-link  
+  音乐: /music/ || fa-regular fa-music
   番剧列表||fas fa-list:
     追番: /bangumis/ || fa-brands fa-bilibili
     追剧: /cinemas/ || fas fa-video
