@@ -415,7 +415,7 @@ async function packAndDownload() {
       .then(function(content) {
         const a = document.createElement("a");
         a.href = URL.createObjectURL(content);
-        a.download = "allcfgs.zip"; // 下载的ZIP文件名
+        a.download = "Allcfgs.zip"; // 下载的ZIP文件名
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -430,7 +430,7 @@ async function packAndDownload() {
 </script>
 
 - 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。 
-- 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
+- 下载完成后会得到一个压缩包`Allcfgs.zip`，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
 ## 启动项
 
 ```ini
@@ -528,7 +528,7 @@ async function packAndDownload() {
 - 在 autoexec.cfg 中自动启用，必须绑定“4”键电击枪，在电击枪左键使用之后自动切出主武器/副武器，手持电击枪右键时则不使用，直接切出主武器/副武器。
 - Tips: 电击枪充电完成是有声音的，请注意使用后利用该声音做一定战术调整，或者直接将其丢弃，避免在关键时刻暴露位置。
 ## crosshair_view.cfg
-- `准星与持枪视角库Config`：<a href="./cfgs/crosshair_view.cfg" class="file-link" data-filename="crosshair_view.cfg">.cfg</a>
+- `准星与持枪视角库Config`：<a href="./cfgs/crosshair_view.cfg" class="file-link" data-filename="crosshair_view.cfg">crosshair_view.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 准星与持枪视角的存储与即时更换
 - 若更换准星必须搭配crosshair_library准星代码库使用
@@ -557,13 +557,14 @@ async function packAndDownload() {
 ---
 # lulu's cfg
 - 修改了一些autoexec的默认按键绑定，以适用于用户习惯。
-<button onclick="packAndDownload()" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+
+<button onclick="packAndDownloadLulu()" style="padding: 8px 16px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">
   打包并下载全部CFG文件
 </button>
 
 <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <script>
-async function packAndDownload() {
+async function packAndDownloadLulu() {
   // 1. 定义文件列表，包含完整的文件夹路径（模拟服务器上的层级结构）
   // 格式：{ name: "ZIP中的路径/文件名", url: "服务器上的实际路径" }
   const filesToPack = [
@@ -680,7 +681,7 @@ async function packAndDownload() {
       .then(function(content) {
         const a = document.createElement("a");
         a.href = URL.createObjectURL(content);
-        a.download = "allcfgs.zip"; // 下载的ZIP文件名
+        a.download = "AllcfgsForLulu.zip"; // 下载的ZIP文件名
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
