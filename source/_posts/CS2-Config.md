@@ -438,15 +438,15 @@ async function packAndDownload() {
 ```
 
 ## cs2_video.txt
-- `视频配置文件`：<a href="./video_config/cs2_video.txt" download="cs2_video.txt">cs2_video.txt</a>
+- `视频配置文件`：<a href="./video_config/cs2_video.txt" class="file-link" data-filename="cs2_video.txt">cs2_video.txt</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 -  集合了“高级视频选项”、“分辨率”、“显示模式”
 ## autoexec.cfg
-- `自启动Config`：<a href="./cfgs/autoexec.cfg" download="autoexec.cfg">autoexec.cfg</a>
+- `自启动Config`：<a href="./cfgs/autoexec.cfg" class="file-link" data-filename="autoexec.cfg">autoexec.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 注意查看控制台导航信息。
 ## train.cfg
-- `跑图Config`：<a href="./cfgs/train.cfg" download="train.cfg">train.cfg</a>
+- `跑图Config`：<a href="./cfgs/train.cfg" class="file-link" data-filename="train.cfg">train.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 注意查看控制台导航信息。
 - “p”键启用，出生点预设参考于 **Bad0RANG3** ，项目地址：https://github.com/Bad0RANG3/CS2PraticeCFG ，个人空间：https://space.bilibili.com/482966540
@@ -454,81 +454,81 @@ async function packAndDownload() {
 > 注意以下 cfg 都需要存放在游戏全局 cfg 文件夹下的 spawn 文件夹内，比如 **...\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\spawn** 或 **...\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\spawn** 下。
 
 ### spawn.cfg
-- `重生点控制台Config`：<a href="./cfgs/spawn/spawn.cfg" download="spawn.cfg">spawn.cfg</a>
+- `重生点控制台Config`：<a href="./cfgs/spawn/spawn.cfg" class="file-link" data-filename="spawn.cfg">spawn.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### vertigo.cfg
-- `vertigo重生点Config`：<a href="./cfgs/spawn/vertigo.cfg" download="vertigo.cfg">vertigo.cfg</a>
+- `vertigo重生点Config`：<a href="./cfgs/spawn/vertigo.cfg" class="file-link" data-filename="vertigo.cfg">vertigo.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### office.cfg
-- `office重生点Config`：<a href="./cfgs/spawn/office.cfg" download="office.cfg">office.cfg</a>
+- `office重生点Config`：<a href="./cfgs/spawn/office.cfg" class="file-link" data-filename="office.cfg">office.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### nuke.cfg
-- `nuke重生点Config`：<a href="./cfgs/spawn/nuke.cfg" download="nuke.cfg">nuke.cfg</a>
+- `nuke重生点Config`：<a href="./cfgs/spawn/nuke.cfg" class="file-link" data-filename="nuke.cfg">nuke.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### mirage.cfg
-- `mirage重生点Config`：<a href="./cfgs/spawn/mirage.cfg" download="mirage.cfg">mirage.cfg</a>
+- `mirage重生点Config`：<a href="./cfgs/spawn/mirage.cfg" class="file-link" data-filename="mirage.cfg">mirage.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### italy.cfg
-- `italy重生点Config`：<a href="./cfgs/spawn/italy.cfg" download="italy.cfg">italy.cfg</a>
+- `italy重生点Config`：<a href="./cfgs/spawn/italy.cfg" class="file-link" data-filename="italy.cfg">italy.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 ### inferno.cfg
-- `inferno重生点Config`：<a href="./cfgs/spawn/inferno.cfg" download="inferno.cfg">inferno.cfg</a>
+- `inferno重生点Config`：<a href="./cfgs/spawn/inferno.cfg" class="file-link" data-filename="inferno.cfg">inferno.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 ### dust2.cfg
-- `dust2重生点Config`：<a href="./cfgs/spawn/dust2.cfg" download="dust2.cfg">dust2.cfg</a>
+- `dust2重生点Config`：<a href="./cfgs/spawn/dust2.cfg" class="file-link" data-filename="dust2.cfg">dust2.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 ### anubis.cfg
-- `anubis重生点Config`：<a href="./cfgs/spawn/anubis.cfg" download="anubis.cfg">anubis.cfg</a>
+- `anubis重生点Config`：<a href="./cfgs/spawn/anubis.cfg" class="file-link" data-filename="anubis.cfg">anubis.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### ancient.cfg
-- `ancient重生点Config`：<a href="./cfgs/spawn/ancient.cfg" download="ancient.cfg">ancient.cfg</a>
+- `ancient重生点Config`：<a href="./cfgs/spawn/ancient.cfg" class="file-link" data-filename="ancient.cfg">ancient.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 ### init_spawns.cfg
-- `重生点初始化Config`：<a href="./cfgs/spawn/init_spawns.cfg" download="init_spawns.cfg">init_spawns.cfg</a>
+- `重生点初始化Config`：<a href="./cfgs/spawn/init_spawns.cfg" class="file-link" data-filename="init_spawns.cfg">init_spawns.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ---
 
 ## demo.cfg
-- `看demo专用Config`：<a href="./cfgs/demo.cfg" download="demo.cfg">demo.cfg</a>
+- `看demo专用Config`：<a href="./cfgs/demo.cfg" class="file-link" data-filename="demo.cfg">demo.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 集成了一些实用指令的快捷键
 - 取自 Purp1e 老师：https://space.bilibili.com/73115492
 - 注意查看控制台导航信息。
 ## hlae.cfg
-- `HLAE观赛Config`：<a href="./cfgs/hlae.cfg" download="hlae.cfg">hlae.cfg</a>
+- `HLAE观赛Config`：<a href="./cfgs/hlae.cfg" class="file-link" data-filename="hlae.cfg">hlae.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 集成了一些HLAE的实用指令的快捷键
 - 同样取自 Purp1e 老师：https://space.bilibili.com/73115492
 - 注意查看控制台导航信息。
 ## knife.cfg
-- `匕首模型更换Config`：<a href="./cfgs/knife.cfg" download="knife.cfg">knife.cfg</a>
+- `匕首模型更换Config`：<a href="./cfgs/knife.cfg" class="file-link" data-filename="knife.cfg">knife.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 注意控制台导航信息
 - “j”键启用，命令完成后有聊天框提示
 
 ## lastinv.cfg
 > 2025.8.15更新：此cfg已不再适用，Valve在更新中使切装备动画在衔接检视时的延迟变为0，此cfg效果可以由在切换装备前按住“检视键”来实现。
-- `切刀自动检视Config`：<a href="./cfgs/lastinv.cfg" download="lastinv.cfg">lastinv.cfg</a>
+- `切刀自动检视Config`：<a href="./cfgs/lastinv.cfg" class="file-link" data-filename="lastinv.cfg">lastinv.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - “弯刀”专用，规避了切刀时的双手拔刀动作，而是直接检视
 - 注意该配置重写了Q键(更换为最近装备)、1键(主武器)、2键(副武器)、3键(匕首刀)的逻辑，请不要修改这4个按键的默认功能。
 - “/”键启用，启用后“.”键取消该设置，与弯刀搭配使用，避免了切刀时的双手动作。
 
 ## zeus.cfg
-- `电击枪即用即切Config`：<a href="./cfgs/zeus.cfg" download="zeus.cfg">zeus.cfg</a>
+- `电击枪即用即切Config`：<a href="./cfgs/zeus.cfg" class="file-link" data-filename="zeus.cfg">zeus.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 电击枪快捷切换
 - 在 autoexec.cfg 中自动启用，必须绑定“4”键电击枪，在电击枪左键使用之后自动切出主武器/副武器，手持电击枪右键时则不使用，直接切出主武器/副武器。
 - Tips: 电击枪充电完成是有声音的，请注意使用后利用该声音做一定战术调整，或者直接将其丢弃，避免在关键时刻暴露位置。
 ## crosshair_view.cfg
-- `准星与持枪视角库Config`：<a href="./cfgs/crosshair_view.cfg" download="crosshair_view.cfg">.cfg</a>
+- `准星与持枪视角库Config`：<a href="./cfgs/crosshair_view.cfg" class="file-link" data-filename="crosshair_view.cfg">.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 准星与持枪视角的存储与即时更换
 - 若更换准星必须搭配crosshair_library准星代码库使用
@@ -538,19 +538,19 @@ async function packAndDownload() {
 > 注意以下 cfg 都需要存放在游戏全局 cfg 文件夹下的 crosshair_library 文件夹内，比如 **...\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\crosshair_library** 或 **...\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\crosshair_library** 下。
 ### crosshair_library
 > 这里仅给出库中的准星代码、源码以及持枪视角源码，后续将会以GIF格式在此展示准星与持枪视角。
-- `01号准星Config`：<a href="./cfgs/crosshair_library/01.cfg" download="01.cfg">01.cfg</a>
+- `01号准星Config`：<a href="./cfgs/crosshair_library/01.cfg" class="file-link" data-filename="01.cfg">01.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 准星代码: `CSGO-H9mcs-8GDFZ-MfxkQ-2Kx7O-pTLoD`
 
-- `02号准星Config`：<a href="./cfgs/crosshair_library/02.cfg" download="02.cfg">02.cfg</a>
+- `02号准星Config`：<a href="./cfgs/crosshair_library/02.cfg" class="file-link" data-filename="02.cfg">02.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 准星代码: `CSGO-oK2db-LY2wT-seq73-YTnJB-3bOUD`
 
-- `03号准星Config`：<a href="./cfgs/crosshair_library/03.cfg" download="03.cfg">03.cfg</a>
+- `03号准星Config`：<a href="./cfgs/crosshair_library/03.cfg" class="file-link" data-filename="03.cfg">03.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 准星代码: `CSGO-9StUb-FrcBs-HhYjr-mzVip-YScNE`
 
-- `04号准星Config`：<a href="./cfgs/crosshair_library/04.cfg" download="04.cfg">04.cfg</a>
+- `04号准星Config`：<a href="./cfgs/crosshair_library/04.cfg" class="file-link" data-filename="04.cfg">04.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 准星代码: `CSGO-pqEaF-5AKXB-DCdnh-vpxAJ-94GSQ`
 
@@ -696,3 +696,47 @@ async function packAndDownload() {
 - [备用链接1](https://cdn.jsdelivr.net/gh/RolinShmily/rolinshmily.github.io@refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) [备用链接2](https://raw.githubusercontent.com/RolinShmily/rolinshmily.github.io/refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) 
 - 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。    
 - 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
+
+<!-- 监听脚本：区分单击和Ctrl+单击行为 -->
+<script>
+document.querySelectorAll('.file-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    // 获取文件路径和文件名
+    const fileUrl = link.href;
+    const fileName = link.dataset.filename;
+
+    // 判断是否按下了Ctrl键（兼容Windows和Mac的Command键）
+    const isCtrlPressed = e.ctrlKey || e.metaKey;
+
+    if (isCtrlPressed) {
+      // 1. Ctrl+单击：强制下载
+      e.preventDefault(); // 阻止默认跳转
+      
+      // 用Fetch获取文件并转换为Blob下载
+      fetch(fileUrl)
+        .then(response => {
+          if (!response.ok) throw new Error('文件获取失败');
+          return response.blob();
+        })
+        .then(blob => {
+          const blobUrl = URL.createObjectURL(blob);
+          const downloadLink = document.createElement('a');
+          downloadLink.href = blobUrl;
+          downloadLink.download = fileName;
+          downloadLink.click();
+          // 清理临时资源
+          setTimeout(() => {
+            URL.revokeObjectURL(blobUrl);
+          }, 100);
+        })
+        .catch(error => {
+          console.error('下载失败:', error);
+          alert('下载失败，请重试');
+        });
+    } else {
+      // 2. 普通单击：默认行为（跳转查看文件）
+      // 不做任何阻止，让浏览器自然导航到文件URL
+    }
+  });
+});
+</script>
