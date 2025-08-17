@@ -292,6 +292,145 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-23-37.png)
 # 自用配置分享
 [点击下载1](https://cdn.jsdelivr.net/gh/RolinShmily/rolinshmily.github.io@refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip) [点击下载2](https://raw.githubusercontent.com/RolinShmily/rolinshmily.github.io/refs/heads/main/source/_posts/CS2-Config/self/cfgs.zip)，解压至cfg文件夹即可。
+
+<button onclick="packAndDownload()" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+  打包并下载全部CFG文件
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script>
+async function packAndDownload() {
+  // 1. 定义文件列表，包含完整的文件夹路径（模拟服务器上的层级结构）
+  // 格式：{ name: "ZIP中的路径/文件名", url: "服务器上的实际路径" }
+  const filesToPack = [
+    { 
+      name: "autoexec.cfg", 
+      url: "./cfgs/autoexec.cfg" 
+    },
+    { 
+      name: "crosshair_view.cfg", 
+      url: "./cfgs/crosshair_view.cfg" 
+    },
+    { 
+      name: "demo.cfg", 
+      url: "./cfgs/demo.cfg" 
+    },
+    { 
+      name: "hlae.cfg", 
+      url: "./cfgs/hlae.cfg" 
+    },
+    { 
+      name: "knife.cfg", 
+      url: "./cfgs/knife.cfg" 
+    },
+    { 
+      name: "lastinv.cfg", 
+      url: "./cfgs/lastinv.cfg" 
+    },
+    { 
+      name: "train.cfg", 
+      url: "./cfgs/train.cfg" 
+    },
+    { 
+      name: "zeus.cfg", 
+      url: "./cfgs/zeus.cfg" 
+    },
+    { 
+      name: "spawn/ancient.cfg", 
+      url: "./cfgs/spawn/ancient.cfg" 
+    },
+    { 
+      name: "spawn/anubis.cfg", 
+      url: "./cfgs/spawn/anubis.cfg" 
+    },
+    { 
+      name: "spawn/dust2.cfg", 
+      url: "./cfgs/spawn/dust2.cfg" 
+    },
+    { 
+      name: "spawn/inferno.cfg", 
+      url: "./cfgs/spawn/inferno.cfg" 
+    },
+    { 
+      name: "spawn/init_spawns.cfg", 
+      url: "./cfgs/spawn/init_spawns.cfg" 
+    },
+    { 
+      name: "spawn/italy.cfg", 
+      url: "./cfgs/spawn/italy.cfg" 
+    },
+    { 
+      name: "spawn/mirage.cfg", 
+      url: "./cfgs/spawn/mirage.cfg" 
+    },
+    { 
+      name: "spawn/nuke.cfg", 
+      url: "./cfgs/spawn/nuke.cfg" 
+    },
+    { 
+      name: "spawn/office.cfg", 
+      url: "./cfgs/spawn/office.cfg" 
+    },
+    { 
+      name: "spawn/spawn.cfg", 
+      url: "./cfgs/spawn/spawn.cfg" 
+    },
+    { 
+      name: "spawn/vertigo.cfg", 
+      url: "./cfgs/spawn/vertigo.cfg" 
+    },
+    { 
+      name: "crosshair_library/01.cfg", 
+      url: "./cfgs/crosshair_library/01.cfg" 
+    },
+    { 
+      name: "crosshair_library/02.cfg", 
+      url: "./cfgs/crosshair_library/02.cfg" 
+    },
+    { 
+      name: "crosshair_library/03.cfg", 
+      url: "./cfgs/crosshair_library/03.cfg" 
+    },
+    { 
+      name: "crosshair_library/04.cfg", 
+      url: "./cfgs/crosshair_library/04.cfg" 
+    }
+  ];
+
+  // 2. 创建ZIP实例
+  const zip = new JSZip();
+  try {
+
+    // 3. 循环下载文件并按层级添加到ZIP
+    for (const file of filesToPack) {
+      const response = await fetch(file.url);
+      if (!response.ok) {
+        throw new Error(`无法获取文件: ${file.name}`);
+      }
+      const content = await response.text();
+      zip.file(file.name, content);
+    }
+
+    // 4. 生成ZIP并下载
+    zip.generateAsync({ type: "blob" })
+      .then(function(content) {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(content);
+        a.download = "allcfgs.zip"; // 下载的ZIP文件名
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+      });
+
+  } catch (error) {
+    console.error("打包失败:", error);
+    alert("文件打包失败");
+  }
+}
+</script>
+    
+
 ## 启动项
 
 ```ini
@@ -299,11 +438,11 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 ```
 
 ## cs2_video.txt
-
-[点击查看具体内容](./video_config/cs2_video.txt)
-下载视频配置文件：<a href="./video_config/cs2_video.txt" download="cs2.cfg">cs2_video.txt</a>
 - 集合了“高级视频选项”、“分辨率”、“显示模式”
 
+视频配置文件：<a href="./video_config/cs2_video.txt" download="cs2.cfg">cs2_video.txt</a>
+
+- 单击查看文件，`Ctrl`+单击下载文件。（请注意浏览器拦截下载）
 ## autoexec.cfg
 
 ```ini
