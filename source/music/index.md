@@ -37,7 +37,7 @@ aplayer: true
 
 <script>
 const ap = new APlayer({
-    container: document.getElementById('player'),
+    container: document.getElementById('aplayer'),
     mini: false,
     autoplay: false,
     theme: '#FADFA3',
@@ -53,9 +53,9 @@ const ap = new APlayer({
         {
             name: 'Love Story',
             artist: 'Taylor Swift',
-            url: './LoveStory/lovestory.mp3',
+            url: '/music/LoveStory/lovestory.mp3',
             cover: 'https://upload.wikimedia.org/wikipedia/zh/6/60/Fearless_album.jpg',
-            lrc: './LoveStory/lovestory.txt',
+            lrc: '/music/LoveStory/lovestory.txt',
             theme: '#ebd0c2'
         }
     ]
