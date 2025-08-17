@@ -1,41 +1,12 @@
 ---
 title: music
 date: 2025-08-17 09:59:46
-aplayer: true
+aplayer: false
 ---
-测试文本
-
-{% aplayer "Love Story" "Taylor Swift" "./LoveStory/lovestory.mp3" "https://upload.wikimedia.org/wikipedia/zh/6/60/Fearless_album.jpg" "lrc:./LoveStory/lovestory.txt" %}
-
-{% aplayerlist %}
-{
-    "narrow": false,                          // （可选）播放器袖珍风格
-    "autoplay": true,                         // （可选) 自动播放，移动端浏览器暂时不支持此功能
-    "mode": "random",                         // （可选）曲目循环类型，有 'random'（随机播放）, 'single' (单曲播放), 'circulation' (循环播放), 'order' (列表播放)， 默认：'circulation' 
-    "showlrc": 3,                             // （可选）歌词显示配置项，可选项有：1,2,3
-    "mutex": true,                            // （可选）该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停
-    "theme": "#e6d0b2",	                      // （可选）播放器风格色彩设置，默认：#b7daff
-    "preload": "auto",                    // （可选）音乐文件预载入模式，可选项： 'none' 'metadata' 'auto', 默认: 'auto'
-    "listmaxheight": "513px",                 // (可选) 该播放列表的最大长度
-    "music": [
-        {
-            "title": "Love Story",
-            "author": "Taylor Swift",
-            "url": "./LoveStory/lovestory.mp3",
-            "pic": "https://upload.wikimedia.org/wikipedia/zh/6/60/Fearless_album.jpg",
-            "lrc": "./LoveStory/lovestory.txt"
-        }
-
-    ]
-}
-{% endaplayerlist %}
-
 
 <!-- 引入APlayer资源 -->
 <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-
-<!-- 播放器容器 -->
 <div id="aplayer" style="width: 100%; max-width: 800px; margin: 2rem auto;"></div>
 
 <!-- 初始化脚本 -->
@@ -75,8 +46,24 @@ window.onload = function() {
         artist: 'Taylor Swift',
         url: '/music/LoveStory/lovestory.mp3',  // 确保文件在source/music目录下
         cover: 'https://upload.wikimedia.org/wikipedia/zh/6/60/Fearless_album.jpg',
-        lrc: '/music/LoveStory/lovestory.txt',
+        lrc: '/music/LoveStory/lovestory.lrc',
         theme: '#ebd0c2'
+      },
+      {
+        name: '童话镇',
+        artist: '陈一发儿',
+        url: '/music/童话镇/童话镇.mp3',  // 确保文件在source/music目录下
+        cover: 'https://i.kfs.io/album/global/84935848,3v2/fit/500x500.jpg',
+        lrc: '/music/童话镇/童话镇.lrc',
+        theme: '#252E47'
+      },
+      {
+        name: '好想爱这个世界啊',
+        artist: '华晨宇',
+        url: '/music/好想爱这个世界啊/好想爱这个世界啊.mp3',  // 确保文件在source/music目录下
+        cover: 'https://upload.wikimedia.org/wikipedia/zh-yue/d/d2/%E5%A5%BD%E6%83%B3%E6%84%9B%E9%80%99%E5%80%8B%E4%B8%96%E7%95%8C%E5%95%8A.jpg',
+        lrc: '/music/好想爱这个世界啊/好想爱这个世界啊.lrc',
+        theme: '#343030'
       }
     ]
   });
