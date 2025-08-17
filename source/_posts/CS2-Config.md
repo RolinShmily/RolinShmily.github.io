@@ -697,46 +697,155 @@ async function packAndDownload() {
 - 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。    
 - 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
 
-<!-- 监听脚本：区分单击和Ctrl+单击行为 -->
+<!--  预览样式：用于美化预览区域 -->
+<style>
+  .cfg-preview-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  .cfg-preview-content {
+    background: white;
+    width: 100%;
+    max-width: 800px;
+    height: 80vh;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow: auto;
+    position: relative;
+  }
+  .cfg-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ff4444;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .cfg-download-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .cfg-file-content {
+    white-space: pre; /* 保留文本中的空格和换行 */
+    font-family: monospace; /* 使用等宽字体，适合代码/配置文件 */
+    color: #333;
+  }
+</style>
+
+<!-- 预览模态框（默认隐藏） -->
+<div class="cfg-preview-modal" id="cfgPreviewModal">
+  <div class="cfg-preview-content">
+    <button class="cfg-close-btn" onclick="closePreview()">×</button>
+    <h3 id="previewFileName"></h3>
+    <pre class="cfg-file-content" id="previewContent"></pre>
+    <button class="cfg-download-btn" onclick="downloadCurrentFile()">下载此文件</button>
+  </div>
+</div>
+
+<!-- 按键监听与文件预览脚本：区分单击和Ctrl+单击行为，单击显示预览 -->
 <script>
-document.querySelectorAll('.file-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    // 获取文件路径和文件名
-    const fileUrl = link.href;
-    const fileName = link.dataset.filename;
+  // 存储当前预览的文件信息
+  let currentFileInfo = null;
 
-    // 判断是否按下了Ctrl键（兼容Windows和Mac的Command键）
-    const isCtrlPressed = e.ctrlKey || e.metaKey;
-
-    if (isCtrlPressed) {
-      // 1. Ctrl+单击：强制下载
-      e.preventDefault(); // 阻止默认跳转
+  // 监听所有CFG链接的点击事件
+  document.querySelectorAll('.file-link').forEach(link => {
+    link.addEventListener('click', async (e) => {
+      // 判断是否按下Ctrl/Command键（用于下载）
+      const isCtrlPressed = e.ctrlKey || e.metaKey;
       
-      // 用Fetch获取文件并转换为Blob下载
-      fetch(fileUrl)
-        .then(response => {
-          if (!response.ok) throw new Error('文件获取失败');
-          return response.blob();
-        })
-        .then(blob => {
-          const blobUrl = URL.createObjectURL(blob);
-          const downloadLink = document.createElement('a');
-          downloadLink.href = blobUrl;
-          downloadLink.download = fileName;
-          downloadLink.click();
-          // 清理临时资源
-          setTimeout(() => {
-            URL.revokeObjectURL(blobUrl);
-          }, 100);
-        })
-        .catch(error => {
-          console.error('下载失败:', error);
-          alert('下载失败，请重试');
-        });
-    } else {
-      // 2. 普通单击：默认行为（跳转查看文件）
-      // 不做任何阻止，让浏览器自然导航到文件URL
+      if (isCtrlPressed) {
+        // Ctrl+单击：直接下载
+        e.preventDefault();
+        const fileUrl = link.href;
+        const fileName = link.dataset.filename;
+        downloadFile(fileUrl, fileName);
+      } else {
+        // 普通单击：预览文件内容
+        e.preventDefault();
+        const fileUrl = link.href;
+        const fileName = link.dataset.filename;
+        
+        try {
+          // 获取文件内容
+          const response = await fetch(fileUrl);
+          if (!response.ok) throw new Error('文件不存在或无法访问');
+          const content = await response.text();
+          
+          // 存储当前文件信息（用于下载按钮）
+          currentFileInfo = { url: fileUrl, name: fileName };
+          
+          // 显示预览模态框
+          document.getElementById('previewFileName').textContent = fileName;
+          document.getElementById('previewContent').textContent = content;
+          document.getElementById('cfgPreviewModal').style.display = 'block';
+        } catch (error) {
+          console.error('预览失败:', error);
+          alert('无法预览文件：' + error.message);
+        }
+      }
+    });
+  });
+
+  // 关闭预览模态框
+  function closePreview() {
+    document.getElementById('cfgPreviewModal').style.display = 'none';
+    currentFileInfo = null;
+  }
+
+  // 下载当前预览的文件
+  function downloadCurrentFile() {
+    if (currentFileInfo) {
+      downloadFile(currentFileInfo.url, currentFileInfo.name);
+    }
+  }
+
+  // 通用下载函数
+  function downloadFile(url, filename) {
+    fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = filename;
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 100);
+      })
+      .catch(error => {
+        console.error('下载失败:', error);
+        alert('下载失败，请重试');
+      });
+  }
+
+  // 点击模态框外部关闭预览
+  document.getElementById('cfgPreviewModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('cfgPreviewModal')) {
+      closePreview();
     }
   });
-});
+
+  // 按ESC键关闭预览
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('cfgPreviewModal').style.display === 'block') {
+      closePreview();
+    }
+  });
 </script>
