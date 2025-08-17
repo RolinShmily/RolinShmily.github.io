@@ -31,13 +31,33 @@ aplayer: true
 {% endaplayerlist %}
 
 
-<link rel="stylesheet" href="APlayer.min.css">
-<div id="aplayer"></div>
-<script src="APlayer.min.js"></script>
+<!-- 引入APlayer资源 -->
+<link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
+<!-- 播放器容器 -->
+<div id="aplayer" style="width: 100%; max-width: 800px; margin: 2rem auto;"></div>
+
+<!-- 初始化脚本 -->
 <script>
-const ap = new APlayer({
-    container: document.getElementById('aplayer'),
+// 确保页面完全加载后再执行
+window.onload = function() {
+  // 检查APlayer是否加载成功
+  if (typeof APlayer === 'undefined') {
+    console.error('APlayer未加载成功，请检查CDN链接');
+    return;
+  }
+  
+  // 检查容器是否存在
+  const container = document.getElementById('aplayer');
+  if (!container) {
+    console.error('未找到播放器容器');
+    return;
+  }
+  
+  // 初始化播放器
+  const ap = new APlayer({
+    container: container,
     mini: false,
     autoplay: false,
     theme: '#FADFA3',
@@ -50,14 +70,15 @@ const ap = new APlayer({
     listMaxHeight: 90,
     lrcType: 3,
     audio: [
-        {
-            name: 'Love Story',
-            artist: 'Taylor Swift',
-            url: '/music/LoveStory/lovestory.mp3',
-            cover: 'https://upload.wikimedia.org/wikipedia/zh/6/60/Fearless_album.jpg',
-            lrc: '/music/LoveStory/lovestory.txt',
-            theme: '#ebd0c2'
-        }
+      {
+        name: 'Love Story',
+        artist: 'Taylor Swift',
+        url: '/music/LoveStory/lovestory.mp3',  // 确保文件在source/music目录下
+        cover: 'https://upload.wikimedia.org/wikipedia/zh/6/60/Fearless_album.jpg',
+        lrc: '/music/LoveStory/lovestory.txt',
+        theme: '#ebd0c2'
+      }
     ]
-});
+  });
+};
 </script>
