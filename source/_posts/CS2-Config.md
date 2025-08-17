@@ -748,6 +748,19 @@ async function packAndDownload() {
     font-family: monospace; /* 使用等宽字体，适合代码/配置文件 */
     color: #333;
   }
+  /* 深色主题样式 - 基于data-theme="dark" */
+  html[data-theme="dark"] .cfg-preview-content {
+    background: #1e1e1e; /* 深色背景 */
+  }
+  html[data-theme="dark"] .cfg-file-content {
+    color: #e0e0e0; /* 浅色文本 */
+  }
+  html[data-theme="dark"] .cfg-close-btn {
+    background: #d12525; /* 深色主题下的关闭按钮颜色 */
+  }
+  html[data-theme="dark"] .cfg-download-btn {
+    background: #0b5ed7; /* 深色主题下的下载按钮颜色 */
+  }
 </style>
 
 <!-- 预览模态框（默认隐藏） -->
