@@ -369,7 +369,7 @@ async function packAndDownload() {
       .then(function(content) {
         const a = document.createElement("a");
         a.href = URL.createObjectURL(content);
-        a.download = "AllcfgsForLulu.zip";
+        a.download = "Allcfgs.zip";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
