@@ -404,7 +404,7 @@ async function packAndDownload() {
 ## 启动项
 
 ```ini
--allow_third_party_software -noreflex -high -novid -nojoy -noborder -w 1440 -h 1080 -worldwide
+-allow_third_party_software -noreflex -high -novid -nojoy -noborder -worldwide
 ```
 
 ## cs2_video.txt
