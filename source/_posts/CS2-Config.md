@@ -694,7 +694,7 @@ async function packAndDownloadLulu() {
   }
 }
 </script>
-- [备用链接1](https://cdn.jsdelivr.net/gh/RolinShmily/rolinshmily.github.io@refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) [备用链接2](https://raw.githubusercontent.com/RolinShmily/rolinshmily.github.io/refs/heads/main/source/_posts/CS2-Config/lulu/lulu's%20cfgs.zip) 
+
 - 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。    
 - 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
 
