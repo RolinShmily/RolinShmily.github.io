@@ -556,7 +556,7 @@ async function packAndDownloadLulu() {
   // 2. 定义文件列表
   const filesToPack = [
     { name: "autoexec.cfg", url: "./lulu/autoexec.cfg" },
-    { name: "crosshair_view.cfg", url: "./cfgs/crosshair_view.cfg" },
+    { name: "crosshair_view.cfg", url: "./lulu/crosshair_view.cfg" },
     { name: "demo.cfg", url: "./cfgs/demo.cfg" },
     { name: "hlae.cfg", url: "./cfgs/hlae.cfg" },
     { name: "knife.cfg", url: "./cfgs/knife.cfg" },
