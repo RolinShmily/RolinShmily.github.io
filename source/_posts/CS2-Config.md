@@ -292,116 +292,69 @@ mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-23-37.png)
 # 自用配置分享
  
-<button onclick="packAndDownload()" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
-  打包并下载全部CFG文件
+
+<button id="downloadBtn" onclick="packAndDownload()" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+  <span>打包并打包下载全部CFG文件</span>
+  <div id="loader" style="display: none; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: white; animation: spin 1s ease-in-out infinite;"></div>
 </button>
+<div id="statusMessage" style="margin-top: 8px; color: #666; font-size: 14px; height: 20px;"></div>
+
+<style>
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
 
 <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <script>
 async function packAndDownload() {
-  // 1. 定义文件列表，包含完整的文件夹路径（模拟服务器上的层级结构）
-  // 格式：{ name: "ZIP中的路径/文件名", url: "服务器上的实际路径" }
+  const btn = document.getElementById('downloadBtn');
+  const loader = document.getElementById('loader');
+  const statusMsg = document.getElementById('statusMessage');
+  
+  // 1. 准备阶段 - 更新UI状态
+  btn.disabled = true;
+  btn.style.background = '#6c757d';
+  loader.style.display = 'block';
+  statusMsg.textContent = '正在准备文件...';
+  
+  // 2. 定义文件列表
   const filesToPack = [
-    { 
-      name: "autoexec.cfg", 
-      url: "./cfgs/autoexec.cfg" 
-    },
-    { 
-      name: "crosshair_view.cfg", 
-      url: "./cfgs/crosshair_view.cfg" 
-    },
-    { 
-      name: "demo.cfg", 
-      url: "./cfgs/demo.cfg" 
-    },
-    { 
-      name: "hlae.cfg", 
-      url: "./cfgs/hlae.cfg" 
-    },
-    { 
-      name: "knife.cfg", 
-      url: "./cfgs/knife.cfg" 
-    },
-    { 
-      name: "lastinv.cfg", 
-      url: "./cfgs/lastinv.cfg" 
-    },
-    { 
-      name: "train.cfg", 
-      url: "./cfgs/train.cfg" 
-    },
-    { 
-      name: "zeus.cfg", 
-      url: "./cfgs/zeus.cfg" 
-    },
-    { 
-      name: "spawn/ancient.cfg", 
-      url: "./cfgs/spawn/ancient.cfg" 
-    },
-    { 
-      name: "spawn/anubis.cfg", 
-      url: "./cfgs/spawn/anubis.cfg" 
-    },
-    { 
-      name: "spawn/dust2.cfg", 
-      url: "./cfgs/spawn/dust2.cfg" 
-    },
-    { 
-      name: "spawn/inferno.cfg", 
-      url: "./cfgs/spawn/inferno.cfg" 
-    },
-    { 
-      name: "spawn/init_spawns.cfg", 
-      url: "./cfgs/spawn/init_spawns.cfg" 
-    },
-    { 
-      name: "spawn/italy.cfg", 
-      url: "./cfgs/spawn/italy.cfg" 
-    },
-    { 
-      name: "spawn/mirage.cfg", 
-      url: "./cfgs/spawn/mirage.cfg" 
-    },
-    { 
-      name: "spawn/nuke.cfg", 
-      url: "./cfgs/spawn/nuke.cfg" 
-    },
-    { 
-      name: "spawn/office.cfg", 
-      url: "./cfgs/spawn/office.cfg" 
-    },
-    { 
-      name: "spawn/spawn.cfg", 
-      url: "./cfgs/spawn/spawn.cfg" 
-    },
-    { 
-      name: "spawn/vertigo.cfg", 
-      url: "./cfgs/spawn/vertigo.cfg" 
-    },
-    { 
-      name: "crosshair_library/01.cfg", 
-      url: "./cfgs/crosshair_library/01.cfg" 
-    },
-    { 
-      name: "crosshair_library/02.cfg", 
-      url: "./cfgs/crosshair_library/02.cfg" 
-    },
-    { 
-      name: "crosshair_library/03.cfg", 
-      url: "./cfgs/crosshair_library/03.cfg" 
-    },
-    { 
-      name: "crosshair_library/04.cfg", 
-      url: "./cfgs/crosshair_library/04.cfg" 
-    }
+    { name: "autoexec.cfg", url: "./cfgs/autoexec.cfg" },
+    { name: "crosshair_view.cfg", url: "./cfgs/crosshair_view.cfg" },
+    { name: "demo.cfg", url: "./cfgs/demo.cfg" },
+    { name: "hlae.cfg", url: "./cfgs/hlae.cfg" },
+    { name: "knife.cfg", url: "./cfgs/knife.cfg" },
+    { name: "lastinv.cfg", url: "./cfgs/lastinv.cfg" },
+    { name: "train.cfg", url: "./cfgs/train.cfg" },
+    { name: "zeus.cfg", url: "./cfgs/zeus.cfg" },
+    { name: "spawn/ancient.cfg", url: "./cfgs/spawn/ancient.cfg" },
+    { name: "spawn/anubis.cfg", url: "./cfgs/spawn/anubis.cfg" },
+    { name: "spawn/dust2.cfg", url: "./cfgs/spawn/dust2.cfg" },
+    { name: "spawn/inferno.cfg", url: "./cfgs/spawn/inferno.cfg" },
+    { name: "spawn/init_spawns.cfg", url: "./cfgs/spawn/init_spawns.cfg" },
+    { name: "spawn/italy.cfg", url: "./cfgs/spawn/italy.cfg" },
+    { name: "spawn/mirage.cfg", url: "./cfgs/spawn/mirage.cfg" },
+    { name: "spawn/nuke.cfg", url: "./cfgs/spawn/nuke.cfg" },
+    { name: "spawn/office.cfg", url: "./cfgs/spawn/office.cfg" },
+    { name: "spawn/spawn.cfg", url: "./cfgs/spawn/spawn.cfg" },
+    { name: "spawn/vertigo.cfg", url: "./cfgs/spawn/vertigo.cfg" },
+    { name: "crosshair_library/01.cfg", url: "./cfgs/crosshair_library/01.cfg" },
+    { name: "crosshair_library/02.cfg", url: "./cfgs/crosshair_library/02.cfg" },
+    { name: "crosshair_library/03.cfg", url: "./cfgs/crosshair_library/03.cfg" },
+    { name: "crosshair_library/04.cfg", url: "./cfgs/crosshair_library/04.cfg" }
   ];
 
-  // 2. 创建ZIP实例
+  // 3. 创建ZIP实例
   const zip = new JSZip();
+  
   try {
-
-    // 3. 循环下载文件并按层级添加到ZIP
-    for (const file of filesToPack) {
+    // 4. 循环下载文件并显示进度
+    for (let i = 0; i < filesToPack.length; i++) {
+      const file = filesToPack[i];
+      // 更新进度信息
+      statusMsg.textContent = `正在处理文件 ${i+1}/${filesToPack.length}: ${file.name}`;
+      
       const response = await fetch(file.url);
       if (!response.ok) {
         throw new Error(`无法获取文件: ${file.name}`);
@@ -410,21 +363,38 @@ async function packAndDownload() {
       zip.file(file.name, content);
     }
 
-    // 4. 生成ZIP并下载
+    // 5. 生成ZIP并下载
+    statusMsg.textContent = '正在生成压缩文件...';
     zip.generateAsync({ type: "blob" })
       .then(function(content) {
         const a = document.createElement("a");
         a.href = URL.createObjectURL(content);
-        a.download = "Allcfgs.zip"; // 下载的ZIP文件名
+        a.download = "AllcfgsForLulu.zip";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(a.href);
+        
+        // 下载完成
+        statusMsg.textContent = '下载完成!';
       });
 
   } catch (error) {
     console.error("打包失败:", error);
-    alert("文件打包失败");
+    statusMsg.textContent = `错误: ${error.message}`;
+    statusMsg.style.color = '#dc3545';
+  } finally {
+    // 恢复按钮状态
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.style.background = '#28a745';
+      loader.style.display = 'none';
+      
+      // 5秒后清除状态消息
+      if (statusMsg.textContent !== '错误: 无法获取文件') {
+        setTimeout(() => statusMsg.textContent = '', 5000);
+      }
+    }, 1000);
   }
 }
 </script>
