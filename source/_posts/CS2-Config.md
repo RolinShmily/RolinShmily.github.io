@@ -399,8 +399,7 @@ async function packAndDownload() {
 }
 </script>
 
-[存储地址](https://openlist.srprolin.top/blog/CS2-CFGS/cfgs)
-[云盘下载](https://openlist.srprolin.top/streamer/openlist.srprolin.top/275367/cfgs.zip)
+[云盘存储地址](https://openlist.srprolin.top/blog/CS2-CFGS/cfgs)
 
 - 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。 
 - 下载完成后会得到一个压缩包`Allcfgs.zip`，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
@@ -531,10 +530,10 @@ async function packAndDownload() {
 ---
 # lulu's cfg
 - 修改了autoexec的默认按键绑定与crosshair_view的内容
-- 点击`存储地址`查看并下载所更改文件
-[存储地址](https://openlist.srprolin.top/blog/CS2-CFGS/lulu)
-[云盘下载(此地址仅下载修改部分)](https://openlist.srprolin.top/streamer/openlist.srprolin.top/800171/lulu.zip)
-- 可以下载`全部自用配置cfg`,再下载此部分,将修改后的内容覆盖原来的文件.
+- 点击`云盘存储地址`查看并下载所更改文件
+- 可以先下载`全部自用配置cfg`,再下载此部分,将修改后的内容覆盖原来的文件.
+[云盘存储地址](https://openlist.srprolin.top/blog/CS2-CFGS/lulu)
+
 
 <button id="downloadBtn" onclick="packAndDownloadLulu()" style="padding: 8px 16px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
   <span>打包并下载全部CFG文件(此链接为全部cfg)</span>
