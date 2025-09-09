@@ -322,8 +322,7 @@ async function packAndDownload() {
   const filesToPack = [
     { name: "autoexec.cfg", url: "./cfgs/autoexec.cfg" },
     { name: "crosshair_view.cfg", url: "./cfgs/crosshair_view.cfg" },
-    { name: "demo.cfg", url: "./cfgs/demo.cfg" },
-    { name: "hlae.cfg", url: "./cfgs/hlae.cfg" },
+    { name: "demo_hlae.cfg", url: "./cfgs/demo_hlae.cfg" },
     { name: "knife.cfg", url: "./cfgs/knife.cfg" },
     { name: "lastinv.cfg", url: "./cfgs/lastinv.cfg" },
     { name: "train.cfg", url: "./cfgs/train.cfg" },
@@ -468,17 +467,12 @@ async function packAndDownload() {
 
 ---
 
-## demo.cfg
-- `看demo专用Config`：<a href="./cfgs/demo.cfg" class="file-link" data-filename="demo.cfg">demo.cfg</a>
+## demo_hlae.cfg
+- `观赛Config`：<a href="./cfgs/demo_hlae.cfg" class="file-link" data-filename="demo_hlae.cfg">demo_hlae.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
-- 集成了一些实用指令的快捷键
-- 取自 Purp1e 老师：https://space.bilibili.com/73115492
-- 注意查看控制台导航信息。
-## hlae.cfg
-- `HLAE观赛Config`：<a href="./cfgs/hlae.cfg" class="file-link" data-filename="hlae.cfg">hlae.cfg</a>
-- - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
-- 集成了一些HLAE的实用指令的快捷键
-- 同样取自 Purp1e 老师：https://space.bilibili.com/73115492
+- 集成了一些HLAE和demo的实用指令的快捷键
+- 修改自 Purp1e 的cfg：https://github.com/Purple-CSGO/CSGO-Config-Presets
+- 整合了hale的动态模糊录制功能，来自YouTube:https://www.youtube.com/watch?v=4zq27TcpfVg
 - 注意查看控制台导航信息。
 ## knife.cfg
 - `匕首模型更换Config`：<a href="./cfgs/knife.cfg" class="file-link" data-filename="knife.cfg">knife.cfg</a>
@@ -564,8 +558,7 @@ async function packAndDownloadLulu() {
   const filesToPack = [
     { name: "autoexec.cfg", url: "./lulu/autoexec.cfg" },
     { name: "crosshair_view.cfg", url: "./lulu/crosshair_view.cfg" },
-    { name: "demo.cfg", url: "./cfgs/demo.cfg" },
-    { name: "hlae.cfg", url: "./cfgs/hlae.cfg" },
+    { name: "demo_hlae.cfg", url: "./cfgs/demo_hlae.cfg" },
     { name: "knife.cfg", url: "./cfgs/knife.cfg" },
     { name: "lastinv.cfg", url: "./cfgs/lastinv.cfg" },
     { name: "train.cfg", url: "./cfgs/train.cfg" },
