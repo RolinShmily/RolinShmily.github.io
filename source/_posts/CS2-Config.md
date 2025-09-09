@@ -16,6 +16,7 @@ updated: 2025-08-17 00:00:00
 description:
 keywords:
 ---
+
 # 什么是 CFG
 
 **cfg** 是 config(设置)的简写，可以理解为，拥有了 cfg，你就拥有了在任何地点快速开一把 cs 的能力，不用再为设置而担忧。
@@ -68,6 +69,7 @@ keywords:
 
 - 控制台输入 `host_writeconfig backup` 可生成 `backup.cfg` 必要时在控制台输入 `exec backup` 即可恢复原设置
 - 控制台输入 `binddefaults`后，将绑定默认按键，输入`key_listboundkeys` 可在控制台输出里查看所有默认按键绑定
+
 ## autoexec.cfg (模板)
 
 这是一个只要你游戏启动就会自动加载的 cfg，所以基础设置与按键绑定，可以直接写在这个 cfg 文件里。
@@ -275,23 +277,26 @@ cl_showpos 1 // 在屏幕上显示玩家当前的位置、速度和角度信息
 mp_weapons_glow_on_ground 1 // 开启地面武器的高亮显示功能
 ```
 
-# 如何查找及时映射的cfg代码参数
-> 如果我们使用cfg来配置准星，是需要知道具体参数的，而CS提供的准星代码需要进游戏中导入，为了一键式配置，可参考以下方法，找到喜欢的准星导入后，在文件中找到准星具体参数复制。
+# 如何查找及时映射的 cfg 代码参数
+
+> 如果我们使用 cfg 来配置准星，是需要知道具体参数的，而 CS 提供的准星代码需要进游戏中导入，为了一键式配置，可参考以下方法，找到喜欢的准星导入后，在文件中找到准星具体参数复制。
+
 - 找到如下路径 **...\Steam\userdata\123456789\730\local\cfg** ,找到如下文件打开。
-![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250420121101.png)
+  ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250420121101.png)
 - 这里的参数就是准星参数
-![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250420121153.png)
-> 查看所有刚刚更改的按键绑定，应对不知键位名称的情况。
+  ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250420121153.png)
+  > 查看所有刚刚更改的按键绑定，应对不知键位名称的情况。
 - 下面这个文件里就是所有的按键绑定
-![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-18-22.png)
-> 游戏的功能性设置，所对应的cfg代码参数，也有对应文件。以chatwheel轮盘配置为例说明。
+  ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-18-22.png)
+
+  > 游戏的功能性设置，所对应的 cfg 代码参数，也有对应文件。以 chatwheel 轮盘配置为例说明。
 
 - 首先打开下面这个文件
-![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-20-46.png)
+  ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-20-46.png)
 - 下面的就是快捷轮盘对应槽位的关键词配置
-![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-23-37.png)
+  ![](https://cdn.jsdelivr.net/gh/RolinShmily/Images@main/20250721newstart/PixPin_2025-07-25_03-23-37.png)
+
 # 自用配置分享
- 
 
 <button id="downloadBtn" onclick="packAndDownload()" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
   <span>打包并打包下载全部CFG文件</span>
@@ -400,8 +405,8 @@ async function packAndDownload() {
 
 [云盘存储地址](https://openlist.srprolin.top/blog/CS2-CFGS/cfgs)
 
-- 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。 
-- 下载完成后会得到一个压缩包`Allcfgs.zip`，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
+- 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。
+- 下载完成后会得到一个压缩包`Allcfgs.zip`，直接放进 cfg 文件夹，并右击选择“解压到此文件夹“即可。
 
 ## 启动项
 
@@ -410,14 +415,19 @@ async function packAndDownload() {
 ```
 
 ## cs2_video.txt
+
 - `视频配置文件`：<a href="./video_config/cs2_video.txt" class="file-link" data-filename="cs2_video.txt">cs2_video.txt</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
--  集合了“高级视频选项”、“分辨率”、“显示模式”
+- 集合了“高级视频选项”、“分辨率”、“显示模式”
+
 ## autoexec.cfg
+
 - `自启动Config`：<a href="./cfgs/autoexec.cfg" class="file-link" data-filename="autoexec.cfg">autoexec.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 注意查看控制台导航信息。
+
 ## train.cfg
+
 - `跑图Config`：<a href="./cfgs/train.cfg" class="file-link" data-filename="train.cfg">train.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 注意查看控制台导航信息。
@@ -426,85 +436,111 @@ async function packAndDownload() {
 > 注意以下 cfg 都需要存放在游戏全局 cfg 文件夹下的 spawn 文件夹内，比如 **...\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\spawn** 或 **...\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\spawn** 下。
 
 ### spawn.cfg
+
 - `重生点控制台Config`：<a href="./cfgs/spawn/spawn.cfg" class="file-link" data-filename="spawn.cfg">spawn.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### vertigo.cfg
+
 - `vertigo重生点Config`：<a href="./cfgs/spawn/vertigo.cfg" class="file-link" data-filename="vertigo.cfg">vertigo.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### office.cfg
+
 - `office重生点Config`：<a href="./cfgs/spawn/office.cfg" class="file-link" data-filename="office.cfg">office.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### nuke.cfg
+
 - `nuke重生点Config`：<a href="./cfgs/spawn/nuke.cfg" class="file-link" data-filename="nuke.cfg">nuke.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### mirage.cfg
+
 - `mirage重生点Config`：<a href="./cfgs/spawn/mirage.cfg" class="file-link" data-filename="mirage.cfg">mirage.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### italy.cfg
+
 - `italy重生点Config`：<a href="./cfgs/spawn/italy.cfg" class="file-link" data-filename="italy.cfg">italy.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
+
 ### inferno.cfg
+
 - `inferno重生点Config`：<a href="./cfgs/spawn/inferno.cfg" class="file-link" data-filename="inferno.cfg">inferno.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
+
 ### dust2.cfg
+
 - `dust2重生点Config`：<a href="./cfgs/spawn/dust2.cfg" class="file-link" data-filename="dust2.cfg">dust2.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
+
 ### anubis.cfg
+
 - `anubis重生点Config`：<a href="./cfgs/spawn/anubis.cfg" class="file-link" data-filename="anubis.cfg">anubis.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ### ancient.cfg
+
 - `ancient重生点Config`：<a href="./cfgs/spawn/ancient.cfg" class="file-link" data-filename="ancient.cfg">ancient.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
+
 ### init_spawns.cfg
+
 - `重生点初始化Config`：<a href="./cfgs/spawn/init_spawns.cfg" class="file-link" data-filename="init_spawns.cfg">init_spawns.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 
 ---
 
 ## demo_hlae.cfg
+
 - `观赛Config`：<a href="./cfgs/demo_hlae.cfg" class="file-link" data-filename="demo_hlae.cfg">demo_hlae.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
-- 集成了一些HLAE和demo的实用指令的快捷键
-- 修改自 Purp1e 的cfg：https://github.com/Purple-CSGO/CSGO-Config-Presets
-- 整合了hale的动态模糊录制功能，来自YouTube:https://www.youtube.com/watch?v=4zq27TcpfVg
-- 注意查看控制台导航信息。
+- 集成了一些 HLAE 和 demo 的实用指令的快捷键
+- 修改自 Purp1e 的 cfg：https://github.com/Purple-CSGO/CSGO-Config-Presets
+- 整合了 hale 的动态模糊录制功能，来自 YouTube:https://www.youtube.com/watch?v=4zq27TcpfVg
+- "]"键启用，注意查看控制台导航信息。
+
 ## knife.cfg
+
 - `匕首模型更换Config`：<a href="./cfgs/knife.cfg" class="file-link" data-filename="knife.cfg">knife.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 注意控制台导航信息
 - “j”键启用，命令完成后有聊天框提示
 
 ## lastinv.cfg
-> 2025.8.15更新：此cfg已不再适用，Valve在更新中使切装备动画在衔接检视时的延迟变为0，此cfg效果可以由在切换装备前按住“检视键”来实现。
+
+> 2025.8.15 更新：此 cfg 已不再适用，Valve 在更新中使切装备动画在衔接检视时的延迟变为 0，此 cfg 效果可以由在切换装备前按住“检视键”来实现。
+
 - `切刀自动检视Config`：<a href="./cfgs/lastinv.cfg" class="file-link" data-filename="lastinv.cfg">lastinv.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - “弯刀”专用，规避了切刀时的双手拔刀动作，而是直接检视
-- 注意该配置重写了Q键(更换为最近装备)、1键(主武器)、2键(副武器)、3键(匕首刀)的逻辑，请不要修改这4个按键的默认功能。
+- 注意该配置重写了 Q 键(更换为最近装备)、1 键(主武器)、2 键(副武器)、3 键(匕首刀)的逻辑，请不要修改这 4 个按键的默认功能。
 - “/”键启用，启用后“.”键取消该设置，与弯刀搭配使用，避免了切刀时的双手动作。
 
 ## zeus.cfg
+
 - `电击枪即用即切Config`：<a href="./cfgs/zeus.cfg" class="file-link" data-filename="zeus.cfg">zeus.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 电击枪快捷切换
 - 在 autoexec.cfg 中自动启用，必须绑定“4”键电击枪，在电击枪左键使用之后自动切出主武器/副武器，手持电击枪右键时则不使用，直接切出主武器/副武器。
 - Tips: 电击枪充电完成是有声音的，请注意使用后利用该声音做一定战术调整，或者直接将其丢弃，避免在关键时刻暴露位置。
+
 ## crosshair_view.cfg
+
 - `准星与持枪视角库Config`：<a href="./cfgs/crosshair_view.cfg" class="file-link" data-filename="crosshair_view.cfg">crosshair_view.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 准星与持枪视角的存储与即时更换
-- 若更换准星必须搭配crosshair_library准星代码库使用
+- 若更换准星必须搭配 crosshair_library 准星代码库使用
 - "["键启用，注意查看控制台导航信息。
 - Tips: 如果你有能力，可以自己根据代码魔改，将源代码绑定按键，实现一键切换准星/持枪视角。
-> 由于Valve的脚本指令单条有长度限制，而准星参数的设置已经超过该限制，故直接用cfg文件来保存准星预设。
-> 注意以下 cfg 都需要存放在游戏全局 cfg 文件夹下的 crosshair_library 文件夹内，比如 **...\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\crosshair_library** 或 **...\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\crosshair_library** 下。
+  > 由于 Valve 的脚本指令单条有长度限制，而准星参数的设置已经超过该限制，故直接用 cfg 文件来保存准星预设。
+  > 注意以下 cfg 都需要存放在游戏全局 cfg 文件夹下的 crosshair_library 文件夹内，比如 **...\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\crosshair_library** 或 **...\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\crosshair_library** 下。
+
 ### crosshair_library
-> 这里仅给出库中的准星代码、源码以及持枪视角源码，后续将会以GIF格式在此展示准星与持枪视角。
+
+> 这里仅给出库中的准星代码、源码以及持枪视角源码，后续将会以 GIF 格式在此展示准星与持枪视角。
+
 - `01号准星Config`：<a href="./cfgs/crosshair_library/01.cfg" class="file-link" data-filename="01.cfg">01.cfg</a>
 - - 单击`(Click)`查看文件，`Ctrl+单击(click)`下载文件。（请注意浏览器拦截下载）
 - 准星代码: `CSGO-H9mcs-8GDFZ-MfxkQ-2Kx7O-pTLoD`
@@ -522,12 +558,13 @@ async function packAndDownload() {
 - 准星代码: `CSGO-pqEaF-5AKXB-DCdnh-vpxAJ-94GSQ`
 
 ---
+
 # lulu's cfg
-- 修改了autoexec的默认按键绑定与crosshair_view的内容
+
+- 修改了 autoexec 的默认按键绑定与 crosshair_view 的内容
 - 点击`云盘存储地址`查看并下载所更改文件
 - 可以先下载`全部自用配置cfg`,再下载此部分,将修改后的内容覆盖原来的文件.
-[云盘存储地址](https://openlist.srprolin.top/blog/CS2-CFGS/lulu)
-
+  [云盘存储地址](https://openlist.srprolin.top/blog/CS2-CFGS/lulu)
 
 <button id="downloadBtn" onclick="packAndDownloadLulu()" style="padding: 8px 16px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
   <span>打包并下载全部CFG文件(此链接为全部cfg)</span>
@@ -634,8 +671,8 @@ async function packAndDownloadLulu() {
 }
 </script>
 
-- 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。    
-- 下载完成后会得到一个压缩包，直接放进cfg文件夹，并右击选择“解压到此文件夹“即可。
+- 下载可能会有延迟，请耐心等待，并且请注意浏览器拦截下载。
+- 下载完成后会得到一个压缩包，直接放进 cfg 文件夹，并右击选择“解压到此文件夹“即可。
 
 <!--  预览样式：用于美化预览区域 -->
 <style>
